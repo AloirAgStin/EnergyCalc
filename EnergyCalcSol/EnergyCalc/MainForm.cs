@@ -21,6 +21,8 @@ namespace EnergyCalc
 
         private void MainFrame_Load(object sender, EventArgs e)
         {
+            Icon = Properties.Resources.mainICO;
+
             lblINFO.Parent = pbMain;
             lblMainText.Parent = pbMain;
             lblTitle.Parent = pbMain;

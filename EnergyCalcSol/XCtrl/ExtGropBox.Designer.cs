@@ -50,6 +50,7 @@
             this.MinimumSize = new System.Drawing.Size(188, 65);
             this.Name = "ExtGropBox";
             this.Size = new System.Drawing.Size(188, 65);
+            this.SizeChanged += new System.EventHandler(this.ExtGropBox_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.ExtGropBox_Paint);
             this.ResumeLayout(false);
 

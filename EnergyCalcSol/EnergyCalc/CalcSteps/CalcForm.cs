@@ -13,7 +13,11 @@ namespace EnergyCalc
 {
     public partial class CalcForm : Form
     {
-        ValidateDlg[] frm = { new CalcSteps.Step1Dlg(), new CalcSteps.Step2Dlg(),};
+        ValidateDlg[] frm = {   new CalcSteps.Step1Dlg(),
+                                new CalcSteps.Step2Dlg(),
+                                new CalcSteps.Step3Dlg(),
+                                new CalcSteps.Step1Dlg()
+        };
         int top = -1;
         int count;
 
@@ -21,6 +25,9 @@ namespace EnergyCalc
         {
             count = frm.Count();
             InitializeComponent();
+
+            Icon = Properties.Resources.mainICO;
+
         }
 
         private void LoadForm()
@@ -80,8 +87,9 @@ namespace EnergyCalc
         }
         private void Next()
         {
-            if (!VerifyPage())
-                return;
+            //todo
+            //if (!VerifyPage())
+              //  return;
 
             top++;
             if (top >= count)

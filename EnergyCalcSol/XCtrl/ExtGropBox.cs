@@ -15,8 +15,10 @@ namespace XCtrl
             InitializeComponent();
             BorderColor = Color.FromArgb(126,175, 45);
             LineW = 4;
+            ArrowType = 0;
         }
 
+        public int ArrowType { get; set; }
         public Color BorderColor { get; set; }
         public int LineW { get; set; }
         
@@ -28,11 +30,16 @@ namespace XCtrl
             pen.MiterLimit = 1;           //задаем ограничение толщины скошенных углов
             e.Graphics.DrawRectangle(pen, new Rectangle(20, 3, Width - 3 - LineW - 20, Height - 3 - LineW));
 
-            var img = Image.FromHbitmap(Properties.Resources.arrow.GetHbitmap());
-            img.MakeTransparent();
-            e.Graphics.DrawImage(img, LineW-2, 10);
+            if(ArrowType == 0)
+            {
+                var img = Image.FromHbitmap(Properties.Resources.arrow.GetHbitmap());
+                img.MakeTransparent();
+                e.Graphics.DrawImage(img, LineW - 2, 10);
+            }
+            
+
         }
-        
+
         [Category("Appearance")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public Panel DropZone
@@ -40,6 +47,11 @@ namespace XCtrl
             get {
                 panel1.Dock = DockStyle.Fill;
                     return panel1; }
+        }
+
+        private void ExtGropBox_SizeChanged(object sender, EventArgs e)
+        {
+            Invalidate(true);
         }
     }
 
