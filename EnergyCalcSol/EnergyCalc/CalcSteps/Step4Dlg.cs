@@ -289,7 +289,7 @@ namespace EnergyCalc.CalcSteps
                 cbFloorType.SetDataSource(lFloorType);
                 cbFloorType.EndUpdate();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

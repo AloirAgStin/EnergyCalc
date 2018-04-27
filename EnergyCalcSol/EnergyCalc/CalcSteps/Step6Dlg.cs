@@ -21,7 +21,7 @@ namespace EnergyCalc.CalcSteps
         private void FinishDlg_Load(object sender, EventArgs e)
         {
             string textRegion = "Район строительства: "  + sCalcRec._region.Name;
-            pbHouse.Image = ResourceImage.GetBuildImageByType(sCalcRec.BuildingType);
+            pbHouse.Image = ResourceImage.GetBuildImageByType(sCalcRec.st2_BuildingType);
 
             lbBaseData.Items.Add(textRegion);
             lbBaseData.Items.Add("Параметры здания:");
@@ -59,7 +59,7 @@ namespace EnergyCalc.CalcSteps
             SolidBrush drawBrush = new SolidBrush(Color.Black);
 
             e.Graphics.DrawString("Тестовая печать", drawFont, drawBrush, 10, 10);
-            e.Graphics.DrawImage(ResourceImage.GetBuildImageByType(sCalcRec.BuildingType), 10, 40);
+            e.Graphics.DrawImage(ResourceImage.GetBuildImageByType(sCalcRec.st2_BuildingType), 10, 40);
         }
     }
 }

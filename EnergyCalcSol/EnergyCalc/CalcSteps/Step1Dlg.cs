@@ -91,10 +91,6 @@ namespace EnergyCalc.CalcSteps
 
         }
 
-        private void pbVitebsk_MouseHover(object sender, EventArgs e)
-        {
-            pbRegion.Image = Properties.Resources.rg_vitebsk;
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -110,10 +106,6 @@ namespace EnergyCalc.CalcSteps
 
         }
 
-        private void onMinsK_MouseHover(object sender, EventArgs e)
-        {
-            pbRegion.Image = Properties.Resources.rg_minsk;
-        }
 
         private void pbMinsk_Click(object sender, EventArgs e)
         {

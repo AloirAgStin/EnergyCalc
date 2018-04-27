@@ -38,11 +38,19 @@ namespace EnergyCalc
 
         private void LoadForm()
         {
-            frm[top].TopLevel = false;
-            frm[top].Dock = DockStyle.Fill;
-            this.pnlContent.Controls.Clear();
-            this.pnlContent.Controls.Add(frm[top]);
-            frm[top].Show();
+            try
+            {
+                frm[top].TopLevel = false;
+                frm[top].Dock = DockStyle.Fill;
+                this.pnlContent.Controls.Clear();
+                this.pnlContent.Controls.Add(frm[top]);
+                frm[top].Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+            }
         }
 
         bool VerifyPage()
@@ -98,8 +106,8 @@ namespace EnergyCalc
         }
         private void Next()
         {
-            if (!VerifyPage())
-              return;
+//            if (!VerifyPage())
+  //            return;
             if(top != -1)
                 frm[top].SaveData();
 

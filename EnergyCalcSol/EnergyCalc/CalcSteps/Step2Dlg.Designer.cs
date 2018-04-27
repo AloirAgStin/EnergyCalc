@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Step2Dlg));
             this.imlBuildsType = new System.Windows.Forms.ImageList(this.components);
-            this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.pbMainImg = new XCtrl.ExtPictureBox();
             this.cbBuildingType = new XCtrl.ExtComboBox();
             this.extGBTypeBuild = new XCtrl.ExtGropBox();
             this.pbArroy = new System.Windows.Forms.PictureBox();
@@ -43,7 +41,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tbBHBasement = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbBHSkat = new System.Windows.Forms.TextBox();
+            this.tbBSkat = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tbBHeight = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -67,8 +65,9 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.err1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.err2 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMainImg)).BeginInit();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.pbMainImg = new XCtrl.ExtPictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.extGBTypeBuild.DropZone.SuspendLayout();
             this.extGBTypeBuild.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbArroy)).BeginInit();
@@ -79,6 +78,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMainImg)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // imlBuildsType
@@ -92,45 +94,21 @@
             this.imlBuildsType.Images.SetKeyName(4, "bt_5.png");
             this.imlBuildsType.Images.SetKeyName(5, "bt_6.png");
             // 
-            // pbLogo
-            // 
-            this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbLogo.BackColor = System.Drawing.Color.Transparent;
-            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pbLogo.Image = global::EnergyCalc.Properties.Resources.logo;
-            this.pbLogo.Location = new System.Drawing.Point(677, 43);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(187, 60);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbLogo.TabIndex = 19;
-            this.pbLogo.TabStop = false;
-            // 
-            // pbMainImg
-            // 
-            this.pbMainImg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbMainImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMainImg.Location = new System.Drawing.Point(284, 41);
-            this.pbMainImg.Name = "pbMainImg";
-            this.pbMainImg.Size = new System.Drawing.Size(580, 571);
-            this.pbMainImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbMainImg.TabIndex = 18;
-            this.pbMainImg.TabStop = false;
-            this.pbMainImg.WaitOnLoad = true;
-            // 
             // cbBuildingType
             // 
+            this.cbBuildingType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbBuildingType.BackColor = System.Drawing.Color.White;
             this.cbBuildingType.DisplayMember = "0";
             this.cbBuildingType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBuildingType.Font = new System.Drawing.Font("Sitka Small", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbBuildingType.Font = new System.Drawing.Font("Sitka Small", 10F);
             this.cbBuildingType.FormattingEnabled = true;
             this.err2.SetIconPadding(this.cbBuildingType, 2);
             this.err1.SetIconPadding(this.cbBuildingType, 2);
-            this.cbBuildingType.Location = new System.Drawing.Point(388, 13);
+            this.cbBuildingType.Location = new System.Drawing.Point(387, 10);
             this.cbBuildingType.Name = "cbBuildingType";
-            this.cbBuildingType.Size = new System.Drawing.Size(476, 24);
-            this.cbBuildingType.TabIndex = 0;
+            this.cbBuildingType.Size = new System.Drawing.Size(476, 27);
+            this.cbBuildingType.TabIndex = 10;
             this.cbBuildingType.ValueMember = "0";
             this.cbBuildingType.SelectedIndexChanged += new System.EventHandler(this.cbHeatingType_SelectedIndexChanged);
             // 
@@ -190,7 +168,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.tbBHBasement);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.tbBHSkat);
+            this.panel1.Controls.Add(this.tbBSkat);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.tbBHeight);
             this.panel1.Controls.Add(this.label2);
@@ -219,8 +197,8 @@
             this.tbBCountFloor.MaxLength = 5;
             this.tbBCountFloor.Name = "tbBCountFloor";
             this.tbBCountFloor.Size = new System.Drawing.Size(40, 20);
-            this.tbBCountFloor.TabIndex = 6;
-            this.tbBCountFloor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressTextBod);
+            this.tbBCountFloor.TabIndex = 16;
+            this.tbBCountFloor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressTextBod2);
             // 
             // label5
             // 
@@ -239,7 +217,7 @@
             this.tbBHBasement.MaxLength = 5;
             this.tbBHBasement.Name = "tbBHBasement";
             this.tbBHBasement.Size = new System.Drawing.Size(40, 20);
-            this.tbBHBasement.TabIndex = 5;
+            this.tbBHBasement.TabIndex = 15;
             this.tbBHBasement.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressTextBod);
             // 
             // label4
@@ -251,16 +229,16 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "Высота конька, м";
             // 
-            // tbBHSkat
+            // tbBSkat
             // 
-            this.err2.SetIconPadding(this.tbBHSkat, 2);
-            this.err1.SetIconPadding(this.tbBHSkat, 2);
-            this.tbBHSkat.Location = new System.Drawing.Point(170, 83);
-            this.tbBHSkat.MaxLength = 5;
-            this.tbBHSkat.Name = "tbBHSkat";
-            this.tbBHSkat.Size = new System.Drawing.Size(40, 20);
-            this.tbBHSkat.TabIndex = 4;
-            this.tbBHSkat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressTextBod);
+            this.err2.SetIconPadding(this.tbBSkat, 2);
+            this.err1.SetIconPadding(this.tbBSkat, 2);
+            this.tbBSkat.Location = new System.Drawing.Point(170, 83);
+            this.tbBSkat.MaxLength = 5;
+            this.tbBSkat.Name = "tbBSkat";
+            this.tbBSkat.Size = new System.Drawing.Size(40, 20);
+            this.tbBSkat.TabIndex = 14;
+            this.tbBSkat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressTextBod);
             // 
             // label3
             // 
@@ -279,7 +257,7 @@
             this.tbBHeight.MaxLength = 5;
             this.tbBHeight.Name = "tbBHeight";
             this.tbBHeight.Size = new System.Drawing.Size(40, 20);
-            this.tbBHeight.TabIndex = 3;
+            this.tbBHeight.TabIndex = 13;
             this.tbBHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressTextBod);
             // 
             // label2
@@ -299,7 +277,7 @@
             this.tbBWight.MaxLength = 5;
             this.tbBWight.Name = "tbBWight";
             this.tbBWight.Size = new System.Drawing.Size(40, 20);
-            this.tbBWight.TabIndex = 2;
+            this.tbBWight.TabIndex = 12;
             this.tbBWight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressTextBod);
             // 
             // label1
@@ -319,7 +297,7 @@
             this.tbBLenght.MaxLength = 5;
             this.tbBLenght.Name = "tbBLenght";
             this.tbBLenght.Size = new System.Drawing.Size(40, 20);
-            this.tbBLenght.TabIndex = 1;
+            this.tbBLenght.TabIndex = 11;
             this.tbBLenght.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressTextBod);
             // 
             // label7
@@ -382,7 +360,7 @@
             this.panel2.Controls.Add(this.trackBar1);
             this.panel2.Location = new System.Drawing.Point(22, 468);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(244, 83);
+            this.panel2.Size = new System.Drawing.Size(244, 99);
             this.panel2.TabIndex = 20;
             // 
             // tbTemp
@@ -394,12 +372,11 @@
             this.tbTemp.MaxLength = 2;
             this.tbTemp.Name = "tbTemp";
             this.tbTemp.Size = new System.Drawing.Size(25, 20);
-            this.tbTemp.TabIndex = 7;
+            this.tbTemp.TabIndex = 17;
             this.tbTemp.Text = "22";
             this.tbTemp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbTemp.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.tbTemp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            this.tbTemp.Leave += new System.EventHandler(this.OnKillLastControlFocus);
             // 
             // label11
             // 
@@ -517,15 +494,49 @@
             this.err2.ContainerControl = this;
             this.err2.Icon = ((System.Drawing.Icon)(resources.GetObject("err2.Icon")));
             // 
+            // pbLogo
+            // 
+            this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pbLogo.Image = global::EnergyCalc.Properties.Resources.logo;
+            this.pbLogo.Location = new System.Drawing.Point(392, 0);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(187, 60);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbLogo.TabIndex = 20;
+            this.pbLogo.TabStop = false;
+            // 
+            // pbMainImg
+            // 
+            this.pbMainImg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbMainImg.Location = new System.Drawing.Point(0, 0);
+            this.pbMainImg.Name = "pbMainImg";
+            this.pbMainImg.Size = new System.Drawing.Size(579, 517);
+            this.pbMainImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbMainImg.TabIndex = 18;
+            this.pbMainImg.TabStop = false;
+            this.pbMainImg.WaitOnLoad = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.pbLogo);
+            this.panel3.Controls.Add(this.pbMainImg);
+            this.panel3.Location = new System.Drawing.Point(284, 41);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(579, 517);
+            this.panel3.TabIndex = 21;
+            // 
             // Step2Dlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(885, 620);
-            this.Controls.Add(this.pbLogo);
-            this.Controls.Add(this.pbMainImg);
+            this.ClientSize = new System.Drawing.Size(875, 620);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.cbBuildingType);
             this.Controls.Add(this.extGBTypeBuild);
             this.Controls.Add(this.lblTitle);
@@ -535,8 +546,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Step2Dlg";
             this.Load += new System.EventHandler(this.Step2Dlg_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMainImg)).EndInit();
             this.extGBTypeBuild.DropZone.ResumeLayout(false);
             this.extGBTypeBuild.DropZone.PerformLayout();
             this.extGBTypeBuild.ResumeLayout(false);
@@ -550,6 +559,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.err1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.err2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMainImg)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -564,12 +577,11 @@
         private System.Windows.Forms.Label lblBuildSize;
         private System.Windows.Forms.Panel panel1;
         private XCtrl.ExtGropBox extGBTypeBuild;
-        private XCtrl.ExtPictureBox pbMainImg;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbBLenght;
         private System.Windows.Forms.ErrorProvider err1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbBHSkat;
+        private System.Windows.Forms.TextBox tbBSkat;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbBHeight;
         private System.Windows.Forms.Label label2;
@@ -594,5 +606,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pbLogo;
+        private XCtrl.ExtPictureBox pbMainImg;
+        private System.Windows.Forms.Panel panel3;
     }
 }

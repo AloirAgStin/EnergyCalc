@@ -20,7 +20,7 @@ namespace EnergyCalc.CalcSteps
 
         private void Step5Dlg_Load(object sender, EventArgs e)
         {
-            pbHouse.Image = ResourceImage.GetBuildImageByType(sCalcRec.BuildingType);
+            pbHouse.Image = ResourceImage.GetBuildImageByType(sCalcRec.st2_BuildingType);
         }
     }
 }

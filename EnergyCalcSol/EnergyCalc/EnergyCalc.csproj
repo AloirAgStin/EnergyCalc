@@ -105,6 +105,8 @@
     </Compile>
     <Compile Include="CoreClass\ResourceImage.cs" />
     <Compile Include="CoreClass\sCalcRec.cs" />
+    <Compile Include="CoreClass\SimpleFunc.cs" />
+    <Compile Include="CoreClass\Step2Manager.cs" />
     <Compile Include="CoreClass\ValidateDlg.cs">
       <SubType>Form</SubType>
     </Compile>

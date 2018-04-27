@@ -15,3 +15,7 @@ E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.csproj.CopyC
 E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.exe
 E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.pdb
 E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.CalcSteps.Step3Dlg.resources
+E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.CalcSteps.Step6Dlg.resources
+E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.CalcSteps.Step4Dlg.resources
+E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.CalcSteps.Step5Dlg.resources
+E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.CalcSteps.StepFinish.resources
