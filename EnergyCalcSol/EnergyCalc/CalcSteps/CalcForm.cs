@@ -13,16 +13,22 @@ namespace EnergyCalc
 {
     public partial class CalcForm : Form
     {
-        ValidateDlg[] frm = {   new CalcSteps.Step1Dlg(),
+        ValidateDlg[] frm = {
+                                new CalcSteps.Step1Dlg(),
                                 new CalcSteps.Step2Dlg(),
                                 new CalcSteps.Step3Dlg(),
-                                new CalcSteps.Step1Dlg()
+                                new CalcSteps.Step4Dlg(),
+                                new CalcSteps.Step5Dlg(),
+                                new CalcSteps.Step6Dlg(),
+                                new CalcSteps.StepFinish(),
         };
+
         int top = -1;
         int count;
 
         public CalcForm()
         {
+            sCalcRec.Init();
             count = frm.Count();
             InitializeComponent();
 
@@ -64,6 +70,11 @@ namespace EnergyCalc
         private void Back()
         {
             top--;
+            btnNext.Text = "Далее";
+            if(top == count - 2)
+            {
+                btnNext.Text = "Завершить";
+            }
 
             if (top <= -1)
             {
@@ -87,23 +98,34 @@ namespace EnergyCalc
         }
         private void Next()
         {
-            //todo
-            //if (!VerifyPage())
-              //  return;
+            if (!VerifyPage())
+              return;
+            if(top != -1)
+                frm[top].SaveData();
 
             top++;
             if (top >= count)
             {
+                Close();
                 return;
             }
             else
             {
                 btnBack.Enabled = true;
                 btnNext.Enabled = true;
+                btnNext.Text = "Далее";
+
                 LoadForm();
+                if (top + 2 == count)
+                {
+                    btnNext.Text = "Завершить";
+                    btnNext.Enabled = true;
+                }
+                else
                 if (top + 1 == count)
                 {
-                    btnNext.Enabled = false;
+                    btnNext.Text = "Выход";
+                    btnNext.Enabled = true;
                 }
             }
 
@@ -117,7 +139,8 @@ namespace EnergyCalc
         {
             if (top != count)
             {
-                var ret = MessageBox.Show("Вы уверены, что хотите прервать расчет средст и энергоэффективности?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                var ret = MessageBox.Show(this, "Вы уверены, что хотите прервать расчет средст и энергоэффективности?", "Внимание", 
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (ret != DialogResult.Yes)
                     return;
             }

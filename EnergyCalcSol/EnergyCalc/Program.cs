@@ -16,6 +16,7 @@ namespace EnergyCalc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new CalcForm());
             Application.Run(new MainFrame());
         }
     }

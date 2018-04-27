@@ -12,12 +12,23 @@ using EnergyCalc.CoreClass;
 
 namespace EnergyCalc.CalcSteps
 {
+    public struct heatingType
+    {
+        public string Name { get; set; }
+        public int ItemIndex { get; set; }
+    }
     public partial class Step3Dlg : ValidateDlg
     {
         public List<heatingType> heatingTypeList = new List<heatingType>();
         public BindingSource cbHeatingTypeBindingSource = new BindingSource();
 
         public Step3Dlg()
+        {
+            InitializeComponent();
+            pbLogo.Parent = extPictureBox1;
+        }
+
+        private void Step3Dlg_Load(object sender, EventArgs e)
         {
             heatingTypeList.Add(new heatingType() { ItemIndex = 0, Name = "Газовое отопление" });
             heatingTypeList.Add(new heatingType() { ItemIndex = 1, Name = "Угольное отопление" });
@@ -26,13 +37,14 @@ namespace EnergyCalc.CalcSteps
             heatingTypeList.Add(new heatingType() { ItemIndex = 4, Name = "Центральное отопление" });
             heatingTypeList.Add(new heatingType() { ItemIndex = 5, Name = "Дровяное  отопление" });
 
-            InitializeComponent();
             cbHeatingTypeBindingSource.DataSource = heatingTypeList;
             cbHeatingType.DataSource = cbHeatingTypeBindingSource;
             cbHeatingType.DisplayMember = "Name";
             cbHeatingType.ValueMember = "ItemIndex";
 
             onChangeHeatingType(null, null);
+
+
         }
 
         private void onChangeHeatingType(object sender, EventArgs e)
@@ -60,20 +72,9 @@ namespace EnergyCalc.CalcSteps
                 else
                 if (hValue == 5)
                     lblTarif.Text = val + "грн./м3";
-
-
             }
         }
 
-        private void pbHeatingType_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         string previousInput = "";
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -89,17 +90,7 @@ namespace EnergyCalc.CalcSteps
                 textBox1.Text = previousInput;
             }
         }
-
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
-        {
-        }
-
-
-        public struct heatingType
-        {
-            public string Name { get; set; }
-            public int ItemIndex { get; set; }
-        }
+ 
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -110,6 +101,8 @@ namespace EnergyCalc.CalcSteps
             }
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.';
         }
+
+
     }
 
 }

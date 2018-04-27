@@ -13,6 +13,8 @@ namespace XCtrl
         public ExtGropBox()
         {
             InitializeComponent();
+            DoubleBuffered = true;
+
             BorderColor = Color.FromArgb(126,175, 45);
             LineW = 4;
             ArrowType = 0;
@@ -63,8 +65,7 @@ namespace XCtrl
 
             if (this.Control is ExtGropBox)
             {
-                this.EnableDesignMode(
-                                     ((ExtGropBox)this.Control).DropZone, "DropZone");
+                this.EnableDesignMode(((ExtGropBox)this.Control).DropZone, "DropZone");
             }
         }
     }

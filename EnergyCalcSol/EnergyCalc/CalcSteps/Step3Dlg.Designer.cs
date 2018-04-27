@@ -33,7 +33,9 @@
             this.DropZone = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.imlHeatingType = new System.Windows.Forms.ImageList(this.components);
-            this.lblTitle = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.extPictureBox1 = new XCtrl.ExtPictureBox();
             this.extGropBox2 = new XCtrl.ExtGropBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTarif = new System.Windows.Forms.Label();
@@ -44,6 +46,10 @@
             this.lblHeatType = new System.Windows.Forms.Label();
             this.pbHeatingType = new System.Windows.Forms.PictureBox();
             this.cbHeatingType = new System.Windows.Forms.ComboBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.extPictureBox1)).BeginInit();
             this.extGropBox2.DropZone.SuspendLayout();
             this.extGropBox2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -79,16 +85,40 @@
             this.imlHeatingType.Images.SetKeyName(4, "ht_centr.png");
             this.imlHeatingType.Images.SetKeyName(5, "ht_wooden.png");
             // 
-            // lblTitle
+            // panel2
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Sitka Small", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblTitle.Location = new System.Drawing.Point(12, 9);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(444, 28);
-            this.lblTitle.TabIndex = 6;
-            this.lblTitle.Text = "Шаг 3. Укажите тип отопления и тариф:";
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.pbLogo);
+            this.panel2.Controls.Add(this.extPictureBox1);
+            this.panel2.Location = new System.Drawing.Point(315, 41);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(611, 469);
+            this.panel2.TabIndex = 13;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pbLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pbLogo.Image = global::EnergyCalc.Properties.Resources.logo;
+            this.pbLogo.Location = new System.Drawing.Point(421, 0);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(187, 60);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbLogo.TabIndex = 11;
+            this.pbLogo.TabStop = false;
+            // 
+            // extPictureBox1
+            // 
+            this.extPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.extPictureBox1.Image = global::EnergyCalc.Properties.Resources.bl_gas;
+            this.extPictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.extPictureBox1.Name = "extPictureBox1";
+            this.extPictureBox1.Size = new System.Drawing.Size(611, 469);
+            this.extPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.extPictureBox1.TabIndex = 12;
+            this.extPictureBox1.TabStop = false;
             // 
             // extGropBox2
             // 
@@ -134,17 +164,15 @@
             this.lblTarif.TabIndex = 12;
             this.lblTarif.Text = "Тариф, грн./кВт*час";
             this.lblTarif.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblTarif.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(177, 3);
             this.textBox1.MaxLength = 6;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(65, 20);
+            this.textBox1.Size = new System.Drawing.Size(44, 20);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label3
@@ -223,7 +251,6 @@
             this.pbHeatingType.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbHeatingType.TabIndex = 8;
             this.pbHeatingType.TabStop = false;
-            this.pbHeatingType.Click += new System.EventHandler(this.pbHeatingType_Click);
             // 
             // cbHeatingType
             // 
@@ -242,22 +269,38 @@
             this.cbHeatingType.ValueMember = "0";
             this.cbHeatingType.SelectedIndexChanged += new System.EventHandler(this.onChangeHeatingType);
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Sitka Small", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblTitle.Location = new System.Drawing.Point(12, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(444, 28);
+            this.lblTitle.TabIndex = 6;
+            this.lblTitle.Text = "Шаг 3. Укажите тип отопления и тариф:";
+            // 
             // Step3Dlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(833, 411);
+            this.ClientSize = new System.Drawing.Size(938, 522);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.extGropBox2);
             this.Controls.Add(this.extGropBox1);
             this.Controls.Add(this.lblTitle);
-            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Step3Dlg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Step3Dlg";
+            this.Load += new System.EventHandler(this.Step3Dlg_Load);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.extPictureBox1)).EndInit();
             this.extGropBox2.DropZone.ResumeLayout(false);
             this.extGropBox2.DropZone.PerformLayout();
             this.extGropBox2.ResumeLayout(false);
@@ -287,5 +330,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.PictureBox pbLogo;
+        private XCtrl.ExtPictureBox extPictureBox1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

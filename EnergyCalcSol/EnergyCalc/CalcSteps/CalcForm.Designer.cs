@@ -30,10 +30,10 @@
         {
             this.pnlNavigation = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.pnlNavigation.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -42,7 +42,7 @@
             // 
             this.pnlNavigation.Controls.Add(this.tableLayoutPanel1);
             this.pnlNavigation.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlNavigation.Location = new System.Drawing.Point(0, 404);
+            this.pnlNavigation.Location = new System.Drawing.Point(0, 617);
             this.pnlNavigation.Name = "pnlNavigation";
             this.pnlNavigation.Size = new System.Drawing.Size(964, 37);
             this.pnlNavigation.TabIndex = 0;
@@ -65,20 +65,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(316, 29);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.AutoSize = true;
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancel.Location = new System.Drawing.Point(215, 3);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(98, 23);
-            this.btnCancel.TabIndex = 9999;
-            this.btnCancel.TabStop = false;
-            this.btnCancel.Text = "Отмена";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
-            // 
             // btnNext
             // 
             this.btnNext.AutoSize = true;
@@ -98,7 +84,7 @@
             this.btnBack.Location = new System.Drawing.Point(3, 3);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(100, 23);
-            this.btnBack.TabIndex = 9998;
+            this.btnBack.TabIndex = 3;
             this.btnBack.Text = "Назад";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -108,9 +94,23 @@
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(0, 0);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(964, 404);
+            this.pnlContent.Size = new System.Drawing.Size(964, 617);
             this.pnlContent.TabIndex = 2;
             this.pnlContent.TabStop = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.AutoSize = true;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancel.Location = new System.Drawing.Point(215, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(98, 23);
+            this.btnCancel.TabIndex = 9999;
+            this.btnCancel.TabStop = false;
+            this.btnCancel.Text = "Отмена";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // CalcForm
             // 
@@ -118,11 +118,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(964, 441);
+            this.ClientSize = new System.Drawing.Size(964, 654);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlNavigation);
-            this.MinimumSize = new System.Drawing.Size(640, 480);
+            this.MinimumSize = new System.Drawing.Size(885, 535);
             this.Name = "CalcForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Калькулятор расчета экономии средств и энергоэффективности";
@@ -136,12 +135,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlNavigation;
-        private System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Button btnCancel;
+        public System.Windows.Forms.Button btnNext;
+        public System.Windows.Forms.Button btnBack;
+        public System.Windows.Forms.Panel pnlContent;
+        public System.Windows.Forms.Panel pnlNavigation;
+        public System.Windows.Forms.Button btnCancel;
     }
 }

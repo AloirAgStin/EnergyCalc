@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XCtrl</RootNamespace>
     <AssemblyName>XCtrl</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -46,8 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategoryComboBox.cs">
+    <Compile Include="BufferedPainter.cs" />
+    <Compile Include="ExtComboBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExtComboBox.Designer.cs">
+      <DependentUpon>ExtComboBox.cs</DependentUpon>
     </Compile>
     <Compile Include="ExtGropBox.cs">
       <SubType>UserControl</SubType>
@@ -55,15 +59,29 @@
     <Compile Include="ExtGropBox.Designer.cs">
       <DependentUpon>ExtGropBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExtPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExtPictureBox.Designer.cs">
+      <DependentUpon>ExtPictureBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="XCtlFunction.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ExtComboBox.resx">
+      <DependentUpon>ExtComboBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExtGropBox.resx">
       <DependentUpon>ExtGropBox.cs</DependentUpon>
     </EmbeddedResource>

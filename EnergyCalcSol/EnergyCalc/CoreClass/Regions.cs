@@ -13,6 +13,7 @@ namespace EnergyCalc
         {
             return Name;
         }
+        public int Code { get; set; }
     };
 
     public struct sRegionGroup
@@ -34,8 +35,8 @@ namespace EnergyCalc
                 sRegionGroup gr = new sRegionGroup();
                 gr.Name = "Минская";
                 gr.RegionsList.Add(new sRegion() { Name = "Минск" });
-
-                
+                gr.RegionsList.Add(new sRegion() { Name = "Фаниполь" });
+                gr.RegionsList.Add(new sRegion() { Name = "Боровляны" });
                 return gr;
             }
             
@@ -43,7 +44,7 @@ namespace EnergyCalc
         }
 
 
-        static public sRegion[] GetRegionGroupName()
+        static public sRegion[] GetRegionsGroupName()
         {
             List<sRegion> reg = new List<sRegion>()
                 {
@@ -54,7 +55,7 @@ namespace EnergyCalc
                     new sRegion() { Name = "Гомельская" },
                     new sRegion() { Name = "Гродно" }
                 };
-          
+
 
             return reg.ToArray();
             

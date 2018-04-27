@@ -17,9 +17,25 @@ namespace EnergyCalc.CalcSteps
         {
             InitializeComponent();            
         }
+
+
         private void Step1Dlg_Load(object sender, EventArgs e)
         {
-            errorPageRegion.SetIconPadding(cbRegionType, 3);
+            foreach (var s in RegionController.GetRegionsGroupName())
+                cbRegionType.Items.Add(s);
+            pbRegion.Image = Properties.Resources.rg_base;
+
+            pbVitebsk.Parent = pbRegion;
+            pbVitebsk2.Parent = pbRegion;
+
+            pbMinsk2.Parent = pbRegion;
+            pbMinsk.Parent = pbRegion;
+
+            pbBrest.Parent = pbRegion;
+            pbGomel.Parent = pbRegion;
+            pbGomel2.Parent = pbRegion;
+            pbGrodno.Parent = pbRegion;
+            pbMogilev.Parent = pbRegion;
         }
         public override bool CheckControls()
         {
@@ -35,10 +51,107 @@ namespace EnergyCalc.CalcSteps
                 errorPageRegion.SetError(cbRegionType, "ОК");
             }
 
+
             return true;
         }
+        public override void SaveData()
+        {
+            sCalcRec._region.Name = cbRegionType.Text;
+            sCalcRec._region.Code = cbRegionType.SelectedIndex;
+        }
+
 
         private void cbRegionType_Leave(object sender, EventArgs e)
+        {
+            CheckControls();
+        }
+
+        private void cbRegionType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbRegionType.SelectedIndex == -1)
+                pbRegion.Image = Properties.Resources.rg_base;
+            else
+            if (cbRegionType.SelectedIndex == 0)
+                pbRegion.Image = Properties.Resources.rg_minsk;
+            else
+            if (cbRegionType.SelectedIndex == 1)
+                pbRegion.Image = Properties.Resources.rg_vitebsk;
+            else
+            if (cbRegionType.SelectedIndex == 2)
+                pbRegion.Image = Properties.Resources.rg_mogilev;
+            else
+            if (cbRegionType.SelectedIndex == 3)
+                pbRegion.Image = Properties.Resources.rg_brest;
+            else
+            if (cbRegionType.SelectedIndex == 4)
+                pbRegion.Image = Properties.Resources.rg_gomel;
+            else
+            if (cbRegionType.SelectedIndex == 5)
+                pbRegion.Image = Properties.Resources.rg_grodno;
+
+        }
+
+        private void pbVitebsk_MouseHover(object sender, EventArgs e)
+        {
+            pbRegion.Image = Properties.Resources.rg_vitebsk;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            cbRegionType.SelectedIndex = 1;
+        }
+        private void pbVitebsk2_Click(object sender, EventArgs e)
+        {
+            cbRegionType.SelectedIndex = 1;
+        }
+        private void OnLeaveRegion(object sender, EventArgs e)
+        {
+//            cbRegionType_SelectedIndexChanged(sender, e);       
+
+        }
+
+        private void onMinsK_MouseHover(object sender, EventArgs e)
+        {
+            pbRegion.Image = Properties.Resources.rg_minsk;
+        }
+
+        private void pbMinsk_Click(object sender, EventArgs e)
+        {
+
+            cbRegionType.SelectedIndex = 0;
+        }
+        private void pbMinsk2_Click(object sender, EventArgs e)
+        {
+            cbRegionType.SelectedIndex = 0;
+        }
+
+
+        private void pbGrodno_Click(object sender, EventArgs e)
+        {
+            cbRegionType.SelectedIndex = 5;
+        }
+
+        private void pbBrest_Click(object sender, EventArgs e)
+        {
+            cbRegionType.SelectedIndex = 3;
+        }
+
+        private void pbGomel_Click(object sender, EventArgs e)
+        {
+            cbRegionType.SelectedIndex = 4;
+        }
+
+        private void pbGomel2_Click(object sender, EventArgs e)
+        {
+            cbRegionType.SelectedIndex = 4;
+        }
+
+        private void pbMogilev_Click(object sender, EventArgs e)
+        {
+            cbRegionType.SelectedIndex = 2;
+        }
+
+        private void pbRegion_LoadCompleted(object sender, AsyncCompletedEventArgs e)
         {
             CheckControls();
         }
