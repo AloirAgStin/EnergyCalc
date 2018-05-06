@@ -104,10 +104,10 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrint.BackColor = System.Drawing.Color.PowderBlue;
             this.btnPrint.ContextMenuStrip = this.cmPrint;
             this.btnPrint.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPrint.Location = new System.Drawing.Point(639, 90);
+            this.btnPrint.Location = new System.Drawing.Point(681, 103);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(187, 52);
             this.btnPrint.TabIndex = 26;
@@ -251,7 +251,7 @@
             this.pbLogo.BackColor = System.Drawing.Color.Transparent;
             this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbLogo.Image = global::EnergyCalc.Properties.Resources.logo;
-            this.pbLogo.Location = new System.Drawing.Point(639, 24);
+            this.pbLogo.Location = new System.Drawing.Point(681, 24);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(187, 60);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -318,13 +318,13 @@
             this.pbHouse.TabIndex = 0;
             this.pbHouse.TabStop = false;
             // 
-            // FinishDlg
+            // Step6Dlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(832, 673);
+            this.ClientSize = new System.Drawing.Size(874, 673);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.lblNameHouse);
             this.Controls.Add(this.label3);
@@ -334,7 +334,7 @@
             this.Controls.Add(this.extGropBox1);
             this.Controls.Add(this.pbHouse);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FinishDlg";
+            this.Name = "Step6Dlg";
             this.Text = "FinishDlg";
             this.Load += new System.EventHandler(this.FinishDlg_Load);
             this.cmPrint.ResumeLayout(false);

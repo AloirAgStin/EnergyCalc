@@ -30,10 +30,10 @@
         {
             this.pnlNavigation = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.pnlContent = new System.Windows.Forms.Panel();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.pnlNavigation.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -65,28 +65,48 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(316, 29);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.AutoSize = true;
+            this.btnCancel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCancel.Location = new System.Drawing.Point(215, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(98, 23);
+            this.btnCancel.TabIndex = 9999;
+            this.btnCancel.TabStop = false;
+            this.btnCancel.Text = "Отмена";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
+            // 
             // btnNext
             // 
             this.btnNext.AutoSize = true;
+            this.btnNext.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnNext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNext.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnNext.Location = new System.Drawing.Point(109, 3);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(100, 23);
             this.btnNext.TabIndex = 1;
             this.btnNext.Text = "Далее ";
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnBack
             // 
             this.btnBack.AutoSize = true;
+            this.btnBack.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnBack.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBack.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnBack.Location = new System.Drawing.Point(3, 3);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(100, 23);
-            this.btnBack.TabIndex = 3;
+            this.btnBack.TabIndex = 100;
             this.btnBack.Text = "Назад";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // pnlContent
@@ -97,20 +117,6 @@
             this.pnlContent.Size = new System.Drawing.Size(964, 617);
             this.pnlContent.TabIndex = 2;
             this.pnlContent.TabStop = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.AutoSize = true;
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancel.Location = new System.Drawing.Point(215, 3);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(98, 23);
-            this.btnCancel.TabIndex = 9999;
-            this.btnCancel.TabStop = false;
-            this.btnCancel.Text = "Отмена";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // CalcForm
             // 

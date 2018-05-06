@@ -34,7 +34,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.imlHeatingType = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.extPictureBox1 = new XCtrl.ExtPictureBox();
             this.extGropBox2 = new XCtrl.ExtGropBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -47,8 +46,8 @@
             this.pbHeatingType = new System.Windows.Forms.PictureBox();
             this.cbHeatingType = new System.Windows.Forms.ComboBox();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.extPictureBox1)).BeginInit();
             this.extGropBox2.DropZone.SuspendLayout();
             this.extGropBox2.SuspendLayout();
@@ -56,6 +55,7 @@
             this.extGropBox1.DropZone.SuspendLayout();
             this.extGropBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHeatingType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // DropZone
@@ -91,23 +91,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.pbLogo);
             this.panel2.Controls.Add(this.extPictureBox1);
-            this.panel2.Location = new System.Drawing.Point(315, 41);
+            this.panel2.Location = new System.Drawing.Point(319, 41);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(611, 469);
+            this.panel2.Size = new System.Drawing.Size(607, 397);
             this.panel2.TabIndex = 13;
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pbLogo.BackColor = System.Drawing.Color.Transparent;
-            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pbLogo.Image = global::EnergyCalc.Properties.Resources.logo;
-            this.pbLogo.Location = new System.Drawing.Point(421, 0);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(187, 60);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbLogo.TabIndex = 11;
-            this.pbLogo.TabStop = false;
             // 
             // extPictureBox1
             // 
@@ -115,8 +102,7 @@
             this.extPictureBox1.Image = global::EnergyCalc.Properties.Resources.bl_gas;
             this.extPictureBox1.Location = new System.Drawing.Point(0, 0);
             this.extPictureBox1.Name = "extPictureBox1";
-            this.extPictureBox1.Size = new System.Drawing.Size(611, 469);
-            this.extPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.extPictureBox1.Size = new System.Drawing.Size(607, 397);
             this.extPictureBox1.TabIndex = 12;
             this.extPictureBox1.TabStop = false;
             // 
@@ -280,17 +266,30 @@
             this.lblTitle.TabIndex = 6;
             this.lblTitle.Text = "Шаг 3. Укажите тип отопления и тариф:";
             // 
+            // pbLogo
+            // 
+            this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pbLogo.Image = global::EnergyCalc.Properties.Resources.logo;
+            this.pbLogo.Location = new System.Drawing.Point(417, 0);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(187, 60);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbLogo.TabIndex = 14;
+            this.pbLogo.TabStop = false;
+            // 
             // Step3Dlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(938, 522);
+            this.ClientSize = new System.Drawing.Size(938, 466);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.extGropBox2);
             this.Controls.Add(this.extGropBox1);
-            this.Controls.Add(this.lblTitle);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Step3Dlg";
@@ -299,7 +298,6 @@
             this.Load += new System.EventHandler(this.Step3Dlg_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.extPictureBox1)).EndInit();
             this.extGropBox2.DropZone.ResumeLayout(false);
             this.extGropBox2.DropZone.PerformLayout();
@@ -310,6 +308,7 @@
             this.extGropBox1.DropZone.PerformLayout();
             this.extGropBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbHeatingType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,8 +329,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.PictureBox pbLogo;
         private XCtrl.ExtPictureBox extPictureBox1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pbLogo;
     }
 }

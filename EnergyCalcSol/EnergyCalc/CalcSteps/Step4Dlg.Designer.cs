@@ -80,11 +80,12 @@
             // 
             // pbLogo
             // 
-            this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pbLogo.BackColor = System.Drawing.Color.Transparent;
             this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbLogo.Image = global::EnergyCalc.Properties.Resources.logo;
-            this.pbLogo.Location = new System.Drawing.Point(734, 9);
+            this.pbLogo.Location = new System.Drawing.Point(734, 12);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(187, 60);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;

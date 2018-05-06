@@ -48,7 +48,7 @@ namespace EnergyCalc
         {
             List<sRegion> reg = new List<sRegion>()
                 {
-                    new sRegion() { Name = "Минская"  },
+                    new sRegion() { Name = "Минская"  },    
                     new sRegion() { Name = "Витебкая" },
                     new sRegion() { Name = "Могилевская"  },
                     new sRegion() { Name = "Брестская" },

@@ -64,17 +64,19 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 519F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 517F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.Controls.Add(this.pbLogo, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(17, 43);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 417);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(839, 417);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // pbLogo
@@ -83,9 +85,9 @@
             this.pbLogo.BackColor = System.Drawing.Color.Transparent;
             this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbLogo.Image = global::EnergyCalc.Properties.Resources.logo;
-            this.pbLogo.Location = new System.Drawing.Point(713, 3);
+            this.pbLogo.Location = new System.Drawing.Point(649, 3);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(185, 60);
+            this.pbLogo.Size = new System.Drawing.Size(187, 60);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbLogo.TabIndex = 4;
             this.pbLogo.TabStop = false;
@@ -103,9 +105,9 @@
             this.panel1.Controls.Add(this.pbVitebsk);
             this.panel1.Controls.Add(this.pbRegion);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(194, 3);
+            this.panel1.Location = new System.Drawing.Point(131, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(513, 411);
+            this.panel1.Size = new System.Drawing.Size(511, 411);
             this.panel1.TabIndex = 6;
             // 
             // pbMogilev
@@ -151,7 +153,7 @@
             // pbGrodno
             // 
             this.pbGrodno.BackColor = System.Drawing.Color.Transparent;
-            this.pbGrodno.Location = new System.Drawing.Point(29, 159);
+            this.pbGrodno.Location = new System.Drawing.Point(32, 160);
             this.pbGrodno.Name = "pbGrodno";
             this.pbGrodno.Size = new System.Drawing.Size(143, 126);
             this.pbGrodno.TabIndex = 10;
@@ -168,7 +170,6 @@
             this.pbMinsk2.TabStop = false;
             this.pbMinsk2.Click += new System.EventHandler(this.pbMinsk2_Click);
             this.pbMinsk2.MouseLeave += new System.EventHandler(this.OnLeaveRegion);
-            this.pbMinsk2.MouseHover += new System.EventHandler(this.onMinsK_MouseHover);
             // 
             // pbMinsk
             // 
@@ -180,7 +181,6 @@
             this.pbMinsk.TabStop = false;
             this.pbMinsk.Click += new System.EventHandler(this.pbMinsk_Click);
             this.pbMinsk.MouseLeave += new System.EventHandler(this.OnLeaveRegion);
-            this.pbMinsk.MouseHover += new System.EventHandler(this.onMinsK_MouseHover);
             // 
             // pbVitebsk2
             // 
@@ -192,7 +192,6 @@
             this.pbVitebsk2.TabStop = false;
             this.pbVitebsk2.Click += new System.EventHandler(this.pbVitebsk2_Click);
             this.pbVitebsk2.MouseLeave += new System.EventHandler(this.cbRegionType_Leave);
-            this.pbVitebsk2.MouseHover += new System.EventHandler(this.pbVitebsk_MouseHover);
             // 
             // pbVitebsk
             // 
@@ -204,7 +203,6 @@
             this.pbVitebsk.TabStop = false;
             this.pbVitebsk.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pbVitebsk.MouseLeave += new System.EventHandler(this.OnLeaveRegion);
-            this.pbVitebsk.MouseHover += new System.EventHandler(this.pbVitebsk_MouseHover);
             // 
             // pbRegion
             // 
@@ -212,7 +210,7 @@
             this.pbRegion.Image = global::EnergyCalc.Properties.Resources.rg_base;
             this.pbRegion.Location = new System.Drawing.Point(0, 0);
             this.pbRegion.Name = "pbRegion";
-            this.pbRegion.Size = new System.Drawing.Size(513, 411);
+            this.pbRegion.Size = new System.Drawing.Size(511, 411);
             this.pbRegion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbRegion.TabIndex = 5;
             this.pbRegion.TabStop = false;
@@ -230,8 +228,8 @@
             this.cbRegionType.Location = new System.Drawing.Point(430, 13);
             this.cbRegionType.MaxDropDownItems = 10;
             this.cbRegionType.Name = "cbRegionType";
-            this.cbRegionType.Size = new System.Drawing.Size(485, 24);
-            this.cbRegionType.TabIndex = 3;
+            this.cbRegionType.Size = new System.Drawing.Size(426, 24);
+            this.cbRegionType.TabIndex = 100;
             this.cbRegionType.SelectedIndexChanged += new System.EventHandler(this.cbRegionType_SelectedIndexChanged);
             this.cbRegionType.Leave += new System.EventHandler(this.cbRegionType_Leave);
             // 
@@ -260,7 +258,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(923, 473);
+            this.ClientSize = new System.Drawing.Size(877, 473);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.cbRegionType);
             this.Controls.Add(this.lblTitle);
@@ -292,7 +290,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.ComboBox categoryComboBox1;
         private System.Windows.Forms.ComboBox cbRegionType;
         private System.Windows.Forms.ErrorProvider errorPageRegion;
         private System.Windows.Forms.PictureBox pbLogo;

@@ -18,5 +18,7 @@ namespace EnergyCalc.CoreClass
 
         public virtual void SaveData() { }
 
+        public CalcForm GetPrent() { return (CalcForm) Parent.Parent;  }
+
     }
 }

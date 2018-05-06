@@ -20,20 +20,34 @@ namespace EnergyCalc.CalcSteps
 
         private void FinishDlg_Load(object sender, EventArgs e)
         {
-            string textRegion = "Район строительства: "  + sCalcRec._region.Name;
-            pbHouse.Image = ResourceImage.GetBuildImageByType(sCalcRec.BuildingType);
+            string textRegion = "Район строительства: "  + GetPrent().Rec._region.Name;
+            pbHouse.Image = ResourceImage.GetBuildImageByType(GetPrent().Rec.st2_BuildingType);
 
-            lbBaseData.Items.Add(textRegion);
-            lbBaseData.Items.Add("Параметры здания:");
-            lbBaseData.Items.Add("      длина: 213 м");
-            lbBaseData.Items.Add("      ширина: 3213 м");
-            lbBaseData.Items.Add("      высота до ската: 2 м");
-            lbBaseData.Items.Add("      высота до конька: 2 м");
-            lbBaseData.Items.Add("      высота подвала: 0 м");
-            lbBaseData.Items.Add("      количество этажей: 2");
-            lbBaseData.Items.Add("      температурный режим: 22 °С");
-            lbBaseData.Items.Add("      отопление: Газовое отопление");
-            lbBaseData.Items.Add("      тариф: 0.7254 грн./м3");
+
+            var Record = GetPrent().Rec;
+            try
+            {
+                lbBaseData.Items.Add(textRegion);
+                lbBaseData.Items.Add("Параметры здания:");
+
+                //load step 2
+                lbBaseData.Items.Add("      длина: " + Record.st2_Lenght.ToString() + " м");
+                lbBaseData.Items.Add("      ширина: " + Record.st2_Wight.ToString() + " м");
+                lbBaseData.Items.Add("      высота до ската: " + Record.st2_Height  + " м");
+                lbBaseData.Items.Add("      высота до конька: " + Record.st2_Konek.ToString() + " м");
+                lbBaseData.Items.Add("      высота подвала: " + Record.st2_basement.ToString() +" м");
+                lbBaseData.Items.Add("      количество этажей: " + Record.st2_level.ToString() + " м");
+                lbBaseData.Items.Add("      температурный режим: " + Record.st2_temperature.ToString() + "°С");
+
+                //load step 3
+                lbBaseData.Items.Add("      отопление: Газовое отопление");
+                lbBaseData.Items.Add("      тариф: 0.7254 грн./м3");
+            }
+            catch (Exception)
+            {
+
+            }
+
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -59,7 +73,7 @@ namespace EnergyCalc.CalcSteps
             SolidBrush drawBrush = new SolidBrush(Color.Black);
 
             e.Graphics.DrawString("Тестовая печать", drawFont, drawBrush, 10, 10);
-            e.Graphics.DrawImage(ResourceImage.GetBuildImageByType(sCalcRec.BuildingType), 10, 40);
+            e.Graphics.DrawImage(ResourceImage.GetBuildImageByType(GetPrent().Rec.st2_BuildingType), 10, 40);
         }
     }
 }

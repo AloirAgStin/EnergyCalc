@@ -15,7 +15,6 @@ namespace EnergyCalc.CalcSteps
 {
     public partial class Step2Dlg : ValidateDlg
     {
-        List<sExtDataSource> buildingTypeList = new List<sExtDataSource>();
         public Step2Dlg()
         {
             DoubleBuffered = true;
@@ -25,26 +24,14 @@ namespace EnergyCalc.CalcSteps
             err1.Icon = Properties.Resources.apply;
             err2.Icon = Properties.Resources.reject;
 
-            buildingTypeList.Add(new sExtDataSource() { Code = 1, Name = "Здание без подвала. Неотапливаемая мансарда." });
-            buildingTypeList.Add(new sExtDataSource() { Code = 2, Name = "Здание без подвала. Отапливаемая мансарда." });
-            buildingTypeList.Add(new sExtDataSource() { Code = 3, Name = "Здание с неотапливаемым подвалом. Неотапливаемая мансарда." });
-            buildingTypeList.Add(new sExtDataSource() { Code = 4, Name = "Здание с неотапливаемым подвалом. Отапливаемая мансарда." });
-            buildingTypeList.Add(new sExtDataSource() { Code = 5, Name = "Здание с отапливаемым подвалом. Неотапливаемая мансарда." });
-            buildingTypeList.Add(new sExtDataSource() { Code = 6, Name = "Здание с отапливаемым подвалом. Отапливаемая мансарда." });
-            
-            cbBuildingType.SetDataSource(buildingTypeList);
+            cbBuildingType.SetDataSource(Step2Manager.GetBuilingList());
         }
 
         private void Step2Dlg_Load(object sender, EventArgs e)
         {
             InitBuildInfo();
         }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            CheckControls();
-        }
-
+        
         public override bool CheckControls()
         {
             bool lRet = true;
@@ -62,51 +49,94 @@ namespace EnergyCalc.CalcSteps
                 err2.SetError(cbBuildingType, "");
             }
 
+            List<Control> focusCtr = new List<Control>();
+
             if (!CheckEditVale(tbBLenght))
+            {
+                focusCtr.Add(tbBLenght);
                 lRet = false;
+            }
 
             if (!CheckEditVale(tbBWight))
+            {
+                focusCtr.Add(tbBWight);
                 lRet = false;
+            }
 
             if (!CheckEditVale(tbBHeight))
+            {
+                focusCtr.Add(tbBHeight);
                 lRet = false;
+            }
 
-            if (!CheckEditVale(tbBHSkat))
+            if (!CheckEditVale(tbBSkat))
+            {
+                focusCtr.Add(tbBSkat);
                 lRet = false;
+            }
 
             if (TypeBuild != 0 && TypeBuild != 1)
             {
                 if (!CheckEditVale(tbBHBasement))
+                {
                     lRet = false;
+                    focusCtr.Add(tbBHBasement);
+                }
             }
 
-            if (!CheckEditVale(tbBCountFloor))
+            if (!CheckEditVale(tbBCountFloor, false))
+            {
+                focusCtr.Add(tbBCountFloor);
                 lRet = false;
+            }
 
             if (!CheckEditVale(tbTemp))
+            {
+                focusCtr.Add(tbTemp);
                 lRet = false;
+            }
 
-            //if (!lRet)
-            //  MessageBox.Show("Введены не все данные", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+            if (focusCtr.Count > 0)
+                focusCtr[0].Focus();
             return lRet;
         }
 
         public override void SaveData()
         {
-            sCalcRec.BuildingType = (int)cbBuildingType.SelectedValue;
+            GetPrent().Rec.st2_BuildingType = (int)cbBuildingType.SelectedValue;
+
+            GetPrent().Rec.st2_Lenght     = SafeConvert.ToDouble(tbBLenght.Text);
+            GetPrent().Rec.st2_Wight      = SafeConvert.ToDouble(tbBWight.Text);
+            GetPrent().Rec.st2_Height     = SafeConvert.ToDouble(tbBHeight.Text);
+            GetPrent().Rec.st2_Konek      = SafeConvert.ToDouble(tbBSkat.Text);
+            GetPrent().Rec.st2_basement   = SafeConvert.ToDouble(tbBHBasement.Text);
+            GetPrent().Rec.st2_level      = SafeConvert.toInt32(tbBCountFloor.Text);
+            GetPrent().Rec.st2_temperature = SafeConvert.toInt32(tbTemp.Text);
         }
 
 
-        private bool CheckEditVale(Control item)
+        private bool CheckEditVale(Control item, bool IsDouble = true)
         {
             string errorText = "Введите значение";
-            if (item.Text.Length == 0)
+            if(IsDouble)
             {
-                err1.SetError(item, "");
-                err2.SetError(item, errorText);
-                return false;
+                if (SafeConvert.ToDouble(item.Text) == 0)
+                {
+                    err1.SetError(item, "");
+                    err2.SetError(item, errorText);
+                    return false;
+                }
             }
+            else
+            {
+                if (SafeConvert.toInt32(item.Text) == 0)
+                {
+                    err1.SetError(item, "");
+                    err2.SetError(item, errorText);
+                    return false;
+                }
+            }
+  
             err2.SetError(item, "");
             err1.SetError(item, "OK");
 
@@ -148,38 +178,19 @@ namespace EnergyCalc.CalcSteps
         {
             InitBuildInfo();
         }
-
-        private void KeyPressTextBod(object sender, KeyPressEventArgs e)
-        {
-            if (tbBLenght.Text.Contains(".") && e.KeyChar == '.')
-            {
-                e.Handled = true;
-                return;
-            }
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.';
-        }
-
-
-        private string prevTempVal;
+        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                int val = Convert.ToInt32(tbTemp.Text);
-                if (val > trackBar1.Maximum)
-                    trackBar1.Value = trackBar1.Maximum;
-                else
-                if (val < trackBar1.Minimum)
-                    trackBar1.Value = trackBar1.Minimum;
-                else
-                    trackBar1.Value = val;
-
-            }
-            catch (Exception ex)
-            {
-                //todo
-                //MessageBox.Show()
-            }
+            int val = 15;
+            val = SafeConvert.toInt32(tbTemp.Text);
+            
+            if (val > trackBar1.Maximum)
+                trackBar1.Value = trackBar1.Maximum;
+            else
+            if (val < trackBar1.Minimum)
+                trackBar1.Value = trackBar1.Minimum;
+            else
+                trackBar1.Value = val;
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -192,22 +203,24 @@ namespace EnergyCalc.CalcSteps
             tbTemp.Text = trackBar1.Value.ToString();
         }
 
-        private void OnKillLastControlFocus(object sender, EventArgs e)
+        private void KeyPressTextBod2(object sender, KeyPressEventArgs e)
         {
-/*            var f = (CalcForm)Parent.Parent;
-
-            try
-            {
-                f.Focus();
-                f.pnlNavigation.SelectNextControl(null, true, true, true, true);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-  */       
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
 
         }
 
+        private void KeyPressTextBod(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).Text.Contains(".") && e.KeyChar == '.')
+            {
+                e.Handled = true;
+                return;
+            }
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.';
+        }
+
+        private void tbTemp_Leave(object sender, EventArgs e)
+        {
+        }
     }
 }
