@@ -103,14 +103,15 @@ namespace EnergyCalc.CalcSteps
 
         public override void SaveData()
         {
-            sCalcRec.st2_BuildingType = (int)cbBuildingType.SelectedValue;
+            GetPrent().Rec.st2_BuildingType = (int)cbBuildingType.SelectedValue;
 
-            sCalcRec.st2_Lenght     = SafeConvert.ToDouble(tbBLenght.Text);
-            sCalcRec.st2_Wight      = SafeConvert.ToDouble(tbBWight.Text);
-            sCalcRec.st2_Height     = SafeConvert.ToDouble(tbBHeight.Text);
-            sCalcRec.st2_Konek      = SafeConvert.ToDouble(tbBSkat.Text);
-            sCalcRec.st2_basement   = SafeConvert.ToDouble(tbBHBasement.Text);
-            sCalcRec.st2_level      = SafeConvert.toInt32(tbBCountFloor.Text);            
+            GetPrent().Rec.st2_Lenght     = SafeConvert.ToDouble(tbBLenght.Text);
+            GetPrent().Rec.st2_Wight      = SafeConvert.ToDouble(tbBWight.Text);
+            GetPrent().Rec.st2_Height     = SafeConvert.ToDouble(tbBHeight.Text);
+            GetPrent().Rec.st2_Konek      = SafeConvert.ToDouble(tbBSkat.Text);
+            GetPrent().Rec.st2_basement   = SafeConvert.ToDouble(tbBHBasement.Text);
+            GetPrent().Rec.st2_level      = SafeConvert.toInt32(tbBCountFloor.Text);
+            GetPrent().Rec.st2_temperature = SafeConvert.toInt32(tbTemp.Text);
         }
 
 
@@ -217,6 +218,9 @@ namespace EnergyCalc.CalcSteps
             }
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.';
         }
-        
+
+        private void tbTemp_Leave(object sender, EventArgs e)
+        {
+        }
     }
 }

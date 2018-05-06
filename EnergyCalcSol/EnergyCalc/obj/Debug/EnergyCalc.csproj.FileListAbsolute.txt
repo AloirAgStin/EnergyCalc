@@ -10,8 +10,6 @@ E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.CalcSteps.St
 E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.MainFrame.resources
 E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.Properties.Resources.resources
 E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.csproj.GenerateResource.cache
-E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.csproj.CoreCompileInputs.cache
-E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.csproj.CopyComplete
 E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.exe
 E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.pdb
 E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.CalcSteps.Step3Dlg.resources
@@ -19,3 +17,5 @@ E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.CalcSteps.St
 E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.CalcSteps.Step4Dlg.resources
 E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.CalcSteps.Step5Dlg.resources
 E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.CalcSteps.StepFinish.resources
+E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.csproj.CoreCompileInputs.cache
+E:\Project\EnergyCalc\EnergyCalcSol\EnergyCalc\obj\Debug\EnergyCalc.csproj.CopyComplete

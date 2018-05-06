@@ -377,6 +377,7 @@
             this.tbTemp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbTemp.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.tbTemp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.tbTemp.Leave += new System.EventHandler(this.tbTemp_Leave);
             // 
             // label11
             // 

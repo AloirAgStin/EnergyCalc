@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace EnergyCalc.CoreClass
 {
-    static public class sCalcRec
+    public class sCalcRec
     {
-        static public void Init()
+        public void Init()
         {
             st2_BuildingType = 0;
             Buildingtemperature = 21;
@@ -19,24 +19,26 @@ namespace EnergyCalc.CoreClass
             st2_Konek   = 0;
             st2_basement = 0;
             st2_level   = 0;
+            st2_temperature = 0;
 
         }
-        static public sRegion _region;
+        public sRegion _region;
 
 
 
         //page 2
-        static public int st2_BuildingType { get; set; }
+        public int st2_BuildingType { get; set; }
 
-        static public double st2_Lenght { get; set; }
-        static public double st2_Wight{ get; set; }
-        static public double st2_Height { get; set; }
-        static public double st2_Konek { get; set; }
-        static public double st2_basement { get; set; }
-        static public int st2_level { get; set; }
+        public double st2_Lenght { get; set; }
+        public double st2_Wight{ get; set; }
+        public double st2_Height { get; set; }
+        public double st2_Konek { get; set; }
+        public double st2_basement { get; set; }
+        public int st2_level { get; set; }
+        public int st2_temperature { get; set; }
 
 
-        static public int Buildingtemperature { get; set; }
+        public int Buildingtemperature { get; set; }
 
 
     }

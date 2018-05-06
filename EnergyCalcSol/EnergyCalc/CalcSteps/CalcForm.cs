@@ -26,9 +26,11 @@ namespace EnergyCalc
         int top = -1;
         int count;
 
+        public sCalcRec Rec = new sCalcRec();
+
         public CalcForm()
         {
-            sCalcRec.Init();
+            Rec.Init();
             count = frm.Count();
             InitializeComponent();
 
@@ -42,6 +44,7 @@ namespace EnergyCalc
             {
                 frm[top].TopLevel = false;
                 frm[top].Dock = DockStyle.Fill;
+                frm[top].Parent = this;
                 this.pnlContent.Controls.Clear();
                 this.pnlContent.Controls.Add(frm[top]);
                 frm[top].Show();
@@ -153,6 +156,11 @@ namespace EnergyCalc
                     return;
             }
             Close();
+        }
+
+        public void NextFocus()
+        {
+            btnNext.Focus();
         }
     }
 }

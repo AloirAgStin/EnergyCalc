@@ -18,9 +18,9 @@ namespace EnergyCalc.CoreClass
             new sExtDataSource() { Code = 6, Name = "Здание с отапливаемым подвалом. Отапливаемая мансарда." }
         };
 
-        public static ref List<sExtDataSource> GetBuilingList()
+        public static List<sExtDataSource> GetBuilingList()
         {
-            return ref buildingTypeList;
+            return buildingTypeList;
         }
 
 

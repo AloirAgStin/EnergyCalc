@@ -15,10 +15,10 @@ namespace EnergyCalc.CalcSteps
     {
         public Step1Dlg()
         {
-            InitializeComponent();            
+            InitializeComponent();
+
         }
-
-
+        
         private void Step1Dlg_Load(object sender, EventArgs e)
         {
             foreach (var s in RegionController.GetRegionsGroupName())
@@ -56,8 +56,8 @@ namespace EnergyCalc.CalcSteps
         }
         public override void SaveData()
         {
-            sCalcRec._region.Name = cbRegionType.Text;
-            sCalcRec._region.Code = cbRegionType.SelectedIndex;
+            GetPrent().Rec._region.Name = cbRegionType.Text;
+            GetPrent().Rec._region.Code = cbRegionType.SelectedIndex;
         }
 
 
