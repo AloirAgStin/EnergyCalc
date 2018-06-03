@@ -221,6 +221,8 @@ namespace EnergyCalc.CalcSteps
 
         private void tbTemp_Leave(object sender, EventArgs e)
         {
+            GetPrent().NextFocus();
+            //Parent.Parent.SelectNextControl(null, true, true, true, true);
         }
     }
 }

@@ -4,3 +4,13 @@ EnergyCalcSol/packages/**
 EnergyCalcSolXCtrl/bin/**
 EnergyCalcSol/XCtrl/obj/**
 EnergyCalcSol/.vs/**
+EnergyCalcSol/Image/**
+EnergyCalcSol/Installer/**
+EnergyCalcSol/TestCotrols/bin/**
+EnergyCalcSol/TestCotrols/obj/**
+EnergyCalcSol/KnaufInsalutionCalc/**
+EnergyCalcSol/KnaufInsalutionCalc/**
+EnergyCalcSolKnaufinsulationWalls/**
+EnergyCalcSol/KnaufinsulationWalls/**
+EnergyCalcSol/other_files/**
+EnergyCalcSol/test/**

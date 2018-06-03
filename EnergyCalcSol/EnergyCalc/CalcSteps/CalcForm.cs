@@ -161,6 +161,26 @@ namespace EnergyCalc
         public void NextFocus()
         {
             btnNext.Focus();
+
+
         }
+
+        private void btnNext_Enter(object sender, EventArgs e)
+        {
+        }
+        public override bool PreProcessMessage(ref Message msg)
+        {
+            if (msg.Msg == 0x002)
+            {
+                // Do something
+                // ...
+                // Return true if you've processed the message
+                msg.Result = (IntPtr)1;
+                return true;
+            }
+            return base.PreProcessMessage(ref msg);
+        }
+
+
     }
 }

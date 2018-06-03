@@ -46,6 +46,7 @@
             this.cbRegionType = new System.Windows.Forms.ComboBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.errorPageRegion = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupComboBox1 = new XCtrl.GroupComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -72,6 +73,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.Controls.Add(this.pbLogo, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupComboBox1, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(17, 43);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -252,6 +254,16 @@
             this.errorPageRegion.Icon = ((System.Drawing.Icon)(resources.GetObject("errorPageRegion.Icon")));
             this.errorPageRegion.RightToLeft = true;
             // 
+            // groupComboBox1
+            // 
+            this.groupComboBox1.DataSource = null;
+            this.groupComboBox1.FormattingEnabled = true;
+            this.groupComboBox1.GroupColor = System.Drawing.SystemColors.WindowText;
+            this.groupComboBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupComboBox1.Name = "groupComboBox1";
+            this.groupComboBox1.Size = new System.Drawing.Size(122, 21);
+            this.groupComboBox1.TabIndex = 7;
+            // 
             // Step1Dlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,5 +317,6 @@
         private System.Windows.Forms.PictureBox pbGomel;
         private System.Windows.Forms.PictureBox pbBrest;
         private System.Windows.Forms.PictureBox pbGrodno;
+        private XCtrl.GroupComboBox groupComboBox1;
     }
 }

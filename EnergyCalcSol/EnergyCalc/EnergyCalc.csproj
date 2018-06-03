@@ -190,12 +190,6 @@
     <None Include="Resources\map.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XCtrl\XCtrl.csproj">
-      <Project>{02c128e3-59d7-4000-a7d3-ec8b9b3e1769}</Project>
-      <Name>XCtrl</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\apply.ico" />
   </ItemGroup>
   <ItemGroup>

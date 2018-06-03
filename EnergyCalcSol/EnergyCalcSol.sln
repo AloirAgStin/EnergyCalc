@@ -1,11 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergyCalc", "EnergyCalc\EnergyCalc.csproj", "{128F3BA3-0BF0-480B-B77F-3F48EF0B789B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XCtrl", "XCtrl\XCtrl.csproj", "{02C128E3-59D7-4000-A7D3-EC8B9B3E1769}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XControl", "TestCotrols\XControl.csproj", "{6EF75517-E33D-49DD-8C6E-500BE72DC7CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{C927E494-3D88-4023-B51D-7D2D3BD48E91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnaufInsalutionCalc", "KnaufInsalutionCalc\KnaufInsalutionCalc.csproj", "{E1128A9C-BF17-4657-B569-8AD66F34CD56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnaufinsulationWalls", "KnaufinsulationWalls\KnaufinsulationWalls.csproj", "{FAE383E3-1665-4138-851C-772498DDF993}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +29,27 @@ Global
 		{02C128E3-59D7-4000-A7D3-EC8B9B3E1769}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02C128E3-59D7-4000-A7D3-EC8B9B3E1769}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02C128E3-59D7-4000-A7D3-EC8B9B3E1769}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EF75517-E33D-49DD-8C6E-500BE72DC7CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EF75517-E33D-49DD-8C6E-500BE72DC7CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EF75517-E33D-49DD-8C6E-500BE72DC7CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EF75517-E33D-49DD-8C6E-500BE72DC7CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C927E494-3D88-4023-B51D-7D2D3BD48E91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C927E494-3D88-4023-B51D-7D2D3BD48E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C927E494-3D88-4023-B51D-7D2D3BD48E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C927E494-3D88-4023-B51D-7D2D3BD48E91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1128A9C-BF17-4657-B569-8AD66F34CD56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1128A9C-BF17-4657-B569-8AD66F34CD56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1128A9C-BF17-4657-B569-8AD66F34CD56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1128A9C-BF17-4657-B569-8AD66F34CD56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAE383E3-1665-4138-851C-772498DDF993}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAE383E3-1665-4138-851C-772498DDF993}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAE383E3-1665-4138-851C-772498DDF993}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAE383E3-1665-4138-851C-772498DDF993}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95C66B38-3CCA-42E7-8D91-D3C6B305C82E}
 	EndGlobalSection
 EndGlobal

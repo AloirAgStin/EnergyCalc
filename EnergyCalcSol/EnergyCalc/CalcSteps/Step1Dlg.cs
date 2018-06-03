@@ -18,8 +18,17 @@ namespace EnergyCalc.CalcSteps
             InitializeComponent();
 
         }
-        
-        private void Step1Dlg_Load(object sender, EventArgs e)
+        List<XCtrl.sGroupComboBoxItem> dt = new List<XCtrl.sGroupComboBoxItem>()
+        {
+            new XCtrl.sGroupComboBoxItem(){ DisplayName = "qwe", GroupName = "qqq", GroupCode = 1, lValue = 1, sValue = "12"},
+            new XCtrl.sGroupComboBoxItem(){ DisplayName = "edfsfgdfgfdgdgf", GroupName = "qqq", GroupCode = 1, lValue = 1, sValue = "12"},
+            new XCtrl.sGroupComboBoxItem(){ DisplayName = "edfsfgdfgfdgdgf", GroupName = "qqq", GroupCode = 1, lValue = 1, sValue = "12"},
+            new XCtrl.sGroupComboBoxItem(){ DisplayName = "XZCVXCVZXV", GroupName = "1qqq", GroupCode = 1, lValue = 1, sValue = "12"},
+            new XCtrl.sGroupComboBoxItem(){ DisplayName = "edfsfgdfgfdgdgf", GroupName = "qqq", GroupCode = 1, lValue = 1, sValue = "12"},
+        };
+    
+
+private void Step1Dlg_Load(object sender, EventArgs e)
         {
             foreach (var s in RegionController.GetRegionsGroupName())
                 cbRegionType.Items.Add(s);
@@ -36,6 +45,13 @@ namespace EnergyCalc.CalcSteps
             pbGomel2.Parent = pbRegion;
             pbGrodno.Parent = pbRegion;
             pbMogilev.Parent = pbRegion;
+
+            groupComboBox1.DataSource = dt;
+            groupComboBox1.ValueMember = "sValue";
+            groupComboBox1.DisplayMember = "DisplayName";
+            groupComboBox1.GroupMember = "GroupName";
+
+
         }
         public override bool CheckControls()
         {
