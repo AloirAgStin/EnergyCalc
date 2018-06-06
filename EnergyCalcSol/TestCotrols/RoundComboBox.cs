@@ -159,8 +159,18 @@ namespace XControl
             e.Graphics.FillRectangle(backgroundColor, e.Bounds);
             if (e.Index == -1) return;
 
-            e.Graphics.DrawString((sender as ComboBox).
-            Items[e.Index].ToString(), font, textColor, e.Bounds);
+            if(e.Index < 1)
+            {
+                var fFont = new Font("Lato", 8);
+                e.Graphics.DrawString((sender as ComboBox).
+               Items[e.Index].ToString(), fFont, textColor, e.Bounds);
+            }
+            else
+            {
+                e.Graphics.DrawString((sender as ComboBox).
+                Items[e.Index].ToString(), font, textColor, e.Bounds);
+
+            }
         }
     }
 }

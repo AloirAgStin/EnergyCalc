@@ -13,18 +13,30 @@ namespace XControl
         public SelectableLabel() : base()
         {
             SetStyle(ControlStyles.Selectable, true);
+            KeyDown += SelectableLabel_KeyDown; ;
+        }
+
+        private void SelectableLabel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space || e.KeyCode == Keys.Enter)
+                base.OnClick(new EventArgs());
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
+
             if (Focused)
             {
-                ClientRectangle.Inflate(-3, -3);
-                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Black, ButtonBorderStyle.Dotted);
+                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Black, ButtonBorderStyle.Dashed);
             }
             else
             {
+                Color cl = SystemColors.Control;
+                if (Parent != null)
+                    cl = Parent.BackColor;
+
+                ControlPaint.DrawBorder(e.Graphics, ClientRectangle, cl, ButtonBorderStyle.Solid);
             }
             TextRenderer.DrawText(e.Graphics, Text, Font, ClientRectangle, ForeColor, BackColor);          
         }

@@ -15,7 +15,6 @@ namespace XControl
     {
         public RoundEdit()
         {
-            SetStyle(ControlStyles.Selectable, true);
             InitializeComponent();
             Size = new Size(270, 60);
             BorderColor = Color.FromArgb(105, 203, 242);
@@ -25,10 +24,38 @@ namespace XControl
             AddTextEnable = false;
             label1.Parent = this;
 
+            this.SetStyle(ControlStyles.Selectable, true);
+
+            GotFocus += RoundEdit_GotFocus;
+            LostFocus += RoundEdit_LostFocus;
+            Enter += RoundEdit_Enter;
+            Leave += RoundEdit_Leave;
+            
             TBFontInit = TBFont;
             SetDefaultText();
             
         }
+
+        private void RoundEdit_Leave(object sender, EventArgs e)
+        {
+            Invalidate();
+        }
+
+        private void RoundEdit_Enter(object sender, EventArgs e)
+        {
+            Invalidate();
+        }
+
+        private void RoundEdit_LostFocus(object sender, EventArgs e)
+        {
+            Invalidate();
+        }
+
+        private void RoundEdit_GotFocus(object sender, EventArgs e)
+        {
+            Invalidate();
+        }
+
         public Font TBFont
         {
             get => textBox1.Font;
@@ -72,9 +99,7 @@ namespace XControl
             var ButtonBorderColor = Color.Red;
 
             ClientRectangle.Inflate(-3, -3);
-
-
-
+            
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
 
             using (var pen = new Pen(BorderColor, BorderWidth))
@@ -92,17 +117,22 @@ namespace XControl
             }
 
 
+            var clRect = ClientRectangle;
+            clRect.Inflate(-3, -3);
+
+
             if (Focused)
             {
-                ClientRectangle.Inflate(-3, -3);
-                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Black, ButtonBorderStyle.Dotted);
+                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Black, ButtonBorderStyle.Dashed);
             }
             else
             {
+                Color cl = SystemColors.Control;
+                if (Parent != null)
+                    cl = Parent.BackColor;
+
+                ControlPaint.DrawBorder(e.Graphics, ClientRectangle, cl, ButtonBorderStyle.Solid);
             }
-
-
-
         }
 
         protected GraphicsPath Path
@@ -147,7 +177,10 @@ namespace XControl
 
         protected override void OnPaintBackground(PaintEventArgs e)
         {
-            e.Graphics.Clear(Focused ? SystemColors.Highlight : SystemColors.Control);
+            Color cl = SystemColors.Control;
+            if (Parent != null)
+                cl = Parent.BackColor;
+            e.Graphics.Clear(cl);
         }
 
         private void textBox1_Enter(object sender, EventArgs e)

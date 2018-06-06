@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace XControl
 {
-    public class RoundButton : Control
+    public class RoundButton :  Control
     {
         public Color BackColor2 { get; set; }
         public Color ButtonBorderColor { get; set; }
@@ -52,8 +52,35 @@ namespace XControl
             ForeColor = Color.White;
             ButtonHighlightForeColor = Color.White;
 
+            SetStyle(ControlStyles.Selectable, true);
 
-            this.KeyDown += RoundButton_KeyDown;
+            KeyDown += RoundButton_KeyDown;
+            GotFocus += RoundButton_GotFocus;
+            LostFocus += RoundButton_LostFocus;
+            Leave += RoundButton_Leave;
+            Click += RoundButton_Click;
+        }
+
+        private void RoundButton_Click(object sender, EventArgs e)
+        {
+            Focus();
+            Invalidate();
+        }
+
+        private void RoundButton_Leave(object sender, EventArgs e)
+        {
+            //FocusSet = false;
+            Invalidate();
+        }
+
+        private void RoundButton_LostFocus(object sender, EventArgs e)
+        {
+            Invalidate();
+        }
+
+        private void RoundButton_GotFocus(object sender, EventArgs e)
+        {
+            Invalidate();
         }
 
         protected override CreateParams CreateParams
@@ -86,6 +113,7 @@ namespace XControl
             using (var brush = new LinearGradientBrush(ClientRectangle, backColor, backColor2, LinearGradientMode.Vertical))
                 e.Graphics.FillPath(brush, Path);
 
+
             using (var brush = new SolidBrush(foreColor))
             {
                 var sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center };
@@ -94,8 +122,21 @@ namespace XControl
                 rect.Y += 2;
                 e.Graphics.DrawString(Text, Font, brush, rect, sf);
             }
-
+            
             base.OnPaint(e);
+
+            if (Focused)
+            {
+                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Black, ButtonBorderStyle.Dashed);
+            }
+            else
+            {
+                Color cl = SystemColors.Control;
+                if (Parent != null)
+                    cl = Parent.BackColor;
+
+                ControlPaint.DrawBorder(e.Graphics, ClientRectangle, cl, ButtonBorderStyle.Solid);
+            }
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
@@ -147,11 +188,12 @@ namespace XControl
             get
             {
                 var rect = ClientRectangle;
+                rect.Inflate(-3, -3);
                 rect.Inflate(-1 - ButtonBorderWidth / 2, -1 - ButtonBorderWidth / 2 );
                 return GetRoundedRectangle(rect, ButtonRoundRadius);
             }
         }
-
+        
         public static GraphicsPath GetRoundedRectangle(Rectangle rect, int d)
         {
             var gp = new GraphicsPath();
@@ -175,5 +217,7 @@ namespace XControl
             base.OnResize(e);
             Invalidate();
         }
+
+ 
     }
 }
