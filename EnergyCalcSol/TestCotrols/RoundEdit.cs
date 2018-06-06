@@ -15,6 +15,7 @@ namespace XControl
     {
         public RoundEdit()
         {
+            SetStyle(ControlStyles.Selectable, true);
             InitializeComponent();
             Size = new Size(270, 60);
             BorderColor = Color.FromArgb(105, 203, 242);
@@ -25,16 +26,18 @@ namespace XControl
             label1.Parent = this;
 
             TBFontInit = TBFont;
-
             SetDefaultText();
+            
         }
         public Font TBFont
         {
             get => textBox1.Font;
             set => textBox1.Font = value;
+
         }
 
         private Font TBFontInit;
+
         public int TBMaxLenght
         {
             get => textBox1.MaxLength;
@@ -46,13 +49,13 @@ namespace XControl
             get => textBox1.Text;
             set => textBox1.Text = value;
         }
-            
+          
         public HorizontalAlignment TBTextAlign
         {
             get => textBox1.TextAlign;
             set => textBox1.TextAlign = value;
         }
-
+        
 
         public bool AddTextEnable { get; set; }
         public String AddText { get; set; }
@@ -66,8 +69,11 @@ namespace XControl
 
         private void OnPaint(object sender, PaintEventArgs e)
         {
-            textBox1.Invalidate();
             var ButtonBorderColor = Color.Red;
+
+            ClientRectangle.Inflate(-3, -3);
+
+
 
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
 
@@ -77,14 +83,26 @@ namespace XControl
             using (var brush = new LinearGradientBrush(ClientRectangle, BackButtonColor, 
                 BackButtonColor, LinearGradientMode.Vertical))
                 e.Graphics.FillPath(brush, Path);
-
+                
             label1.Text = AddText;
             if(!AddTextEnable)
             {
                 textBox1.Visible = false;
                 label1.Visible = false;
-
             }
+
+
+            if (Focused)
+            {
+                ClientRectangle.Inflate(-3, -3);
+                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Black, ButtonBorderStyle.Dotted);
+            }
+            else
+            {
+            }
+
+
+
         }
 
         protected GraphicsPath Path
@@ -111,36 +129,55 @@ namespace XControl
         }
 
         public String TBDefaultText { get; set; }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-             
-        }
-
 
         public void SetDefaultText()
         {
-            textBox1.Font = new Font(TBFontInit.FontFamily, TBFontInit.Size - 4, FontStyle.Italic);
+            TBFontInit = textBox1.Font;
+            textBox1.Font = new Font("Lato", 8);
             textBox1.Text = TBDefaultText;
+            textBox1.Invalidate();
         }
         private void SetNormalText()
-        {
+        {            
             textBox1.Font = TBFontInit;
             textBox1.Text = "";
         }
+
+        
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            e.Graphics.Clear(Focused ? SystemColors.Highlight : SystemColors.Control);
+        }
+
         private void textBox1_Enter(object sender, EventArgs e)
         {
+
+            if (TBDefaultText == null)
+                TBDefaultText = "";
+
             if (textBox1.Text == TBDefaultText)
             {
                 SetNormalText();
-            }           
+            }
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (textBox1.Text == "" || textBox1.Text == null)
             {
                 SetDefaultText();
             }
+            else
+                textBox1.Font = TBFontInit; ;
         }
+  
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            if (!Focused)
+                Focus();
+            base.OnMouseDown(e);
+        }
+        
     }
 }

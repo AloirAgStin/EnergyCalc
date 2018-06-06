@@ -145,8 +145,7 @@ namespace XControl
                     else
                     {
                         backgroundColor = new SolidBrush(Color.SandyBrown);
-                        textColor = new SolidBrush(comboBox1.ForeColor);
-                        
+                        textColor = new SolidBrush(comboBox1.ForeColor);                        
                     }
 
                 }
