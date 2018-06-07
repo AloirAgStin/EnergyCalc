@@ -46,9 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BufferedPainter.cs" />
     <Compile Include="DBPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ExtComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GroupComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interop.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -81,6 +89,9 @@
     </Compile>
     <Compile Include="StepCounter.Designer.cs">
       <DependentUpon>StepCounter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestTB.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="VButton.cs">
       <SubType>Component</SubType>

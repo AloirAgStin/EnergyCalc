@@ -98,14 +98,15 @@ namespace XControl
         {
             var ButtonBorderColor = Color.Red;
 
-            ClientRectangle.Inflate(-3, -3);
+            var rc = ClientRectangle;
+            rc.Inflate(-3, -3);
             
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
 
             using (var pen = new Pen(BorderColor, BorderWidth))
                 e.Graphics.DrawPath(pen, Path);
 
-            using (var brush = new LinearGradientBrush(ClientRectangle, BackButtonColor, 
+            using (var brush = new LinearGradientBrush(rc, BackButtonColor, 
                 BackButtonColor, LinearGradientMode.Vertical))
                 e.Graphics.FillPath(brush, Path);
                 
@@ -117,10 +118,10 @@ namespace XControl
             }
 
 
-            var clRect = ClientRectangle;
+            var clRect = rc;
             clRect.Inflate(-3, -3);
 
-
+            /*
             if (Focused)
             {
                 ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Black, ButtonBorderStyle.Dashed);
@@ -132,7 +133,7 @@ namespace XControl
                     cl = Parent.BackColor;
 
                 ControlPaint.DrawBorder(e.Graphics, ClientRectangle, cl, ButtonBorderStyle.Solid);
-            }
+            }*/
         }
 
         protected GraphicsPath Path

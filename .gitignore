@@ -6,8 +6,8 @@ EnergyCalcSol/XCtrl/obj/**
 EnergyCalcSol/.vs/**
 EnergyCalcSol/Image/**
 EnergyCalcSol/Installer/**
-EnergyCalcSol/TestCotrols/bin/**
-EnergyCalcSol/TestCotrols/obj/**
+EnergyCalcSol/XControl/bin/**
+EnergyCalcSol/XControl/obj/**
 EnergyCalcSol/KnaufInsalutionCalc/**
 EnergyCalcSol/KnaufInsalutionCalc/**
 EnergyCalcSolKnaufinsulationWalls/**
