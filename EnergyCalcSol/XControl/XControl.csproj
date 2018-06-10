@@ -68,6 +68,7 @@
     <Compile Include="RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoundComboBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -80,7 +81,9 @@
     <Compile Include="RoundEdit.Designer.cs">
       <DependentUpon>RoundEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoundPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="SelectableLabel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -89,9 +92,6 @@
     </Compile>
     <Compile Include="StepCounter.Designer.cs">
       <DependentUpon>StepCounter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TestTB.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="VButton.cs">
       <SubType>Component</SubType>
@@ -108,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RoundEdit.resx">
       <DependentUpon>RoundEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoundPanel.resx">
+      <DependentUpon>RoundPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StepCounter.resx">
       <DependentUpon>StepCounter.cs</DependentUpon>

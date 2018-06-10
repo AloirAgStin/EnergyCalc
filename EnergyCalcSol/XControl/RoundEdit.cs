@@ -7,211 +7,104 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Drawing2D;
+using XCotrols;
 
 namespace XControl
 {
-    public partial class RoundEdit : UserControl
+    public partial class RoundEdit : RoundPanel
     {
-        public RoundEdit()
+        public RoundEdit() : base()
         {
             InitializeComponent();
-            Size = new Size(270, 60);
-            BorderColor = Color.FromArgb(105, 203, 242);
-            BackButtonColor = Color.White;
-            BorderWidth = 2;
-            Radius = 30;
-            AddTextEnable = false;
-            label1.Parent = this;
 
-            this.SetStyle(ControlStyles.Selectable, true);
+            _watermarkActive = true;
+            textbox.Text = _watermarkText;
+            textbox.ForeColor = Color.Gray;
 
-            GotFocus += RoundEdit_GotFocus;
-            LostFocus += RoundEdit_LostFocus;
-            Enter += RoundEdit_Enter;
-            Leave += RoundEdit_Leave;
-            
-            TBFontInit = TBFont;
-            SetDefaultText();
+            textbox.GotFocus += (source, e) =>
+            {
+                RemoveWatermak();
+            };
+
+            textbox.LostFocus += (source, e) =>
+            {
+                ApplyWatermark();
+            };
             
         }
+        /*
 
-        private void RoundEdit_Leave(object sender, EventArgs e)
+        [Description("Add Text Align"), Category("AddText options")]
+        public ContentAlignment AddTextAlign
         {
-            Invalidate();
+            get { return label1.TextAlign; }
+            set { label1.TextAlign = value; }
+ 
         }
 
-        private void RoundEdit_Enter(object sender, EventArgs e)
+        [Description("Add Text Value"), Category("AddText options")]
+        public string AddText
         {
-            Invalidate();
+            get { return label1.Text; }
+            set { label1.Text = value; }
+        }
+        */
+        public void RemoveWatermak()
+        {
+            if (_watermarkActive)
+            {
+                textbox.Font = new Font("Lato", 10);
+                textbox.ForeColor = Color.Black;
+
+                _watermarkActive = false;
+                textbox.Text = "";
+            }
         }
 
-        private void RoundEdit_LostFocus(object sender, EventArgs e)
+        public void ApplyWatermark(string newText)
         {
-            Invalidate();
+            textbox.Font = new Font("Lato", 8);
+
+            WatermarkText = newText;
+            ApplyWatermark();
         }
 
-        private void RoundEdit_GotFocus(object sender, EventArgs e)
+        public void ApplyWatermark()
         {
-            Invalidate();
-        }
-
-        public Font TBFont
-        {
-            get => textBox1.Font;
-            set => textBox1.Font = value;
-
-        }
-
-        private Font TBFontInit;
-
-        public int TBMaxLenght
-        {
-            get => textBox1.MaxLength;
-            set => textBox1.MaxLength = value;
-        }
-
-        public String TBText
-        {
-            get => textBox1.Text;
-            set => textBox1.Text = value;
-        }
-          
-        public HorizontalAlignment TBTextAlign
-        {
-            get => textBox1.TextAlign;
-            set => textBox1.TextAlign = value;
+            if (!_watermarkActive && string.IsNullOrEmpty(textbox.Text)
+                || ForeColor == Color.Gray)
+            {
+                _watermarkActive = true;
+                textbox.Text = _watermarkText;
+                textbox.ForeColor = Color.Gray;
+            }
         }
         
-
-        public bool AddTextEnable { get; set; }
-        public String AddText { get; set; }
-
-        public Color BorderColor { get; set; }
-        public Color BackButtonColor { get; set; }
-
-        public int BorderWidth { get; set; }
-
-        public int Radius { get; set; }
-
-        private void OnPaint(object sender, PaintEventArgs e)
+        protected override void OnPaint(PaintEventArgs e)
         {
-            var ButtonBorderColor = Color.Red;
-
-            var rc = ClientRectangle;
-            rc.Inflate(-3, -3);
-            
-            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-
-            using (var pen = new Pen(BorderColor, BorderWidth))
-                e.Graphics.DrawPath(pen, Path);
-
-            using (var brush = new LinearGradientBrush(rc, BackButtonColor, 
-                BackButtonColor, LinearGradientMode.Vertical))
-                e.Graphics.FillPath(brush, Path);
-                
-            label1.Text = AddText;
-            if(!AddTextEnable)
-            {
-                textBox1.Visible = false;
-                label1.Visible = false;
-            }
-
-
-            var clRect = rc;
-            clRect.Inflate(-3, -3);
-
-            /*
-            if (Focused)
-            {
-                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Black, ButtonBorderStyle.Dashed);
-            }
-            else
-            {
-                Color cl = SystemColors.Control;
-                if (Parent != null)
-                    cl = Parent.BackColor;
-
-                ControlPaint.DrawBorder(e.Graphics, ClientRectangle, cl, ButtonBorderStyle.Solid);
-            }*/
+            base.OnPaint(e);
         }
-
-        protected GraphicsPath Path
+    
+        private void RoundEdit_FontChanged(object sender, EventArgs e)
         {
-            get
-            {
-                var rect = ClientRectangle;
-                rect.Inflate(-4, -4);
-                return GetRoundedRectangle(rect, Radius);
-            }
+            textbox.Font = Font;
         }
-
-        public static GraphicsPath GetRoundedRectangle(Rectangle rect, int d)
+        private bool _watermarkActive = true;
+        public bool WatermarkActive
         {
-            var gp = new GraphicsPath();
-
-            gp.AddArc(rect.X, rect.Y, d, d, 180, 90);
-            gp.AddArc(rect.X + rect.Width - d, rect.Y, d, d, 270, 90);
-            gp.AddArc(rect.X + rect.Width - d, rect.Y + rect.Height - d, d, d, 0, 90);
-            gp.AddArc(rect.X, rect.Y + rect.Height - d, d, d, 90, 90);
-            gp.CloseFigure();
-
-            return gp;
+            get { return _watermarkActive;  }
+            set { _watermarkActive = value; }
         }
-
-        public String TBDefaultText { get; set; }
-
-        public void SetDefaultText()
+        private string _watermarkText = "Введите значение";
+        public string WatermarkText
         {
-            TBFontInit = textBox1.Font;
-            textBox1.Font = new Font("Lato", 8);
-            textBox1.Text = TBDefaultText;
-            textBox1.Invalidate();
-        }
-        private void SetNormalText()
-        {            
-            textBox1.Font = TBFontInit;
-            textBox1.Text = "";
+            get { return _watermarkText; }
+            set { _watermarkText = value; }
         }
 
-        
-
-        protected override void OnPaintBackground(PaintEventArgs e)
+        private void RoundEdit_ForeColorChanged(object sender, EventArgs e)
         {
-            Color cl = SystemColors.Control;
-            if (Parent != null)
-                cl = Parent.BackColor;
-            e.Graphics.Clear(cl);
+            textbox.ForeColor = ForeColor;
         }
-
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-
-            if (TBDefaultText == null)
-                TBDefaultText = "";
-
-            if (textBox1.Text == TBDefaultText)
-            {
-                SetNormalText();
-            }
-        }
-
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "" || textBox1.Text == null)
-            {
-                SetDefaultText();
-            }
-            else
-                textBox1.Font = TBFontInit; ;
-        }
-  
-        protected override void OnMouseDown(MouseEventArgs e)
-        {
-            if (!Focused)
-                Focus();
-            base.OnMouseDown(e);
-        }
-        
     }
 }

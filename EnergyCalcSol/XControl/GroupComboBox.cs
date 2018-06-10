@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms.VisualStyles;
 using BufferedPainting;
 using XControl.Properties;
+using System.Drawing.Drawing2D;
 
 /*
  * INIT SOURCE CODE https://www.brad-smith.info/blog/projects/dropdown-controls
@@ -427,6 +428,8 @@ namespace XCotrols
                 // determine grouping
                 string groupText;
                 bool isGroupStart = IsGroupStart(e.Index, out groupText) && !comboBoxEdit;
+                
+
                 bool hasGroup = (groupText != String.Empty) && !comboBoxEdit;
 
                 // the item text will appear in a different colour, depending on its state
@@ -468,7 +471,29 @@ namespace XCotrols
                     // use the default background-painting logic
                     e.DrawBackground();
                 }
-                
+
+                /*
+                var backgroundColor = new SolidBrush(BackColor);
+
+                if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+                {
+                    if (e.Index < 1)
+                    {
+                        backgroundColor = new SolidBrush(Color.White);
+                    }
+                    else
+                    {
+                        backgroundColor = new SolidBrush(Color.SandyBrown);
+                    }
+
+                }
+                else
+                {
+                    backgroundColor = new SolidBrush(BackColor);
+                }
+                */
+
+
                 // render group header text
                 if (isGroupStart) TextRenderer.DrawText(
                     e.Graphics,
@@ -478,19 +503,41 @@ namespace XCotrols
                     GroupColor,
                     _textFormatFlags
                 );
+                
+                if(e.Index < 1)
+                {
+                    var txt = new Font(new FontFamily("Lato"), 9.25f);
+                    var clr = Color.Gray;
 
-                // render item text
-                TextRenderer.DrawText(
-                    e.Graphics,
-                    GetItemText(Items[e.Index]),
-                    Font,
-                    itemBounds,
-                    textColor,
-                    _textFormatFlags
-                );
+                    e.Graphics.FillRectangle(new SolidBrush(BackColor), itemBounds);
+                    TextRenderer.DrawText(
+                          e.Graphics,
+                          GetItemText(Items[e.Index]),
+                          txt,
+                          itemBounds,
+                          clr,
+                          _textFormatFlags
+                      );
 
-                // paint the focus rectangle if required
-                if (focus && !noAccelerator)
+                }
+                else
+                {
+
+                    // render item text
+                    TextRenderer.DrawText(
+                        e.Graphics,
+                        GetItemText(Items[e.Index]),
+                        Font,
+                        itemBounds,
+                        textColor,
+                        _textFormatFlags
+                    );
+                }
+
+
+
+            // paint the focus rectangle if required
+            if (focus && !noAccelerator)
                 {
                     if (isGroupStart && selected)
                     {
@@ -669,7 +716,8 @@ namespace XCotrols
         /// <param name="state"></param>
         internal static void DrawComboBox(Graphics graphics, Rectangle bounds, ComboBoxState state)
         {
-            
+            graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
             Rectangle comboBounds = bounds;
             comboBounds.Inflate(1, 1);
 
@@ -677,30 +725,33 @@ namespace XCotrols
 
             graphics.FillRectangle(Brushes.White, comboBounds);
 
-       
 
-            int w = 30;
+
+            int w = 17;
             Rectangle buttonBounds = new Rectangle(
                 bounds.Left + (bounds.Width - w),
                 bounds.Top,
-                w,
-                bounds.Height - (state != ComboBoxState.Pressed ? 1 : 0)
+                w ,
+                bounds.Height - (state != ComboBoxState.Pressed ? 1 : 0 )
             );
-            var img = new Bitmap(Resources._1, new Size(buttonBounds.Width, buttonBounds.Height));
-
-            buttonBounds.Inflate(-5,-5);
-            //graphics.FillRectangle(Brushes.Red, buttonBounds);
-            graphics.DrawImage(img, buttonBounds);
-            /*
-            Rectangle buttonClip = buttonBounds;
-            buttonClip.Inflate(-2, -2);
+            buttonBounds.Inflate(0, -7);
             
-            using (Region oldClip = graphics.Clip.Clone())
+            
+            int hItem = buttonBounds.Height/4*3;
+            int hAddP = 3;
+
+            var p1 = new Point(buttonBounds.Left, buttonBounds.Top + hAddP);
+            var p2 = new Point(buttonBounds.Left + buttonBounds.Width/2, buttonBounds.Top + hItem+ hAddP);
+            var p3 = new Point(buttonBounds.Right, buttonBounds.Top + hAddP);
+
+            int wPen = 2;
+
+            using (var pen = new Pen(Color.LightSlateGray, wPen))
             {
-                graphics.SetClip(buttonClip, System.Drawing.Drawing2D.CombineMode.Intersect);
-                ComboBoxRenderer.DrawDropDownButton(graphics, buttonBounds, state);
-                graphics.SetClip(oldClip, System.Drawing.Drawing2D.CombineMode.Replace);
-            }*/
+                graphics.DrawLine(pen, p1, p2);
+                graphics.DrawLine(pen, p2, p3);
+
+            }
         }
 
         /// <summary>
@@ -725,5 +776,6 @@ namespace XCotrols
             if (!Enabled) state |= DrawItemState.Disabled;
             OnDrawItem(new DrawItemEventArgs(e.Graphics, Font, itemBounds, SelectedIndex, state));
         }
+        
     }
 }

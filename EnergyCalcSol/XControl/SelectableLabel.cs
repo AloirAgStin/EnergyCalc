@@ -38,6 +38,8 @@ namespace XControl
 
                 ControlPaint.DrawBorder(e.Graphics, ClientRectangle, cl, ButtonBorderStyle.Solid);
             }
+            var rect = ClientRectangle;
+            rect.Inflate(-3, -3);
             TextRenderer.DrawText(e.Graphics, Text, Font, ClientRectangle, ForeColor, BackColor);          
         }
 
