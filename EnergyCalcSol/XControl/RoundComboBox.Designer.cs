@@ -40,7 +40,8 @@
             this.groupComboBox1.FormattingEnabled = true;
             this.groupComboBox1.GroupColor = System.Drawing.SystemColors.WindowText;
             this.groupComboBox1.Location = new System.Drawing.Point(16, 12);
-            this.groupComboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupComboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupComboBox1.MaxDropDownItems = 10;
             this.groupComboBox1.Name = "groupComboBox1";
             this.groupComboBox1.Size = new System.Drawing.Size(164, 24);
             this.groupComboBox1.TabIndex = 0;
@@ -51,7 +52,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupComboBox1);
             this.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RoundComboBox";
             this.Size = new System.Drawing.Size(197, 46);
             this.ResumeLayout(false);

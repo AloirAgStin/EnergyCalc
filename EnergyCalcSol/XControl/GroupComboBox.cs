@@ -442,7 +442,8 @@ namespace XCotrols
                     textColor = ForeColor;
 
                 // items will be indented if they belong to a group
-                Rectangle itemBounds = Rectangle.FromLTRB(
+                Rectangle itemBounds = 
+                    Rectangle.FromLTRB(
                     e.Bounds.X + (hasGroup ? 12 : 0),
                     e.Bounds.Y + (isGroupStart ? (e.Bounds.Height / 2) : 0),
                     e.Bounds.Right,
@@ -503,8 +504,13 @@ namespace XCotrols
                     GroupColor,
                     _textFormatFlags
                 );
-                
-                if(e.Index < 1)
+
+                if (!Focused)
+                {
+                    itemBounds.Inflate(2, 0);
+                }
+
+                if (e.Index < 1)
                 {
                     var txt = new Font(new FontFamily("Lato"), 9.25f);
                     var clr = Color.Gray;
@@ -532,8 +538,16 @@ namespace XCotrols
                         textColor,
                         _textFormatFlags
                     );
-                }
 
+                    int vertScrollBarWidth = (Items.Count > MaxDropDownItems) ? SystemInformation.VerticalScrollBarWidth : 0;
+
+                    int newWidth = (int)e.Graphics.MeasureString(GetItemText(Items[e.Index]), Font).Width + vertScrollBarWidth;
+                    newWidth += 20;
+                    if (newWidth > DropDownWidth)
+                    {
+                        DropDownWidth = newWidth;
+                    }
+                }
 
 
             // paint the focus rectangle if required
@@ -568,6 +582,7 @@ namespace XCotrols
             {
                 // the first item in each group will be twice as tall in order to accommodate the group header
                 e.ItemHeight *= 2;
+           
 
                 // probably not necessary to measure the width
                 //e.ItemWidth = Math.Max(
@@ -581,6 +596,7 @@ namespace XCotrols
                 //	).Width
                 //);
             }
+            
         }
 
         /// <summary>

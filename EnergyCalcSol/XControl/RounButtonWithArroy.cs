@@ -29,7 +29,7 @@ namespace XControl
 
             var rect = ClientRectangle;
             rect.Inflate(-4, -4);
-            var textPos = e.Graphics.MeasureString(Text, Font);
+            //var textPos = e.Graphics.MeasureString(Text, Font);
 
             float arroyW = 2;
             using (var pen = new Pen(base.ForeColor, arroyW))
@@ -56,11 +56,8 @@ namespace XControl
             }
         }
 
-        protected override void OnResize(EventArgs e)
-        {
-            base.OnResize(e);
-            Invalidate();
-        }
+
+        
     }
 
 

@@ -32,23 +32,7 @@ namespace XControl
             };
             
         }
-        /*
 
-        [Description("Add Text Align"), Category("AddText options")]
-        public ContentAlignment AddTextAlign
-        {
-            get { return label1.TextAlign; }
-            set { label1.TextAlign = value; }
- 
-        }
-
-        [Description("Add Text Value"), Category("AddText options")]
-        public string AddText
-        {
-            get { return label1.Text; }
-            set { label1.Text = value; }
-        }
-        */
         public void RemoveWatermak()
         {
             if (_watermarkActive)
@@ -61,9 +45,10 @@ namespace XControl
             }
         }
 
+        private Font _WaterMarkFont = new Font("Lato", 9.25f, FontStyle.Bold);
+
         public void ApplyWatermark(string newText)
         {
-            textbox.Font = new Font("Lato", 8);
 
             WatermarkText = newText;
             ApplyWatermark();
@@ -75,11 +60,22 @@ namespace XControl
                 || ForeColor == Color.Gray)
             {
                 _watermarkActive = true;
-                textbox.Text = _watermarkText;
+                if (Parent.Enabled)
+                {
+                    textbox.Font = _WaterMarkFont;
+                    textbox.Text = _watermarkText;
+                }
+                else
+                {
+
+                    textbox.Font = new Font("Lato", 10);
+                    textbox.Text = "";
+                }
+
                 textbox.ForeColor = Color.Gray;
             }
         }
-        
+       
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);

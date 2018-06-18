@@ -26,29 +26,29 @@ namespace XCotrols
         protected override void OnPaint(PaintEventArgs e)
         {
             //base.OnPaint(e);
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             ButtonRenderer.DrawParentBackground(e.Graphics, ClientRectangle, this);
-
             
             GraphicsPath path = new GraphicsPath();
             if(!isPress)
             {
-                path.AddLine(   new PointF(PenSize, PenSize), 
-                                new PointF(ClientRectangle.Width / wightDeliter, ClientRectangle.Height - PenSize) 
+                path.AddLine(   new PointF(0, ClientRectangle.Top - 2), 
+                                new PointF(ClientRectangle.Width /2 , ClientRectangle.Bottom - 2) 
                                );
 
-                path.AddLine(   new PointF(ClientRectangle.Width / wightDeliter, ClientRectangle.Height - PenSize), 
-                                new PointF(ClientRectangle.Width, PenSize));                
+                path.AddLine(   new PointF(ClientRectangle.Width / 2, ClientRectangle.Bottom - 2),
+                                new PointF(ClientRectangle.Width, ClientRectangle.Top - 2));                
             }
-             else
+             /*else
              {
                 path.AddLine(new PointF(PenSize, ClientRectangle.Height - PenSize ),
                                 new PointF(ClientRectangle.Width / wightDeliter - PenSize, PenSize)
                           );
 
-                path.AddLine(new PointF(ClientRectangle.Width / wightDeliter - PenSize, PenSize),
+                path.AddLine(new PointF(ClientRectangle.Width / 2 - PenSize, PenSize),
                              new PointF(ClientRectangle.Width - PenSize, ClientRectangle.Height - PenSize)
                             );
-            }
+            }*/
 
             var Pen = new Pen(PenColor, PenSize);
             e.Graphics.DrawPath(Pen, path);

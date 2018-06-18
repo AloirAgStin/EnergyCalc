@@ -7,7 +7,8 @@ using System;
 
 namespace XCotrols
 {
-   public class RoundPanel : UserControl
+    [Designer("System.Windows.Forms.Design.ParentControlDesigner, System.Design", typeof(IDesigner))]
+    public class RoundPanel : UserControl
     {
         public RoundPanel()
         {
@@ -38,8 +39,7 @@ namespace XCotrols
             IsFocus = false;
             Invalidate();
         }
-
-
+        
         private void RoundPanel_Paint1(object sender, PaintEventArgs e)
         {
             /*
@@ -55,7 +55,10 @@ namespace XCotrols
             using (var pen = new Pen(BorderColor, BorderWidth))
                 e.Graphics.DrawPath(pen, Path);
 
-            using (var brush = new SolidBrush(BackColorInBorder))
+
+            var backColor = Enabled ? BackColorInBorder : SystemColors.Control;
+
+            using (var brush = new SolidBrush(backColor))
                 e.Graphics.FillPath(brush, Path);
         }
 
@@ -103,7 +106,13 @@ namespace XCotrols
             // 
             this.Name = "RoundPanel";
             this.Size = new System.Drawing.Size(162, 39);
+            this.Load += new System.EventHandler(this.RoundPanel_Load);
             this.ResumeLayout(false);
+
+        }
+
+        private void RoundPanel_Load(object sender, EventArgs e)
+        {
 
         }
     }
