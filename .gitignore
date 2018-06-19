@@ -10,7 +10,7 @@ EnergyCalcSol/XControl/bin/**
 EnergyCalcSol/XControl/obj/**
 EnergyCalcSol/KnaufInsalutionCalc/**
 EnergyCalcSol/KnaufInsalutionCalc/**
-EnergyCalcSolKnaufinsulationWalls/**
-EnergyCalcSol/KnaufinsulationWalls/**
+EnergyCalcSolKnaufinsulationWalls/bin/**
+EnergyCalcSol/KnaufinsulationWalls/obj/**
 EnergyCalcSol/other_files/**
 EnergyCalcSol/test/**

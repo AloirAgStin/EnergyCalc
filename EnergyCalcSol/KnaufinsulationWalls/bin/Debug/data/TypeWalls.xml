@@ -1,0 +1,31 @@
+ <?xml version="1.0" encoding="utf-8" ?> 
+<WallsType>
+	<Wall>
+		<Name>Имя</Name>
+		<RW>1</RW>
+		<EI>11</EI>
+		<T>111</T>
+		<Tk>1111</Tk>
+		<Tu>11111</Tu>
+		<n>111111</n>
+		<Image>Имя картинки в папке DATA/resource</Image>
+		<DOCS>
+			<Doc>Документ 1.docx DATA/doc</Doc>
+			<Doc>9.txt</Doc>
+		</DOCS>		
+	</Wall>
+	<Wall>
+		<Name>Имя 2</Name>
+		<RW>2</RW>
+		<EI>22</EI>
+		<T>222</T>
+		<Tk>2222</Tk>
+		<Tu>22222</Tu>
+		<n>222222</n>
+		<Image>Имя картинки в папке DATA/resource</Image>
+		<DOCS>
+			<Doc>Документ 3.docx DATA/doc</Doc>
+			<Doc>Документ 4.docx DATA/doc</Doc>
+		</DOCS>		
+	</Wall>
+</WallsType>
