@@ -40,7 +40,7 @@ namespace XControl
             }
             var rect = ClientRectangle;
             rect.Inflate(-3, -3);
-            TextRenderer.DrawText(e.Graphics, Text, Font, ClientRectangle, ForeColor, BackColor);          
+            TextRenderer.DrawText(e.Graphics, Text, Font, ClientRectangle, ForeColor, BackColor);        
         }
 
         protected override void OnClick(EventArgs e)
