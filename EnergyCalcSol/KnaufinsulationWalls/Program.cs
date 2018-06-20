@@ -17,22 +17,44 @@ namespace KnaufinsulationWalls
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-
-
+      
             try
             {
-                //todo normal init
-                Data_BuildingType.InitData();
-
+                if (!Data_BuildingType.InitData())
+                    throw new Exception("Ошибка инициализации данных");
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                string message = ex.Message;
+                message += "\r\n\r\nОшибка чтение данных из файла TypeBuildings.xml\r\nПриложение будет закрыто!";
+
+                MessageBox.Show(message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Helper.WriteLog(message);
+
+                Application.Exit();
+                return;
             }
 
-            Application.Run(new Steps.StepFrame());
-            //Application.Run(new MainForm());
+            try
+            {
+                if(!Data_WallsType.InitData())
+                    throw new Exception("Ошибка инициализации данных");
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+                message += "\r\n\r\nОшибка чтение данных из файла TypeWalls.xml\r\nПриложение будет закрыто!";
+
+                MessageBox.Show(message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Helper.WriteLog(message);
+
+                Application.Exit();
+                return;
+            }
+
+
+            //Application.Run(new Steps.StepFrame());
+            Application.Run(new MainForm());
 
 
         }

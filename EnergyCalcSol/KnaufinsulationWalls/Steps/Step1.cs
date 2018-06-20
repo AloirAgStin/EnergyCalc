@@ -29,6 +29,7 @@ namespace KnaufinsulationWalls.Steps
         private void Step1_Load(object sender, EventArgs e)
         {
             InitComboBoxes(1);
+            btnNext.offsettextX = -5;
         }
 
         private void InitComboBoxes(int ind)

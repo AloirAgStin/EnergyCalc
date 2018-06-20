@@ -35,7 +35,6 @@ namespace KnaufinsulationWalls.Data
 
     public class Data_BuildingType
     {
-
         private static List<sBuildingType> data = new List<sBuildingType>(20);
         static public bool InitData()
         {

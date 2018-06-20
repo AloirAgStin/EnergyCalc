@@ -55,7 +55,9 @@
     <Compile Include="Base64Manager.cs" />
     <Compile Include="Data\Data_BuildingType.cs" />
     <Compile Include="Data\Data_WallsType.cs" />
+    <Compile Include="Data\GlobalData.cs" />
     <Compile Include="FileManager.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="ImageManager.cs" />
     <Compile Include="IniFileManager.cs" />
     <Compile Include="MainForm.cs">
@@ -128,7 +130,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">

@@ -32,7 +32,7 @@ namespace KnaufinsulationWalls
         {
             this.label1 = new System.Windows.Forms.Label();
             this.roundButton1 = new XControl.RoundButton();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new XControl.SelectableLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -74,16 +74,16 @@ namespace KnaufinsulationWalls
             this.roundButton1.Text = "Скачать";
             this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
             // 
-            // label3
+            // lblVersion
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(160)))));
-            this.label3.Location = new System.Drawing.Point(81, 49);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(269, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Доступна новая версия программы 1.0.1";
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold);
+            this.lblVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(160)))));
+            this.lblVersion.Location = new System.Drawing.Point(81, 49);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(239, 17);
+            this.lblVersion.TabIndex = 5;
+            this.lblVersion.Text = "Доступна новая версия программы ";
             // 
             // button1
             // 
@@ -140,7 +140,7 @@ namespace KnaufinsulationWalls
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.roundButton1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "newVersion";
@@ -159,10 +159,10 @@ namespace KnaufinsulationWalls
 
         private System.Windows.Forms.Label label1;
         private XControl.RoundButton roundButton1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private SelectableLabel label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.Label lblVersion;
     }
 }

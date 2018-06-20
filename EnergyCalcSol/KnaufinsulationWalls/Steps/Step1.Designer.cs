@@ -307,6 +307,7 @@
             this.btnNext.ForeColor = System.Drawing.Color.White;
             this.btnNext.Location = new System.Drawing.Point(544, 432);
             this.btnNext.Name = "btnNext";
+            this.btnNext.offsettextX = 0;
             this.btnNext.Size = new System.Drawing.Size(170, 40);
             this.btnNext.TabIndex = 10;
             this.btnNext.Text = "ДАЛЕЕ";

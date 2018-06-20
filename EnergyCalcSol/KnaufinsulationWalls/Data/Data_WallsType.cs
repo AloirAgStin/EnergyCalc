@@ -8,5 +8,9 @@ namespace KnaufinsulationWalls.Data
 {
     public static class Data_WallsType
     {
+        public static bool InitData()
+        {
+            return true;
+        }
     }
 }

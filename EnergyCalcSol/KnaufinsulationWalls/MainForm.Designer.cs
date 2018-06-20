@@ -57,6 +57,7 @@ namespace KnaufinsulationWalls
             this.roundButton1.ForeColor = System.Drawing.Color.White;
             this.roundButton1.Location = new System.Drawing.Point(243, 327);
             this.roundButton1.Name = "roundButton1";
+            this.roundButton1.offsettextX = 0;
             this.roundButton1.Size = new System.Drawing.Size(268, 60);
             this.roundButton1.TabIndex = 1;
             this.roundButton1.TabStop = false;

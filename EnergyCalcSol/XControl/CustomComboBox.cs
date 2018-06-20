@@ -59,8 +59,18 @@ namespace XCotrols
             
             using (var br = new SolidBrush(bcgColor))
                 g.FillRectangle(br, ClientRectangle);
-           
+
+
+            //add
+            var sf = new StringFormat(StringFormatFlags.NoWrap);
+            sf.LineAlignment = StringAlignment.Center;
+
+            var textColor = SelectedIndex == 0 ? Color.Gray : ForeColor;
+            var textFont  = SelectedIndex == 0 ? FontSmall : Font;
+            using (var brush = new SolidBrush(textColor))
+                e.Graphics.DrawString(Text, textFont, brush, textRectange, sf);
             
+            /*
             if (SelectedIndex == 0)
             {               
                 TextRenderer.DrawText(g, Text, FontSmall, textRectange, Color.Gray, _textFormatFlags);
@@ -68,11 +78,12 @@ namespace XCotrols
             else
             {
                 TextRenderer.DrawText(g, Text, Font, textRectange, ForeColor, _textFormatFlags);
-            }
+            }*/
             
+
+
             DropDownWidth = GetDropDownWidth();
-
-
+            
             //draw item arroy
 
             g.SmoothingMode = SmoothingMode.AntiAlias;
@@ -116,10 +127,7 @@ namespace XCotrols
 
         protected override void OnDrawItem(DrawItemEventArgs e)
         {
-            base.OnDrawItem(e);
-
-
-            if (!DroppedDown )
+            if (!DroppedDown)
             {
                 e.DrawFocusRectangle();
                 return;
@@ -147,10 +155,8 @@ namespace XCotrols
             var drawColor = ColorDeactiveItem;
 
             if ((e.State & DrawItemState.Selected) == DrawItemState.Selected && e.Index > 0) 
-            {
                 drawColor = ColorActiveItem;
-            }
-
+        
             using (var br = new SolidBrush(drawColor))
                 g.FillRectangle(br, textRectange);
 
@@ -159,17 +165,11 @@ namespace XCotrols
             {
                 textToPaint = GetItemText(Items[e.Index]);                
             }
-            
-            if(e.Index == 0)
-            {
-                using (var br = new SolidBrush(Color.Black))
-                    e.Graphics.DrawString(textToPaint, e.Font, br, textRectange);
-            }
-            else
-            {
-                using (var br = new SolidBrush(e.ForeColor))
-                    e.Graphics.DrawString(textToPaint, e.Font, br, textRectange);
-            }           
+
+
+            var colorText = e.Index == 0 ? Color.Black : e.ForeColor;
+            using (var br = new SolidBrush(colorText))
+                e.Graphics.DrawString(textToPaint, e.Font, br, textRectange);
 
             e.DrawFocusRectangle();
         }

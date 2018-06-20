@@ -12,14 +12,19 @@ namespace KnaufinsulationWalls
 {
     public static class IniFileManager
     {
-        private static string _path = Application.StartupPath;
+        private static string _pathIni = Path.Combine(Application.StartupPath, "config.ini");
         public static string GetStringKey(string key, string defaultValue = "")
+        {
+            return GetStringKey(_pathIni, key, defaultValue);
+        }
+
+        public static string GetStringKey(string FilePath, string key, string defaultValue = "")
         {
             try
             {
                 var parser = new FileIniDataParser();
-                IniData data = parser.ReadFile(Path.Combine(_path, "config.ini"));
-                
+                IniData data = parser.ReadFile(FilePath, Encoding.UTF8);
+
                 var s = data.GetKey(key);
                 if (s == null)
                     return defaultValue;
@@ -28,12 +33,15 @@ namespace KnaufinsulationWalls
 
                 return s;
             }
-            catch(Exception)
+            catch (Exception e)
             {
+                Helper.WriteLog(e.Message);
                 //todo error log
                 return defaultValue;
             }
         }
+
+
 
 
         public static bool GetBoolKey(string key, bool defaultValue = false)
@@ -44,6 +52,24 @@ namespace KnaufinsulationWalls
             Boolean.TryParse(str, out ret);
 
             return ret;            
+        }
+
+
+        public static void WriteStringKey(string key, string section, string value)
+        {
+            try
+            {
+                var parser = new FileIniDataParser();
+                IniData data = parser.ReadFile(_pathIni);
+                data[key][section] = value;
+
+                parser.WriteFile(_pathIni, data, Encoding.UTF8);
+
+            }
+            catch (Exception e)
+            {
+                Helper.WriteLog(e.Message);
+            }
         }
 
 

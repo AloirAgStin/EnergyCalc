@@ -10,6 +10,7 @@ namespace XControl
 {
     public class RoundButton :  Control
     {
+        public int offsettextX { get; set; }
         public Color BackColor2 { get; set; }
         public Color ButtonBorderColor { get; set; }
 
@@ -36,6 +37,7 @@ namespace XControl
 
             ButtonRoundRadius = 30;
             ButtonBorderWidth = 1;
+            offsettextX = 0;
 
             BackColor = defColor;
             BackColor2 = defColor;
@@ -120,6 +122,7 @@ namespace XControl
                 var rect = ClientRectangle;
                 //rect.Inflate(-4, -4);
                 rect.Y += 2;
+                rect.X += offsettextX;
                 e.Graphics.DrawString(Text, Font, brush, rect, sf);
             }
             

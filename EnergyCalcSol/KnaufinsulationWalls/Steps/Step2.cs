@@ -24,12 +24,11 @@ namespace KnaufinsulationWalls.Steps
       
         private void Step2_Load(object sender, EventArgs e)
         {
+            btnNext.offsettextX = -5;
             customComboBox1.Focus();
             roundEdit2.Focus();
             roundEdit3.Focus();
-            roundEdit4.Focus();
-
-                      
+            roundEdit4.Focus();                      
 
             customComboBox1.DataSource = Data.Data_BuildingType.GetDataByIndex(0);
             customComboBox1.DisplayMember = "Name";
