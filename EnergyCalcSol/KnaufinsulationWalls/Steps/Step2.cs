@@ -46,18 +46,10 @@ namespace KnaufinsulationWalls.Steps
             {
                 if (Parent.Parent != null)
                 {
-                    if (Parent.Parent.Parent != null)
-                    {
-                        var MainFrom = Parent.Parent.Parent as StepFrame;
-                        MainFrom.NextStep();
-                    }
+                    var MainFrom = Parent.Parent as StepFrame;
+                    MainFrom.NextStep();
                 }
             }
-        }
-
-        private void Step2_Resize(object sender, EventArgs e)
-        {
-            btnNext.Invalidate();
         }
 
         public void label4_Click(object sender, EventArgs e)
@@ -66,13 +58,16 @@ namespace KnaufinsulationWalls.Steps
             {
                 if (Parent.Parent != null)
                 {
-                    if (Parent.Parent.Parent != null)
-                    {
-                        var MainFrom = Parent.Parent.Parent as StepFrame;
-                        MainFrom.BackStep();
-                    }
+                    var MainFrom = Parent.Parent as StepFrame;
+                    MainFrom.BackStep();
+                   
                 }
             }
+        }
+
+        private void Step2_Resize(object sender, EventArgs e)
+        {
+            btnNext.Invalidate();
         }
 
 

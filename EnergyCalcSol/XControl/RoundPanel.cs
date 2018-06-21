@@ -24,32 +24,22 @@ namespace XCotrols
 
             SetStyle(ControlStyles.Selectable, true);
 
-            IsFocus = false;
+           // DoubleBuffered = true;
+
         }
 
-        private bool IsFocus;
         protected override void OnGotFocus(EventArgs e)
         {
-            IsFocus = true;
-            Invalidate();
+         //   Invalidate();
         }
         
         protected override void OnLostFocus(EventArgs e)
         {
-            IsFocus = false;
-            Invalidate();
+          //  Invalidate();
         }
         
         private void RoundPanel_Paint1(object sender, PaintEventArgs e)
         {
-            /*
-            if (IsFocus)
-                ControlPaint.DrawBorder(e.Graphics, ClientRectangle, Color.Black, ButtonBorderStyle.Dashed);
-            else
-            {
-                ControlPaint.DrawBorder(e.Graphics, ClientRectangle, SystemColors.Control, ButtonBorderStyle.Dashed);
-            }
-            */
             var ButtonBorderColor = Color.Red;
 
             using (var pen = new Pen(BorderColor, BorderWidth))
@@ -106,14 +96,9 @@ namespace XCotrols
             // 
             this.Name = "RoundPanel";
             this.Size = new System.Drawing.Size(162, 39);
-            this.Load += new System.EventHandler(this.RoundPanel_Load);
             this.ResumeLayout(false);
 
         }
-
-        private void RoundPanel_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

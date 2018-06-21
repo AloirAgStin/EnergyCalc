@@ -336,7 +336,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dbPictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(905, 484);
             this.Name = "Step1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Step1";

@@ -25,8 +25,15 @@ namespace KnaufinsulationWalls.Steps
       
         private void label4_Click(object sender, EventArgs e)
         {
-            var MainFrom = Parent.Parent.Parent as StepFrame;
-            MainFrom.BackStep();
+            if (Parent != null)
+            {
+                if (Parent.Parent != null)
+                {
+                    var MainFrom = Parent.Parent as StepFrame;
+                    MainFrom.BackStep();
+
+                }
+            }
         }
 
         private void Step3_Load(object sender, EventArgs e)

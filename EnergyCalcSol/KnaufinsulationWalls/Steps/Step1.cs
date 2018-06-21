@@ -127,14 +127,10 @@ namespace KnaufinsulationWalls.Steps
             {
                 if (Parent.Parent != null)
                 {
-                    if (Parent.Parent.Parent != null)
-                    {
-                        var MainFrom = Parent.Parent.Parent as StepFrame;
+                        var MainFrom = Parent.Parent as StepFrame;
                         MainFrom.NextStep();
-                    }
                 }
             }
-
         }
 
 
