@@ -79,11 +79,11 @@ namespace KnaufinsulationWalls.UpdateForms
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
-            this.lblVersion.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold);
+            this.lblVersion.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold);
             this.lblVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(160)))));
             this.lblVersion.Location = new System.Drawing.Point(81, 49);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(239, 17);
+            this.lblVersion.Size = new System.Drawing.Size(275, 19);
             this.lblVersion.TabIndex = 5;
             this.lblVersion.Text = "Доступна новая версия программы ";
             // 

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using IniParser;
 using IniParser.Model;
@@ -23,7 +20,7 @@ namespace KnaufinsulationWalls
             try
             {
                 var parser = new FileIniDataParser();
-                IniData data = parser.ReadFile(FilePath, Encoding.UTF8);
+                IniData data = parser.ReadFile(FilePath, Encoding.ASCII);
 
                 var s = data.GetKey(key);
                 if (s == null)
@@ -63,7 +60,7 @@ namespace KnaufinsulationWalls
                 IniData data = parser.ReadFile(_pathIni);
                 data[key][section] = value;
 
-                parser.WriteFile(_pathIni, data, Encoding.UTF8);
+                parser.WriteFile(_pathIni, data, Encoding.ASCII);
 
             }
             catch (Exception e)
