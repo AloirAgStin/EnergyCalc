@@ -56,6 +56,9 @@
     <Compile Include="ExtComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ExtProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GroupComboBox.cs">
       <SubType>Component</SubType>
     </Compile>

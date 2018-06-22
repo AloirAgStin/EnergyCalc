@@ -10,7 +10,8 @@ namespace XCotrols
         public CustomComboBox() : base()
         {
             SetStyle(ControlStyles.UserPaint | ControlStyles.DoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
-
+            
+            DoubleBuffered = true;
             Font = new Font("Lato", 10);
             ForeColor = Color.Black;
             DropDownStyle = ComboBoxStyle.DropDownList;
@@ -70,17 +71,6 @@ namespace XCotrols
             using (var brush = new SolidBrush(textColor))
                 e.Graphics.DrawString(Text, textFont, brush, textRectange, sf);
             
-            /*
-            if (SelectedIndex == 0)
-            {               
-                TextRenderer.DrawText(g, Text, FontSmall, textRectange, Color.Gray, _textFormatFlags);
-            }
-            else
-            {
-                TextRenderer.DrawText(g, Text, Font, textRectange, ForeColor, _textFormatFlags);
-            }*/
-            
-
 
             DropDownWidth = GetDropDownWidth();
             
