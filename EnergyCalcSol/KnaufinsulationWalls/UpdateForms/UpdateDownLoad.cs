@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KnaufinsulationWalls.UpdateForms
@@ -61,7 +54,7 @@ namespace KnaufinsulationWalls.UpdateForms
 
         private void Wb_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            lblStatus.Text = valueUpdate + (e.BytesReceived/1024).ToString() + " из " + (e.TotalBytesToReceive/1024).ToString() + " к/байт";
+            lblStatus.Text = valueUpdate + (e.BytesReceived/1024).ToString() + " из " + (e.TotalBytesToReceive/1024).ToString() + " мегабайт";
             pgBar.Value = e.ProgressPercentage;
 
         }
@@ -96,6 +89,7 @@ namespace KnaufinsulationWalls.UpdateForms
                 if (ew.Status == WebExceptionStatus.RequestCanceled)
                 {
                     Helper.WriteLog(ew.Message);
+                    File.Delete(saveFileDialog1.FileName);
                     Close();
                 }
                 else
@@ -122,7 +116,9 @@ namespace KnaufinsulationWalls.UpdateForms
         private void roundButton1_Click(object sender, EventArgs e)
         {
             if (wb.IsBusy)
+            {
                 wb.CancelAsync();
+            }
             Close();
         }
     }

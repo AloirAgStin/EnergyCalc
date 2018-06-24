@@ -26,6 +26,17 @@ namespace KnaufinsulationWalls.Steps
             DoubleBuffered = true;
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                cp.Style &= ~0x02000000;  // Turn off WS_CLIPCHILDREN
+                return cp;
+            }
+        }
+
         private void Step1_Load(object sender, EventArgs e)
         {
             InitComboBoxes(1);
@@ -74,6 +85,7 @@ namespace KnaufinsulationWalls.Steps
 
                 customComboBox2.DataSource = Data_BuildingType.GetDataByIndex(0);
 
+                customComboBox1.Focus();
             }
 
         }
@@ -123,14 +135,67 @@ namespace KnaufinsulationWalls.Steps
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (Parent != null)
+            Control focusItem = roundEdit1;
+            try
             {
-                if (Parent.Parent != null)
+                StepFrame vMainFrom = null;
+
+                if (Parent == null)
+                    return;
+                if (Parent.Parent == null)
+                    return;
+
+                vMainFrom = Parent.Parent as StepFrame;
+                int UserIndex = 0;
+
+                if (vMainFrom.IsEnableCheck)
                 {
-                        var MainFrom = Parent.Parent as StepFrame;
-                        MainFrom.NextStep();
+                    if (radioButton1.Checked)
+                    {
+                        int nDb = 0;
+                        Int32.TryParse(roundEdit1.textbox.Text, out nDb);
+
+                        if (!Int32.TryParse(roundEdit1.textbox.Text, out nDb) || nDb <= 0)
+                        {
+                            focusItem = roundEdit1;
+                            throw new Exception("Значение поля \"Индекс изоляции воздушного шума, Rw\" " +
+                                "не может быть нулевым");
+                        }
+
+                        UserIndex = nDb;
+                    }
+                    else
+                    if (radioButton2.Checked)
+                    {
+                        if(customComboBox1.SelectedIndex  < 1)
+                        {
+                            focusItem = customComboBox1;
+                            throw new Exception("Необходимо выбрать значение поля \"Тип здания\"");
+                        }
+
+                        if (customComboBox2.SelectedIndex < 1)
+                        {
+                            focusItem = customComboBox2;
+                            throw new Exception("Необходимо выбрать значение поля \"Тип конструкции\"");
+                        }
+
+                        var itemS = customComboBox2.SelectedItem as sBuildingWall;
+                        UserIndex = itemS.Db;
+                    }
+
                 }
+
+                vMainFrom.CalcStruct.DBIndex = UserIndex;
+                vMainFrom.NextStep();
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                focusItem.Focus();
+                return;
+            }
+            
         }
 
 

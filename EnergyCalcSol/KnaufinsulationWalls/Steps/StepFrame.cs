@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KnaufinsulationWalls.Steps
@@ -27,7 +21,14 @@ namespace KnaufinsulationWalls.Steps
             InitializeComponent();
 
             DoubleBuffered = true;
+
+            CalcStruct = new CalcItem();
+
+            IsEnableCheck = false;
         }
+
+        public bool IsEnableCheck;
+        public CalcItem CalcStruct;
 
         private void StepFrame_Load(object sender, EventArgs e)
         {

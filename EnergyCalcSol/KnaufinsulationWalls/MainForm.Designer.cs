@@ -73,9 +73,8 @@ namespace KnaufinsulationWalls
             this.label1.Size = new System.Drawing.Size(660, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "ПРОГРАММА ПОДБОРА ПЕРЕГОРОДОК ПОД ОБЪЕКТ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // label2   
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));

@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base64Manager.cs" />
+    <Compile Include="CalcItem.cs" />
     <Compile Include="Data\Data_BuildingType.cs" />
     <Compile Include="Data\Data_WallsType.cs" />
     <Compile Include="Data\GlobalData.cs" />

@@ -85,7 +85,7 @@ namespace KnaufinsulationWalls.Steps
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 516);
+            this.panel1.Size = new System.Drawing.Size(260, 516);
             this.panel1.TabIndex = 5;
             // 
             // roundPanel2
@@ -94,7 +94,7 @@ namespace KnaufinsulationWalls.Steps
             this.roundPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
             this.roundPanel2.BorderWidth = 2;
             this.roundPanel2.Controls.Add(this.customComboBox2);
-            this.roundPanel2.Location = new System.Drawing.Point(12, 180);
+            this.roundPanel2.Location = new System.Drawing.Point(18, 180);
             this.roundPanel2.Name = "roundPanel2";
             this.roundPanel2.Radius = 20;
             this.roundPanel2.Size = new System.Drawing.Size(225, 35);
@@ -122,7 +122,7 @@ namespace KnaufinsulationWalls.Steps
             this.roundPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
             this.roundPanel1.BorderWidth = 2;
             this.roundPanel1.Controls.Add(this.customComboBox1);
-            this.roundPanel1.Location = new System.Drawing.Point(12, 123);
+            this.roundPanel1.Location = new System.Drawing.Point(18, 123);
             this.roundPanel1.Name = "roundPanel1";
             this.roundPanel1.Radius = 20;
             this.roundPanel1.Size = new System.Drawing.Size(225, 35);
@@ -135,13 +135,13 @@ namespace KnaufinsulationWalls.Steps
             this.customComboBox1.ColorDeactiveItem = System.Drawing.Color.White;
             this.customComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.customComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.customComboBox1.DropDownWidth = 198;
+            this.customComboBox1.DropDownWidth = 200;
             this.customComboBox1.Font = new System.Drawing.Font("Lato", 10F);
             this.customComboBox1.ForeColor = System.Drawing.Color.Black;
             this.customComboBox1.FormattingEnabled = true;
             this.customComboBox1.Location = new System.Drawing.Point(14, 6);
             this.customComboBox1.Name = "customComboBox1";
-            this.customComboBox1.Size = new System.Drawing.Size(198, 24);
+            this.customComboBox1.Size = new System.Drawing.Size(200, 24);
             this.customComboBox1.TabIndex = 1;
             // 
             // roundEdit4
@@ -150,7 +150,8 @@ namespace KnaufinsulationWalls.Steps
             this.roundEdit4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
             this.roundEdit4.BorderWidth = 2;
             this.roundEdit4.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundEdit4.Location = new System.Drawing.Point(12, 413);
+            this.roundEdit4.IsDigitOnly = false;
+            this.roundEdit4.Location = new System.Drawing.Point(18, 413);
             this.roundEdit4.Margin = new System.Windows.Forms.Padding(4);
             this.roundEdit4.Name = "roundEdit4";
             this.roundEdit4.Radius = 20;
@@ -165,7 +166,8 @@ namespace KnaufinsulationWalls.Steps
             this.roundEdit3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
             this.roundEdit3.BorderWidth = 2;
             this.roundEdit3.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundEdit3.Location = new System.Drawing.Point(12, 353);
+            this.roundEdit3.IsDigitOnly = false;
+            this.roundEdit3.Location = new System.Drawing.Point(18, 353);
             this.roundEdit3.Margin = new System.Windows.Forms.Padding(4);
             this.roundEdit3.Name = "roundEdit3";
             this.roundEdit3.Radius = 20;
@@ -180,7 +182,8 @@ namespace KnaufinsulationWalls.Steps
             this.roundEdit2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
             this.roundEdit2.BorderWidth = 2;
             this.roundEdit2.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundEdit2.Location = new System.Drawing.Point(12, 297);
+            this.roundEdit2.IsDigitOnly = false;
+            this.roundEdit2.Location = new System.Drawing.Point(18, 297);
             this.roundEdit2.Margin = new System.Windows.Forms.Padding(4);
             this.roundEdit2.Name = "roundEdit2";
             this.roundEdit2.Radius = 20;
@@ -192,7 +195,7 @@ namespace KnaufinsulationWalls.Steps
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(16, 394);
+            this.label9.Location = new System.Drawing.Point(19, 394);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(235, 19);
             this.label9.TabIndex = 35;
@@ -202,7 +205,7 @@ namespace KnaufinsulationWalls.Steps
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(16, 335);
+            this.label8.Location = new System.Drawing.Point(19, 335);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(151, 17);
             this.label8.TabIndex = 33;
@@ -212,7 +215,7 @@ namespace KnaufinsulationWalls.Steps
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(16, 279);
+            this.label3.Location = new System.Drawing.Point(19, 279);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 17);
             this.label3.TabIndex = 31;

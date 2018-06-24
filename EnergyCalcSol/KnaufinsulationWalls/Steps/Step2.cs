@@ -21,7 +21,17 @@ namespace KnaufinsulationWalls.Steps
 
         }
 
-      
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                cp.Style &= ~0x02000000;  // Turn off WS_CLIPCHILDREN
+                return cp;
+            }
+        }
+
         private void Step2_Load(object sender, EventArgs e)
         {
             btnNext.offsettextX = -5;
@@ -42,27 +52,57 @@ namespace KnaufinsulationWalls.Steps
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (Parent != null)
+            Control focusItem = customComboBox1;
+            try
             {
-                if (Parent.Parent != null)
+                StepFrame vMainFrom = null;
+
+                if (Parent == null)
+                    return;
+                if (Parent.Parent == null)
+                    return;
+
+                vMainFrom = Parent.Parent as StepFrame;
+
+                if (vMainFrom.IsEnableCheck)
                 {
-                    var MainFrom = Parent.Parent as StepFrame;
-                    MainFrom.NextStep();
+                    if (customComboBox1.SelectedIndex < 1)
+                    {
+                        focusItem = customComboBox1;
+                        throw new Exception("Выберите \"Предел огнестойкости EI\"");
+                    }
+
+                    if (customComboBox2.SelectedIndex < 1)
+                    {
+                        focusItem = customComboBox2;
+                        throw new Exception("Выберите \"Толщина перегородки, Тп\"");
+                    }
+
+
                 }
+
+                vMainFrom.NextStep();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                focusItem.Focus();
+                return;
             }
         }
 
         public void label4_Click(object sender, EventArgs e)
         {
-            if (Parent != null)
-            {
-                if (Parent.Parent != null)
-                {
-                    var MainFrom = Parent.Parent as StepFrame;
-                    MainFrom.BackStep();
-                   
-                }
-            }
+            StepFrame vMainFrom = null;
+
+            if (Parent == null)
+                return;
+            if (Parent.Parent == null)
+                return;
+
+            vMainFrom = Parent.Parent as StepFrame;
+            vMainFrom.BackStep();
         }
 
         private void Step2_Resize(object sender, EventArgs e)
