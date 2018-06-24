@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace KnaufinsulationWalls
+namespace KnaufinsulationWalls.UpdateForms
 {
     public partial class newVersion : Form
     {
@@ -32,31 +32,21 @@ namespace KnaufinsulationWalls
         {
             label2.ForeColor = (SystemColors.Highlight);
         }
-
-     
+             
         private void newVersion_Paint(object sender, PaintEventArgs e)
         {
             roundButton1.Invalidate();
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
+
+            DialogResult = DialogResult.Cancel;
             Close();
         }
-
-        private void label2_Click(object sender, EventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)
         {
-            Close();
-        }
-
-        private void roundButton1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Process.Start(FileUrl);               
-            }
-            catch (Exception)
-            {
-            }
+            DialogResult = DialogResult.OK;
             Close();
         }
     }

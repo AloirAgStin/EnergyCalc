@@ -52,6 +52,7 @@ namespace KnaufinsulationWalls.Steps
             this.button7 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,7 +70,7 @@ namespace KnaufinsulationWalls.Steps
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 510);
+            this.panel1.Size = new System.Drawing.Size(260, 510);
             this.panel1.TabIndex = 5;
             // 
             // listBox1
@@ -116,7 +117,7 @@ namespace KnaufinsulationWalls.Steps
             this.lblBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBack.Font = new System.Drawing.Font("Lato Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.lblBack.Location = new System.Drawing.Point(470, 467);
+            this.lblBack.Location = new System.Drawing.Point(470, 466);
             this.lblBack.Name = "lblBack";
             this.lblBack.Size = new System.Drawing.Size(68, 25);
             this.lblBack.TabIndex = 9;
@@ -141,6 +142,7 @@ namespace KnaufinsulationWalls.Steps
             this.btnPrint.ForeColor = System.Drawing.Color.White;
             this.btnPrint.Location = new System.Drawing.Point(544, 459);
             this.btnPrint.Name = "btnPrint";
+            this.btnPrint.offsettextX = 0;
             this.btnPrint.Size = new System.Drawing.Size(202, 39);
             this.btnPrint.TabIndex = 6;
             this.btnPrint.Text = "Сохранить PDF";
@@ -152,9 +154,9 @@ namespace KnaufinsulationWalls.Steps
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(255, 0);
+            this.panel2.Location = new System.Drawing.Point(260, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(732, 88);
+            this.panel2.Size = new System.Drawing.Size(727, 88);
             this.panel2.TabIndex = 10;
             // 
             // label5
@@ -344,7 +346,7 @@ namespace KnaufinsulationWalls.Steps
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(303, 458);
+            this.button6.Location = new System.Drawing.Point(807, 471);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 20;
@@ -353,6 +355,17 @@ namespace KnaufinsulationWalls.Steps
             this.button6.Visible = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Lato", 8.25F);
+            this.label4.Location = new System.Drawing.Point(303, 473);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(167, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "02. Параметры перегородки, EI";
+            // 
             // Step3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,6 +373,7 @@ namespace KnaufinsulationWalls.Steps
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(987, 510);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnLayOut);
@@ -411,5 +425,6 @@ namespace KnaufinsulationWalls.Steps
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label4;
     }
 }

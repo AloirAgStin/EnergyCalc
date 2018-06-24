@@ -120,27 +120,18 @@ namespace XControl
             {
                 var sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center };
                 var rect = ClientRectangle;
-                //rect.Inflate(-4, -4);
                 rect.Y += 2;
                 rect.X += offsettextX;
                 e.Graphics.DrawString(Text, Font, brush, rect, sf);
             }
-            
-            base.OnPaint(e);
+      
+            Color cl = SystemColors.Control;
+            if (Parent != null)
+                cl = Parent.BackColor;
 
-            if (Focused)
-            {
-                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Black, ButtonBorderStyle.Dashed);
-            }
-            else
-            {
-                Color cl = SystemColors.Control;
-                if (Parent != null)
-                    cl = Parent.BackColor;
-
-                ControlPaint.DrawBorder(e.Graphics, ClientRectangle, cl, ButtonBorderStyle.Solid);
-            }
-        }
+            ControlPaint.DrawBorder(e.Graphics, ClientRectangle, cl, ButtonBorderStyle.Solid);
+         
+    }
 
         protected override void OnPaintBackground(PaintEventArgs e)
         {

@@ -39,7 +39,7 @@
             this.textbox.Location = new System.Drawing.Point(17, 9);
             this.textbox.Margin = new System.Windows.Forms.Padding(4);
             this.textbox.Name = "textbox";
-            this.textbox.Size = new System.Drawing.Size(183, 16);
+            this.textbox.Size = new System.Drawing.Size(213, 16);
             this.textbox.TabIndex = 0;
             // 
             // RoundEdit

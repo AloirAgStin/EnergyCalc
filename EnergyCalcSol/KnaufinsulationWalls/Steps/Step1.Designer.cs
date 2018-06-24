@@ -49,6 +49,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnNext = new XControl.RounButtonWithArroy();
             this.dbPictureBox1 = new XControl.DBPictureBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.roundPanel2.SuspendLayout();
@@ -59,8 +60,6 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -76,9 +75,10 @@
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 484);
+            this.panel1.Size = new System.Drawing.Size(260, 484);
             this.panel1.TabIndex = 3;
             // 
             // panel2
@@ -123,7 +123,7 @@
             this.roundPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
             this.roundPanel2.BorderWidth = 2;
             this.roundPanel2.Controls.Add(this.customComboBox2);
-            this.roundPanel2.Location = new System.Drawing.Point(16, 298);
+            this.roundPanel2.Location = new System.Drawing.Point(18, 298);
             this.roundPanel2.Name = "roundPanel2";
             this.roundPanel2.Radius = 20;
             this.roundPanel2.Size = new System.Drawing.Size(223, 35);
@@ -152,7 +152,7 @@
             this.roundPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
             this.roundPanel1.BorderWidth = 2;
             this.roundPanel1.Controls.Add(this.customComboBox1);
-            this.roundPanel1.Location = new System.Drawing.Point(16, 242);
+            this.roundPanel1.Location = new System.Drawing.Point(18, 242);
             this.roundPanel1.Name = "roundPanel1";
             this.roundPanel1.Radius = 20;
             this.roundPanel1.Size = new System.Drawing.Size(223, 35);
@@ -179,17 +179,17 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Lato", 9.25F);
-            this.label6.Location = new System.Drawing.Point(15, 278);
+            this.label6.Location = new System.Drawing.Point(26, 282);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 16);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Тип констуркции";
+            this.label6.Text = "Тип конструкции";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lato", 9.25F);
-            this.label4.Location = new System.Drawing.Point(15, 224);
+            this.label4.Location = new System.Drawing.Point(26, 226);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 16);
             this.label4.TabIndex = 5;
@@ -201,10 +201,10 @@
             this.radioButton2.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton2.Location = new System.Drawing.Point(9, 182);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(213, 39);
+            this.radioButton2.Size = new System.Drawing.Size(249, 39);
             this.radioButton2.TabIndex = 3;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Тип здания и расположение конструкции";
+            this.radioButton2.Text = "Я не знаю Rw, но знаю тип здания и расположение конструкции";
             this.radioButton2.UseVisualStyleBackColor = false;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
@@ -213,7 +213,7 @@
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(9, 171);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(230, 1);
+            this.pictureBox1.Size = new System.Drawing.Size(241, 1);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -223,6 +223,7 @@
             this.roundEdit1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
             this.roundEdit1.BorderWidth = 2;
             this.roundEdit1.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.roundEdit1.IsDigitOnly = true;
             this.roundEdit1.Location = new System.Drawing.Point(18, 124);
             this.roundEdit1.Margin = new System.Windows.Forms.Padding(4);
             this.roundEdit1.Name = "roundEdit1";
@@ -237,10 +238,10 @@
             this.radioButton1.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton1.Location = new System.Drawing.Point(9, 78);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(236, 39);
+            this.radioButton1.Size = new System.Drawing.Size(238, 39);
             this.radioButton1.TabIndex = 1;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Индекс изоляции воздушного шума, Rw";
+            this.radioButton1.Text = "Я знаю требуемый индекс изоляции воздушного шума, Rw";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
@@ -323,6 +324,17 @@
             this.dbPictureBox1.TabIndex = 5;
             this.dbPictureBox1.TabStop = false;
             // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Lato", 8.25F);
+            this.label8.Location = new System.Drawing.Point(717, 446);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(167, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "02. Параметры перегородки, EI";
+            // 
             // Step1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,13 +343,13 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(917, 484);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dbPictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(905, 484);
             this.Name = "Step1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Step1";
@@ -376,5 +388,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label8;
     }
 }

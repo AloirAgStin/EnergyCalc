@@ -153,23 +153,38 @@ namespace KnaufinsulationWalls
 
         private void bgCheckUpdates_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if ((int)e.Result == 1)
+            try
             {
-                newVersion d = new newVersion();
-                d.FileUrl = LinkToDownload;
-                d.lblVersion.Text += vVersionNew;
-                d.ShowDialog(this);
-            }
-            else
-            {
-                if(showReport)
+                if ((int)e.Result == 1)
                 {
-                    showReport = false;
-                    MessageBox.Show("У вас установлена последняя версия программы", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    UpdateForms.newVersion d = new UpdateForms.newVersion();
+                    d.FileUrl = LinkToDownload;
+                    d.lblVersion.Text += vVersionNew;
+                    var dResult = d.ShowDialog(this);
+                    if (dResult == DialogResult.OK)
+                    {
+                        UpdateForms.UpdateDownLoad d2 = new UpdateForms.UpdateDownLoad();
+                        d2.vers = vVersionNew;
+                        d2.link = LinkToDownload;
+                        d2.ShowDialog(this);
+                    }
+
+                }
+                else
+                {
+                    if (showReport)
+                    {
+                        showReport = false;
+                        MessageBox.Show("У вас установлена последняя версия программы", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
+            catch(Exception ex)
+            {
+                Helper.WriteLog(ex.Message);
+                MessageBox.Show(ex.Message, "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
-
-    
     }
 }

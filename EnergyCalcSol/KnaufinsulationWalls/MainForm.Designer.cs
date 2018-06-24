@@ -30,10 +30,10 @@ namespace KnaufinsulationWalls
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.roundButton1 = new XControl.RoundButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.bgCheckUpdates = new System.ComponentModel.BackgroundWorker();
             this.label5 = new XControl.SelectableLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -61,38 +61,30 @@ namespace KnaufinsulationWalls
             this.roundButton1.Size = new System.Drawing.Size(268, 60);
             this.roundButton1.TabIndex = 1;
             this.roundButton1.TabStop = false;
-            this.roundButton1.Text = "НАЧАТЬ РАСЧЕТ";
+            this.roundButton1.Text = "НАЧАТЬ РАСЧЁТ";
             this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lato Black", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(69, 144);
+            this.label1.Font = new System.Drawing.Font("Lato Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(47, 146);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(616, 36);
+            this.label1.Size = new System.Drawing.Size(660, 29);
             this.label1.TabIndex = 1;
-            this.label1.Text = "ПРОГРАММА ПОДБОРА ПЕРЕГОРОДОК ";
+            this.label1.Text = "ПРОГРАММА ПОДБОРА ПЕРЕГОРОДОК ПОД ОБЪЕКТ";
             // 
-            // label2
+            // label2   
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(178, 203);
+            this.label2.Location = new System.Drawing.Point(122, 203);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(398, 17);
+            this.label2.Size = new System.Drawing.Size(511, 34);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Программа поможет по требуемым параметрам подобрать ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(151, 225);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(453, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "конструкцию перегородок и загрузить техническую документацию ";
+            this.label2.Text = "Программа поможет по требуемым параметрам (Rw, EI, толщина) подобрать \r\nконструкц" +
+    "ию перегородок и загрузить техническую документацию ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bgCheckUpdates
             // 
@@ -114,7 +106,7 @@ namespace KnaufinsulationWalls
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::KnaufinsulationWalls.Properties.Resources.logonorm;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.Location = new System.Drawing.Point(213, 33);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(296, 86);
@@ -129,7 +121,6 @@ namespace KnaufinsulationWalls
             this.ClientSize = new System.Drawing.Size(754, 442);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.roundButton1);
@@ -149,7 +140,6 @@ namespace KnaufinsulationWalls
         private XControl.RoundButton roundButton1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.ComponentModel.BackgroundWorker bgCheckUpdates;
         private SelectableLabel label5;

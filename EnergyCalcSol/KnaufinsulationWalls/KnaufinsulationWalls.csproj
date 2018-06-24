@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base64Manager.cs" />
+    <Compile Include="CalcItem.cs" />
     <Compile Include="Data\Data_BuildingType.cs" />
     <Compile Include="Data\Data_WallsType.cs" />
     <Compile Include="Data\GlobalData.cs" />
@@ -66,10 +67,10 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="newVersion.cs">
+    <Compile Include="UpdateForms\newVersion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="newVersion.Designer.cs">
+    <Compile Include="UpdateForms\newVersion.Designer.cs">
       <DependentUpon>newVersion.cs</DependentUpon>
     </Compile>
     <Compile Include="PDFManager.cs" />
@@ -99,11 +100,17 @@
     <Compile Include="Steps\StepFrame.Designer.cs">
       <DependentUpon>StepFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateForms\UpdateDownLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForms\UpdateDownLoad.Designer.cs">
+      <DependentUpon>UpdateDownLoad.cs</DependentUpon>
+    </Compile>
     <Compile Include="XmlHelper.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="newVersion.resx">
+    <EmbeddedResource Include="UpdateForms\newVersion.resx">
       <DependentUpon>newVersion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -127,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Steps\StepFrame.resx">
       <DependentUpon>StepFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForms\UpdateDownLoad.resx">
+      <DependentUpon>UpdateDownLoad.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
