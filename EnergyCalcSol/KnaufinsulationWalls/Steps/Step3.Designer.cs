@@ -41,18 +41,13 @@ namespace KnaufinsulationWalls.Steps
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnLayOut = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lblBack = new XControl.SelectableLabel();
             this.exListBox1 = new XControl.ExListBox();
             this.btnPrint = new XControl.RoundButton();
+            this.lblClose = new XControl.SelectableLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -179,96 +174,11 @@ namespace KnaufinsulationWalls.Steps
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLayOut.AutoScroll = true;
             this.btnLayOut.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnLayOut.Controls.Add(this.button1);
-            this.btnLayOut.Controls.Add(this.button2);
-            this.btnLayOut.Controls.Add(this.button3);
-            this.btnLayOut.Controls.Add(this.button4);
-            this.btnLayOut.Controls.Add(this.button5);
             this.btnLayOut.Controls.Add(this.button7);
             this.btnLayOut.Location = new System.Drawing.Point(281, 368);
             this.btnLayOut.Name = "btnLayOut";
             this.btnLayOut.Size = new System.Drawing.Size(702, 84);
             this.btnLayOut.TabIndex = 17;
-            // 
-            // button1
-            // 
-            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.button1.Image = global::KnaufinsulationWalls.Properties.Resources.dw_file;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 74);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Чертежи\r\nПДФ";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.button2.Image = global::KnaufinsulationWalls.Properties.Resources.dw_file;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.Location = new System.Drawing.Point(118, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 74);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Чертежи\r\nПДФ";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.button3.Image = global::KnaufinsulationWalls.Properties.Resources.dw_file;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.Location = new System.Drawing.Point(233, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 74);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "ПРОТОКОЛ\r\nАКУСТИКА";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button4.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.button4.Image = global::KnaufinsulationWalls.Properties.Resources.dw_file;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.Location = new System.Drawing.Point(348, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(109, 74);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "ПРОТОКОЛ\r\nПОЖАРНЫЙ";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button5.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.button5.Image = global::KnaufinsulationWalls.Properties.Resources.dw_file;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.Location = new System.Drawing.Point(463, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(109, 74);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "СЕРТИ-\r\nФИКАТ";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.UseVisualStyleBackColor = false;
             // 
             // button7
             // 
@@ -278,7 +188,7 @@ namespace KnaufinsulationWalls.Steps
             this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.button7.Image = global::KnaufinsulationWalls.Properties.Resources.dw_file;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.Location = new System.Drawing.Point(578, 3);
+            this.button7.Location = new System.Drawing.Point(3, 3);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(109, 74);
             this.button7.TabIndex = 17;
@@ -293,17 +203,6 @@ namespace KnaufinsulationWalls.Steps
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(0, 13);
             this.label9.TabIndex = 19;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(807, 471);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 20;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Visible = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label4
             // 
@@ -347,8 +246,9 @@ namespace KnaufinsulationWalls.Steps
             this.exListBox1.Name = "exListBox1";
             this.exListBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.exListBox1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.exListBox1.Size = new System.Drawing.Size(192, 400);
+            this.exListBox1.Size = new System.Drawing.Size(192, 375);
             this.exListBox1.TabIndex = 3;
+            this.exListBox1.SelectedIndexChanged += new System.EventHandler(this.exListBox1_SelectedIndexChanged);
             // 
             // btnPrint
             // 
@@ -374,6 +274,18 @@ namespace KnaufinsulationWalls.Steps
             this.btnPrint.Text = "Сохранить PDF";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
+            // lblClose
+            // 
+            this.lblClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblClose.Font = new System.Drawing.Font("Lato Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
+            this.lblClose.Location = new System.Drawing.Point(753, 467);
+            this.lblClose.Name = "lblClose";
+            this.lblClose.Size = new System.Drawing.Size(85, 25);
+            this.lblClose.TabIndex = 22;
+            this.lblClose.Text = "Закрыть";
+            this.lblClose.Click += new System.EventHandler(this.lblClose_Click);
+            // 
             // Step3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -381,8 +293,8 @@ namespace KnaufinsulationWalls.Steps
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(987, 510);
+            this.Controls.Add(this.lblClose);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnLayOut);
             this.Controls.Add(this.label8);
@@ -425,14 +337,9 @@ namespace KnaufinsulationWalls.Steps
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.FlowLayoutPanel btnLayOut;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label4;
         private ExListBox exListBox1;
+        private SelectableLabel lblClose;
     }
 }

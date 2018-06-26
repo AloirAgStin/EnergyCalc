@@ -20,6 +20,32 @@ namespace KnaufinsulationWalls.Steps
         {
             InitializeComponent();
         }
+        
+        private void Step3_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                exListBox1.Items.Clear();
+                for (int i = 1; i <= 10; i++)
+                    exListBox1.Items.Add("ВАРИАНТ " + i.ToString());
+
+
+
+
+
+
+
+                exListBox1.SelectedIndex = 0;
+
+            }
+            catch (Exception ex)
+            {
+                Helper.WriteLog(ex.Message);
+                MessageBox.Show(ex.Message);
+                return;
+            }
+        }
+
 
         protected override CreateParams CreateParams
         {
@@ -32,6 +58,19 @@ namespace KnaufinsulationWalls.Steps
             }
         }
 
+        private void lblClose_Click(object sender, EventArgs e)
+        {
+            StepFrame vMainFrom = null;
+
+            if (Parent == null)
+                return;
+            if (Parent.Parent == null)
+                return;
+
+            vMainFrom = Parent.Parent as StepFrame;
+
+            vMainFrom.Close();
+        }
         private void label4_Click(object sender, EventArgs e)
         {
             if (Parent != null)
@@ -45,13 +84,8 @@ namespace KnaufinsulationWalls.Steps
             }
         }
 
-        private void Step3_Load(object sender, EventArgs e)
-        {
-            for(int i = 0; i < 30; i ++)
-            exListBox1.Items.Add("ВАРИАНТ " + i.ToString());
 
-            exListBox1.SelectedIndex = 0;
-        }
+
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -76,10 +110,16 @@ namespace KnaufinsulationWalls.Steps
             btnLayOut.Controls.Add(btn);
         }
 
+
+
+
+
+
+
+        
+        
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            return;
-            string fn = @"d:\test_pdf.pdf";
             PdfDocument pdf = new PdfDocument();
             pdf.Info.Title = "My First PDF";
             PdfPage pdfPage = pdf.AddPage();
@@ -93,9 +133,17 @@ namespace KnaufinsulationWalls.Steps
             XFont fontItalic = new XFont("Times", 12, XFontStyle.BoldItalic);
             double ls = font.GetHeight(gfx);
 
+            
+
+
+
+
             // Draw some text
             gfx.DrawString("Create PDF on the fly with PDFsharp",
                 fontH1, XBrushes.Black, x, x);
+
+
+
             gfx.DrawString("With PDFsharp you can use the same code to draw graphic, " +
                 "text and images on different targets.", font, XBrushes.Black, x, y);
             y += ls;
@@ -135,7 +183,7 @@ namespace KnaufinsulationWalls.Steps
             // Draw some more text
             y += 60 + 2 * ls;
             gfx.DrawString("With XGraphics you can draw on a PDF page as well as " +
-                "on any System.Drawing.Graphics object.", font, XBrushes.Black, x, y);
+                "on any System.Drawing.Graphics object. asdf sadf asdf asdf asdf asdf ", font, XBrushes.Black, x, y);
             y += ls * 1.1;
             gfx.DrawString("Use the same code to", font, XBrushes.Black, x, y);
             x += 10;
@@ -162,48 +210,35 @@ namespace KnaufinsulationWalls.Steps
                 "viewed or printed with a PDF viewer.", fontItalic, XBrushes.Firebrick, x, y);
             y += ls * 1.1;
             XGraphicsState state = gfx.Save();
-            XRect rcImage = new XRect(100, y, 100, 100 * Math.Sqrt(2));
+
+            XRect rcImage = new XRect(100, y, 200, 132);
             gfx.DrawRectangle(XBrushes.Snow, rcImage);
-         //   gfx.DrawImage(XPdfForm.FromFile("d:\\2.jpg"), rcImage);
+
+            var pt = FileManager.GetPathToRes("43.jpg");
+            var im2 = XImage.FromFile(pt);
+                
             gfx.Restore(state);
+            gfx.DrawImage(im2, 100, 100);
             
-            /*
-            {
-                string fn = @"d:\test_pdf.pdf";
-                PdfDocument pdf = new PdfDocument();
-                pdf.Info.Title = "My First PDF";
-                PdfPage pdfPage = pdf.AddPage();
-                XGraphics graph = XGraphics.FromPdfPage(pdfPage);
-                XFont font = new XFont("Verdana", 20, XFontStyle.Bold);
+            string fn = @"d:\testPageDocument.pdf";
+            pdf.Save(fn);
+            Process.Start(fn);
+        }
 
-                graph.DrawString("This is my first PDF document",
-                    font, XBrushes.Black,
-                    new XRect(0, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.Center);
+        private void exListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = exListBox1.SelectedIndex;
 
-                graph.DrawImage(ImageManager.ResizeImage(Properties.Resources.step1, 100, 100), new Point(10, 10));
+            if (index < 0)
+                return;
 
-                PdfPage pdfPage2 = pdf.AddPage();
-
-                XGraphics graph2 = XGraphics.FromPdfPage(pdfPage2);
-                graph2.DrawImage(Properties.Resources.LogoMini, new Point(10, 10));
+            btnLayOut.Controls.Clear();
+            Random r = new Random();
+            
+            for (int i = 0; i < r.Next(1,7); i++)
+                AddDownLoadButton("ИМЯ АФАЙЛА", 12);
 
 
-                string pdfFilename = fn;
-                pdf.Save(pdfFilename);
-                Process.Start(pdfFilename);
-            }
-
-            return;
-            var d = PDFManager.CreateDocument(fn);
-           
-            List<string> l = new List<string>();
-            l.Insert(0, "test 1");
-            l.Insert(1, "test 2");
-            l.Insert(2, "test 3");
-            l.Insert(3, "test 4");
-
-            d.WriteVariantToPDF(l.ToArray());
-            */
         }
     }
 }
