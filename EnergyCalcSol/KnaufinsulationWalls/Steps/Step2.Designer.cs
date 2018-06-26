@@ -158,7 +158,7 @@ namespace KnaufinsulationWalls.Steps
             this.roundEdit4.Size = new System.Drawing.Size(225, 35);
             this.roundEdit4.TabIndex = 42;
             this.roundEdit4.WatermarkActive = true;
-            this.roundEdit4.WatermarkText = "Выберите количество";
+            this.roundEdit4.WatermarkText = "Выберите количество, шт";
             // 
             // roundEdit3
             // 
@@ -174,7 +174,7 @@ namespace KnaufinsulationWalls.Steps
             this.roundEdit3.Size = new System.Drawing.Size(225, 35);
             this.roundEdit3.TabIndex = 41;
             this.roundEdit3.WatermarkActive = true;
-            this.roundEdit3.WatermarkText = "Выберите толщину";
+            this.roundEdit3.WatermarkText = "Выберите толщину, м";
             // 
             // roundEdit2
             // 
@@ -190,7 +190,7 @@ namespace KnaufinsulationWalls.Steps
             this.roundEdit2.Size = new System.Drawing.Size(225, 35);
             this.roundEdit2.TabIndex = 40;
             this.roundEdit2.WatermarkActive = true;
-            this.roundEdit2.WatermarkText = "Выберите толщину";
+            this.roundEdit2.WatermarkText = "Выберите толщину, м";
             // 
             // label9
             // 

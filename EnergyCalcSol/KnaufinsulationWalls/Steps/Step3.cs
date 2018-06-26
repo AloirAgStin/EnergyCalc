@@ -19,7 +19,6 @@ namespace KnaufinsulationWalls.Steps
         public Step3()
         {
             InitializeComponent();
-            listBox1.SelectedIndex = 0;
         }
 
         protected override CreateParams CreateParams
@@ -48,7 +47,10 @@ namespace KnaufinsulationWalls.Steps
 
         private void Step3_Load(object sender, EventArgs e)
         {
+            for(int i = 0; i < 30; i ++)
+            exListBox1.Items.Add("ВАРИАНТ " + i.ToString());
 
+            exListBox1.SelectedIndex = 0;
         }
 
         private void button6_Click(object sender, EventArgs e)

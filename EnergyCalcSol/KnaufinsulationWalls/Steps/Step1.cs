@@ -121,15 +121,16 @@ namespace KnaufinsulationWalls.Steps
         private void customComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             var cm = sender as CustomComboBox;
-            if(cm.SelectedIndex > 0)
+
+            lblInfo.Visible = cm.SelectedIndex > 0 ? true : false;
+            richTextBox1.Text = "";
+
+            if (cm.SelectedIndex > 0)
             {
                 var item = (sBuildingWall)customComboBox2.SelectedItem;
                 richTextBox1.Text = item.Description;
             }
-            else
-            {
-                richTextBox1.Text = "";
-            }
+            
         }
 
 
@@ -182,7 +183,6 @@ namespace KnaufinsulationWalls.Steps
                         var itemS = customComboBox2.SelectedItem as sBuildingWall;
                         UserIndex = itemS.Db;
                     }
-
                 }
 
                 vMainFrom.CalcStruct.DBIndex = UserIndex;

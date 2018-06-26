@@ -53,6 +53,9 @@
     <Compile Include="DBPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ExListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ExtComboBox.cs">
       <SubType>Component</SubType>
     </Compile>

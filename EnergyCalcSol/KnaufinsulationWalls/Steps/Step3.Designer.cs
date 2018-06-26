@@ -31,11 +31,8 @@ namespace KnaufinsulationWalls.Steps
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblBack = new XControl.SelectableLabel();
-            this.btnPrint = new XControl.RoundButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,6 +50,9 @@ namespace KnaufinsulationWalls.Steps
             this.label9 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblBack = new XControl.SelectableLabel();
+            this.exListBox1 = new XControl.ExListBox();
+            this.btnPrint = new XControl.RoundButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,7 +64,7 @@ namespace KnaufinsulationWalls.Steps
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.listBox1);
+            this.panel1.Controls.Add(this.exListBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -72,23 +72,6 @@ namespace KnaufinsulationWalls.Steps
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(260, 510);
             this.panel1.TabIndex = 5;
-            // 
-            // listBox1
-            // 
-            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.listBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 23;
-            this.listBox1.Items.AddRange(new object[] {
-            "ВАРИАНТ 1",
-            "ВАРИАНТ 2",
-            "ВАРИАНТ 3"});
-            this.listBox1.Location = new System.Drawing.Point(14, 92);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(220, 299);
-            this.listBox1.TabIndex = 2;
             // 
             // label1
             // 
@@ -112,42 +95,6 @@ namespace KnaufinsulationWalls.Steps
             this.label2.TabIndex = 1;
             this.label2.Text = "03";
             // 
-            // lblBack
-            // 
-            this.lblBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblBack.Font = new System.Drawing.Font("Lato Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.lblBack.Location = new System.Drawing.Point(470, 466);
-            this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(68, 25);
-            this.lblBack.TabIndex = 9;
-            this.lblBack.Text = "Назад";
-            this.lblBack.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.btnPrint.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.btnPrint.ButtonBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.btnPrint.ButtonBorderWidth = 1;
-            this.btnPrint.ButtonHighlightColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnPrint.ButtonHighlightColor2 = System.Drawing.SystemColors.MenuHighlight;
-            this.btnPrint.ButtonHighlightForeColor = System.Drawing.Color.White;
-            this.btnPrint.ButtonPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.btnPrint.ButtonPressedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.btnPrint.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.btnPrint.ButtonRoundRadius = 30;
-            this.btnPrint.Font = new System.Drawing.Font("Lato", 14F, System.Drawing.FontStyle.Bold);
-            this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Location = new System.Drawing.Point(544, 459);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.offsettextX = 0;
-            this.btnPrint.Size = new System.Drawing.Size(202, 39);
-            this.btnPrint.TabIndex = 6;
-            this.btnPrint.Text = "Сохранить PDF";
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -161,14 +108,17 @@ namespace KnaufinsulationWalls.Steps
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Lato", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Font = new System.Drawing.Font("Lato", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(145)))), ((int)(((byte)(149)))));
-            this.label5.Location = new System.Drawing.Point(13, 55);
+            this.label5.Location = new System.Drawing.Point(13, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(478, 24);
+            this.label5.Size = new System.Drawing.Size(702, 42);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Rw=55дБ, EI=60; Толщина перегродки Tп=150мм";
+            this.label5.Text = "Rw=55дБ, EI=60; Толщина перегродки Tп=150мм\r\nRw=55дБ, EI=60; Толщина перегродки T" +
+    "п=150мм";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
@@ -366,6 +316,64 @@ namespace KnaufinsulationWalls.Steps
             this.label4.TabIndex = 21;
             this.label4.Text = "02. Параметры перегородки, EI";
             // 
+            // lblBack
+            // 
+            this.lblBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBack.Font = new System.Drawing.Font("Lato Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
+            this.lblBack.Location = new System.Drawing.Point(470, 466);
+            this.lblBack.Name = "lblBack";
+            this.lblBack.Size = new System.Drawing.Size(68, 25);
+            this.lblBack.TabIndex = 9;
+            this.lblBack.Text = "Назад";
+            this.lblBack.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // exListBox1
+            // 
+            this.exListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.exListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.exListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.exListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.exListBox1.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold);
+            this.exListBox1.ForeColor = System.Drawing.Color.Silver;
+            this.exListBox1.FormattingEnabled = true;
+            this.exListBox1.ItemHeight = 25;
+            this.exListBox1.Items.AddRange(new object[] {
+            "ВАРИАНТ 1",
+            "ВАРИАНТ 2",
+            "ВАРИАНТ 3"});
+            this.exListBox1.Location = new System.Drawing.Point(14, 97);
+            this.exListBox1.Name = "exListBox1";
+            this.exListBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.exListBox1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
+            this.exListBox1.Size = new System.Drawing.Size(192, 400);
+            this.exListBox1.TabIndex = 3;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
+            this.btnPrint.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
+            this.btnPrint.ButtonBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
+            this.btnPrint.ButtonBorderWidth = 1;
+            this.btnPrint.ButtonHighlightColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnPrint.ButtonHighlightColor2 = System.Drawing.SystemColors.MenuHighlight;
+            this.btnPrint.ButtonHighlightForeColor = System.Drawing.Color.White;
+            this.btnPrint.ButtonPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
+            this.btnPrint.ButtonPressedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
+            this.btnPrint.ButtonPressedForeColor = System.Drawing.Color.White;
+            this.btnPrint.ButtonRoundRadius = 30;
+            this.btnPrint.Font = new System.Drawing.Font("Lato", 14F, System.Drawing.FontStyle.Bold);
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Location = new System.Drawing.Point(544, 459);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.offsettextX = 0;
+            this.btnPrint.Size = new System.Drawing.Size(202, 39);
+            this.btnPrint.TabIndex = 6;
+            this.btnPrint.Text = "Сохранить PDF";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // Step3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,7 +416,6 @@ namespace KnaufinsulationWalls.Steps
         private System.Windows.Forms.Label label2;
         private XControl.RoundButton btnPrint;
         private XControl.SelectableLabel lblBack;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
@@ -426,5 +433,6 @@ namespace KnaufinsulationWalls.Steps
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label4;
+        private ExListBox exListBox1;
     }
 }

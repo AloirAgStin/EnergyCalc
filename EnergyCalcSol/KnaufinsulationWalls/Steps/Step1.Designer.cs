@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.roundPanel2 = new XCotrols.RoundPanel();
             this.customComboBox2 = new XCotrols.CustomComboBox();
             this.roundPanel1 = new XCotrols.RoundPanel();
@@ -64,7 +64,7 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.lblInfo);
             this.panel1.Controls.Add(this.roundPanel2);
             this.panel1.Controls.Add(this.roundPanel1);
             this.panel1.Controls.Add(this.label6);
@@ -107,15 +107,15 @@
             this.richTextBox1.TabStop = false;
             this.richTextBox1.Text = "";
             // 
-            // label7
+            // lblInfo
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Lato", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(13, 338);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(148, 16);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Описание конструкции:";
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Font = new System.Drawing.Font("Lato", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblInfo.Location = new System.Drawing.Point(13, 338);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(148, 16);
+            this.lblInfo.TabIndex = 10;
+            this.lblInfo.Text = "Описание конструкции:";
             // 
             // roundPanel2
             // 
@@ -385,7 +385,7 @@
         private System.Windows.Forms.Label label6;
         private XCotrols.RoundPanel roundPanel2;
         private XCotrols.CustomComboBox customComboBox2;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label8;
