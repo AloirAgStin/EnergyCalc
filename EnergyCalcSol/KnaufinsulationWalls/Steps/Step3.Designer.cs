@@ -128,7 +128,6 @@ namespace KnaufinsulationWalls.Steps
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::KnaufinsulationWalls.Properties.Resources._3img;
             this.pictureBox1.Location = new System.Drawing.Point(281, 98);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(268, 262);

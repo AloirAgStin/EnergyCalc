@@ -22,7 +22,7 @@ namespace XCotrols
             ColorDeactiveItem = Color.White;
         }
 
-        private Font FontSmall = new Font("Lato", 9.25f, FontStyle.Bold);
+        private Font FontSmall = new Font("Lato", 9f);
 
         //private TextFormatFlags _textFormatFlags = TextFormatFlags.VerticalCenter | TextFormatFlags.Left;
         protected override void OnPaint(PaintEventArgs e)

@@ -85,7 +85,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::KnaufinsulationWalls.Properties.Resources.LogoMini1;
+            this.pictureBox2.Image = global::KnaufinsulationWalls.Properties.Resources.logo;
             this.pictureBox2.Location = new System.Drawing.Point(270, -2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(172, 71);
