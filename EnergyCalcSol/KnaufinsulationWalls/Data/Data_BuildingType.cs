@@ -21,6 +21,7 @@ namespace KnaufinsulationWalls.Data
 
         public List<sBuildingWall> data = new List<sBuildingWall>(5);
     }
+
     public class sBuildingWall
     {
         public sBuildingWall() => Db = 0;
