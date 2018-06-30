@@ -54,7 +54,7 @@ namespace KnaufinsulationWalls.UpdateForms
 
         private void Wb_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            lblStatus.Text = valueUpdate + (e.BytesReceived/1024).ToString() + " из " + (e.TotalBytesToReceive/1024).ToString() + " мегабайт";
+            lblStatus.Text = valueUpdate + (e.BytesReceived/1024).ToString() + " из " + (e.TotalBytesToReceive/1024).ToString() + " к/байт";
             pgBar.Value = e.ProgressPercentage;
 
         }

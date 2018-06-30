@@ -31,6 +31,7 @@ namespace KnaufinsulationWalls.Steps
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.exListBox1 = new XControl.ExListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -45,7 +46,6 @@ namespace KnaufinsulationWalls.Steps
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblBack = new XControl.SelectableLabel();
-            this.exListBox1 = new XControl.ExListBox();
             this.btnPrint = new XControl.RoundButton();
             this.lblClose = new XControl.SelectableLabel();
             this.panel1.SuspendLayout();
@@ -67,6 +67,29 @@ namespace KnaufinsulationWalls.Steps
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(260, 510);
             this.panel1.TabIndex = 5;
+            // 
+            // exListBox1
+            // 
+            this.exListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.exListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.exListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.exListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.exListBox1.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold);
+            this.exListBox1.ForeColor = System.Drawing.Color.Silver;
+            this.exListBox1.FormattingEnabled = true;
+            this.exListBox1.ItemHeight = 25;
+            this.exListBox1.Items.AddRange(new object[] {
+            "ВАРИАНТ 1",
+            "ВАРИАНТ 2",
+            "ВАРИАНТ 3"});
+            this.exListBox1.Location = new System.Drawing.Point(14, 97);
+            this.exListBox1.Name = "exListBox1";
+            this.exListBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.exListBox1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
+            this.exListBox1.Size = new System.Drawing.Size(192, 375);
+            this.exListBox1.TabIndex = 3;
+            this.exListBox1.SelectedIndexChanged += new System.EventHandler(this.exListBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -208,7 +231,7 @@ namespace KnaufinsulationWalls.Steps
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lato", 8.25F);
-            this.label4.Location = new System.Drawing.Point(303, 473);
+            this.label4.Location = new System.Drawing.Point(300, 473);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(167, 13);
             this.label4.TabIndex = 21;
@@ -219,35 +242,12 @@ namespace KnaufinsulationWalls.Steps
             this.lblBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBack.Font = new System.Drawing.Font("Lato Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.lblBack.Location = new System.Drawing.Point(470, 466);
+            this.lblBack.Location = new System.Drawing.Point(471, 466);
             this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(68, 25);
+            this.lblBack.Size = new System.Drawing.Size(66, 25);
             this.lblBack.TabIndex = 9;
             this.lblBack.Text = "Назад";
             this.lblBack.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // exListBox1
-            // 
-            this.exListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.exListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.exListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.exListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.exListBox1.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold);
-            this.exListBox1.ForeColor = System.Drawing.Color.Silver;
-            this.exListBox1.FormattingEnabled = true;
-            this.exListBox1.ItemHeight = 25;
-            this.exListBox1.Items.AddRange(new object[] {
-            "ВАРИАНТ 1",
-            "ВАРИАНТ 2",
-            "ВАРИАНТ 3"});
-            this.exListBox1.Location = new System.Drawing.Point(14, 97);
-            this.exListBox1.Name = "exListBox1";
-            this.exListBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.exListBox1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.exListBox1.Size = new System.Drawing.Size(192, 375);
-            this.exListBox1.TabIndex = 3;
-            this.exListBox1.SelectedIndexChanged += new System.EventHandler(this.exListBox1_SelectedIndexChanged);
             // 
             // btnPrint
             // 

@@ -3,13 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergyCalc", "EnergyCalc\EnergyCalc.csproj", "{128F3BA3-0BF0-480B-B77F-3F48EF0B789B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XCtrl", "XCtrl\XCtrl.csproj", "{02C128E3-59D7-4000-A7D3-EC8B9B3E1769}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{C927E494-3D88-4023-B51D-7D2D3BD48E91}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnaufInsalutionCalc", "KnaufInsalutionCalc\KnaufInsalutionCalc.csproj", "{E1128A9C-BF17-4657-B569-8AD66F34CD56}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnaufinsulationWalls", "KnaufinsulationWalls\KnaufinsulationWalls.csproj", "{FAE383E3-1665-4138-851C-772498DDF993}"
 EndProject
@@ -21,22 +15,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{128F3BA3-0BF0-480B-B77F-3F48EF0B789B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{128F3BA3-0BF0-480B-B77F-3F48EF0B789B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{128F3BA3-0BF0-480B-B77F-3F48EF0B789B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{128F3BA3-0BF0-480B-B77F-3F48EF0B789B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{02C128E3-59D7-4000-A7D3-EC8B9B3E1769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02C128E3-59D7-4000-A7D3-EC8B9B3E1769}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02C128E3-59D7-4000-A7D3-EC8B9B3E1769}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02C128E3-59D7-4000-A7D3-EC8B9B3E1769}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C927E494-3D88-4023-B51D-7D2D3BD48E91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C927E494-3D88-4023-B51D-7D2D3BD48E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C927E494-3D88-4023-B51D-7D2D3BD48E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C927E494-3D88-4023-B51D-7D2D3BD48E91}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E1128A9C-BF17-4657-B569-8AD66F34CD56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1128A9C-BF17-4657-B569-8AD66F34CD56}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1128A9C-BF17-4657-B569-8AD66F34CD56}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1128A9C-BF17-4657-B569-8AD66F34CD56}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FAE383E3-1665-4138-851C-772498DDF993}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FAE383E3-1665-4138-851C-772498DDF993}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAE383E3-1665-4138-851C-772498DDF993}.Release|Any CPU.ActiveCfg = Release|Any CPU
