@@ -24,17 +24,19 @@ namespace KnaufinsulationWalls.Data
             public sWallsTypes()
             {
                 Tp = 0;
-                Tu = 0;
+                Ti = 0;
                 Rw = 0;
                 EI = 0;
                 N = 0;
                 ImageName = "";
             }
 
-            public int Tp;
-            public int Tu;
             public int Rw;
+            public int Tp;
             public int EI;
+
+
+            public int Ti;
             public int N;
             public String ImageName;
 
@@ -65,7 +67,33 @@ namespace KnaufinsulationWalls.Data
 
             public _type type;
         }
+        
+        public static List<sWalls> GetFilerData(CalcItem userFilter)
+        {
+            List<sWalls> itemCalc = new List<sWalls>();
+            itemCalc = data;
 
+            foreach(var item in data)
+            {
+                item.types.RemoveAll(x => x.Tp  != userFilter.Tp);
+                item.types.RemoveAll(x => x.EI < userFilter.EI);
+                item.types.RemoveAll(x => x.Rw < userFilter.Rw);
+
+//                if (userFilter.Tk != 0)
+  //                 item.types.RemoveAll(x => x.Tk < userFilter.Tk);
+
+               if (userFilter.Ti != 0)
+                    item.types.RemoveAll(x => x.Ti != userFilter.Ti);
+
+                if (userFilter.N != 0)
+                   item.types.RemoveAll(x => x.N < userFilter.N);
+            }
+
+            itemCalc.RemoveAll(x => x.types.Count == 0);
+
+
+            return itemCalc;
+        }
 
 
         public static bool InitData()
@@ -104,7 +132,7 @@ namespace KnaufinsulationWalls.Data
                     if (!XmlHelper.GetAttribute(wall, "Tp", out wl.Tp))
                         continue;
                     
-                    if (!XmlHelper.GetAttribute(wall, "Tu", out wl.Tu))
+                    if (!XmlHelper.GetAttribute(wall, "Tu", out wl.Ti))
                         continue;
 
                     if (!XmlHelper.GetAttribute(wall, "Rw", out wl.Rw))

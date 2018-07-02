@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KnaufinsulationWalls.Data;
 using PdfSharp;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
@@ -20,9 +21,9 @@ namespace KnaufinsulationWalls.Steps
         {
             InitializeComponent();
         }
-
-
+        
         private String HeaderUserData;
+
         private void Step3_Load(object sender, EventArgs e)
         {
             try
@@ -34,10 +35,24 @@ namespace KnaufinsulationWalls.Steps
 
                 HeaderUserData = MakeUserChoiseText(userData);
                 lblUserData.Text = HeaderUserData;
+                
+                var filtredData = Data_WallsType.GetFilerData(userData);
+                
 
 
 
-                //exListBox1.SelectedIndex = 0;
+                int num = 1;
+                foreach(var item in filtredData)
+                {
+                    String text = "ВАРИАНТ " + num.ToString();
+                    num++;
+
+
+                    exListBox1.Items.Add(text);
+                }
+
+                if(exListBox1.Items.Count > 0)
+                    exListBox1.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -50,7 +65,7 @@ namespace KnaufinsulationWalls.Steps
         private String MakeUserChoiseText(CalcItem itm)
         {
             StringBuilder Text = new StringBuilder();
-            Text.AppendFormat("Rw={0} дБ, EI={2}; Толщина перегродки Tп={2} мм", itm.DBIndex, itm.EI, itm.Tp);            
+            Text.AppendFormat("Rw={0} дБ, EI={2}; Толщина перегродки Tп={2} мм", itm.Rw, itm.EI, itm.Tp);            
             return Text.ToString();
         }
 
@@ -92,40 +107,7 @@ namespace KnaufinsulationWalls.Steps
             }
         }
 
-
-
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            AddDownLoadButton("Имя" , 1);
-        }
-
-        private void AddDownLoadButton(string name, int fileIndex)
-        {
-            var btn = new Button();
-
-            btn.TextAlign = ContentAlignment.TopCenter;
-            btn.Text = "Значение 1";
-            btn.Font = new Font("Lato", 10, FontStyle.Bold);
-            btn.ForeColor = Color.FromArgb(0, 178, 236);
-
-            btn.Size = new Size(109, 74);
-            btn.Image = Properties.Resources.dw_file;
-            btn.ImageAlign = ContentAlignment.BottomCenter;
-            btn.BackColor = Color.WhiteSmoke;
-            btn.Tag = fileIndex;
-
-            btnLayOut.Controls.Add(btn);
-        }
-
-
-
-
-
-
-
-        
-        
+                
         private void btnPrint_Click(object sender, EventArgs e)
         {
             PdfDocument pdf = new PdfDocument();
@@ -140,11 +122,7 @@ namespace KnaufinsulationWalls.Steps
             XFont font = new XFont("Times", 12);
             XFont fontItalic = new XFont("Times", 12, XFontStyle.BoldItalic);
             double ls = font.GetHeight(gfx);
-
             
-
-
-
 
             // Draw some text
             gfx.DrawString("Create PDF on the fly with PDFsharp",
@@ -232,21 +210,6 @@ namespace KnaufinsulationWalls.Steps
             pdf.Save(fn);
             Process.Start(fn);
         }
-
-        private void exListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int index = exListBox1.SelectedIndex;
-
-            if (index < 0)
-                return;
-
-            btnLayOut.Controls.Clear();
-            Random r = new Random();
-            
-            for (int i = 0; i < r.Next(1,7); i++)
-                AddDownLoadButton("ИМЯ АФАЙЛА", 12);
-
-
-        }
+        
     }
 }

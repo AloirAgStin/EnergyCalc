@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static KnaufinsulationWalls.Data.Data_WallsType;
 
 namespace KnaufinsulationWalls
 {
@@ -10,7 +11,7 @@ namespace KnaufinsulationWalls
     {
         public CalcItem()
         {
-            DBIndex = 0;
+            Rw = 0;
             Tp = 0;
             EI = 0;
 
@@ -19,7 +20,7 @@ namespace KnaufinsulationWalls
             N  = 0;
         }
 
-        public int DBIndex;
+        public int Rw;
         public int Tp;
         public int EI;
 
@@ -27,4 +28,7 @@ namespace KnaufinsulationWalls
         public int Tk;
         public int N;
     }
+    
 }
+
+

@@ -185,7 +185,7 @@ namespace KnaufinsulationWalls.Steps
                     }
                 }
 
-                vMainFrom.CalcStruct.DBIndex = UserIndex;
+                vMainFrom.CalcStruct.Rw = UserIndex;
                 vMainFrom.NextStep();
 
             }
