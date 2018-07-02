@@ -16,9 +16,45 @@ namespace KnaufinsulationWalls
                 var vl = node[item];
                 return vl.InnerText;
             }
-            catch (Exception)
-            { }
+            catch (Exception ex)
+            {
+                Helper.WriteLog(ex.Message);
+            }
             return "";
+        }
+
+        public static bool GetAttribute(XmlNode node, String attrName, out int value)
+        {
+            value = 0;
+
+            String askvalue;
+            if (!GetAttribute(node, attrName, out askvalue))
+                return false;
+
+            if (!Int32.TryParse(askvalue, out value))
+            {
+                Helper.WriteLog("Ошибика преобразования знаячения " + askvalue + " в целочисленный тип");
+                return false;
+            }
+            return true;
+        }
+
+        public static bool GetAttribute(XmlNode node, String attrName, out String value)
+        {
+            value = "";
+
+            try
+            {
+                var vl = node.Attributes[attrName];
+                if (vl != null)
+                    value = vl.Value;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Helper.WriteLog(ex.Message);
+                return false;
+            }
         }
 
     }

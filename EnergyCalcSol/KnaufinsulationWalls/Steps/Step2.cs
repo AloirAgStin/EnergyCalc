@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using XCotrols;
+using static KnaufinsulationWalls.Data.Data_FillComboBox;
 
 namespace KnaufinsulationWalls.Steps
 {
@@ -35,19 +36,20 @@ namespace KnaufinsulationWalls.Steps
         private void Step2_Load(object sender, EventArgs e)
         {
             btnNext.offsettextX = -5;
-            customComboBox1.Focus();
-            roundEdit2.Focus();
-            roundEdit3.Focus();
-            roundEdit4.Focus();                      
+            tbTk.Focus();
+            tbTi.Focus();
+            tbN.Focus();                      
 
-            customComboBox1.DataSource = Data.Data_BuildingType.GetDataByIndex(0);
+            customComboBox1.DataSource = Data.Data_FillComboBox.cbItem_EI;
             customComboBox1.DisplayMember = "Name";
             customComboBox1.ValueMember = "index";
-
-
-            customComboBox2.DataSource = Data.Data_BuildingType.GetDataByIndex(0);
+            
+            customComboBox2.DataSource = Data.Data_FillComboBox.cbItem_TP;
             customComboBox2.DisplayMember = "Name";
             customComboBox2.ValueMember = "index";
+
+
+            customComboBox1.Focus();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -77,11 +79,18 @@ namespace KnaufinsulationWalls.Steps
                         focusItem = customComboBox2;
                         throw new Exception("Выберите \"Толщина перегородки, Тп\"");
                     }
+                    
+                    var elem = (CBItem)customComboBox1.SelectedItem;
+                    vMainFrom.CalcStruct.EI = elem._intValue;
 
-
+                    elem = (CBItem)customComboBox2.SelectedItem;
+                    vMainFrom.CalcStruct.Tp = elem._intValue;
+                    
+                    Int32.TryParse(tbN.textbox.Text,  out vMainFrom.CalcStruct.Tk);
+                    Int32.TryParse(tbTi.textbox.Text, out vMainFrom.CalcStruct.Ti);
+                    Int32.TryParse(tbTk.textbox.Text, out vMainFrom.CalcStruct.N);                    
                 }
-
-
+                
                 vMainFrom.NextStep();
 
             }

@@ -20,23 +20,24 @@ namespace KnaufinsulationWalls.Steps
         {
             InitializeComponent();
         }
-        
+
+
+        private String HeaderUserData;
         private void Step3_Load(object sender, EventArgs e)
         {
             try
             {
                 exListBox1.Items.Clear();
-                for (int i = 1; i <= 10; i++)
-                    exListBox1.Items.Add("ВАРИАНТ " + i.ToString());
+                
+                var vMainFrom = Parent.Parent as StepFrame;      
+                var userData = vMainFrom.CalcStruct;
+
+                HeaderUserData = MakeUserChoiseText(userData);
+                lblUserData.Text = HeaderUserData;
 
 
 
-
-
-
-
-                exListBox1.SelectedIndex = 0;
-
+                //exListBox1.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -44,6 +45,13 @@ namespace KnaufinsulationWalls.Steps
                 MessageBox.Show(ex.Message);
                 return;
             }
+        }
+
+        private String MakeUserChoiseText(CalcItem itm)
+        {
+            StringBuilder Text = new StringBuilder();
+            Text.AppendFormat("Rw={0} дБ, EI={2}; Толщина перегродки Tп={2} мм", itm.DBIndex, itm.EI, itm.Tp);            
+            return Text.ToString();
         }
 
 

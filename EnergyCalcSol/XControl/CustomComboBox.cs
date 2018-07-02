@@ -119,6 +119,7 @@ namespace XCotrols
         {
             if (!DroppedDown)
             {
+                e.DrawFocusRectangle();
                 return;
             }
 

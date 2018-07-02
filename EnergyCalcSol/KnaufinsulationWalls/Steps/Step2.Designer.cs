@@ -36,9 +36,9 @@ namespace KnaufinsulationWalls.Steps
             this.customComboBox2 = new XCotrols.CustomComboBox();
             this.roundPanel1 = new XCotrols.RoundPanel();
             this.customComboBox1 = new XCotrols.CustomComboBox();
-            this.roundEdit4 = new XControl.RoundEdit();
-            this.roundEdit3 = new XControl.RoundEdit();
-            this.roundEdit2 = new XControl.RoundEdit();
+            this.tbN = new XControl.RoundEdit();
+            this.tbTi = new XControl.RoundEdit();
+            this.tbTk = new XControl.RoundEdit();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,11 +51,11 @@ namespace KnaufinsulationWalls.Steps
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.lblBack = new XControl.SelectableLabel();
             this.btnNext = new XControl.RounButtonWithArroy();
             this.dbPictureBox1 = new XControl.DBPictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.roundPanel2.SuspendLayout();
             this.roundPanel1.SuspendLayout();
@@ -69,9 +69,9 @@ namespace KnaufinsulationWalls.Steps
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.roundPanel2);
             this.panel1.Controls.Add(this.roundPanel1);
-            this.panel1.Controls.Add(this.roundEdit4);
-            this.panel1.Controls.Add(this.roundEdit3);
-            this.panel1.Controls.Add(this.roundEdit2);
+            this.panel1.Controls.Add(this.tbN);
+            this.panel1.Controls.Add(this.tbTi);
+            this.panel1.Controls.Add(this.tbTk);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label3);
@@ -98,7 +98,7 @@ namespace KnaufinsulationWalls.Steps
             this.roundPanel2.Name = "roundPanel2";
             this.roundPanel2.Radius = 20;
             this.roundPanel2.Size = new System.Drawing.Size(225, 35);
-            this.roundPanel2.TabIndex = 44;
+            this.roundPanel2.TabIndex = 4;
             // 
             // customComboBox2
             // 
@@ -114,7 +114,7 @@ namespace KnaufinsulationWalls.Steps
             this.customComboBox2.Location = new System.Drawing.Point(14, 6);
             this.customComboBox2.Name = "customComboBox2";
             this.customComboBox2.Size = new System.Drawing.Size(198, 24);
-            this.customComboBox2.TabIndex = 1;
+            this.customComboBox2.TabIndex = 3;
             // 
             // roundPanel1
             // 
@@ -126,7 +126,7 @@ namespace KnaufinsulationWalls.Steps
             this.roundPanel1.Name = "roundPanel1";
             this.roundPanel1.Radius = 20;
             this.roundPanel1.Size = new System.Drawing.Size(225, 35);
-            this.roundPanel1.TabIndex = 43;
+            this.roundPanel1.TabIndex = 2;
             // 
             // customComboBox1
             // 
@@ -144,53 +144,56 @@ namespace KnaufinsulationWalls.Steps
             this.customComboBox1.Size = new System.Drawing.Size(200, 24);
             this.customComboBox1.TabIndex = 1;
             // 
-            // roundEdit4
+            // tbN
             // 
-            this.roundEdit4.BackColorInBorder = System.Drawing.Color.White;
-            this.roundEdit4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
-            this.roundEdit4.BorderWidth = 2;
-            this.roundEdit4.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundEdit4.IsDigitOnly = false;
-            this.roundEdit4.Location = new System.Drawing.Point(18, 413);
-            this.roundEdit4.Margin = new System.Windows.Forms.Padding(4);
-            this.roundEdit4.Name = "roundEdit4";
-            this.roundEdit4.Radius = 20;
-            this.roundEdit4.Size = new System.Drawing.Size(225, 35);
-            this.roundEdit4.TabIndex = 42;
-            this.roundEdit4.WatermarkActive = true;
-            this.roundEdit4.WatermarkText = "Выберите количество, шт";
+            this.tbN.BackColorInBorder = System.Drawing.Color.White;
+            this.tbN.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
+            this.tbN.BorderWidth = 2;
+            this.tbN.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbN.IsDigitOnly = false;
+            this.tbN.Location = new System.Drawing.Point(18, 413);
+            this.tbN.Margin = new System.Windows.Forms.Padding(4);
+            this.tbN.MaxTextLenght = 2;
+            this.tbN.Name = "tbN";
+            this.tbN.Radius = 20;
+            this.tbN.Size = new System.Drawing.Size(225, 35);
+            this.tbN.TabIndex = 7;
+            this.tbN.WatermarkActive = true;
+            this.tbN.WatermarkText = "Выберите количество, шт";
             // 
-            // roundEdit3
+            // tbTi
             // 
-            this.roundEdit3.BackColorInBorder = System.Drawing.Color.White;
-            this.roundEdit3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
-            this.roundEdit3.BorderWidth = 2;
-            this.roundEdit3.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundEdit3.IsDigitOnly = false;
-            this.roundEdit3.Location = new System.Drawing.Point(18, 353);
-            this.roundEdit3.Margin = new System.Windows.Forms.Padding(4);
-            this.roundEdit3.Name = "roundEdit3";
-            this.roundEdit3.Radius = 20;
-            this.roundEdit3.Size = new System.Drawing.Size(225, 35);
-            this.roundEdit3.TabIndex = 41;
-            this.roundEdit3.WatermarkActive = true;
-            this.roundEdit3.WatermarkText = "Выберите толщину, м";
+            this.tbTi.BackColorInBorder = System.Drawing.Color.White;
+            this.tbTi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
+            this.tbTi.BorderWidth = 2;
+            this.tbTi.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbTi.IsDigitOnly = false;
+            this.tbTi.Location = new System.Drawing.Point(18, 353);
+            this.tbTi.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTi.MaxTextLenght = 5;
+            this.tbTi.Name = "tbTi";
+            this.tbTi.Radius = 20;
+            this.tbTi.Size = new System.Drawing.Size(225, 35);
+            this.tbTi.TabIndex = 6;
+            this.tbTi.WatermarkActive = true;
+            this.tbTi.WatermarkText = "Выберите толщину";
             // 
-            // roundEdit2
+            // tbTk
             // 
-            this.roundEdit2.BackColorInBorder = System.Drawing.Color.White;
-            this.roundEdit2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
-            this.roundEdit2.BorderWidth = 2;
-            this.roundEdit2.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundEdit2.IsDigitOnly = false;
-            this.roundEdit2.Location = new System.Drawing.Point(18, 297);
-            this.roundEdit2.Margin = new System.Windows.Forms.Padding(4);
-            this.roundEdit2.Name = "roundEdit2";
-            this.roundEdit2.Radius = 20;
-            this.roundEdit2.Size = new System.Drawing.Size(225, 35);
-            this.roundEdit2.TabIndex = 40;
-            this.roundEdit2.WatermarkActive = true;
-            this.roundEdit2.WatermarkText = "Выберите толщину, м";
+            this.tbTk.BackColorInBorder = System.Drawing.Color.White;
+            this.tbTk.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
+            this.tbTk.BorderWidth = 2;
+            this.tbTk.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbTk.IsDigitOnly = false;
+            this.tbTk.Location = new System.Drawing.Point(18, 297);
+            this.tbTk.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTk.MaxTextLenght = 5;
+            this.tbTk.Name = "tbTk";
+            this.tbTk.Radius = 20;
+            this.tbTk.Size = new System.Drawing.Size(225, 35);
+            this.tbTk.TabIndex = 5;
+            this.tbTk.WatermarkActive = true;
+            this.tbTk.WatermarkText = "Выберите толщину";
             // 
             // label9
             // 
@@ -323,6 +326,28 @@ namespace KnaufinsulationWalls.Steps
             this.label11.TabIndex = 10;
             this.label11.Text = resources.GetString("label11.Text");
             // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Lato", 8.25F);
+            this.label4.Location = new System.Drawing.Point(716, 478);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "03. Результат подбора";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Lato", 8.25F);
+            this.label12.Location = new System.Drawing.Point(354, 479);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(115, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "01. Уровень шума Rw";
+            // 
             // lblBack
             // 
             this.lblBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -331,7 +356,7 @@ namespace KnaufinsulationWalls.Steps
             this.lblBack.Location = new System.Drawing.Point(470, 472);
             this.lblBack.Name = "lblBack";
             this.lblBack.Size = new System.Drawing.Size(67, 25);
-            this.lblBack.TabIndex = 8;
+            this.lblBack.TabIndex = 9;
             this.lblBack.Text = "Назад";
             this.lblBack.Click += new System.EventHandler(this.label4_Click);
             // 
@@ -356,7 +381,7 @@ namespace KnaufinsulationWalls.Steps
             this.btnNext.Name = "btnNext";
             this.btnNext.offsettextX = 0;
             this.btnNext.Size = new System.Drawing.Size(169, 40);
-            this.btnNext.TabIndex = 6;
+            this.btnNext.TabIndex = 8;
             this.btnNext.Text = "ДАЛЕЕ";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
@@ -369,28 +394,6 @@ namespace KnaufinsulationWalls.Steps
             this.dbPictureBox1.Size = new System.Drawing.Size(373, 446);
             this.dbPictureBox1.TabIndex = 9;
             this.dbPictureBox1.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Lato", 8.25F);
-            this.label4.Location = new System.Drawing.Point(716, 478);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "03. Результат подбора";
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Lato", 8.25F);
-            this.label12.Location = new System.Drawing.Point(354, 479);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(115, 13);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "01. Уровень шума Rw";
             // 
             // Step2
             // 
@@ -441,9 +444,9 @@ namespace KnaufinsulationWalls.Steps
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private XControl.RoundEdit roundEdit4;
-        private XControl.RoundEdit roundEdit3;
-        private XControl.RoundEdit roundEdit2;
+        private XControl.RoundEdit tbN;
+        private XControl.RoundEdit tbTi;
+        private XControl.RoundEdit tbTk;
         private System.Windows.Forms.Label lbl_N1;
         private XCotrols.RoundPanel roundPanel1;
         private XCotrols.CustomComboBox customComboBox1;

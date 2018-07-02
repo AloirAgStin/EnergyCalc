@@ -35,7 +35,7 @@ namespace KnaufinsulationWalls.Steps
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblUserData = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -115,28 +115,30 @@ namespace KnaufinsulationWalls.Steps
             // 
             // panel2
             // 
+            this.panel2.AutoSize = true;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.lblUserData);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(260, 0);
+            this.panel2.MinimumSize = new System.Drawing.Size(0, 65);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(727, 88);
+            this.panel2.Size = new System.Drawing.Size(727, 65);
             this.panel2.TabIndex = 10;
             // 
-            // label5
+            // lblUserData
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblUserData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("Lato", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(145)))), ((int)(((byte)(149)))));
-            this.label5.Location = new System.Drawing.Point(13, 38);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(702, 42);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Rw=55дБ, EI=60; Толщина перегродки Tп=150мм\r\nRw=55дБ, EI=60; Толщина перегродки T" +
-    "п=150мм";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblUserData.AutoSize = true;
+            this.lblUserData.Font = new System.Drawing.Font("Lato", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblUserData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(145)))), ((int)(((byte)(149)))));
+            this.lblUserData.Location = new System.Drawing.Point(13, 38);
+            this.lblUserData.Name = "lblUserData";
+            this.lblUserData.Size = new System.Drawing.Size(421, 22);
+            this.lblUserData.TabIndex = 4;
+            this.lblUserData.Text = "Rw=55дБ, EI=60; Толщина перегродки Tп=150мм";
+            this.lblUserData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
@@ -328,7 +330,7 @@ namespace KnaufinsulationWalls.Steps
         private XControl.RoundButton btnPrint;
         private XControl.SelectableLabel lblBack;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblUserData;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;

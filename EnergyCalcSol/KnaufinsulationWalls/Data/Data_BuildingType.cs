@@ -14,8 +14,8 @@ namespace KnaufinsulationWalls.Data
     {
         public sBuildingType()
         {
-
         }
+
         public String Name { get; set; }
         public int index { get; set; }
 

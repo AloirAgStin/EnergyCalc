@@ -22,6 +22,7 @@ namespace XControl
             textbox.Text = _watermarkText;
             textbox.ForeColor = Color.Gray;
 
+            MaxTextLenght = 5;
             IsDigitOnly = false;
 
             textbox.GotFocus += (source, e) =>
@@ -66,6 +67,17 @@ namespace XControl
 
         public bool IsDigitOnly {get;set;}
 
+        public int MaxTextLenght {
+            get
+            {
+                return textbox.MaxLength;
+            }
+            set
+            {
+                textbox.MaxLength = value;
+            }
+        }
+
         protected override void WndProc(ref System.Windows.Forms.Message m)
         {
             const int WM_PASTE = 0x0302;
@@ -95,7 +107,7 @@ namespace XControl
         {
             if (_watermarkActive)
             {
-                textbox.Font = new Font("Lato", 10);
+                textbox.Font = new Font("Lato", 10, FontStyle.Bold);
                 textbox.ForeColor = Color.Black;
 
                 _watermarkActive = false;

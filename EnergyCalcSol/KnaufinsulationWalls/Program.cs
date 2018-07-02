@@ -17,7 +17,10 @@ namespace KnaufinsulationWalls
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-      
+
+            Helper.WriteLog("---------------------------------------------");
+            Helper.WriteLog("Запуск программы " + Application.StartupPath);
+
             try
             {
                 if (!Data_BuildingType.InitData())
@@ -52,9 +55,26 @@ namespace KnaufinsulationWalls
                 return;
             }
 
+            try
+            {
+                if(!Data_FillComboBox.InitDataForFill())
+                throw new Exception("Ошибка инициализации данных для элементов управления");
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+                message += "\r\n\r\nПриложение будет закрыто!";
 
-            //Application.Run(new Steps.StepFrame());
-            Application.Run(new MainForm());
+                MessageBox.Show(message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Helper.WriteLog(message);
+
+                Application.Exit();
+                return;
+            }
+
+
+            Application.Run(new Steps.StepFrame());
+            //Application.Run(new MainForm());
         }
     }
 }

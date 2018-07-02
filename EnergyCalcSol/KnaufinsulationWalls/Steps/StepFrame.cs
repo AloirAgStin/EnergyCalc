@@ -24,7 +24,7 @@ namespace KnaufinsulationWalls.Steps
 
             CalcStruct = new CalcItem();
 
-            IsEnableCheck = false;
+            IsEnableCheck = true;
         }
 
         public bool IsEnableCheck;

@@ -100,7 +100,7 @@
 		<Name>C381.2(Aquapanel)</Name>	
 		<Description>Перегородка на одинарном металлическом каркасе, однослойная обшивка листами Aquapanel</Description>
 		<Types>
-			<Type Tp="125" Tu="50"  Rw="48" EI="120/160" N="1" Img="C381_2_Aquapanel.png">
+			<Type Tp="125" Tu="50" Rw="48" EI="120/160" N="1" Img="C381_2_Aquapanel.png">
 				<Files>
 					<File>F5.zip</File>
 					<File>F1(5).zip</File>
