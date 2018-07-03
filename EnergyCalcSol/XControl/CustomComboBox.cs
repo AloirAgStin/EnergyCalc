@@ -89,7 +89,7 @@ namespace XCotrols
             var p2 = new Point(buttonBounds.Left + buttonBounds.Width / 2, buttonBounds.Top + hItem + hAddP);
             var p3 = new Point(buttonBounds.Right, buttonBounds.Top + hAddP);
 
-            int wPen = 2;
+            float wPen = 1.5f;
 
             using (var pen = new Pen(Color.LightSlateGray, wPen))
             {

@@ -17,17 +17,24 @@ namespace KnaufinsulationWalls.Data
             MakeChoiseElement.Name = "Выберите тип";
             MakeChoiseElement._intValue = 0;
 
-            //заполняем EI
             cbItem_EI.Clear();
+            cbItem_TP.Clear();
+            cbItem_Ti.Clear();
+            cbItem_N.Clear();
+
             foreach (var item in Data_WallsType.data)
             {
                 foreach (var tp in item.types)
                 {
-                    var newItm = new CBItem();
-                    newItm.Name = tp.EI.ToString();
-                    newItm._intValue = tp.EI;
-
-                    cbItem_EI.Add(newItm);
+                    var newItmEI = new CBItem() { Name = tp.EI.ToString(), _intValue = tp.EI };
+                    var newItmTp = new CBItem() { Name = tp.Tp.ToString(), _intValue = tp.Tp};
+                    var newItmTi = new CBItem() { Name = tp.Ti.ToString(), _intValue = tp.Ti};
+                    var newItmN = new CBItem() { Name = tp.N.ToString(), _intValue = tp.N };
+                    
+                    cbItem_EI.Add(newItmEI);
+                    cbItem_TP.Add(newItmTp);
+                    cbItem_Ti.Add(newItmTi);
+                    cbItem_N.Add(newItmN);
                 }
             }
 
@@ -36,36 +43,35 @@ namespace KnaufinsulationWalls.Data
                 var uniqList = cbItem_EI.Distinct<CBItem>(uniCompare);
                 cbItem_EI = uniqList.ToList<CBItem>();
                 cbItem_EI.Sort(ComprasionByIntValue);
+                cbItem_EI.Insert(0, MakeChoiseElement);
             }
-            cbItem_EI.Insert(0, MakeChoiseElement);
-
-            //заполняем Tp
-
-            MakeChoiseElement.Name = "Выберите толщину";
-
-            cbItem_TP.Clear();
-            foreach (var item in Data_WallsType.data)
-            {
-                foreach (var tp in item.types)
-                {
-                    var newItm = new CBItem();
-                    newItm.Name = tp.Tp.ToString();
-                    newItm._intValue = tp.Tp;
-
-                    cbItem_TP.Add(newItm);
-                }
-            }
-
             {
                 var uniCompare = new CBItem_EqualityComparerBy_IntValue();
                 var uniqList = cbItem_TP.Distinct<CBItem>(uniCompare);
                 cbItem_TP = uniqList.ToList<CBItem>();
                 cbItem_TP.Sort(ComprasionByIntValue);
 
+                MakeChoiseElement.Name = "Выберите толщину";
+                cbItem_TP.Insert(0, MakeChoiseElement);
             }
-            cbItem_TP.Insert(0, MakeChoiseElement);
+            {
+                var uniCompare = new CBItem_EqualityComparerBy_IntValue();
+                var uniqList = cbItem_Ti.Distinct<CBItem>(uniCompare);
+                cbItem_Ti = uniqList.ToList<CBItem>();
+                cbItem_Ti.Sort(ComprasionByIntValue);
 
-
+                cbItem_Ti.Insert(0, MakeChoiseElement);
+            }
+            {
+                var uniCompare = new CBItem_EqualityComparerBy_IntValue();
+                var uniqList = cbItem_N.Distinct<CBItem>(uniCompare);
+                cbItem_N = uniqList.ToList<CBItem>();
+                cbItem_N.Sort(ComprasionByIntValue);
+                
+                MakeChoiseElement.Name = "Выберите количество";
+                cbItem_N.Insert(0, MakeChoiseElement);
+            }
+           
             return true;
         }
 
@@ -74,6 +80,10 @@ namespace KnaufinsulationWalls.Data
         public static List<CBItem> cbItem_EI = new List<CBItem>();
 
         public static List<CBItem> cbItem_TP = new List<CBItem>();
+
+        public static List<CBItem> cbItem_Ti = new List<CBItem>();
+
+        public static List<CBItem> cbItem_N = new List<CBItem>();
 
 
         public static int ComprasionByIntValue(CBItem x, CBItem y)
@@ -107,7 +117,6 @@ namespace KnaufinsulationWalls.Data
 
         public struct CBItem
         {       
-
             public String Name { get; set; }
             public int index { get; set; }
             public int _intValue { get; set; }

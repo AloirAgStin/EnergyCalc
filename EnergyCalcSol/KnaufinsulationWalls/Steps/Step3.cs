@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using KnaufinsulationWalls.Data;
 using PdfSharp;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
+using static KnaufinsulationWalls.Data.Data_WallsType;
 
 namespace KnaufinsulationWalls.Steps
 {
@@ -23,26 +25,60 @@ namespace KnaufinsulationWalls.Steps
         }
         
         private String HeaderUserData;
+        
 
         private void Step3_Load(object sender, EventArgs e)
+        {
+            FiltrData();
+            /*
+            this.richTextBox1.Text = "For an annual desired salary of :";
+
+
+
+            this.richTextBox1.SelectionStart = this.richTextBox1.Text.Length;
+
+            this.richTextBox1.SelectionFont = new Font(this.richTextBox1.Font, FontStyle.Bold);
+
+            this.richTextBox1.AppendText("ADD TEXT");
+
+
+
+            this.richTextBox1.SelectionStart = this.richTextBox1.Text.Length;
+
+            this.richTextBox1.SelectionFont = new Font(this.richTextBox1.Font, FontStyle.Italic);
+
+            this.richTextBox1.AppendText(
+
+                "\r\n\r\n*these figures are assuming a " +
+
+                "12% return on your investment minus 4% inflation");
+                */
+        }
+        private List<sLineWallsStruct> m_variants = new List<sLineWallsStruct>(); 
+        private void FiltrData()
         {
             try
             {
                 exListBox1.Items.Clear();
-                
-                var vMainFrom = Parent.Parent as StepFrame;      
+
+                var vMainFrom = Parent.Parent as StepFrame;
                 var userData = vMainFrom.CalcStruct;
+
+                //todo del
+                userData.Tp = 1125;
+                userData.EI = 30;
+                userData.Rw = 45;
+                //====================
 
                 HeaderUserData = MakeUserChoiseText(userData);
                 lblUserData.Text = HeaderUserData;
-                
+
                 var filtredData = Data_WallsType.GetFilerData(userData);
+                m_variants = Data_WallsType.GetLineStruct(filtredData);
                 
-
-
 
                 int num = 1;
-                foreach(var item in filtredData)
+                foreach (var item in m_variants)
                 {
                     String text = "ВАРИАНТ " + num.ToString();
                     num++;
@@ -51,7 +87,7 @@ namespace KnaufinsulationWalls.Steps
                     exListBox1.Items.Add(text);
                 }
 
-                if(exListBox1.Items.Count > 0)
+                if (exListBox1.Items.Count > 0)
                     exListBox1.SelectedIndex = 0;
             }
             catch (Exception ex)
@@ -61,14 +97,14 @@ namespace KnaufinsulationWalls.Steps
                 return;
             }
         }
-
         private String MakeUserChoiseText(CalcItem itm)
         {
             StringBuilder Text = new StringBuilder();
-            Text.AppendFormat("Rw={0} дБ, EI={2}; Толщина перегродки Tп={2} мм", itm.Rw, itm.EI, itm.Tp);            
+            Text.AppendFormat("Rw={0} дБ, EI={1}; Толщина перегродки Tп={2} мм", itm.Rw, itm.EI, itm.Tp);            
             return Text.ToString();
         }
 
+        
 
         protected override CreateParams CreateParams
         {
@@ -102,7 +138,6 @@ namespace KnaufinsulationWalls.Steps
                 {
                     var MainFrom = Parent.Parent as StepFrame;
                     MainFrom.BackStep();
-
                 }
             }
         }
@@ -110,6 +145,7 @@ namespace KnaufinsulationWalls.Steps
                 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            return;
             PdfDocument pdf = new PdfDocument();
             pdf.Info.Title = "My First PDF";
             PdfPage pdfPage = pdf.AddPage();
@@ -210,6 +246,69 @@ namespace KnaufinsulationWalls.Steps
             pdf.Save(fn);
             Process.Start(fn);
         }
-        
+
+        private sLineWallsStruct GetCurrItem()
+        {
+            int ind = exListBox1.SelectedIndex;
+            if (ind < 0) return null;
+
+            return m_variants[ind];
+        }
+
+        private void onBtnFileDownLoadClick(object sender, EventArgs e)
+        {
+            var obj = sender as Button;
+
+            int num = 0;
+            Int32.TryParse((string)obj.Tag, out num);
+
+            var item = GetCurrItem();
+            if (item == null) return;
+
+            if (num >= item.WallTypes._files.Count)
+                return;
+
+            var file = item.WallTypes._files.ElementAt(num);
+
+            if (file.type == sFile._type.FileDescription)
+                MessageBox.Show(file.ExtInfo, "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+            {
+                saveFileDialog1.FileName = obj.Text + " (" + item.Name + ")";
+
+                var ret = saveFileDialog1.ShowDialog();
+                if (ret != DialogResult.OK)
+                    return;
+
+                try
+                {
+                    var pathToDoc = FileManager.GetPathToDocs(file.FileName);
+                    File.Copy(pathToDoc, saveFileDialog1.FileName);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    Helper.WriteLog("Ошибка при сохранении файла " + file.FileName + " " + ex.Message);
+                }
+
+            }
+        }
+
+        private void exListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var item = GetCurrItem();
+
+                var img = Image.FromFile(FileManager.GetPathToRes(item.WallTypes.ImageName));
+                pictureBox1.Image = img;
+            }
+            catch(Exception ex)
+            {
+                Helper.WriteLog(ex.Message);
+
+                //todo error image
+            }            
+        }
     }
 }

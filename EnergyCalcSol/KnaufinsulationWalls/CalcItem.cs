@@ -16,7 +16,6 @@ namespace KnaufinsulationWalls
             EI = 0;
 
             Ti = 0;
-            Tk = 0;
             N  = 0;
         }
 
@@ -25,7 +24,6 @@ namespace KnaufinsulationWalls
         public int EI;
 
         public int Ti;
-        public int Tk;
         public int N;
     }
     

@@ -36,9 +36,6 @@ namespace KnaufinsulationWalls.Steps
         private void Step2_Load(object sender, EventArgs e)
         {
             btnNext.offsettextX = -5;
-            tbTk.Focus();
-            tbTi.Focus();
-            tbN.Focus();                      
 
             customComboBox1.DataSource = Data.Data_FillComboBox.cbItem_EI;
             customComboBox1.DisplayMember = "Name";
@@ -48,6 +45,13 @@ namespace KnaufinsulationWalls.Steps
             customComboBox2.DisplayMember = "Name";
             customComboBox2.ValueMember = "index";
 
+            cbIsolation.DataSource = Data.Data_FillComboBox.cbItem_Ti;
+            cbIsolation.DisplayMember = "Name";
+            cbIsolation.ValueMember = "index";
+
+            cbCountN.DataSource = Data.Data_FillComboBox.cbItem_N;
+            cbCountN.DisplayMember = "Name";
+            cbCountN.ValueMember = "index";
 
             customComboBox1.Focus();
         }
@@ -86,9 +90,20 @@ namespace KnaufinsulationWalls.Steps
                     elem = (CBItem)customComboBox2.SelectedItem;
                     vMainFrom.CalcStruct.Tp = elem._intValue;
                     
-                    Int32.TryParse(tbN.textbox.Text,  out vMainFrom.CalcStruct.Tk);
-                    Int32.TryParse(tbTi.textbox.Text, out vMainFrom.CalcStruct.Ti);
-                    Int32.TryParse(tbTk.textbox.Text, out vMainFrom.CalcStruct.N);                    
+                    if(cbIsolation.SelectedIndex > 0)
+                    {
+                        var itm = (CBItem)cbIsolation.SelectedItem;
+                        vMainFrom.CalcStruct.Ti = itm._intValue;
+
+                    }
+
+                    if (cbCountN.SelectedIndex > 0)
+                    {
+
+                        var itm = (CBItem)cbCountN.SelectedItem;
+                        vMainFrom.CalcStruct.N = itm._intValue;
+                    }
+                    
                 }
                 
                 vMainFrom.NextStep();

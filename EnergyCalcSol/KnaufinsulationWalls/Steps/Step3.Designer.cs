@@ -38,9 +38,6 @@ namespace KnaufinsulationWalls.Steps
             this.lblUserData = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.btnLayOut = new System.Windows.Forms.FlowLayoutPanel();
             this.btnPDF = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -53,6 +50,8 @@ namespace KnaufinsulationWalls.Steps
             this.lblBack = new XControl.SelectableLabel();
             this.btnPrint = new XControl.RoundButton();
             this.lblClose = new XControl.SelectableLabel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,6 +93,7 @@ namespace KnaufinsulationWalls.Steps
             this.exListBox1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.exListBox1.Size = new System.Drawing.Size(192, 375);
             this.exListBox1.TabIndex = 3;
+            this.exListBox1.SelectedIndexChanged += new System.EventHandler(this.exListBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -160,40 +160,9 @@ namespace KnaufinsulationWalls.Steps
             this.pictureBox1.Location = new System.Drawing.Point(281, 98);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(268, 262);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Lato", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(559, 98);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(307, 26);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "ГКЛ Кнауф Acustic Slab Roll";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Lato Medium", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(559, 136);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(405, 85);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "В соответствии с СП 51.13330.2011 «Защита от шума»,\r\nтребуемый индекс изоляции шу" +
-    "ма для констраукции\r\nсоставляет 55 дБ\r\nДля удовлетворения требований рекомендует" +
-    "ся следующая\r\nконструкцияя перегородки:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Lato Medium", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(559, 239);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(381, 68);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "- Толщина перегородки: 150\r\n- Толщина изоляции 50\r\n- Кол-во листов с одной сторон" +
-    "ы 2\r\n- Материал изоляции: минеральная вата Acustic Slab Roll";
             // 
             // btnLayOut
             // 
@@ -225,9 +194,11 @@ namespace KnaufinsulationWalls.Steps
             this.btnPDF.Name = "btnPDF";
             this.btnPDF.Size = new System.Drawing.Size(110, 74);
             this.btnPDF.TabIndex = 17;
+            this.btnPDF.Tag = "0";
             this.btnPDF.Text = "ЧЕРТЕЖИ PDF";
             this.btnPDF.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnPDF.UseVisualStyleBackColor = false;
+            this.btnPDF.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
             // 
             // button1
             // 
@@ -241,9 +212,11 @@ namespace KnaufinsulationWalls.Steps
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 74);
             this.button1.TabIndex = 18;
+            this.button1.Tag = "1";
             this.button1.Text = "ЧЕРТЕЖИ DWG";
             this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
             // 
             // button2
             // 
@@ -257,9 +230,11 @@ namespace KnaufinsulationWalls.Steps
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 74);
             this.button2.TabIndex = 19;
+            this.button2.Tag = "2";
             this.button2.Text = "ПРОТОКОЛ НА Rw";
             this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
             // 
             // button3
             // 
@@ -273,9 +248,11 @@ namespace KnaufinsulationWalls.Steps
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(110, 74);
             this.button3.TabIndex = 20;
+            this.button3.Tag = "3";
             this.button3.Text = "ПРОТОКОЛ НА EI ";
             this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
             // 
             // button4
             // 
@@ -289,9 +266,11 @@ namespace KnaufinsulationWalls.Steps
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(110, 74);
             this.button4.TabIndex = 21;
+            this.button4.Tag = "4";
             this.button4.Text = "СЕРТИФИКАТ НА НГ";
             this.button4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
             // 
             // button5
             // 
@@ -305,9 +284,11 @@ namespace KnaufinsulationWalls.Steps
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(110, 74);
             this.button5.TabIndex = 22;
+            this.button5.Tag = "5";
             this.button5.Text = "ТЕХСВИДЕ-\r\nТЕЛЬСТВО";
             this.button5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
             // 
             // label9
             // 
@@ -376,6 +357,25 @@ namespace KnaufinsulationWalls.Steps
             this.lblClose.Text = "Закрыть";
             this.lblClose.Click += new System.EventHandler(this.lblClose_Click);
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox1.BackColor = System.Drawing.Color.White;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Location = new System.Drawing.Point(565, 98);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(409, 262);
+            this.richTextBox1.TabIndex = 23;
+            this.richTextBox1.Text = "sdaffffffffffffffqwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwffffffffff" +
+    "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "zip";
+            this.saveFileDialog1.Filter = "Файлы архива zip|*.zip";
+            // 
             // Step3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,13 +383,11 @@ namespace KnaufinsulationWalls.Steps
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(987, 510);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.lblClose);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnLayOut);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblBack);
@@ -422,9 +420,6 @@ namespace KnaufinsulationWalls.Steps
         private System.Windows.Forms.Label lblUserData;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.FlowLayoutPanel btnLayOut;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnPDF;
@@ -436,5 +431,7 @@ namespace KnaufinsulationWalls.Steps
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

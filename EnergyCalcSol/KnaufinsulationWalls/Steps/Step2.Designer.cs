@@ -36,12 +36,8 @@ namespace KnaufinsulationWalls.Steps
             this.customComboBox2 = new XCotrols.CustomComboBox();
             this.roundPanel1 = new XCotrols.RoundPanel();
             this.customComboBox1 = new XCotrols.CustomComboBox();
-            this.tbN = new XControl.RoundEdit();
-            this.tbTi = new XControl.RoundEdit();
-            this.tbTk = new XControl.RoundEdit();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.vButton1 = new XCotrols.VButton();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,10 +52,16 @@ namespace KnaufinsulationWalls.Steps
             this.lblBack = new XControl.SelectableLabel();
             this.btnNext = new XControl.RounButtonWithArroy();
             this.dbPictureBox1 = new XControl.DBPictureBox();
+            this.cbIsolation = new XCotrols.CustomComboBox();
+            this.roundPanel3 = new XCotrols.RoundPanel();
+            this.roundPanel4 = new XCotrols.RoundPanel();
+            this.cbCountN = new XCotrols.CustomComboBox();
             this.panel1.SuspendLayout();
             this.roundPanel2.SuspendLayout();
             this.roundPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbPictureBox1)).BeginInit();
+            this.roundPanel3.SuspendLayout();
+            this.roundPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,14 +69,12 @@ namespace KnaufinsulationWalls.Steps
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.roundPanel4);
+            this.panel1.Controls.Add(this.roundPanel3);
             this.panel1.Controls.Add(this.roundPanel2);
             this.panel1.Controls.Add(this.roundPanel1);
-            this.panel1.Controls.Add(this.tbN);
-            this.panel1.Controls.Add(this.tbTi);
-            this.panel1.Controls.Add(this.tbTk);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.vButton1);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
@@ -144,61 +144,10 @@ namespace KnaufinsulationWalls.Steps
             this.customComboBox1.Size = new System.Drawing.Size(200, 24);
             this.customComboBox1.TabIndex = 1;
             // 
-            // tbN
-            // 
-            this.tbN.BackColorInBorder = System.Drawing.Color.White;
-            this.tbN.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
-            this.tbN.BorderWidth = 2;
-            this.tbN.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbN.IsDigitOnly = false;
-            this.tbN.Location = new System.Drawing.Point(18, 413);
-            this.tbN.Margin = new System.Windows.Forms.Padding(4);
-            this.tbN.MaxTextLenght = 2;
-            this.tbN.Name = "tbN";
-            this.tbN.Radius = 20;
-            this.tbN.Size = new System.Drawing.Size(225, 35);
-            this.tbN.TabIndex = 7;
-            this.tbN.WatermarkActive = true;
-            this.tbN.WatermarkText = "Выберите количество, шт";
-            // 
-            // tbTi
-            // 
-            this.tbTi.BackColorInBorder = System.Drawing.Color.White;
-            this.tbTi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
-            this.tbTi.BorderWidth = 2;
-            this.tbTi.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbTi.IsDigitOnly = false;
-            this.tbTi.Location = new System.Drawing.Point(18, 353);
-            this.tbTi.Margin = new System.Windows.Forms.Padding(4);
-            this.tbTi.MaxTextLenght = 5;
-            this.tbTi.Name = "tbTi";
-            this.tbTi.Radius = 20;
-            this.tbTi.Size = new System.Drawing.Size(225, 35);
-            this.tbTi.TabIndex = 6;
-            this.tbTi.WatermarkActive = true;
-            this.tbTi.WatermarkText = "Выберите толщину";
-            // 
-            // tbTk
-            // 
-            this.tbTk.BackColorInBorder = System.Drawing.Color.White;
-            this.tbTk.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
-            this.tbTk.BorderWidth = 2;
-            this.tbTk.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbTk.IsDigitOnly = false;
-            this.tbTk.Location = new System.Drawing.Point(18, 297);
-            this.tbTk.Margin = new System.Windows.Forms.Padding(4);
-            this.tbTk.MaxTextLenght = 5;
-            this.tbTk.Name = "tbTk";
-            this.tbTk.Radius = 20;
-            this.tbTk.Size = new System.Drawing.Size(225, 35);
-            this.tbTk.TabIndex = 5;
-            this.tbTk.WatermarkActive = true;
-            this.tbTk.WatermarkText = "Выберите толщину";
-            // 
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(19, 394);
+            this.label9.Location = new System.Drawing.Point(15, 339);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(235, 19);
             this.label9.TabIndex = 35;
@@ -208,21 +157,11 @@ namespace KnaufinsulationWalls.Steps
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(19, 335);
+            this.label8.Location = new System.Drawing.Point(16, 279);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(151, 17);
             this.label8.TabIndex = 33;
             this.label8.Text = "Толщина изоляции, Ти";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(19, 279);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 17);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "Толщина каркаса, Тк";
             // 
             // vButton1
             // 
@@ -395,6 +334,62 @@ namespace KnaufinsulationWalls.Steps
             this.dbPictureBox1.TabIndex = 9;
             this.dbPictureBox1.TabStop = false;
             // 
+            // cbIsolation
+            // 
+            this.cbIsolation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbIsolation.ColorActiveItem = System.Drawing.Color.CornflowerBlue;
+            this.cbIsolation.ColorDeactiveItem = System.Drawing.Color.White;
+            this.cbIsolation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbIsolation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIsolation.DropDownWidth = 198;
+            this.cbIsolation.Font = new System.Drawing.Font("Lato", 10F);
+            this.cbIsolation.ForeColor = System.Drawing.Color.Black;
+            this.cbIsolation.FormattingEnabled = true;
+            this.cbIsolation.Location = new System.Drawing.Point(14, 6);
+            this.cbIsolation.Name = "cbIsolation";
+            this.cbIsolation.Size = new System.Drawing.Size(198, 24);
+            this.cbIsolation.TabIndex = 3;
+            // 
+            // roundPanel3
+            // 
+            this.roundPanel3.BackColorInBorder = System.Drawing.Color.White;
+            this.roundPanel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
+            this.roundPanel3.BorderWidth = 2;
+            this.roundPanel3.Controls.Add(this.cbIsolation);
+            this.roundPanel3.Location = new System.Drawing.Point(18, 298);
+            this.roundPanel3.Name = "roundPanel3";
+            this.roundPanel3.Radius = 20;
+            this.roundPanel3.Size = new System.Drawing.Size(225, 35);
+            this.roundPanel3.TabIndex = 5;
+            // 
+            // roundPanel4
+            // 
+            this.roundPanel4.BackColorInBorder = System.Drawing.Color.White;
+            this.roundPanel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
+            this.roundPanel4.BorderWidth = 2;
+            this.roundPanel4.Controls.Add(this.cbCountN);
+            this.roundPanel4.Location = new System.Drawing.Point(19, 359);
+            this.roundPanel4.Name = "roundPanel4";
+            this.roundPanel4.Radius = 20;
+            this.roundPanel4.Size = new System.Drawing.Size(225, 35);
+            this.roundPanel4.TabIndex = 6;
+            // 
+            // cbCountN
+            // 
+            this.cbCountN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbCountN.ColorActiveItem = System.Drawing.Color.CornflowerBlue;
+            this.cbCountN.ColorDeactiveItem = System.Drawing.Color.White;
+            this.cbCountN.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbCountN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCountN.DropDownWidth = 198;
+            this.cbCountN.Font = new System.Drawing.Font("Lato", 10F);
+            this.cbCountN.ForeColor = System.Drawing.Color.Black;
+            this.cbCountN.FormattingEnabled = true;
+            this.cbCountN.Location = new System.Drawing.Point(14, 6);
+            this.cbCountN.Name = "cbCountN";
+            this.cbCountN.Size = new System.Drawing.Size(198, 24);
+            this.cbCountN.TabIndex = 3;
+            // 
             // Step2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,6 +417,8 @@ namespace KnaufinsulationWalls.Steps
             this.roundPanel2.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dbPictureBox1)).EndInit();
+            this.roundPanel3.ResumeLayout(false);
+            this.roundPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,14 +436,10 @@ namespace KnaufinsulationWalls.Steps
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private XCotrols.VButton vButton1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private XControl.RoundEdit tbN;
-        private XControl.RoundEdit tbTi;
-        private XControl.RoundEdit tbTk;
         private System.Windows.Forms.Label lbl_N1;
         private XCotrols.RoundPanel roundPanel1;
         private XCotrols.CustomComboBox customComboBox1;
@@ -454,5 +447,9 @@ namespace KnaufinsulationWalls.Steps
         private XCotrols.CustomComboBox customComboBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label12;
+        private XCotrols.RoundPanel roundPanel4;
+        private XCotrols.CustomComboBox cbCountN;
+        private XCotrols.RoundPanel roundPanel3;
+        private XCotrols.CustomComboBox cbIsolation;
     }
 }

@@ -41,9 +41,8 @@ namespace KnaufinsulationWalls.Data
             public String ImageName;
 
             public List<sFile> _files = new List<sFile>(6);
+
         }
-
-
 
         public class sFile
         {
@@ -78,11 +77,8 @@ namespace KnaufinsulationWalls.Data
                 item.types.RemoveAll(x => x.Tp  != userFilter.Tp);
                 item.types.RemoveAll(x => x.EI < userFilter.EI);
                 item.types.RemoveAll(x => x.Rw < userFilter.Rw);
-
-//                if (userFilter.Tk != 0)
-  //                 item.types.RemoveAll(x => x.Tk < userFilter.Tk);
-
-               if (userFilter.Ti != 0)
+                
+                if (userFilter.Ti != 0)
                     item.types.RemoveAll(x => x.Ti != userFilter.Ti);
 
                 if (userFilter.N != 0)
@@ -95,6 +91,31 @@ namespace KnaufinsulationWalls.Data
             return itemCalc;
         }
 
+        public static List<sLineWallsStruct> GetLineStruct(List<sWalls> data)
+        {
+            List<sLineWallsStruct> newData = new List<sLineWallsStruct>();
+
+            data.ForEach(delegate(sWalls item)
+            {
+                item.types.ForEach(delegate (sWallsTypes fl)
+                {
+                    sLineWallsStruct newItm = new sLineWallsStruct() { Name = item.Name, Description = item.Description };
+                    newItm.WallTypes = fl;
+                    newData.Add(newItm);
+
+                });                
+            });
+           
+
+            return newData;
+        }
+    
+        public class sLineWallsStruct
+        {
+            public String Name;
+            public String Description;
+            public sWallsTypes WallTypes;
+        }
 
         public static bool InitData()
         {
@@ -169,8 +190,8 @@ namespace KnaufinsulationWalls.Data
                     }
                     else
                     {
-                        if (data.Count > 0 && data[0].types.Count > 0)
-                            wl._files = data[0].types[0]._files;
+                        if (tp.types.Count > 0)
+                            wl._files = tp.types[0]._files;
                     }
                     
                     tp.types.Add(wl);
