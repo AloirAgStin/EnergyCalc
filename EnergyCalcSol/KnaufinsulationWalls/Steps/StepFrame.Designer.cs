@@ -96,9 +96,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "StepFrame";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Подбор перегородок";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StepFrame_FormClosing);
             this.Load += new System.EventHandler(this.StepFrame_Load);
+            this.SizeChanged += new System.EventHandler(this.StepFrame_SizeChanged);
+            this.Move += new System.EventHandler(this.StepFrame_Move);
             this.Resize += new System.EventHandler(this.StepFrame_Resize);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

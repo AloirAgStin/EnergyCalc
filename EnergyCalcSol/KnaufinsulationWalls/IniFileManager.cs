@@ -38,9 +38,7 @@ namespace KnaufinsulationWalls
             }
         }
 
-
-
-
+            
         public static bool GetBoolKey(string key, bool defaultValue = false)
         {
             var str = GetStringKey(key);

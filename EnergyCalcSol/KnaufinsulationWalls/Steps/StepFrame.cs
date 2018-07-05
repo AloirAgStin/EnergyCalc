@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
+using KnaufinsulationWalls.Properties;
 
 namespace KnaufinsulationWalls.Steps
 {
@@ -42,8 +44,31 @@ namespace KnaufinsulationWalls.Steps
             panelMain.Controls.Clear();
             panelMain.Controls.Add(frm[top]);
             frm[top].Show();
+
+
+            if(Settings.Default.SZWindows.Height != 0 && Settings.Default.SZWindows.Width != 0)
+            {
+                Size = Settings.Default.SZWindows;                
+            }
+            else
+            {
+                Settings.Default.SZWindows = Size;
+                Settings.Default.Save();
+            }
+
+            if (Settings.Default.STPoint != new System.Drawing.Point(0,0))
+            {
+                Location = Settings.Default.STPoint;
+            }
+            else
+            {
+                Location = new Point((Screen.PrimaryScreen.Bounds.Size.Width / 2) - (Size.Width / 2), (Screen.PrimaryScreen.Bounds.Size.Height / 2) - (Size.Height / 2));
+                Settings.Default.STPoint = Location;
+                Settings.Default.Save();
+            }
+
         }
-    
+
         public void BackStep()
         {
             
@@ -103,6 +128,22 @@ namespace KnaufinsulationWalls.Steps
         private void StepFrame_Resize(object sender, EventArgs e)
         {
             frm[top].Invalidate(true);
+            Settings.Default.SZWindows = Size;
+        }
+
+        private void StepFrame_Move(object sender, EventArgs e)
+        {
+            Settings.Default.STPoint = Location;
+        }
+
+        private void StepFrame_SizeChanged(object sender, EventArgs e)
+        {
+            Settings.Default.Save();
+        }
+
+        private void StepFrame_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Settings.Default.Save();
         }
     }
 }

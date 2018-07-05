@@ -22,5 +22,29 @@ namespace KnaufinsulationWalls.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point STPoint {
+            get {
+                return ((global::System.Drawing.Point)(this["STPoint"]));
+            }
+            set {
+                this["STPoint"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Size SZWindows {
+            get {
+                return ((global::System.Drawing.Size)(this["SZWindows"]));
+            }
+            set {
+                this["SZWindows"] = value;
+            }
+        }
     }
 }
