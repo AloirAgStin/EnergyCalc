@@ -87,11 +87,11 @@ namespace KnaufinsulationWalls.Steps
             "ВАРИАНТ 1",
             "ВАРИАНТ 2",
             "ВАРИАНТ 3"});
-            this.exListBox1.Location = new System.Drawing.Point(14, 97);
+            this.exListBox1.Location = new System.Drawing.Point(14, 82);
             this.exListBox1.Name = "exListBox1";
             this.exListBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.exListBox1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.exListBox1.Size = new System.Drawing.Size(192, 375);
+            this.exListBox1.Size = new System.Drawing.Size(192, 400);
             this.exListBox1.TabIndex = 3;
             this.exListBox1.SelectedIndexChanged += new System.EventHandler(this.exListBox1_SelectedIndexChanged);
             // 
@@ -157,17 +157,16 @@ namespace KnaufinsulationWalls.Steps
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(281, 98);
+            this.pictureBox1.Location = new System.Drawing.Point(281, 83);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(268, 262);
+            this.pictureBox1.Size = new System.Drawing.Size(268, 277);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
             // btnLayOut
             // 
-            this.btnLayOut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnLayOut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLayOut.AutoScroll = true;
             this.btnLayOut.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -359,17 +358,19 @@ namespace KnaufinsulationWalls.Steps
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.BackColor = System.Drawing.Color.White;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(565, 98);
+            this.richTextBox1.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBox1.Location = new System.Drawing.Point(565, 83);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(409, 262);
+            this.richTextBox1.Size = new System.Drawing.Size(409, 277);
             this.richTextBox1.TabIndex = 23;
-            this.richTextBox1.Text = "sdaffffffffffffffqwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwffffffffff" +
-    "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff";
+            this.richTextBox1.Text = "С111(ГСП) Перегородка на одинарном металлическом каркасе, однослойная обшивка КНА" +
+    "УФ-суперлистами";
             // 
             // saveFileDialog1
             // 

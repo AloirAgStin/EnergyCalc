@@ -21,6 +21,7 @@ namespace XControl
 
             DrawItem += ExListBox_DrawItem;
         }
+        
 
         private void ExListBox_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -38,7 +39,6 @@ namespace XControl
 
             }
             e.DrawFocusRectangle();
-
         }
     }
 }

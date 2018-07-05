@@ -26,18 +26,21 @@ namespace XControl
         {
             base.OnPaint(e);
 
+            Color cl = SystemColors.Control;
+            if (Parent != null)
+                cl = Parent.BackColor;
+
+            
             if (Focused)
             {
-                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Black, ButtonBorderStyle.Dashed);
+                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Black, ButtonBorderStyle.Dotted);
             }
             else
             {
-                Color cl = SystemColors.Control;
-                if (Parent != null)
-                    cl = Parent.BackColor;
-
-                ControlPaint.DrawBorder(e.Graphics, ClientRectangle, cl, ButtonBorderStyle.Solid);
+                ControlPaint.DrawBorder(e.Graphics, ClientRectangle, cl, ButtonBorderStyle.Dotted);
             }
+
+            
             var rect = ClientRectangle;
             rect.Inflate(-3, -3);
             TextRenderer.DrawText(e.Graphics, Text, Font, ClientRectangle, ForeColor, BackColor);        
@@ -51,12 +54,12 @@ namespace XControl
         }
         protected override void OnEnter(EventArgs e)
         {
-            base.OnEnter(e);
+            //base.OnEnter(e);
             Invalidate();
         }
         protected override void OnLeave(EventArgs e)
         {
-            base.OnLeave(e);
+            //base.OnLeave(e);
             Invalidate();
         }
     }

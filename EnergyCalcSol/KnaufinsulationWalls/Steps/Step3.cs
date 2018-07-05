@@ -19,41 +19,31 @@ namespace KnaufinsulationWalls.Steps
 {
     public partial class Step3 : Form
     {
+        private sLineWallsStruct GetCurrItem()
+        {
+            int ind = exListBox1.SelectedIndex;
+            if (ind < 0) return null;
+
+            return m_variants[ind];
+        }
+
         public Step3()
         {
             InitializeComponent();
-        }
-        
-        private String HeaderUserData;
-        
+            coreFont = richTextBox1.Font;
 
+        }
+
+        private String HeaderUserData;
+
+
+
+        Font coreFont;
         private void Step3_Load(object sender, EventArgs e)
         {
-            FiltrData();
-            /*
-            this.richTextBox1.Text = "For an annual desired salary of :";
-
-
-
-            this.richTextBox1.SelectionStart = this.richTextBox1.Text.Length;
-
-            this.richTextBox1.SelectionFont = new Font(this.richTextBox1.Font, FontStyle.Bold);
-
-            this.richTextBox1.AppendText("ADD TEXT");
-
-
-
-            this.richTextBox1.SelectionStart = this.richTextBox1.Text.Length;
-
-            this.richTextBox1.SelectionFont = new Font(this.richTextBox1.Font, FontStyle.Italic);
-
-            this.richTextBox1.AppendText(
-
-                "\r\n\r\n*these figures are assuming a " +
-
-                "12% return on your investment minus 4% inflation");
-                */
+            FiltrData();            
         }
+
         private List<sLineWallsStruct> m_variants = new List<sLineWallsStruct>(); 
         private void FiltrData()
         {
@@ -65,7 +55,7 @@ namespace KnaufinsulationWalls.Steps
                 var userData = vMainFrom.CalcStruct;
 
                 //todo del
-                userData.Tp = 1125;
+                userData.Tp = 125;
                 userData.EI = 30;
                 userData.Rw = 45;
                 //====================
@@ -103,9 +93,7 @@ namespace KnaufinsulationWalls.Steps
             Text.AppendFormat("Rw={0} дБ, EI={1}; Толщина перегродки Tп={2} мм", itm.Rw, itm.EI, itm.Tp);            
             return Text.ToString();
         }
-
         
-
         protected override CreateParams CreateParams
         {
             get
@@ -247,14 +235,80 @@ namespace KnaufinsulationWalls.Steps
             Process.Start(fn);
         }
 
-        private sLineWallsStruct GetCurrItem()
+        private void RichTextAddNewLine()
         {
-            int ind = exListBox1.SelectedIndex;
-            if (ind < 0) return null;
+            richTextBox1.SelectionCharOffset = -3;
+            richTextBox1.SelectionFont = new Font(new Font(coreFont.FontFamily, 3), FontStyle.Regular);
+            richTextBox1.AppendText("\r\n \r\n");
+            richTextBox1.SelectionCharOffset = 0;
 
-            return m_variants[ind];
+            richTextBox1.SelectionFont = coreFont;
         }
 
+        private void exListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var item = GetCurrItem();
+                var oldCharOffset = richTextBox1.SelectionCharOffset;
+
+                var img = Image.FromFile(FileManager.GetPathToRes(item.WallTypes.ImageName));
+                pictureBox1.Image = img;
+
+
+                richTextBox1.Clear();
+                richTextBox1.SelectionFont = new Font(new Font(coreFont.FontFamily, 14), FontStyle.Bold | FontStyle.Underline);
+
+                //richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Underline);
+
+                richTextBox1.AppendText(item.Name);
+                
+                richTextBox1.SelectionFont = new Font(new Font(coreFont.FontFamily, 12), FontStyle.Bold | FontStyle.Underline);
+                richTextBox1.AppendText(" " + item.Description);
+
+                RichTextAddNewLine();
+                
+                StringBuilder strB = new StringBuilder();
+                strB.AppendFormat("В соответствии с СП 51.1330.2011 «Защита от шума», " +
+                    "требуемый индекс изоляции шума для конструкции составляет {0} дБ"
+                    , item.WallTypes.Rw);
+                richTextBox1.AppendText(strB.ToString());
+
+                RichTextAddNewLine();
+
+                richTextBox1.AppendText("Для удовлетворения требований рекомендуется следующая конструкция перегородки:");
+
+                RichTextAddNewLine();
+                
+                
+                richTextBox1.SelectionFont = coreFont;
+                richTextBox1.SelectionCharOffset = 2;
+                strB = new StringBuilder();
+                strB.AppendFormat(
+                    "- Толщина перегородки: {0} мм\r\n" +
+                    "- Толщина изоляции: {1} мм\r\n" +
+                    "- Кол-во листов с одной стороны  - {2} {3}\r\n" +
+                    "- Материал изоляции перегородки: минеральная вата\t\n   "
+                    //  "Материал изоляции перегородки: минеральная вата"
+
+                    ,  item.WallTypes.Tp, item.WallTypes.Ti, item.WallTypes.N, item.GetNameExtVal());
+
+
+                richTextBox1.AppendText(strB.ToString());
+                
+                richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Underline);
+                richTextBox1.AppendText("KnaufInsulation AS Акустическая перегородка");
+                
+
+                richTextBox1.Invalidate();
+            }
+            catch (Exception ex)
+            {
+                Helper.WriteLog(ex.Message);
+            }
+        }
+
+        //download file
         private void onBtnFileDownLoadClick(object sender, EventArgs e)
         {
             var obj = sender as Button;
@@ -294,21 +348,6 @@ namespace KnaufinsulationWalls.Steps
             }
         }
 
-        private void exListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                var item = GetCurrItem();
 
-                var img = Image.FromFile(FileManager.GetPathToRes(item.WallTypes.ImageName));
-                pictureBox1.Image = img;
-            }
-            catch(Exception ex)
-            {
-                Helper.WriteLog(ex.Message);
-
-                //todo error image
-            }            
-        }
     }
 }

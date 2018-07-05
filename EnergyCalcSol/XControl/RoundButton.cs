@@ -102,35 +102,38 @@ namespace XControl
         }
         protected override void OnPaint(PaintEventArgs e)
         {
-            e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
 
             var foreColor = IsPressed ? ButtonPressedForeColor : IsHighlighted ? ButtonHighlightForeColor : ForeColor;
             var backColor = IsPressed ? ButtonPressedColor : IsHighlighted ? ButtonHighlightColor : BackColor;
             var backColor2 = IsPressed ? ButtonPressedColor2 : IsHighlighted ? ButtonHighlightColor2 : BackColor2;
 
 
+            var clRect = ClientRectangle;
+
             using (var pen = new Pen(ButtonBorderColor, ButtonBorderWidth))
                 e.Graphics.DrawPath(pen, Path);
 
-            using (var brush = new LinearGradientBrush(ClientRectangle, backColor, backColor2, LinearGradientMode.Vertical))
+            using (var brush = new LinearGradientBrush(clRect, backColor, backColor2, LinearGradientMode.Vertical))
                 e.Graphics.FillPath(brush, Path);
 
-
-            using (var brush = new SolidBrush(foreColor))
-            {
-                var sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center };
-                var rect = ClientRectangle;
-                rect.Y += 2;
-                rect.X += offsettextX;
-                e.Graphics.DrawString(Text, Font, brush, rect, sf);
-            }
-      
             Color cl = SystemColors.Control;
             if (Parent != null)
                 cl = Parent.BackColor;
 
-            ControlPaint.DrawBorder(e.Graphics, ClientRectangle, cl, ButtonBorderStyle.Solid);
-         
+            if (Focused)
+                cl = Color.Gray;
+
+            ControlPaint.DrawBorder(e.Graphics, clRect, cl, ButtonBorderStyle.Dotted);
+
+            e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
+            using (var brush = new SolidBrush(foreColor))
+            {
+                var sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center };
+                var rect = clRect;
+                rect.Y += 2;
+                rect.X += offsettextX;
+                e.Graphics.DrawString(Text, Font, brush, rect, sf);
+            }             
     }
 
         protected override void OnPaintBackground(PaintEventArgs e)

@@ -20,6 +20,19 @@ namespace XCotrols
 
             ColorActiveItem = Color.CornflowerBlue;
             ColorDeactiveItem = Color.White;
+
+            Leave += CustomComboBox_Leave;
+            GotFocus += CustomComboBox_GotFocus;
+        }
+
+        private void CustomComboBox_GotFocus(object sender, System.EventArgs e)
+        {
+            Invalidate();
+        }
+
+        private void CustomComboBox_Leave(object sender, System.EventArgs e)
+        {
+            Invalidate();
         }
 
         private Font FontSmall = new Font("Lato", 9f);
@@ -30,13 +43,10 @@ namespace XCotrols
             base.OnPaint(e);
        
             var g = e.Graphics;
-            
-            if(Enabled)
-                g.SmoothingMode = SmoothingMode.AntiAlias;
 
             //control rectangle
             var ctrlRectangle = Enabled? ClientRectangle : e.ClipRectangle;
-
+            
             //combobox button W;
             int buttonW = 15;
             int border = 8;
@@ -45,6 +55,10 @@ namespace XCotrols
             var textRectange = ctrlRectangle;
             textRectange.Width -= buttonW;
             textRectange.Width -= border;
+
+            var rectBorder = textRectange;
+            textRectange.Inflate(-1, -1);
+
 
 
             //BUTTON RECTANGLE
@@ -55,12 +69,27 @@ namespace XCotrols
                                    textRectange.Bottom);
 
 
+
             //DRAW BACKGROUND
             var bcgColor = Enabled ? BackColor : SystemColors.Control;
             
             using (var br = new SolidBrush(bcgColor))
                 g.FillRectangle(br, ClientRectangle);
 
+
+            if (Focused)
+            {
+                rectBorder.Width -= 2;
+                rectBorder.Height -= 2;
+                
+                var p = new Pen(Color.Gray);
+                p.DashStyle = DashStyle.Dot;
+                
+                e.Graphics.DrawRectangle(p, rectBorder);
+            }
+            
+            if (Enabled)
+                g.SmoothingMode = SmoothingMode.AntiAlias;
 
             //add
             var sf = new StringFormat(StringFormatFlags.NoWrap);
@@ -123,6 +152,7 @@ namespace XCotrols
                 return;
             }
 
+
             var g = e.Graphics;
 
             var ctrlRectangle = e.Bounds;
@@ -135,6 +165,8 @@ namespace XCotrols
             var textRectange = ctrlRectangle;
             textRectange.Width -= buttonW;
             textRectange.Width -= border;
+
+            
 
             var textToPaint = "";
 

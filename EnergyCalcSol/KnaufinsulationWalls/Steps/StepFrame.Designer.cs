@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StepFrame));
             this.panel2 = new System.Windows.Forms.Panel();
             this.stepCounter1 = new XCotrols.StepCounter();
-            this.panelMain = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +46,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(984, 67);
+            this.panel2.Size = new System.Drawing.Size(1026, 67);
             this.panel2.TabIndex = 1;
             // 
             // stepCounter1
@@ -63,6 +63,17 @@
             this.stepCounter1.TabIndex = 1;
             this.stepCounter1.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = global::KnaufinsulationWalls.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(755, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(271, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // panelMain
             // 
             this.panelMain.AutoScroll = true;
@@ -71,26 +82,15 @@
             this.panelMain.Location = new System.Drawing.Point(0, 67);
             this.panelMain.Margin = new System.Windows.Forms.Padding(0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(984, 544);
+            this.panelMain.Size = new System.Drawing.Size(1026, 544);
             this.panelMain.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::KnaufinsulationWalls.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(713, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(271, 67);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // StepFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(984, 611);
+            this.ClientSize = new System.Drawing.Size(1026, 611);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
