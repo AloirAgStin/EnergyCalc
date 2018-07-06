@@ -226,6 +226,7 @@
             this.roundEdit1.IsDigitOnly = true;
             this.roundEdit1.Location = new System.Drawing.Point(18, 124);
             this.roundEdit1.Margin = new System.Windows.Forms.Padding(4);
+            this.roundEdit1.MaxTextLenght = 5;
             this.roundEdit1.Name = "roundEdit1";
             this.roundEdit1.Radius = 20;
             this.roundEdit1.Size = new System.Drawing.Size(220, 33);
@@ -291,7 +292,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnNext.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnNext.ButtonBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
@@ -326,7 +327,7 @@
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Lato", 8.25F);
             this.label8.Location = new System.Drawing.Point(717, 446);

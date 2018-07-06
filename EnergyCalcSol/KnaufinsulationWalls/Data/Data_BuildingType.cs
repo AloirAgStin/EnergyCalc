@@ -14,6 +14,7 @@ namespace KnaufinsulationWalls.Data
     {
         public sBuildingType()
         {
+            index = -1;
         }
 
         public String Name { get; set; }
@@ -68,7 +69,10 @@ namespace KnaufinsulationWalls.Data
 
                 var listWallsTypes = item["Walls"];
                 if (listWallsTypes == null)
+                {
+                    Helper.WriteLog("Отсуствует тег Walls");
                     continue;
+                }
 
                 int jIndex = 1;
 
@@ -86,7 +90,10 @@ namespace KnaufinsulationWalls.Data
                     int number = 0;
                     bool result = Int32.TryParse(outStr, out number);
                     if (!result)
+                    {
+                        Helper.WriteLog("Ошибка разбора значения DbIndex " + outStr + wl.Name);
                         continue;
+                    }
 
                     wl.Db = number;
 
@@ -97,7 +104,6 @@ namespace KnaufinsulationWalls.Data
             }
             
             return true;
-
         }
         
         public static List<sBuildingType> GetData()

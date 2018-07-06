@@ -1,5 +1,7 @@
 ﻿namespace KnaufinsulationWalls.Properties {
-    
+    // developer: Rusak E.G
+    // email: rusakeg@gmail.com
+    //
     
     // Этот класс позволяет обрабатывать определенные события в классе параметров:
     //  Событие SettingChanging возникает перед изменением значения параметра.

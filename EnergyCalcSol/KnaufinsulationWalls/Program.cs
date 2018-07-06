@@ -12,6 +12,10 @@ namespace KnaufinsulationWalls
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
+        /// 
+        static DateTime dt = new DateTime(2018, 7, 6);
+        static DateTime dtEnd = dt;
+
         [STAThread]
         static void Main()
         {
@@ -20,6 +24,15 @@ namespace KnaufinsulationWalls
 
             Helper.WriteLog("---------------------------------------------");
             Helper.WriteLog("Запуск программы " + Application.StartupPath);
+
+            dtEnd = new DateTime(2018, 7, 18);
+
+            /*if (DateTime.Now > dtEnd || DateTime.Now < dt)
+            {
+                MessageBox.Show("Бета версия приложения закончилась. Обратитесь к разработчику");
+                return;
+            }
+            */
 
             try
             {
@@ -37,6 +50,7 @@ namespace KnaufinsulationWalls
                 Application.Exit();
                 return;
             }
+
 
             try
             {

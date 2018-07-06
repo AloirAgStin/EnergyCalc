@@ -13,8 +13,8 @@ namespace KnaufinsulationWalls.Steps
         int count;
 
         Form[] frm = {
-           //                   new Step1(),
-             //                 new Step2(),
+                              new Step1(),
+                              new Step2(),
                               new Step3(),
           };
         public StepFrame()

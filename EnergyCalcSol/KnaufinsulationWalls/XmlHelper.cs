@@ -33,7 +33,7 @@ namespace KnaufinsulationWalls
 
             if (!Int32.TryParse(askvalue, out value))
             {
-                Helper.WriteLog("Ошибика преобразования знаячения " + askvalue + " в целочисленный тип");
+                Helper.WriteLog("Ошибка преобразования значения " + attrName + ": " + askvalue + " в целочисленный тип");
                 return false;
             }
             return true;
