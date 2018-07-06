@@ -77,7 +77,7 @@ namespace XCotrols
                 g.FillRectangle(br, ClientRectangle);
 
 
-            if (Focused)
+            if (Focused && DroppedDown == false)
             {
                 rectBorder.Width -= 2;
                 rectBorder.Height -= 2;

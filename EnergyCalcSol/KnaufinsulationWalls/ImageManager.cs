@@ -61,5 +61,21 @@ namespace KnaufinsulationWalls
         }
 
 
+        public static Image LoadImageFromFile(string Path)
+        {
+            try
+            {
+                var img = Image.FromFile(Path);
+                return img;
+            }
+            catch(Exception ex)
+            {
+                Helper.WriteLog("Изобрадение: " + ex.Message + Path);
+                return Properties.Resources.warn;
+            }
+            
+        }
+
+
     }
 }

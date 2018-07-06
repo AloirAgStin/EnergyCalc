@@ -252,7 +252,11 @@ namespace KnaufinsulationWalls.Steps
                 var item = GetCurrItem();
                 var oldCharOffset = richTextBox1.SelectionCharOffset;
 
-                var img = Image.FromFile(FileManager.GetPathToRes(item.WallTypes.ImageName));
+                var imgName = FileManager.GetPathToRes(item.WallTypes.ImageName);
+
+                var img = ImageManager.LoadImageFromFile(imgName);
+
+
                 pictureBox1.Image = img;
 
 
@@ -347,7 +351,5 @@ namespace KnaufinsulationWalls.Steps
 
             }
         }
-
-
     }
 }
