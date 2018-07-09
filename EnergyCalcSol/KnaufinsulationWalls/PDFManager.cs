@@ -1,100 +1,112 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using PdfSharp;
+using PdfSharp.Drawing;
+using PdfSharp.Drawing.Layout;
+using PdfSharp.Pdf;
+using static KnaufinsulationWalls.Data.Data_WallsType;
 
 namespace KnaufinsulationWalls
 {
     public class PDFManager
     {
+        private PdfDocument PDF = new PdfDocument();
+        private XPdfFontOptions options = new XPdfFontOptions(PdfFontEncoding.Unicode, PdfFontEmbedding.Always);
+        private PdfPage PAGE;
+        public String FileName { get; set; }
 
-//        private Document _doc;
-        private string _filename;
-        private PDFManager()
+
+        public PDFManager(String filename, String DocTitle)
         {
-           // _doc = null;
-            _filename = "";
+            FileName = filename;
+            PDF.Info.Title = DocTitle;
         }
 
-        ~PDFManager()
+        public void Save()
         {
-           // if(_doc != null)
-            //    _doc.Close();
+            PDF.Save(FileName);
+            Process.Start(FileName);
+            Application.Exit();
         }
-        public static PDFManager CreateDocument(string FileName)
+    
+        private void DrawLine()
         {
-            var pdf = new PDFManager();
 
-            pdf._filename = FileName;
+        }
+        XGraphics AddPage()
+        {
+            PAGE = PDF.AddPage();
+            XGraphics gfx = XGraphics.FromPdfPage(PAGE);
+            return gfx;
+        }
+        void AddLogo(XGraphics gfx,  System.Drawing.Image img,  double xPosition, double yPosition)
+        {
+            XImage xImage = XImage.FromGdiPlusImage(ImageManager.ResizeImage(img, 255, 72));
+            gfx.DrawImage(xImage, xPosition, yPosition, xImage.PixelWidth, xImage.Height);
+        }
 
-            pdf.InitPrintA4(FileName);
+        void AddImage(XGraphics gfx, String path, double xPosition, double yPosition)
+        {
+            XImage xImage = XImage.FromGdiPlusImage(ImageManager.ResizeImage(System.Drawing.Image.FromFile(path), 268, 277));
+            gfx.DrawImage(xImage, xPosition, yPosition, xImage.PixelWidth, xImage.Height);
+        }
             
-            return pdf;
-        }
-
-
-        private void InitPrintA4(string filename)
+        public void MakePDF(object obj)
         {
-            string fn = filename;
-            File.Delete(filename);
-
-         //   _doc = new Document(PageSize.A4);
-
-        }
-
-
-        public void WriteVariantToPDF(string []items)
-        {/*
-            try
+            var gr = AddPage();
+            
+            String FontFamilyName = "Arial";
+            var item = obj as sLineWallsStruct;
+            
+            var pCurrLine = new XPoint(40, 45);
+            
             {
-                PdfWriter.GetInstance(_doc, new FileStream(_filename, FileMode.Create));
+                var font = new XFont(FontFamilyName, 10, XFontStyle.Regular, options);
+                var text = "КНАУФ Инсулейшн";
+                gr.DrawString(text, font, new XSolidBrush(XColor.FromArgb(0, 178, 236)), pCurrLine);
 
-                _doc.Open();
+                pCurrLine.Y += gr.MeasureString(text, font).Height;
+                pCurrLine.Y -= 10;
 
-                for (int i = 0; i < items.Length; i++)
-                {
+                text = "117513, Москва, Ленинский\r\n" +
+                        "проспект, 119а, 5 - й этаж\r\n" +
+                        "Тел.  +7(495) 933 - 61 - 30,\r\n" +
+                        "факс: +7(495) 933 - 61 - 31\r\n" +
+                        "info.russia@knaufinsulation.com";
+
+                XTextFormatter tf = new XTextFormatter(gr);
+
+                var sz = gr.MeasureString(text, font);
+                sz.Height += 10;
+                XRect rect = new XRect(pCurrLine, sz.ToXVector());
+                gr.DrawRectangle(XBrushes.White, rect);
+                tf.DrawString(text, font, XBrushes.Black, rect, XStringFormats.TopLeft);
+
+                AddLogo(gr, Properties.Resources.logo, PAGE.Width - Properties.Resources.logo.Width, pCurrLine.Y);
+                pCurrLine.Y += 72;
 
 
-                    string val6 = (string)items.GetValue(i);
-                    var el = new Paragraph(val6);
-                    _doc.Add(el);_doc.Add(el);
-
-
-                    var vvs = ImageManager.ResizeImage(Properties.Resources.step1, 200, 200);
-                    Image pic = Image.GetInstance(vvs, System.Drawing.Imaging.ImageFormat.Png);
-                    _doc.Add(pic);
-
-
-                    _doc.NewPage();
-                }
-
-
-                if (_doc != null)
-                    _doc.Close();
-
-          
-
+                AddImage(gr, FileManager.GetPathToRes(item.WallTypes.ImageName), 10f, 200);
+                AddImage(gr, FileManager.GetPathToRes(item.WallTypes.ImageName), 10f, 200);
             }
-            catch (DocumentException de)
-            {
-                throw new Exception(de.Message);
-            }
-            catch (IOException ioe)
-            {
-                throw new Exception(ioe.Message);
-            }*/
-        }
+            
 
-        protected string GetAutoPrintJs()
-        {
-            var script = new StringBuilder();
-            script.Append("var pp = getPrintParams();");
-            script.Append("pp.interactive= pp.constants.interactionLevel.full;");
-            script.Append("pp.NumCopies=eval(2);");
-            script.Append("print(pp);");
-            return script.ToString();
+            /*
+            var pen = new XPen(XColor.FromArgb(0, 178, 236), 1);
+            pen.DashStyle = XDashStyle.Solid;
+
+            XPoint pFrom = pCurrLine;
+            XPoint pTo = pCurrLine;
+            pTo.X = PAGE.Width;
+            gr.DrawLine(pen, pFrom, pTo);
+            */
+
         }
     }
 }

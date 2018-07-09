@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using KnaufinsulationWalls.Data;
 using PdfSharp;
 using PdfSharp.Drawing;
+using PdfSharp.Drawing.Layout;
 using PdfSharp.Pdf;
 using static KnaufinsulationWalls.Data.Data_WallsType;
 
@@ -41,7 +42,10 @@ namespace KnaufinsulationWalls.Steps
         Font coreFont;
         private void Step3_Load(object sender, EventArgs e)
         {
-            FiltrData();            
+            FiltrData();
+
+            //todo del
+            btnPrint_Click(sender,e);
         }
 
         private List<sLineWallsStruct> m_variants = new List<sLineWallsStruct>(); 
@@ -130,15 +134,25 @@ namespace KnaufinsulationWalls.Steps
             }
         }
 
-                
+
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            return;
-            PdfDocument pdf = new PdfDocument();
-            pdf.Info.Title = "My First PDF";
-            PdfPage pdfPage = pdf.AddPage();
-            XGraphics gfx = XGraphics.FromPdfPage(pdfPage);
+            try
+            {
+                PDFManager mng = new PDFManager(@"d:\testPDF.pdf", "ДОКУМЕНТ");
+                mng.MakePDF(GetCurrItem());
+                mng.Save();
+            }
+            catch(Exception ex)
+            {
+                Helper.WriteLog("Ошибка печати" + ex.Message);
+                MessageBox.Show(ex.Message);
+            }
 
+
+            
+            
+            /*
             XRect rect;
             XPen pen;
             double x = 50, y = 100;
@@ -146,13 +160,19 @@ namespace KnaufinsulationWalls.Steps
             XFont font = new XFont("Times", 12);
             XFont fontItalic = new XFont("Times", 12, XFontStyle.BoldItalic);
             double ls = font.GetHeight(gfx);
+
             
-
             // Draw some text
-            gfx.DrawString("Create PDF on the fly with PDFsharp",
-                fontH1, XBrushes.Black, x, x);
+            var str = "Create PDF on the fly with PDFsharp asdfsd fasssssss 123456 sdfasd kfasd fkasd fk;as dfkj asd" +
+                "fsd fasd fasdmasdk fmaklsd flkas lma ";
 
+            XTextFormatter tf = new XTextFormatter(gfx);
 
+            XRect rect2 = new XRect(40, 100, 250, 220);
+            gfx.DrawRectangle(XBrushes.SeaShell, rect2);
+            tf.DrawString(str, font, XBrushes.Black, rect2, XStringFormats.TopLeft);
+            */
+            /*
 
             gfx.DrawString("With PDFsharp you can use the same code to draw graphic, " +
                 "text and images on different targets.", font, XBrushes.Black, x, y);
@@ -229,10 +249,8 @@ namespace KnaufinsulationWalls.Steps
                 
             gfx.Restore(state);
             gfx.DrawImage(im2, 100, 100);
+            */
             
-            string fn = @"d:\testPageDocument.pdf";
-            pdf.Save(fn);
-            Process.Start(fn);
         }
 
         private void RichTextAddNewLine()
