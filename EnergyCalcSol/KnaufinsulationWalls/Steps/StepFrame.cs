@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using KnaufinsulationWalls.Properties;
 
+ 
 namespace KnaufinsulationWalls.Steps
 {
     public partial class StepFrame : Form
@@ -13,8 +14,8 @@ namespace KnaufinsulationWalls.Steps
         int count;
 
         Form[] frm = {
-                              new Step1(),
-                              new Step2(),
+                      //        new Step1(),
+                        //      new Step2(),
                               new Step3(),
           };
         public StepFrame()
