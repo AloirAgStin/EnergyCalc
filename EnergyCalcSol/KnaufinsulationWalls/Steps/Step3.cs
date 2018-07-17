@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using KnaufinsulationWalls.Data;
 using PdfSharp;
 using PdfSharp.Drawing;
+using PdfSharp.Drawing.Layout;
 using PdfSharp.Pdf;
 using static KnaufinsulationWalls.Data.Data_WallsType;
 
@@ -41,7 +42,7 @@ namespace KnaufinsulationWalls.Steps
         Font coreFont;
         private void Step3_Load(object sender, EventArgs e)
         {
-            FiltrData();            
+            FiltrData();
         }
 
         private List<sLineWallsStruct> m_variants = new List<sLineWallsStruct>(); 
@@ -55,9 +56,9 @@ namespace KnaufinsulationWalls.Steps
                 var userData = vMainFrom.CalcStruct;
 
                 //todo del
-                userData.Tp = 125;
+              /*  userData.Tp = 125;
                 userData.EI = 30;
-                userData.Rw = 45;
+                userData.Rw = 45;*/
                 //====================
 
                 HeaderUserData = MakeUserChoiseText(userData);
@@ -130,109 +131,20 @@ namespace KnaufinsulationWalls.Steps
             }
         }
 
-                
+
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            return;
-            PdfDocument pdf = new PdfDocument();
-            pdf.Info.Title = "My First PDF";
-            PdfPage pdfPage = pdf.AddPage();
-            XGraphics gfx = XGraphics.FromPdfPage(pdfPage);
-
-            XRect rect;
-            XPen pen;
-            double x = 50, y = 100;
-            XFont fontH1 = new XFont("Times", 18, XFontStyle.Bold);
-            XFont font = new XFont("Times", 12);
-            XFont fontItalic = new XFont("Times", 12, XFontStyle.BoldItalic);
-            double ls = font.GetHeight(gfx);
-            
-
-            // Draw some text
-            gfx.DrawString("Create PDF on the fly with PDFsharp",
-                fontH1, XBrushes.Black, x, x);
-
-
-
-            gfx.DrawString("With PDFsharp you can use the same code to draw graphic, " +
-                "text and images on different targets.", font, XBrushes.Black, x, y);
-            y += ls;
-            gfx.DrawString("The object used for drawing is the XGraphics object.",
-                font, XBrushes.Black, x, y);
-            y += 2 * ls;
-
-            // Draw an arc
-            pen = new XPen(XColors.Red, 4);
-            pen.DashStyle = XDashStyle.Dash;
-            gfx.DrawArc(pen, x + 20, y, 100, 60, 150, 120);
-
-            // Draw a star
-            XGraphicsState gs = gfx.Save();
-            gfx.TranslateTransform(x + 140, y + 30);
-            for (int idx = 0; idx < 360; idx += 10)
+            try
             {
-                gfx.RotateTransform(10);
-                gfx.DrawLine(XPens.DarkGreen, 0, 0, 30, 0);
+                PDFManager mng = new PDFManager(@"d:\testPDF.pdf", "KnaufInsulation");
+                mng.MakePDF(GetCurrItem());
+                mng.Save();
             }
-            gfx.Restore(gs);
-
-            // Draw a rounded rectangle
-            rect = new XRect(x + 230, y, 100, 60);
-            pen = new XPen(XColors.DarkBlue, 2.5);
-            XColor color1 = XColor.FromKnownColor(KnownColor.DarkBlue);
-            XColor color2 = XColors.Red;
-            XLinearGradientBrush lbrush = new XLinearGradientBrush(rect, color1, color2,
-              XLinearGradientMode.Vertical);
-            gfx.DrawRoundedRectangle(pen, lbrush, rect, new XSize(10, 10));
-
-            // Draw a pie
-            pen = new XPen(XColors.DarkOrange, 1.5);
-            pen.DashStyle = XDashStyle.Dot;
-            gfx.DrawPie(pen, XBrushes.Blue, x + 360, y, 100, 60, -130, 135);
-
-            // Draw some more text
-            y += 60 + 2 * ls;
-            gfx.DrawString("With XGraphics you can draw on a PDF page as well as " +
-                "on any System.Drawing.Graphics object. asdf sadf asdf asdf asdf asdf ", font, XBrushes.Black, x, y);
-            y += ls * 1.1;
-            gfx.DrawString("Use the same code to", font, XBrushes.Black, x, y);
-            x += 10;
-            y += ls * 1.1;
-            gfx.DrawString("• draw on a newly created PDF page", font, XBrushes.Black, x, y);
-            y += ls;
-            gfx.DrawString("• draw above or beneath of the content of an existing PDF page",
-                font, XBrushes.Black, x, y);
-            y += ls;
-            gfx.DrawString("• draw in a window", font, XBrushes.Black, x, y);
-            y += ls;
-            gfx.DrawString("• draw on a printer", font, XBrushes.Black, x, y);
-            y += ls;
-            gfx.DrawString("• draw in a bitmap image", font, XBrushes.Black, x, y);
-            x -= 10;
-            y += ls * 1.1;
-            gfx.DrawString("You can also import an existing PDF page and use it like " +
-                "an image, e.g. draw it on another PDF page.", font, XBrushes.Black, x, y);
-            y += ls * 1.1 * 2;
-            gfx.DrawString("Imported PDF pages are neither drawn nor printed; create a " +
-                "PDF file to see or print them!", fontItalic, XBrushes.Firebrick, x, y);
-            y += ls * 1.1;
-            gfx.DrawString("Below this text is a PDF form that will be visible when " +
-                "viewed or printed with a PDF viewer.", fontItalic, XBrushes.Firebrick, x, y);
-            y += ls * 1.1;
-            XGraphicsState state = gfx.Save();
-
-            XRect rcImage = new XRect(100, y, 200, 132);
-            gfx.DrawRectangle(XBrushes.Snow, rcImage);
-
-            var pt = FileManager.GetPathToRes("43.jpg");
-            var im2 = XImage.FromFile(pt);
-                
-            gfx.Restore(state);
-            gfx.DrawImage(im2, 100, 100);
-            
-            string fn = @"d:\testPageDocument.pdf";
-            pdf.Save(fn);
-            Process.Start(fn);
+            catch(Exception ex)
+            {
+                Helper.WriteLog("Ошибка печати" + ex.Message);
+                MessageBox.Show(ex.Message);
+            }      
         }
 
         private void RichTextAddNewLine()
@@ -293,7 +205,6 @@ namespace KnaufinsulationWalls.Steps
                     "- Толщина изоляции: {1} мм\r\n" +
                     "- Кол-во листов с одной стороны  - {2} {3}\r\n" +
                     "- Материал изоляции перегородки: минеральная вата\t\n   "
-                    //  "Материал изоляции перегородки: минеральная вата"
 
                     ,  item.WallTypes.Tp, item.WallTypes.Ti, item.WallTypes.N, item.GetNameExtVal());
 
