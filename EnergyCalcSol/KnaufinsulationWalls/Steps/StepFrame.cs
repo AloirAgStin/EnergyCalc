@@ -27,8 +27,15 @@ namespace KnaufinsulationWalls.Steps
 
             CalcStruct = new CalcItem();
 
-         //   IsEnableCheck = true;
-            IsEnableCheck = false;
+            IsEnableCheck = true;
+
+            //todo del
+            /*
+            userData.Tp = 255;
+            userData.EI = 30;
+            userData.Rw = 30;*/
+            //====================
+            //   IsEnableCheck = false;
         }
 
         public bool IsEnableCheck;

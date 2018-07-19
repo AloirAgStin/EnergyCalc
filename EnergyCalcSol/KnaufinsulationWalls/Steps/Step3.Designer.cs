@@ -53,6 +53,7 @@ namespace KnaufinsulationWalls.Steps
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblEmptyVar = new System.Windows.Forms.Label();
+            this.saveFDPDF = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.btnDWG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -407,9 +408,14 @@ namespace KnaufinsulationWalls.Steps
             this.lblEmptyVar.Name = "lblEmptyVar";
             this.lblEmptyVar.Size = new System.Drawing.Size(700, 277);
             this.lblEmptyVar.TabIndex = 25;
-            this.lblEmptyVar.Text = "Невозможно выполнить подбор перегоодок по заданным условиям\r\nПопробуйте вернуться" +
-    " назад и установить альтернативные значения\r\n";
+            this.lblEmptyVar.Text = "Невозможно выполнить подбор перегоодок по заданным условиям\r\nПопробуйте задать др" +
+    "угие критерии подбора";
             this.lblEmptyVar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // saveFDPDF
+            // 
+            this.saveFDPDF.DefaultExt = "pdf";
+            this.saveFDPDF.Filter = "PDF файл|*.PDF";
             // 
             // Step3
             // 
@@ -470,5 +476,6 @@ namespace KnaufinsulationWalls.Steps
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblEmptyVar;
+        private System.Windows.Forms.SaveFileDialog saveFDPDF;
     }
 }

@@ -53,13 +53,7 @@ namespace KnaufinsulationWalls.Steps
 
                 var vMainFrom = Parent.Parent as StepFrame;
                 var userData = vMainFrom.CalcStruct;
-
-                //todo del
-                userData.Tp = 225;
-                userData.EI = 30;
-                userData.Rw = 30;
-                //====================
-
+                
                 HeaderUserData = MakeUserChoiseText(userData);
                 lblUserData.Text = HeaderUserData;
 
@@ -150,14 +144,17 @@ namespace KnaufinsulationWalls.Steps
             try
             {
                 if(exListBox1.Items.Count == 0)
-                {
                     return;
-                }
-                //todo save file dialog
 
-                String flName = @"d:\testPDF.pdf";
+                var itm = GetCurrItem();
+                saveFDPDF.FileName = itm.Name + " " + itm.WallTypes.Rw.ToString() + " " + itm.WallTypes.EI.ToString() + " " + itm.WallTypes.Tp.ToString();
+     
+                if (saveFDPDF.ShowDialog() != DialogResult.OK)
+                    return;
+
+                String flName = saveFDPDF.FileName;
                 PDFManager mng = new PDFManager(flName, "KnaufInsulation");
-                mng.MakePDF(GetCurrItem());
+                mng.MakePDF(itm);
                 mng.Save();
 
                 var ret = MessageBox.Show("Документ успешно сохранен.\r\nОткрыть файл?", "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -198,9 +195,7 @@ namespace KnaufinsulationWalls.Steps
 
                 richTextBox1.Clear();
                 richTextBox1.SelectionFont = new Font(new Font(coreFont.FontFamily, 14), FontStyle.Bold | FontStyle.Underline);
-
-                //richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Underline);
-
+                
                 richTextBox1.AppendText(item.Name);
                 
                 richTextBox1.SelectionFont = new Font(new Font(coreFont.FontFamily, 12), FontStyle.Bold | FontStyle.Underline);

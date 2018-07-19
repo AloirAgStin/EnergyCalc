@@ -27,6 +27,26 @@ namespace KnaufinsulationWalls.Data
                 item.types = types.ToList();
                 return item;
             }
+
+            public void DumpItem()
+            {
+                //todo dump data
+                return;
+
+                StringBuilder rec = new StringBuilder();
+                rec.AppendFormat("Item: {0} - {1}\r\n", Name, Description);
+                foreach(var itm in types)
+                {
+                    rec.AppendFormat("\t{0} - {1} - {2} - {3} - {4} - {5}\r\n", itm.Tp, itm.Ti, itm.Rw, itm.EI, itm.N, itm.ImageName);
+
+                    foreach(var f in itm._files)
+                    {
+                        rec.AppendFormat("\t\t{0} - {1}\r\n", f.FileName, f.ExtInfo);
+                    }
+                }
+
+                Helper.WriteLog(rec.ToString());
+            }
         }
         public class sWallsTypes
         {
@@ -99,7 +119,7 @@ namespace KnaufinsulationWalls.Data
                 item.types.RemoveAll(x => x.Rw < userFilter.Rw);
                 
                 if (userFilter.Ti != 0)
-                    item.types.RemoveAll(x => x.Ti != userFilter.Ti);
+                    item.types.RemoveAll(x => x.Ti < userFilter.Ti);
 
                 if (userFilter.N != 0)
                    item.types.RemoveAll(x => x.N < userFilter.N);
@@ -206,7 +226,7 @@ namespace KnaufinsulationWalls.Data
 
                             var type = sFile._type.FileName;
                             String value = fl.InnerText;
-                            if (value == null)
+                            if (value == null  || value.Length == 0)
                             {
                                 type = sFile._type.FileDescription;
                                 XmlHelper.GetAttribute(fl, "Text", out value);
@@ -233,6 +253,12 @@ namespace KnaufinsulationWalls.Data
                 data.Add(tp);
             }        
             
+
+
+            foreach(var item in data)
+            {
+                item.DumpItem();
+            }
             return true;
         }
 

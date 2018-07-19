@@ -94,8 +94,9 @@ namespace KnaufinsulationWalls.Steps
                     {
                         var itm = (CBItem)cbIsolation.SelectedItem;
                         vMainFrom.CalcStruct.Ti = itm._intValue;
-
                     }
+                    else
+                        vMainFrom.CalcStruct.Ti = 0;
 
                     if (cbCountN.SelectedIndex > 0)
                     {
@@ -103,7 +104,9 @@ namespace KnaufinsulationWalls.Steps
                         var itm = (CBItem)cbCountN.SelectedItem;
                         vMainFrom.CalcStruct.N = itm._intValue;
                     }
-                    
+                    else
+                        vMainFrom.CalcStruct.N = 0;
+
                 }
                 
                 vMainFrom.NextStep();
