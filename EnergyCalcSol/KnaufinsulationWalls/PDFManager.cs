@@ -36,7 +36,6 @@ namespace KnaufinsulationWalls
         public void Save()
         {
             PDF.Save(FileName);
-            Process.Start(FileName);
        }
  
         PdfPage AddPage()

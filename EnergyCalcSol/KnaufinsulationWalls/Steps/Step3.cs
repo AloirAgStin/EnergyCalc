@@ -28,25 +28,24 @@ namespace KnaufinsulationWalls.Steps
             return m_variants[ind];
         }
 
+        private String HeaderUserData;
+        private Font coreFont;
         public Step3()
         {
             InitializeComponent();
             coreFont = richTextBox1.Font;
 
         }
-
-        private String HeaderUserData;
-
-
-
-        Font coreFont;
+        
         private void Step3_Load(object sender, EventArgs e)
         {
-            FiltrData();
+          //  FiltrData();
         }
 
+
+
         private List<sLineWallsStruct> m_variants = new List<sLineWallsStruct>(); 
-        private void FiltrData()
+        public void FiltrData()
         {
             try
             {
@@ -56,9 +55,9 @@ namespace KnaufinsulationWalls.Steps
                 var userData = vMainFrom.CalcStruct;
 
                 //todo del
-              /*  userData.Tp = 125;
+                userData.Tp = 225;
                 userData.EI = 30;
-                userData.Rw = 45;*/
+                userData.Rw = 30;
                 //====================
 
                 HeaderUserData = MakeUserChoiseText(userData);
@@ -66,20 +65,34 @@ namespace KnaufinsulationWalls.Steps
 
                 var filtredData = Data_WallsType.GetFilerData(userData);
                 m_variants = Data_WallsType.GetLineStruct(filtredData);
-                
 
-                int num = 1;
-                foreach (var item in m_variants)
+                bool emptyVariants = true;
+                if(m_variants.Count != 0)
                 {
-                    String text = "ВАРИАНТ " + num.ToString();
-                    num++;
+                    emptyVariants = false;
+                    int num = 1;
+                    foreach (var item in m_variants)
+                    {
+                        String text = "ВАРИАНТ " + num.ToString();
+                        num++;
 
 
-                    exListBox1.Items.Add(text);
+                        exListBox1.Items.Add(text);
+                    }
+
+                    if (exListBox1.Items.Count > 0)
+                        exListBox1.SelectedIndex = 0;
                 }
 
-                if (exListBox1.Items.Count > 0)
-                    exListBox1.SelectedIndex = 0;
+                lblEmptyVar.Visible = emptyVariants;
+                btndw.Visible = !emptyVariants;
+                btnEI.Visible = !emptyVariants;
+                btnNG.Visible = !emptyVariants;
+                btnRW.Visible = !emptyVariants;
+                btnPDF.Visible = !emptyVariants;
+                btnTex.Visible = !emptyVariants;
+
+
             }
             catch (Exception ex)
             {
@@ -136,9 +149,20 @@ namespace KnaufinsulationWalls.Steps
         {
             try
             {
-                PDFManager mng = new PDFManager(@"d:\testPDF.pdf", "KnaufInsulation");
+                if(exListBox1.Items.Count == 0)
+                {
+                    return;
+                }
+                //todo save file dialog
+
+                String flName = @"d:\testPDF.pdf";
+                PDFManager mng = new PDFManager(flName, "KnaufInsulation");
                 mng.MakePDF(GetCurrItem());
                 mng.Save();
+
+                var ret = MessageBox.Show("Документ успешно сохранен.\r\nОткрыть файл?", "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(ret == DialogResult.Yes)
+                    Process.Start(flName);
             }
             catch(Exception ex)
             {
@@ -262,5 +286,7 @@ namespace KnaufinsulationWalls.Steps
 
             }
         }
+
+
     }
 }

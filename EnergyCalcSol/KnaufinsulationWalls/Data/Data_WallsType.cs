@@ -13,11 +13,20 @@ namespace KnaufinsulationWalls.Data
     {
         public static List<sWalls> data = new List<sWalls>(10);
 
-        public class sWalls
+        public class sWalls : ICloneable
         {
             public String Name;
             public String Description;
             public List<sWallsTypes> types = new List<sWallsTypes>(5);
+
+            public object Clone()
+            {
+                var item = new sWalls();
+                item.Description = Description;
+                item.Name = Name;
+                item.types = types.ToList();
+                return item;
+            }
         }
         public class sWallsTypes
         {
@@ -44,7 +53,7 @@ namespace KnaufinsulationWalls.Data
 
         }
 
-        public class sFile
+        public class sFile : ICloneable
         {
             public enum _type
             {
@@ -65,14 +74,25 @@ namespace KnaufinsulationWalls.Data
             public String ExtInfo;
 
             public _type type;
+
+            public object Clone()
+            {
+                var t = new sFile(type, "");
+                t.ExtInfo = ExtInfo;
+                t.FileName = FileName;
+
+                return t;
+            }
         }
         
         public static List<sWalls> GetFilerData(CalcItem userFilter)
         {
             List<sWalls> itemCalc = new List<sWalls>();
-            itemCalc = data;
-
-            foreach(var item in data)
+         
+            foreach(var itm in data)
+                itemCalc.Add((sWalls)itm.Clone());
+            
+            foreach (var item in itemCalc)
             {
                 item.types.RemoveAll(x => x.Tp  != userFilter.Tp);
                 item.types.RemoveAll(x => x.EI < userFilter.EI);
@@ -179,20 +199,20 @@ namespace KnaufinsulationWalls.Data
 
 
                     var xmlnodeFiles = wall["Files"];
-                    if(xmlnodeFiles != null)
+                    if (xmlnodeFiles != null)
                     {
-                        foreach(XmlNode fl in xmlnodeFiles)
+                        foreach (XmlNode fl in xmlnodeFiles)
                         {
 
                             var type = sFile._type.FileName;
                             String value = fl.InnerText;
-                            if(value == null)
+                            if (value == null)
                             {
                                 type = sFile._type.FileDescription;
                                 XmlHelper.GetAttribute(fl, "Text", out value);
                                 if (value == null || value.Length == 0)
                                     value = "Ошибка извлечения имени файла или текста описания";
-                            }                            
+                            }
                             sFile file = new sFile(type, value);
 
                             wl._files.Add(file);
@@ -201,7 +221,10 @@ namespace KnaufinsulationWalls.Data
                     else
                     {
                         if (tp.types.Count > 0)
-                            wl._files = tp.types[0]._files;
+                        {
+                            foreach (var itm in tp.types[0]._files)
+                                wl._files.Add((sFile)itm.Clone());
+                        }
                     }
                     
                     tp.types.Add(wl);

@@ -25,7 +25,7 @@ namespace XControl
 
         private void ExListBox_DrawItem(object sender, DrawItemEventArgs e)
         {
-            if (Items.Count > 0)
+            if (Items.Count > 0 && e.Index != -1)
             {
                 var rect = e.Bounds;
                 rect.Inflate(-10, 0);
