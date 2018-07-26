@@ -41,6 +41,7 @@ namespace KnaufinsulationWalls.Steps
         {
             InitComboBoxes(1);
             btnNext.offsettextX = -5;
+            richTextBox1.Visible = false;
         }
 
         private void InitComboBoxes(int ind)
@@ -82,6 +83,8 @@ namespace KnaufinsulationWalls.Steps
                 customComboBox1.DataSource = Data_BuildingType.GetData();
                 customComboBox1.DisplayMember = "Name";
                 customComboBox1.ValueMember = "index";
+                customComboBox1.SelectedIndex = 0;
+
 
                 customComboBox2.DataSource = Data_BuildingType.GetDataByIndex(0);
 
@@ -115,6 +118,10 @@ namespace KnaufinsulationWalls.Steps
                 customComboBox2.DisplayMember = "Name";
                 customComboBox2.ValueMember = "index";
             }
+            else
+            {
+
+            }
  
         }
 
@@ -122,7 +129,8 @@ namespace KnaufinsulationWalls.Steps
         {
             var cm = sender as CustomComboBox;
 
-            lblInfo.Visible = cm.SelectedIndex > 0 ? true : false;
+            //lblInfo.Visible = cm.SelectedIndex > 0 ? true : false;
+            richTextBox1.Visible = cm.SelectedIndex > 0 ? true : false;
             richTextBox1.Text = "";
 
             if (cm.SelectedIndex > 0)

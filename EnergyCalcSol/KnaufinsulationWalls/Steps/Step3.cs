@@ -231,7 +231,7 @@ namespace KnaufinsulationWalls.Steps
                 richTextBox1.AppendText(strB.ToString());
                 
                 richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Underline);
-                richTextBox1.AppendText("KnaufInsulation AS Акустическая перегородка");
+                richTextBox1.AppendText("Knauf Insulation AS Акустическая перегородка");
                 
 
                 richTextBox1.Invalidate();

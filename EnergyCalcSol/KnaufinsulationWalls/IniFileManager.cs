@@ -32,7 +32,7 @@ namespace KnaufinsulationWalls
             }
             catch (Exception e)
             {
-                Helper.WriteLog(e.Message);
+                //Helper.WriteLog(e.Message);
                 //todo error log
                 return defaultValue;
             }

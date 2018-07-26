@@ -36,6 +36,8 @@ namespace XControl
             };
 
             textbox.KeyPress += Textbox_KeyPress;
+
+            DoubleBuffered = true;
         }
 
         private void Textbox_KeyPress(object sender, KeyPressEventArgs e)

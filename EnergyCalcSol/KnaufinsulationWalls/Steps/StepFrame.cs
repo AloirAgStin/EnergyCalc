@@ -27,7 +27,7 @@ namespace KnaufinsulationWalls.Steps
 
             CalcStruct = new CalcItem();
 
-            IsEnableCheck = true;
+            IsEnableCheck = false;
 
             //todo del
             /*
@@ -40,7 +40,7 @@ namespace KnaufinsulationWalls.Steps
 
         public bool IsEnableCheck;
         public CalcItem CalcStruct;
-
+        
         private void StepFrame_Load(object sender, EventArgs e)
         {
             typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty

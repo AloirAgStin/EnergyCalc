@@ -82,8 +82,15 @@ namespace XCotrols
             }
 
             drawPoint.X += +sizeAdd.Width;
+
             e.Graphics.DrawString(drawText.ToString(), Font, drawBrushFuture, drawPoint);
 
+
+            sizeAdd = e.Graphics.MeasureString(drawText.ToString(), Font);
+            drawPoint.X += +sizeAdd.Width;
+            if(StepCurrent == StepCount)
+                e.Graphics.DrawString("РЕЗУЛЬТАТ", Font, drawBrushCurr, drawPoint);
+            
             //рисуем круги
             var TextPart = e.Graphics.MeasureString("0", Font);
             float sz = Font.Size / 4;
@@ -100,6 +107,7 @@ namespace XCotrols
                 // Draw ellipse to screen.        
                 e.Graphics.FillEllipse(drawBrushCurr, drawPoint.X, drawPoint.Y, sz, sz);
             }
+
             drawPoint.X += TextPart.Width * 2 + TextPart.Width * 0.2f;
 
             for (int i = _StepCurrent + 1; i <= StepCount; i++)
@@ -112,6 +120,8 @@ namespace XCotrols
                 // Draw ellipse to screen.        
                 e.Graphics.FillEllipse(drawBrushFuture, drawPoint.X, drawPoint.Y, sz, sz);
             }
+
+            
         }
     }
 }
