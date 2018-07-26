@@ -61,7 +61,7 @@ namespace KnaufinsulationWalls
             this.roundButton1.Size = new System.Drawing.Size(268, 60);
             this.roundButton1.TabIndex = 1;
             this.roundButton1.TabStop = false;
-            this.roundButton1.Text = "НАЧАТЬ РАСЧЁТ";
+            this.roundButton1.Text = "НАЧАТЬ";
             this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
             // 
             // label1
