@@ -244,6 +244,7 @@ namespace KnaufinsulationWalls.Steps
             this.label7.Size = new System.Drawing.Size(204, 17);
             this.label7.TabIndex = 29;
             this.label7.Text = "Дополонительные параметры";
+            this.label7.Click += new System.EventHandler(this.onClickExtParams);
             // 
             // label6
             // 
@@ -272,9 +273,9 @@ namespace KnaufinsulationWalls.Steps
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.label5.Location = new System.Drawing.Point(12, 74);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(228, 18);
+            this.label5.Size = new System.Drawing.Size(197, 18);
             this.label5.TabIndex = 24;
-            this.label5.Text = "ОБЯЗАТЕЛЬНЫЕ ПАРАМЕТРЫ";
+            this.label5.Text = "ОСНОВНЫЕ ПАРАМЕТРЫ";
             // 
             // label1
             // 
@@ -323,10 +324,10 @@ namespace KnaufinsulationWalls.Steps
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lato", 8.25F);
-            this.label4.Location = new System.Drawing.Point(716, 478);
+            this.label4.Location = new System.Drawing.Point(726, 478);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 13);
             this.label4.TabIndex = 13;
@@ -334,10 +335,10 @@ namespace KnaufinsulationWalls.Steps
             // 
             // label12
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Lato", 8.25F);
-            this.label12.Location = new System.Drawing.Point(354, 478);
+            this.label12.Location = new System.Drawing.Point(344, 478);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(115, 13);
             this.label12.TabIndex = 14;
@@ -345,10 +346,10 @@ namespace KnaufinsulationWalls.Steps
             // 
             // lblBack
             // 
-            this.lblBack.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblBack.Font = new System.Drawing.Font("Lato Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.lblBack.Location = new System.Drawing.Point(470, 472);
+            this.lblBack.Location = new System.Drawing.Point(470, 470);
             this.lblBack.Name = "lblBack";
             this.lblBack.Size = new System.Drawing.Size(67, 25);
             this.lblBack.TabIndex = 9;
@@ -357,7 +358,7 @@ namespace KnaufinsulationWalls.Steps
             // 
             // btnNext
             // 
-            this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnNext.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnNext.ButtonBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
@@ -383,10 +384,10 @@ namespace KnaufinsulationWalls.Steps
             // dbPictureBox1
             // 
             this.dbPictureBox1.BackColor = System.Drawing.Color.White;
-            this.dbPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("dbPictureBox1.Image")));
+            this.dbPictureBox1.Image = global::KnaufinsulationWalls.Properties.Resources.stepImage;
             this.dbPictureBox1.Location = new System.Drawing.Point(270, 10);
             this.dbPictureBox1.Name = "dbPictureBox1";
-            this.dbPictureBox1.Size = new System.Drawing.Size(373, 446);
+            this.dbPictureBox1.Size = new System.Drawing.Size(364, 446);
             this.dbPictureBox1.TabIndex = 9;
             this.dbPictureBox1.TabStop = false;
             // 

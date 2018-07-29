@@ -11,32 +11,54 @@ namespace KnaufinsulationWalls.Steps
     public partial class StepFrame : Form
     {
         int top = 0;
-        int count;
+        int count = 0;
 
         Form[] frm = {
                               new Step1(),
                               new Step2(),
                               new Step3(),
           };
+        
         public StepFrame()
         {
             count = frm.Count();
-            InitializeComponent();
 
-            DoubleBuffered = true;
+            InitializeComponent();
 
             CalcStruct = new CalcItem();
 
             IsEnableCheck = false;
 
             //todo del
-            /*
-            userData.Tp = 255;
-            userData.EI = 30;
-            userData.Rw = 30;*/
-            //====================
-            //   IsEnableCheck = false;
+            CalcStruct.Tp = 100;
+            CalcStruct.EI = 30;
+            CalcStruct.Rw = 30;
+            
+
         }
+        
+        private void StepFrame_Resize(object sender, EventArgs e)
+        {
+            frm[top].Invalidate(true);
+            Settings.Default.SZWindows = Size;
+        }
+
+        private void StepFrame_SizeChanged(object sender, EventArgs e)
+        {
+            Settings.Default.Save();
+        }
+
+        private void StepFrame_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Settings.Default.Save();
+        }
+
+        private void StepFrame_Move(object sender, EventArgs e)
+        {
+            Settings.Default.STPoint = Location;
+        }
+
+
 
         public bool IsEnableCheck;
         public CalcItem CalcStruct;
@@ -139,25 +161,5 @@ namespace KnaufinsulationWalls.Steps
         }
 
 
-        private void StepFrame_Resize(object sender, EventArgs e)
-        {
-            frm[top].Invalidate(true);
-            Settings.Default.SZWindows = Size;
-        }
-
-        private void StepFrame_Move(object sender, EventArgs e)
-        {
-            Settings.Default.STPoint = Location;
-        }
-
-        private void StepFrame_SizeChanged(object sender, EventArgs e)
-        {
-            Settings.Default.Save();
-        }
-
-        private void StepFrame_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Settings.Default.Save();
-        }
     }
 }

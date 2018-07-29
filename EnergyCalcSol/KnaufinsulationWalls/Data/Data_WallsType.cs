@@ -12,99 +12,9 @@ namespace KnaufinsulationWalls.Data
     public static class Data_WallsType
     {
         public static List<sWalls> data = new List<sWalls>(10);
-
-        public class sWalls : ICloneable
-        {
-            public String Name;
-            public String Description;
-            public List<sWallsTypes> types = new List<sWallsTypes>(5);
-
-            public object Clone()
-            {
-                var item = new sWalls();
-                item.Description = Description;
-                item.Name = Name;
-                item.types = types.ToList();
-                return item;
-            }
-
-            public void DumpItem()
-            {
-                //todo dump data
-                return;
-
-                StringBuilder rec = new StringBuilder();
-                rec.AppendFormat("Item: {0} - {1}\r\n", Name, Description);
-                foreach(var itm in types)
-                {
-                    rec.AppendFormat("\t{0} - {1} - {2} - {3} - {4} - {5}\r\n", itm.Tp, itm.Ti, itm.Rw, itm.EI, itm.N, itm.ImageName);
-
-                    foreach(var f in itm._files)
-                    {
-                        rec.AppendFormat("\t\t{0} - {1}\r\n", f.FileName, f.ExtInfo);
-                    }
-                }
-
-                Helper.WriteLog(rec.ToString());
-            }
-        }
-        public class sWallsTypes
-        {
-            public sWallsTypes()
-            {
-                Tp = 0;
-                Ti = 0;
-                Rw = 0;
-                EI = 0;
-                N = 0;
-                ImageName = "";
-            }
-
-            public int Rw;
-            public int Tp;
-            public int EI;
+        public static int maxRW = 0;
 
 
-            public int Ti;
-            public int N;
-            public String ImageName;
-
-            public List<sFile> _files = new List<sFile>(6);
-
-        }
-
-        public class sFile : ICloneable
-        {
-            public enum _type
-            {
-                FileName,
-                FileDescription
-            };
-
-            public sFile(_type t, String value)
-            {
-                type = t;
-                if (t == _type.FileName)
-                    FileName = value;
-                else
-                    ExtInfo = value;
-            }
-
-            public String FileName;
-            public String ExtInfo;
-
-            public _type type;
-
-            public object Clone()
-            {
-                var t = new sFile(type, "");
-                t.ExtInfo = ExtInfo;
-                t.FileName = FileName;
-
-                return t;
-            }
-        }
-        
         public static List<sWalls> GetFilerData(CalcItem userFilter)
         {
             List<sWalls> itemCalc = new List<sWalls>();
@@ -126,11 +36,10 @@ namespace KnaufinsulationWalls.Data
             }
 
             itemCalc.RemoveAll(x => x.types.Count == 0);
-
-
+            
             return itemCalc;
         }
-
+        
         public static List<sLineWallsStruct> GetLineStruct(List<sWalls> data)
         {
             List<sLineWallsStruct> newData = new List<sLineWallsStruct>();
@@ -149,23 +58,7 @@ namespace KnaufinsulationWalls.Data
 
             return newData;
         }
-    
-        public class sLineWallsStruct
-        {
-            public String Name;
-            public String Description;
-            public sWallsTypes WallTypes;
 
-            public String GetNameExtVal()
-            {
-                int pos1= Name.IndexOf("(");
-                int pos2 = Name.IndexOf(")");
-                if (pos1 < pos2 && pos1!= pos2 && pos1 != -1 && pos2 != -1)
-                    return Name.Substring(pos1, pos2-pos1 + 1);
-
-                return "";
-            }
-        }
 
         public static bool InitData()
         {
@@ -246,17 +139,20 @@ namespace KnaufinsulationWalls.Data
                                 wl._files.Add((sFile)itm.Clone());
                         }
                     }
-                    
+
+                    if (wl.Rw >= maxRW)
+                        maxRW = wl.Rw;
+
                     tp.types.Add(wl);
                 }
              
                 data.Add(tp);
             }        
             
-
-
+            
             foreach(var item in data)
             {
+                
                 item.DumpItem();
             }
             return true;

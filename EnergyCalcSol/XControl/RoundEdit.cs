@@ -17,7 +17,7 @@ namespace XControl
         public RoundEdit() : base()
         {
             InitializeComponent();
-
+            
             _watermarkActive = true;
             textbox.Text = _watermarkText;
             textbox.ForeColor = Color.Gray;
@@ -37,9 +37,8 @@ namespace XControl
 
             textbox.KeyPress += Textbox_KeyPress;
 
-            DoubleBuffered = true;
         }
-
+ 
         private void Textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
             base.OnKeyPress(e);
@@ -66,7 +65,7 @@ namespace XControl
 
             e.Handled = true;
         }
-
+        
         public bool IsDigitOnly {get;set;}
 
         public int MaxTextLenght {

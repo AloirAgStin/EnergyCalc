@@ -79,6 +79,12 @@
   <ItemGroup>
     <Compile Include="Base64Manager.cs" />
     <Compile Include="CalcItem.cs" />
+    <Compile Include="Data\sFile.cs" />
+    <Compile Include="Data\sLineWallsStruct.cs" />
+    <Compile Include="Data\sWalls.cs" />
+    <Compile Include="Data\sWallsTypes.cs" />
+    <Compile Include="Data\sBuildingWall.cs" />
+    <Compile Include="Data\sBuildingType.cs" />
     <Compile Include="Data\Data_BuildingType.cs" />
     <Compile Include="Data\Data_FillComboBox.cs" />
     <Compile Include="Data\Data_WallsType.cs" />
@@ -206,6 +212,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\warn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stepImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

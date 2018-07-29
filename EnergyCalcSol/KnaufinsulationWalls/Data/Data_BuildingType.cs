@@ -10,31 +10,6 @@ using System.Xml.Linq;
 
 namespace KnaufinsulationWalls.Data
 {
-    public class sBuildingType
-    {
-        public sBuildingType()
-        {
-            index = -1;
-        }
-
-        public String Name { get; set; }
-        public int index { get; set; }
-
-        public List<sBuildingWall> data = new List<sBuildingWall>(5);
-    }
-
-    public class sBuildingWall
-    {
-        public sBuildingWall() => Db = 0;
-
-        public String Name { get; set; }
-        public int index { get; set; }
-
-        public int Db { get; set; }
-        public String Description { get; set; }
-    }
-
-
     public class Data_BuildingType
     {
         private static List<sBuildingType> data = new List<sBuildingType>(20);

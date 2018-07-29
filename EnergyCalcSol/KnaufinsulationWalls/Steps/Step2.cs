@@ -138,6 +138,19 @@ namespace KnaufinsulationWalls.Steps
             btnNext.Invalidate();
         }
 
+        private bool IsShowExtParam = true;
+        private void onClickExtParams(object sender, EventArgs e)
+        {
+            IsShowExtParam = !IsShowExtParam;
+   
+            label8.Visible = IsShowExtParam;
+            label9.Visible = IsShowExtParam;
 
+            roundPanel3.Visible = IsShowExtParam;
+            roundPanel4.Visible = IsShowExtParam;
+
+            cbIsolation.Visible = IsShowExtParam;
+            cbCountN.Visible = IsShowExtParam;
+        }
     }
 }

@@ -22,17 +22,37 @@ namespace KnaufinsulationWalls.Steps
         public Step1()
         {
             InitializeComponent();
-
+            originalExStyle = CreateParams.ExStyle;
             DoubleBuffered = true;
+
+            Shown += Step1_Shown;
+
+        }        
+
+         private void Step1_Shown(object sender, EventArgs e)
+        {
+            TurnOffFormLevelDoubleBuffering();
         }
 
+        int originalExStyle = -1;
+        bool enableFormLevelDoubleBuffering = true;
+
+        private void TurnOffFormLevelDoubleBuffering()
+        {
+            enableFormLevelDoubleBuffering = false;
+            this.MaximizeBox = true;
+        }
+ 
         protected override CreateParams CreateParams
         {
             get
             {
                 CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
-                cp.Style &= ~0x02000000;  // Turn off WS_CLIPCHILDREN
+                if (enableFormLevelDoubleBuffering)
+                    cp.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED
+                else
+                    cp.ExStyle = originalExStyle;
+
                 return cp;
             }
         }
@@ -62,21 +82,27 @@ namespace KnaufinsulationWalls.Steps
                 
                 customComboBox1.DataSource = null;
                 customComboBox2.DataSource = null;
-                
+
+
+                roundEdit1.textbox.Visible = !IsEnable;
                 roundEdit1.Enabled = !IsEnable;
 
                 roundEdit1.Focus();
                 radioButton1.Focus();
-
+                
             }
             if(ind == 2)
             {
                 bool IsEnable = true;
+
+
                 customComboBox1.Enabled = IsEnable;
                 customComboBox2.Enabled = IsEnable;
                 roundPanel1.Enabled = IsEnable;
                 roundPanel2.Enabled = IsEnable;
 
+
+                roundEdit1.textbox.Visible = !IsEnable;
                 roundEdit1.Enabled = !IsEnable;
                 roundEdit1.textbox.Text = "";
 
@@ -103,12 +129,6 @@ namespace KnaufinsulationWalls.Steps
                 InitComboBoxes(2);
         }
 
-        private void Step1_Resize(object sender, EventArgs e)
-        {
-            btnNext.Invalidate();
-        }
-
-
         private void customComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             var item = (sBuildingType)customComboBox1.SelectedItem;
@@ -128,8 +148,7 @@ namespace KnaufinsulationWalls.Steps
         private void customComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             var cm = sender as CustomComboBox;
-
-            //lblInfo.Visible = cm.SelectedIndex > 0 ? true : false;
+            
             richTextBox1.Visible = cm.SelectedIndex > 0 ? true : false;
             richTextBox1.Text = "";
 
@@ -164,11 +183,11 @@ namespace KnaufinsulationWalls.Steps
                         int nDb = 0;
                         Int32.TryParse(roundEdit1.textbox.Text, out nDb);
 
-                        if (!Int32.TryParse(roundEdit1.textbox.Text, out nDb) || nDb <= 0)
+                        if (!Int32.TryParse(roundEdit1.textbox.Text, out nDb) || nDb <= 0 || nDb > Data_WallsType.maxRW)
                         {
                             focusItem = roundEdit1;
                             throw new Exception("Значение поля \"Индекс изоляции воздушного шума, Rw\" " +
-                                "не может быть нулевым");
+                                "должно быть заполнено и не может быть больше " + Data_WallsType.maxRW.ToString() + " Дб");
                         }
 
                         UserIndex = nDb;

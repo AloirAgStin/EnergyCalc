@@ -4,7 +4,7 @@
 		<Name>С111(ГСП)</Name>	
 		<Description>Перегородка на одинарном металлическом каркасе, однослойная общивка</Description>
 		<Types>
-			<Type Tp="75"  Tu="50"  Rw="45" EI="30" N="1" Img="С111_GSP_125_50.png">
+			<Type Tp="75"  Tu="50"  Rw="45" EI="30" N="1" Img="С111_GSP_125_50.jpg">
 				<Files>
 					<File>F1_2.zip</File>
 					<File>F1(1,2,6,7).zip</File>
@@ -14,11 +14,11 @@
 					<File>F31.zip</File>
 				</Files>
 			</Type>		
-			<Type Tp="100" Tu="50"  Rw="46" EI="30" N="1" Img="С111_GSP_125_50.png"></Type>		
-			<Type Tp="100" Tu="75"  Rw="46" EI="30" N="1" Img="С111_GSP_125_50.png"></Type>		
-			<Type Tp="125" Tu="50"  Rw="47" EI="30" N="1" Img="С111_GSP_125_50.png"></Type>		
-			<Type Tp="125" Tu="100" Rw="47" EI="30" N="1" Img="С111_GSP_125_50.png"></Type>		
-			<Type Tp="125" Tu="100" Rw="50" EI="30" N="1" Img="С111_GSP_125_50.png"></Type>				
+			<Type Tp="100" Tu="50"  Rw="46" EI="30" N="1" Img="С111_GSP_125_50.jpg"></Type>		
+			<Type Tp="100" Tu="75"  Rw="46" EI="30" N="1" Img="С111_GSP_125_50.jpg"></Type>		
+			<Type Tp="125" Tu="50"  Rw="47" EI="30" N="1" Img="С111_GSP_125_50.jpg"></Type>		
+			<Type Tp="125" Tu="100" Rw="47" EI="30" N="1" Img="С111_GSP_125_50.jpg"></Type>		
+			<Type Tp="125" Tu="100" Rw="50" EI="30" N="1" Img="С111_GSP_125_50.jpg"></Type>				
 		</Types>
 	</Wall>
 
@@ -26,7 +26,7 @@
 		<Name>С112(ГСП)</Name>	
 		<Description>Перегородка на одинарном металлическом каркасе, двухслойная обшивка</Description>
 		<Types>
-			<Type Tp="100" Tu="50"  Rw="51" EI="60" N="2" Img="С112_GSP_150_50.png">	
+			<Type Tp="100" Tu="50"  Rw="51" EI="60" N="2" Img="С112_GSP_150_50.jpg">	
 				<Files>
 					<File>F1_2.zip</File>
 					<File>F1(1,2,6,7).zip</File>
@@ -36,8 +36,8 @@
 					<File>F31.zip</File>
 				</Files>			
 			</Type>
-			<Type Tp="125" Tu="50"  Rw="52" EI="60" N="2" Img="С112_GSP_150_50.png"></Type>		
-			<Type Tp="150" Tu="50"  Rw="55" EI="60" N="2" Img="С112_GSP_150_50.png"></Type>				
+			<Type Tp="125" Tu="50"  Rw="52" EI="60" N="2" Img="С112_GSP_150_50.jpg"></Type>		
+			<Type Tp="150" Tu="50"  Rw="55" EI="60" N="2" Img="С112_GSP_150_50.jpg"></Type>				
 		</Types>	
 	</Wall>	
 	
@@ -45,7 +45,7 @@
 		<Name>C361(ГВЛ)</Name>	
 		<Description>Перегородка на одинарном металлическом каркасе, однослойная обшивка КНАУФ-суперлистами</Description>
 		<Types>
-			<Type Tp="75"  Tu="50"  Rw="52" EI="45" N="1" Img="???">	
+			<Type Tp="75"  Tu="50"  Rw="52" EI="45" N="1" Img="C361_GSP_125_50.jpg">	
 				<Files>
 					<File>F3_4.zip</File>
 					<File>F1(3,4).zip</File>
@@ -56,7 +56,7 @@
 				</Files>			
 			</Type>
 			
-			<Type Tp="100" Tu="50"  Rw="52" EI="45" N="1" Img="???">	
+			<Type Tp="100" Tu="50"  Rw="52" EI="45" N="1" Img="C361_GSP_125_50.jpg">	
 				<Files>
 					<File>F3_4.zip</File>
 					<File>F1(3,4).zip</File>
@@ -66,10 +66,10 @@
 					<File>F31.zip</File>
 				</Files>				
 			</Type>
-			<Type Tp="100" Tu="75"  Rw="52" EI="45" N="1" Img="???"></Type>		
-			<Type Tp="125" Tu="50"  Rw="52" EI="45" N="1" Img="???"></Type>		
-			<Type Tp="125" Tu="75"  Rw="53" EI="45" N="1" Img="???"></Type>		
-			<Type Tp="125" Tu="100" Rw="53" EI="45" N="1" Img="???"></Type>				
+			<Type Tp="100" Tu="75"  Rw="52" EI="45" N="1" Img="C361_GSP_125_50.jpg"></Type>		
+			<Type Tp="125" Tu="50"  Rw="52" EI="45" N="1" Img="C361_GSP_125_50.jpg"></Type>		
+			<Type Tp="125" Tu="75"  Rw="53" EI="45" N="1" Img="C361_GSP_125_50.jpg"></Type>		
+			<Type Tp="125" Tu="100" Rw="53" EI="45" N="1" Img="C361_GSP_125_50.jpg"></Type>				
 		</Types>
 	
 	</Wall>	
@@ -78,7 +78,7 @@
 		<Name>C362(ГВЛ)</Name>	
 		<Description>Перегородка на одинарном металлическом каркасе, двухслойная обшивка КНАУФ-суперлистами</Description>
 		<Types>
-			<Type Tp="100" Tu="50"  Rw="57" EI="90" N="2" Img="???">
+			<Type Tp="100" Tu="50"  Rw="57" EI="90" N="2" Img="C362_GSP_150_50.jpg">
 				<Files>
 					<File>F3_4.zip</File>
 					<File>F1(3,4).zip</File>
@@ -88,11 +88,11 @@
 					<File>F31.zip</File>
 				</Files>
 			</Type>
-			<Type Tp="125" Tu="50"  Rw="57" EI="90" N="2" Img="???"></Type>		
-			<Type Tp="125" Tu="75"  Rw="57" EI="90" N="2" Img="???"></Type>		
-			<Type Tp="150" Tu="50"  Rw="58" EI="90" N="2" Img="???"></Type>		
-			<Type Tp="150" Tu="75"  Rw="58" EI="90" N="2" Img="???"></Type>		
-			<Type Tp="150" Tu="100" Rw="58" EI="90" N="2" Img="???"></Type>				
+			<Type Tp="125" Tu="50"  Rw="57" EI="90" N="2" Img="C362_GSP_150_50.jpg"></Type>		
+			<Type Tp="125" Tu="75"  Rw="57" EI="90" N="2" Img="C362_GSP_150_50.jpg"></Type>		
+			<Type Tp="150" Tu="50"  Rw="58" EI="90" N="2" Img="C362_GSP_150_50.jpg"></Type>		
+			<Type Tp="150" Tu="75"  Rw="58" EI="90" N="2" Img="C362_GSP_150_50.jpg"></Type>		
+			<Type Tp="150" Tu="100" Rw="58" EI="90" N="2" Img="C362_GSP_150_50.jpg"></Type>				
 		</Types>
 	</Wall>	
 	
@@ -100,7 +100,7 @@
 		<Name>C381.2(Aquapanel)</Name>	
 		<Description>Перегородка на одинарном металлическом каркасе, однослойная обшивка листами Aquapanel</Description>
 		<Types>
-			<Type Tp="125" Tu="50" Rw="48" EI="120/160" N="1" Img="C381_2_Aquapanel.png">
+			<Type Tp="125" Tu="50" Rw="48" EI="60" N="1" Img="C381_2_Aquapanel.jpg">
 				<Files>
 					<File>F5.zip</File>
 					<File>F1(5).zip</File>
@@ -117,7 +117,7 @@
 		<Name>С113(ГСП)</Name>	
 		<Description>Перегородка на одинарном металлическом каркасе, трехслойная обшивка</Description>
 		<Types>
-			<Type Tp="175" Tu="50"  Rw="55" EI="240" N="3" Img="C113_GSP_175_50.png">
+			<Type Tp="175" Tu="50"  Rw="55" EI="240" N="3" Img="C113_GSP_175_50.jpg">
 				<Files>
 					<File>F6_7.zip</File>
 					<File>F1(1,2,6,7).zip</File>
@@ -127,7 +127,7 @@
 					<File>F31.zip</File>
 				</Files>
 			</Type>				
-			<Type Tp="175" Tu="100" Rw="55" EI="240" N="3" Img="C113_GSP_175_50.png">
+			<Type Tp="175" Tu="100" Rw="55" EI="240" N="3" Img="C113_GSP_175_50.jpg">
 				<Files>
 					<File>F6_7.zip</File>
 					<File>F1(1,2,6,7).zip</File>
@@ -144,7 +144,7 @@
 		<Name>C115.1(ГСП)</Name>	
 		<Description>Перегородка на двойном спаренном каркасе, двухслойная обшивка</Description>
 		<Types>
-			<Type Tp="155" Tu="50"  Rw="58" EI="60" N="2" Img="C115_1_GSP_255_50.png">
+			<Type Tp="155" Tu="50"  Rw="58" EI="60" N="2" Img="C115_1_GSP_255_50.jpg">
 				<Files>
 					<File>F6_7.zip</File>
 					<File>F1(1,2,6,7).zip</File>
@@ -154,8 +154,8 @@
 					<File>F31.zip</File>
 				</Files>
 			</Type>				
-			<Type Tp="255" Tu="50"  Rw="60" EI="60" N="2" Img="C115_1_GSP_255_50.png"></Type>				
-			<Type Tp="255" Tu="200" Rw="61" EI="60" N="2" Img="C115_1_GSP_255_50.png"></Type>				
+			<Type Tp="255" Tu="50"  Rw="60" EI="60" N="2" Img="C115_1_GSP_255_50.jpg"></Type>				
+			<Type Tp="255" Tu="200" Rw="61" EI="60" N="2" Img="C115_1_GSP_255_50.jpg"></Type>				
 		</Types>
 	</Wall>	
 

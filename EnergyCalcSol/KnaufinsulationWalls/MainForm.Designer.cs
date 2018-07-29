@@ -78,12 +78,12 @@ namespace KnaufinsulationWalls
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(122, 203);
+            this.label2.Location = new System.Drawing.Point(76, 203);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(511, 34);
+            this.label2.Size = new System.Drawing.Size(602, 34);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Программа поможет по требуемым параметрам (Rw, EI, толщина) подобрать \r\nконструкц" +
-    "ию перегородок и загрузить техническую документацию ";
+            this.label2.Text = "Программа поможет быстро и легко по требуемым параметрам (R , EI, толщина) подобр" +
+    "ать\r\nконструкцию перегородок и получить подтверждающую техническую документацию";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bgCheckUpdates

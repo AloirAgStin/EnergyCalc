@@ -296,10 +296,10 @@ namespace KnaufinsulationWalls.Steps
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lato", 8.25F);
-            this.label4.Location = new System.Drawing.Point(300, 472);
+            this.label4.Location = new System.Drawing.Point(290, 472);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(167, 13);
             this.label4.TabIndex = 21;
@@ -307,10 +307,10 @@ namespace KnaufinsulationWalls.Steps
             // 
             // lblBack
             // 
-            this.lblBack.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblBack.Font = new System.Drawing.Font("Lato Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.lblBack.Location = new System.Drawing.Point(471, 466);
+            this.lblBack.Location = new System.Drawing.Point(471, 464);
             this.lblBack.Name = "lblBack";
             this.lblBack.Size = new System.Drawing.Size(66, 25);
             this.lblBack.TabIndex = 9;
@@ -319,7 +319,7 @@ namespace KnaufinsulationWalls.Steps
             // 
             // btnPrint
             // 
-            this.btnPrint.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnPrint.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnPrint.ButtonBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
@@ -343,10 +343,10 @@ namespace KnaufinsulationWalls.Steps
             // 
             // lblClose
             // 
-            this.lblClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblClose.Font = new System.Drawing.Font("Lato Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.lblClose.Location = new System.Drawing.Point(753, 467);
+            this.lblClose.Location = new System.Drawing.Point(753, 465);
             this.lblClose.Name = "lblClose";
             this.lblClose.Size = new System.Drawing.Size(85, 25);
             this.lblClose.TabIndex = 10;
@@ -404,9 +404,9 @@ namespace KnaufinsulationWalls.Steps
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEmptyVar.Font = new System.Drawing.Font("Lato", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblEmptyVar.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblEmptyVar.Location = new System.Drawing.Point(278, 83);
+            this.lblEmptyVar.Location = new System.Drawing.Point(813, 272);
             this.lblEmptyVar.Name = "lblEmptyVar";
-            this.lblEmptyVar.Size = new System.Drawing.Size(700, 277);
+            this.lblEmptyVar.Size = new System.Drawing.Size(165, 88);
             this.lblEmptyVar.TabIndex = 25;
             this.lblEmptyVar.Text = "Невозможно выполнить подбор перегоодок по заданным условиям\r\nПопробуйте задать др" +
     "угие критерии подбора";

@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StepFrame));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.stepCounter1 = new XCotrols.StepCounter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.stepCounter1 = new XCotrols.StepCounter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -48,6 +48,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1026, 67);
             this.panel2.TabIndex = 1;
+            // 
+            // stepCounter1
+            // 
+            this.stepCounter1.Font = new System.Drawing.Font("Lato", 26F);
+            this.stepCounter1.Location = new System.Drawing.Point(18, 10);
+            this.stepCounter1.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
+            this.stepCounter1.Name = "stepCounter1";
+            this.stepCounter1.Size = new System.Drawing.Size(461, 47);
+            this.stepCounter1.StepColorCurrent = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(175)))), ((int)(((byte)(230)))));
+            this.stepCounter1.StepColorFuture = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(215)))), ((int)(((byte)(216)))));
+            this.stepCounter1.StepCount = 3;
+            this.stepCounter1.StepCurrent = 1;
+            this.stepCounter1.TabIndex = 1;
+            this.stepCounter1.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -71,20 +85,6 @@
             this.panelMain.Size = new System.Drawing.Size(1026, 544);
             this.panelMain.TabIndex = 2;
             // 
-            // stepCounter1
-            // 
-            this.stepCounter1.Font = new System.Drawing.Font("Lato", 26F);
-            this.stepCounter1.Location = new System.Drawing.Point(18, 10);
-            this.stepCounter1.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
-            this.stepCounter1.Name = "stepCounter1";
-            this.stepCounter1.Size = new System.Drawing.Size(461, 47);
-            this.stepCounter1.StepColorCurrent = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(175)))), ((int)(((byte)(230)))));
-            this.stepCounter1.StepColorFuture = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(215)))), ((int)(((byte)(216)))));
-            this.stepCounter1.StepCount = 3;
-            this.stepCounter1.StepCurrent = 1;
-            this.stepCounter1.TabIndex = 1;
-            this.stepCounter1.TabStop = false;
-            // 
             // StepFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -94,7 +94,7 @@
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(800, 500);
+            this.MinimumSize = new System.Drawing.Size(800, 610);
             this.Name = "StepFrame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Подбор перегородок";
