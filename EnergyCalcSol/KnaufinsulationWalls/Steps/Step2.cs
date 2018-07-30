@@ -44,29 +44,24 @@ namespace KnaufinsulationWalls.Steps
             foreach (var item in _dataSource)
                 _dataWork.Add((sWalls)item.Clone());
 
-            InitDataForEI(_dataWork);
-            InitDataForTp(_dataWork);
+            InitDataForEIandTP(_dataWork);
 
-            var emptt = new List<sWalls>();
-            InitDataForTi(emptt);
-            InitDataForN(emptt);
-            
-
-            cbEI.DataSource = Data_FillComboBox.cbItem_EI;
             cbEI.DisplayMember = "Name";
             cbEI.ValueMember = "index";
 
-            cbTP.DataSource = Data_FillComboBox.cbItem_TP;
             cbTP.DisplayMember = "Name";
             cbTP.ValueMember = "index";
-
-            cbIsolation.DataSource = Data_FillComboBox.cbItem_Ti;
+            
             cbIsolation.DisplayMember = "Name";
             cbIsolation.ValueMember = "index";
-
-            cbCountN.DataSource = Data_FillComboBox.cbItem_N;
+            
             cbCountN.DisplayMember = "Name";
             cbCountN.ValueMember = "index";
+
+            
+            cbEI.DataSource = Data_FillComboBox.cbItem_EI;
+
+            cbTP.DataSource = Data_FillComboBox.cbItem_TP;
         }
 
 

@@ -32,6 +32,7 @@ namespace KnaufinsulationWalls.Steps
 
         private void DebugChoise()
         {
+            return;
             int n = 2;
             if (n == 1)
             {
@@ -94,6 +95,10 @@ namespace KnaufinsulationWalls.Steps
 
                 bool IsEnable = false;
 
+                roundEdit1.textbox.Enabled = !IsEnable;
+                roundEdit1.Enabled = !IsEnable;
+
+
                 customComboBox1.SelectedIndex = -1;
                 customComboBox2.SelectedIndex = -1;
                 
@@ -105,10 +110,6 @@ namespace KnaufinsulationWalls.Steps
                 customComboBox1.DataSource = null;
                 customComboBox2.DataSource = null;
 
-
-                roundEdit1.textbox.Visible = !IsEnable;
-                roundEdit1.Enabled = !IsEnable;
-
                 roundEdit1.Focus();
                 radioButton1.Focus();
                 
@@ -117,6 +118,9 @@ namespace KnaufinsulationWalls.Steps
             {
                 bool IsEnable = true;
 
+                roundEdit1.textbox.Enabled = !IsEnable;
+                roundEdit1.Enabled = !IsEnable;
+                roundEdit1.textbox.Text = "";
 
                 customComboBox1.Enabled = IsEnable;
                 customComboBox2.Enabled = IsEnable;
@@ -124,9 +128,6 @@ namespace KnaufinsulationWalls.Steps
                 roundPanel2.Enabled = IsEnable;
 
 
-                roundEdit1.textbox.Visible = !IsEnable;
-                roundEdit1.Enabled = !IsEnable;
-                roundEdit1.textbox.Text = "";
 
                 customComboBox1.DataSource = Data_BuildingType.GetData();
                 customComboBox1.DisplayMember = "Name";

@@ -47,6 +47,8 @@ namespace XCotrols
             StepColorFuture = Color.FromArgb(211, 215, 216);
             
             Font = new Font("Lato", 40);
+
+            DoubleBuffered = true;
         }
 
         private void StepCounter_Paint(object sender, PaintEventArgs e)

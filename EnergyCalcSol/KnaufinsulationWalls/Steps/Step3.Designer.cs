@@ -296,21 +296,21 @@ namespace KnaufinsulationWalls.Steps
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Lato", 8.25F);
-            this.label4.Location = new System.Drawing.Point(290, 472);
+            this.label4.Font = new System.Drawing.Font("Lato", 9F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(276, 472);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(167, 13);
+            this.label4.Size = new System.Drawing.Size(186, 15);
             this.label4.TabIndex = 21;
             this.label4.Text = "02. Параметры перегородки, EI";
             // 
             // lblBack
             // 
-            this.lblBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblBack.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblBack.Font = new System.Drawing.Font("Lato Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.lblBack.Location = new System.Drawing.Point(471, 464);
+            this.lblBack.Location = new System.Drawing.Point(470, 464);
             this.lblBack.Name = "lblBack";
             this.lblBack.Size = new System.Drawing.Size(66, 25);
             this.lblBack.TabIndex = 9;
@@ -319,7 +319,7 @@ namespace KnaufinsulationWalls.Steps
             // 
             // btnPrint
             // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPrint.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnPrint.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnPrint.ButtonBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
@@ -343,10 +343,10 @@ namespace KnaufinsulationWalls.Steps
             // 
             // lblClose
             // 
-            this.lblClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblClose.Font = new System.Drawing.Font("Lato Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.lblClose.Location = new System.Drawing.Point(753, 465);
+            this.lblClose.Location = new System.Drawing.Point(757, 465);
             this.lblClose.Name = "lblClose";
             this.lblClose.Size = new System.Drawing.Size(85, 25);
             this.lblClose.TabIndex = 10;

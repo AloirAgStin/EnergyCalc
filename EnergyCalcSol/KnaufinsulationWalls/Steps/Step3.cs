@@ -267,7 +267,17 @@ namespace KnaufinsulationWalls.Steps
                 MessageBox.Show(file.ExtInfo, "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
-                saveFileDialog1.FileName = obj.Text + " (" + item.Name + ")";
+                var nm = obj.Text;
+
+                var charsToRemove = new string[] { "\r", "\n"};
+                foreach (var c in charsToRemove)
+                {
+                    nm = nm.Replace(c, string.Empty);
+                }
+                nm = nm.Replace("-", string.Empty);
+
+
+                saveFileDialog1.FileName = nm + " (" + item.Name + ")";
 
                 var ret = saveFileDialog1.ShowDialog();
                 if (ret != DialogResult.OK)

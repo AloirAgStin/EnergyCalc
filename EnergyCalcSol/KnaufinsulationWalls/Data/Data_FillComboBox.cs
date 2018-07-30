@@ -9,6 +9,44 @@ namespace KnaufinsulationWalls.Data
     public static class Data_FillComboBox
     {
 
+        public static void InitDataForEIandTP(List<sWalls> _data)
+        {
+            var MakeChoiseElement = new CBItem();
+            MakeChoiseElement.index = 0;
+            MakeChoiseElement.Name = "Выберите тип";
+            MakeChoiseElement._intValue = 0;
+
+            cbItem_EI.Clear();
+            cbItem_TP.Clear();
+
+            foreach (var item in _data)
+            {
+                foreach (var tp in item.types)
+                {
+                    var newItmEI = new CBItem() { Name = tp.EI.ToString(), _intValue = tp.EI };
+                    var newItmTp = new CBItem() { Name = tp.Tp.ToString(), _intValue = tp.Tp };
+                    cbItem_TP.Add(newItmTp);
+                    cbItem_EI.Add(newItmEI);
+                }
+            }
+
+            {
+                var uniCompare = new CBItem_EqualityComparerBy_IntValue();
+                var uniqList = cbItem_EI.Distinct<CBItem>(uniCompare);
+                cbItem_EI = uniqList.ToList<CBItem>();
+                cbItem_EI.Sort(ComprasionByIntValue);
+                cbItem_EI.Insert(0, MakeChoiseElement);
+            }
+
+            {
+                var uniCompare = new CBItem_EqualityComparerBy_IntValue();
+                var uniqList = cbItem_TP.Distinct<CBItem>(uniCompare);
+                MakeChoiseElement.Name = "Выберите толщину";
+                cbItem_TP = uniqList.ToList<CBItem>();
+                cbItem_TP.Sort(ComprasionByIntValue);
+                cbItem_TP.Insert(0, MakeChoiseElement);
+            }
+        }
 
 
         public static void InitDataForEI(List<sWalls> _data)
@@ -36,8 +74,8 @@ namespace KnaufinsulationWalls.Data
                 cbItem_EI.Sort(ComprasionByIntValue);
                 cbItem_EI.Insert(0, MakeChoiseElement);
             }
-
         }
+
         public static void InitDataForTp(List<sWalls> _data)
         {
 
