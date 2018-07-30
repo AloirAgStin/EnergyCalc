@@ -18,7 +18,7 @@ using static KnaufinsulationWalls.Data.Data_WallsType;
 
 namespace KnaufinsulationWalls.Steps
 {
-    public partial class Step3 : Form
+    public partial class Step3 : FormExt
     {
         private sLineWallsStruct GetCurrItem()
         {
@@ -39,7 +39,13 @@ namespace KnaufinsulationWalls.Steps
         
         private void Step3_Load(object sender, EventArgs e)
         {
-          //  FiltrData();
+        }
+
+
+
+        public override void AfterShow()
+        {
+            FiltrData();
         }
 
 
@@ -223,8 +229,7 @@ namespace KnaufinsulationWalls.Steps
                     "- Толщина перегородки: {0} мм\r\n" +
                     "- Толщина изоляции: {1} мм\r\n" +
                     "- Кол-во листов с одной стороны  - {2} {3}\r\n" +
-                    "- Материал изоляции перегородки: минеральная вата\t\n   "
-
+                    "- Материал изоляции перегородки: минеральная вата\r\n   "
                     ,  item.WallTypes.Tp, item.WallTypes.Ti, item.WallTypes.N, item.GetNameExtVal());
 
 

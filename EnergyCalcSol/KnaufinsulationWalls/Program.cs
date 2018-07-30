@@ -68,23 +68,6 @@ namespace KnaufinsulationWalls
                 Application.Exit();
                 return;
             }
-
-            try
-            {
-                if(!Data_FillComboBox.InitDataForFill())
-                throw new Exception("Ошибка инициализации данных для элементов управления");
-            }
-            catch (Exception ex)
-            {
-                string message = ex.Message;
-                message += "\r\n\r\nПриложение будет закрыто!";
-
-                MessageBox.Show(message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Helper.WriteLog(message);
-
-                Application.Exit();
-                return;
-            }
             
             Application.Run(new Steps.StepFrame());
             //Application.Run(new MainForm());

@@ -16,7 +16,7 @@ using XCotrols;
 
 namespace KnaufinsulationWalls.Steps
 {
-    public partial class Step1 : Form
+    public partial class Step1 : FormExt
     {
 
         public Step1()
@@ -27,9 +27,28 @@ namespace KnaufinsulationWalls.Steps
 
             Shown += Step1_Shown;
 
-        }        
+        }
 
-         private void Step1_Shown(object sender, EventArgs e)
+
+        private void DebugChoise()
+        {
+            int n = 2;
+            if (n == 1)
+            {
+                roundEdit1.textbox.Text = "50";
+            }
+            else
+            {
+                radioButton2.Checked = true;
+                customComboBox1.SelectedIndex = 1;
+                customComboBox2.SelectedIndex = 4;
+            }
+
+
+            btnNext_Click(this, new EventArgs());
+        }
+
+        private void Step1_Shown(object sender, EventArgs e)
         {
             TurnOffFormLevelDoubleBuffering();
         }
@@ -62,7 +81,10 @@ namespace KnaufinsulationWalls.Steps
             InitComboBoxes(1);
             btnNext.offsettextX = -5;
             richTextBox1.Visible = false;
+
+            DebugChoise();
         }
+       
 
         private void InitComboBoxes(int ind)
         {
@@ -180,6 +202,8 @@ namespace KnaufinsulationWalls.Steps
                 {
                     if (radioButton1.Checked)
                     {
+                        Helper.WriteLog("Manual input: " + roundEdit1.textbox.Text);
+
                         int nDb = 0;
                         Int32.TryParse(roundEdit1.textbox.Text, out nDb);
 
@@ -189,6 +213,7 @@ namespace KnaufinsulationWalls.Steps
                             throw new Exception("Значение поля \"Индекс изоляции воздушного шума, Rw\" " +
                                 "должно быть заполнено и не может быть больше " + Data_WallsType.maxRW.ToString() + " Дб");
                         }
+
 
                         UserIndex = nDb;
                     }
@@ -201,6 +226,8 @@ namespace KnaufinsulationWalls.Steps
                             throw new Exception("Необходимо выбрать значение поля \"Тип здания\"");
                         }
 
+                        var itemType = customComboBox1.SelectedItem as sBuildingType; 
+
                         if (customComboBox2.SelectedIndex < 1)
                         {
                             focusItem = customComboBox2;
@@ -209,23 +236,21 @@ namespace KnaufinsulationWalls.Steps
 
                         var itemS = customComboBox2.SelectedItem as sBuildingWall;
                         UserIndex = itemS.Db;
+
+                        Helper.WriteLog("ComboBox Choise: " + itemType.Name +  " - " + itemS.Name);
                     }
                 }
 
+                Helper.WriteLog("Rw = " + UserIndex);
                 vMainFrom.CalcStruct.Rw = UserIndex;
                 vMainFrom.NextStep();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 focusItem.Focus();
                 return;
-            }
-            
+            }            
         }
-
-
-
     }
 }

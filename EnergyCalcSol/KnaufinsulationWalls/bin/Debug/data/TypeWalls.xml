@@ -40,7 +40,52 @@
 			<Type Tp="150" Tu="50"  Rw="55" EI="60" N="2" Img="С112_GSP_150_50.jpg"></Type>				
 		</Types>	
 	</Wall>	
+		
+	<Wall>
+		<Name>С113(ГСП)</Name>	
+		<Description>Перегородка на одинарном металлическом каркасе, трехслойная обшивка</Description>
+		<Types>
+			<Type Tp="175" Tu="50"  Rw="55" EI="240" N="3" Img="C113_GSP_175_50.jpg">
+				<Files>
+					<File>F6_7.zip</File>
+					<File>F1(1,2,6,7).zip</File>
+					<File>F11_12.zip</File>
+					<File Text="Ожидаемый предел огнестойкости для данной конструкции EI 240. Условия проведения испытаний - по согласованию с Техническим департаментом Knauf Insulation, телефон: +7 (495) 933-61-30"></File>
+					<File>F28_29_30.zip</File>
+					<File>F31.zip</File>
+				</Files>
+			</Type>				
+			<Type Tp="175" Tu="100" Rw="55" EI="240" N="3" Img="C113_GSP_175_50.jpg">
+				<Files>
+					<File>F6_7.zip</File>
+					<File>F1(1,2,6,7).zip</File>
+					<File>F11_12.zip</File>
+					<File Text="Ожидаемый предел огнестойкости для данной конструкции EI 240. Условия проведения испытаний - по согласованию с Техническим департаментом Knauf Insulation, телефон: +7 (495) 933-61-30"></File>
+					<File>F28_29_30.zip</File>
+					<File>F31.zip</File>
+				</Files>
+			</Type>				
+		</Types>
+	</Wall>	
 	
+	<Wall>
+		<Name>C115.1(ГСП)</Name>	
+		<Description>Перегородка на двойном спаренном каркасе, двухслойная обшивка</Description>
+		<Types>
+			<Type Tp="155" Tu="50"  Rw="58" EI="60" N="2" Img="C115_1_GSP_255_50.jpg">
+				<Files>
+					<File>F6_7.zip</File>
+					<File>F1(1,2,6,7).zip</File>
+					<File>F13_14_15.zip</File>
+					<File Text="Ожидаемый предел огнестойкости для данной конструкции EI 60. Условия проведения испытаний - по согласованию с Техническим департаментом Knau fInsulation, телефон: +7 (495) 933-61-30"></File>
+					<File>F28_29_30.zip</File>
+					<File>F31.zip</File>
+				</Files>
+			</Type>				
+			<Type Tp="255" Tu="50"  Rw="60" EI="60" N="2" Img="C115_1_GSP_255_50.jpg"></Type>				
+			<Type Tp="255" Tu="200" Rw="61" EI="60" N="2" Img="C115_1_GSP_255_50.jpg"></Type>				
+		</Types>
+	</Wall>	
 	<Wall>
 		<Name>C361(ГВЛ)</Name>	
 		<Description>Перегородка на одинарном металлическом каркасе, однослойная обшивка КНАУФ-суперлистами</Description>
@@ -112,51 +157,4 @@
 			</Type>				
 		</Types>
 	</Wall>	
-	
-	<Wall>
-		<Name>С113(ГСП)</Name>	
-		<Description>Перегородка на одинарном металлическом каркасе, трехслойная обшивка</Description>
-		<Types>
-			<Type Tp="175" Tu="50"  Rw="55" EI="240" N="3" Img="C113_GSP_175_50.jpg">
-				<Files>
-					<File>F6_7.zip</File>
-					<File>F1(1,2,6,7).zip</File>
-					<File>F11_12.zip</File>
-					<File Text="Ожидаемый предел огнестойкости для данной конструкции EI 240. Условия проведения испытаний - по согласованию с Техническим департаментом Knauf Insulation, телефон: +7 (495) 933-61-30"></File>
-					<File>F28_29_30.zip</File>
-					<File>F31.zip</File>
-				</Files>
-			</Type>				
-			<Type Tp="175" Tu="100" Rw="55" EI="240" N="3" Img="C113_GSP_175_50.jpg">
-				<Files>
-					<File>F6_7.zip</File>
-					<File>F1(1,2,6,7).zip</File>
-					<File>F11_12.zip</File>
-					<File Text="Ожидаемый предел огнестойкости для данной конструкции EI 240. Условия проведения испытаний - по согласованию с Техническим департаментом Knauf Insulation, телефон: +7 (495) 933-61-30"></File>
-					<File>F28_29_30.zip</File>
-					<File>F31.zip</File>
-				</Files>
-			</Type>				
-		</Types>
-	</Wall>	
-	
-	<Wall>
-		<Name>C115.1(ГСП)</Name>	
-		<Description>Перегородка на двойном спаренном каркасе, двухслойная обшивка</Description>
-		<Types>
-			<Type Tp="155" Tu="50"  Rw="58" EI="60" N="2" Img="C115_1_GSP_255_50.jpg">
-				<Files>
-					<File>F6_7.zip</File>
-					<File>F1(1,2,6,7).zip</File>
-					<File>F13_14_15.zip</File>
-					<File Text="Ожидаемый предел огнестойкости для данной конструкции EI 60. Условия проведения испытаний - по согласованию с Техническим департаментом Knau fInsulation, телефон: +7 (495) 933-61-30"></File>
-					<File>F28_29_30.zip</File>
-					<File>F31.zip</File>
-				</Files>
-			</Type>				
-			<Type Tp="255" Tu="50"  Rw="60" EI="60" N="2" Img="C115_1_GSP_255_50.jpg"></Type>				
-			<Type Tp="255" Tu="200" Rw="61" EI="60" N="2" Img="C115_1_GSP_255_50.jpg"></Type>				
-		</Types>
-	</Wall>	
-
 </WallsType>

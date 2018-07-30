@@ -7,19 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KnaufinsulationWalls.Data;
 using XCotrols;
 using static KnaufinsulationWalls.Data.Data_FillComboBox;
 
 namespace KnaufinsulationWalls.Steps
 {
-    public partial class Step2 : Form
+    public partial class Step2 : FormExt
     {
         public Step2()
         {
             InitializeComponent();
-
-            DoubleBuffered = true;
-
         }
 
         protected override CreateParams CreateParams
@@ -33,64 +31,111 @@ namespace KnaufinsulationWalls.Steps
             }
         }
 
-        private void Step2_Load(object sender, EventArgs e)
+
+        private List<sWalls> _dataSource;
+        private List<sWalls> _dataWork;
+
+        public override void AfterShow()
         {
-            btnNext.offsettextX = -5;
+            var vMainFrom = Parent.Parent as StepFrame;
+            _dataSource = Data_WallsType.GetDatabyRW(Data_WallsType.data, vMainFrom.CalcStruct.Rw);
 
-            customComboBox1.DataSource = Data.Data_FillComboBox.cbItem_EI;
-            customComboBox1.DisplayMember = "Name";
-            customComboBox1.ValueMember = "index";
+            _dataWork = new List<sWalls>();
+            foreach (var item in _dataSource)
+                _dataWork.Add((sWalls)item.Clone());
+
+            InitDataForEI(_dataWork);
+            InitDataForTp(_dataWork);
+
+            var emptt = new List<sWalls>();
+            InitDataForTi(emptt);
+            InitDataForN(emptt);
             
-            customComboBox2.DataSource = Data.Data_FillComboBox.cbItem_TP;
-            customComboBox2.DisplayMember = "Name";
-            customComboBox2.ValueMember = "index";
 
-            cbIsolation.DataSource = Data.Data_FillComboBox.cbItem_Ti;
+            cbEI.DataSource = Data_FillComboBox.cbItem_EI;
+            cbEI.DisplayMember = "Name";
+            cbEI.ValueMember = "index";
+
+            cbTP.DataSource = Data_FillComboBox.cbItem_TP;
+            cbTP.DisplayMember = "Name";
+            cbTP.ValueMember = "index";
+
+            cbIsolation.DataSource = Data_FillComboBox.cbItem_Ti;
             cbIsolation.DisplayMember = "Name";
             cbIsolation.ValueMember = "index";
 
-            cbCountN.DataSource = Data.Data_FillComboBox.cbItem_N;
+            cbCountN.DataSource = Data_FillComboBox.cbItem_N;
             cbCountN.DisplayMember = "Name";
             cbCountN.ValueMember = "index";
+        }
 
-            customComboBox1.Focus();
+
+        private void Step2_Load(object sender, EventArgs e)
+        {
+            btnNext.offsettextX = -5;
+            cbEI.Focus();
+        }
+
+
+
+
+        private bool IsShowExtParam = true;
+        private void onClickExtParams(object sender, EventArgs e)
+        {
+            IsShowExtParam = !IsShowExtParam;
+   
+            label8.Visible = IsShowExtParam;
+            label9.Visible = IsShowExtParam;
+
+            roundPanel3.Visible = IsShowExtParam;
+            roundPanel4.Visible = IsShowExtParam;
+
+            cbIsolation.Visible = IsShowExtParam;
+            cbCountN.Visible = IsShowExtParam;
+        }
+
+        private void lbl_Back(object sender, EventArgs e)
+        {
+            StepFrame vMainFrom = null;
+
+            if (Parent == null)
+                return;
+            if (Parent.Parent == null)
+                return;
+
+            vMainFrom = Parent.Parent as StepFrame;
+            vMainFrom.BackStep();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            Control focusItem = customComboBox1;
+            Control focusItem = cbEI;
             try
             {
                 StepFrame vMainFrom = null;
 
-                if (Parent == null)
+                if (base.Parent == null)
                     return;
-                if (Parent.Parent == null)
+                if (base.Parent.Parent == null)
                     return;
 
-                vMainFrom = Parent.Parent as StepFrame;
+                vMainFrom = base.Parent.Parent as StepFrame;
 
                 if (vMainFrom.IsEnableCheck)
                 {
-                    if (customComboBox1.SelectedIndex < 1)
+                    if (cbEI.SelectedIndex < 1)
                     {
-                        focusItem = customComboBox1;
+                        focusItem = cbEI;
                         throw new Exception("Выберите \"Предел огнестойкости EI\"");
                     }
 
-                    if (customComboBox2.SelectedIndex < 1)
-                    {
-                        focusItem = customComboBox2;
-                        throw new Exception("Выберите \"Толщина перегородки, Тп\"");
-                    }
-                    
-                    var elem = (CBItem)customComboBox1.SelectedItem;
+                    var elem = (CBItem)cbEI.SelectedItem;
                     vMainFrom.CalcStruct.EI = elem._intValue;
 
-                    elem = (CBItem)customComboBox2.SelectedItem;
+                    elem = (CBItem)cbTP.SelectedItem;
                     vMainFrom.CalcStruct.Tp = elem._intValue;
-                    
-                    if(cbIsolation.SelectedIndex > 0)
+
+                    if (cbIsolation.SelectedIndex > 0)
                     {
                         var itm = (CBItem)cbIsolation.SelectedItem;
                         vMainFrom.CalcStruct.Ti = itm._intValue;
@@ -108,7 +153,7 @@ namespace KnaufinsulationWalls.Steps
                         vMainFrom.CalcStruct.N = 0;
 
                 }
-                
+
                 vMainFrom.NextStep();
 
             }
@@ -120,37 +165,109 @@ namespace KnaufinsulationWalls.Steps
             }
         }
 
-        public void label4_Click(object sender, EventArgs e)
+        private void onFocusCombo(object sender, EventArgs e)
         {
-            StepFrame vMainFrom = null;
+            var item = sender as CustomComboBox;
+            var name = item.Name;
 
-            if (Parent == null)
+            if (cbEI.Name == name)
+            {
+                dbPictureBox1.Image = Properties.Resources.stepImageEI;
+            }
+            else
+            if (cbTP.Name == name)
+            {
+                dbPictureBox1.Image = Properties.Resources.stepImageTp;
+            }
+            else
+            if (cbIsolation.Name == name)
+            {
+                dbPictureBox1.Image = Properties.Resources.stepImageTi;
+            }
+            else
+            if (cbCountN.Name == name)
+            {
+                dbPictureBox1.Image = Properties.Resources.stepImageN;
+            }
+            else
+            {
+                dbPictureBox1.Image = Properties.Resources.stepImage;
+            }
+
+
+        }
+
+        private void onLeaveCombo(object sender, EventArgs e)
+        {
+            dbPictureBox1.Image = Properties.Resources.stepImage;
+        }
+
+        private void onChangeEI(object sender, EventArgs e)
+        {
+            var elem = (CBItem)cbEI.SelectedItem;
+
+            if (elem._intValue <= 0)
                 return;
-            if (Parent.Parent == null)
+
+            _dataWork = new List<sWalls>();
+            foreach (var item2 in _dataSource)
+                _dataWork.Add((sWalls)item2.Clone());
+
+            _dataWork = Data_WallsType.GetDatabyEI(_dataWork, elem._intValue);
+
+
+            var item = cbTP.SelectedItem;
+
+            InitDataForTp(_dataWork);
+            cbTP.DataSource = Data_FillComboBox.cbItem_TP;
+
+            cbTP.SelectedItem = item;
+        }
+
+        private void onChangeTp(object sender, EventArgs e)
+        {            
+            var elem = (CBItem)cbTP.SelectedItem;
+            
+            if (elem._intValue <= 0)
+            {
+                InitDataForTi(_dataWork);
+                cbIsolation.DataSource = Data_FillComboBox.cbItem_Ti;
+
+                InitDataForN(_dataWork);
+                cbCountN.DataSource = Data_FillComboBox.cbItem_N;
                 return;
+            }
 
-            vMainFrom = Parent.Parent as StepFrame;
-            vMainFrom.BackStep();
+
+            var item = cbIsolation.SelectedItem;
+            _dataWork = Data_WallsType.GetDatabyTP(_dataWork, elem._intValue);
+
+            InitDataForTi(_dataWork);
+            cbIsolation.DataSource = Data_FillComboBox.cbItem_Ti;
+
+            cbIsolation.SelectedItem = item;
         }
 
-        private void Step2_Resize(object sender, EventArgs e)
-        {
-            btnNext.Invalidate();
+        private void onChangeTi(object sender, EventArgs e)
+        {            
+            var elem = (CBItem)cbIsolation.SelectedItem;
+
+            if (elem._intValue <= 0)
+            {
+                InitDataForN(_dataWork);
+                cbCountN.DataSource = Data_FillComboBox.cbItem_N;
+                return;
+            }
+
+            var item = cbCountN.SelectedItem;
+
+            var filtrList = Data_WallsType.GetDatabyTi(_dataWork, elem._intValue);
+            InitDataForN(filtrList);
+            cbCountN.DataSource = Data_FillComboBox.cbItem_N;
+
+            cbCountN.SelectedItem = item;
         }
+        
 
-        private bool IsShowExtParam = true;
-        private void onClickExtParams(object sender, EventArgs e)
-        {
-            IsShowExtParam = !IsShowExtParam;
-   
-            label8.Visible = IsShowExtParam;
-            label9.Visible = IsShowExtParam;
-
-            roundPanel3.Visible = IsShowExtParam;
-            roundPanel4.Visible = IsShowExtParam;
-
-            cbIsolation.Visible = IsShowExtParam;
-            cbCountN.Visible = IsShowExtParam;
-        }
     }
 }

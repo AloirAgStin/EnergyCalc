@@ -37,9 +37,9 @@ namespace KnaufinsulationWalls.Steps
             this.roundPanel3 = new XCotrols.RoundPanel();
             this.cbIsolation = new XCotrols.CustomComboBox();
             this.roundPanel2 = new XCotrols.RoundPanel();
-            this.customComboBox2 = new XCotrols.CustomComboBox();
+            this.cbTP = new XCotrols.CustomComboBox();
             this.roundPanel1 = new XCotrols.RoundPanel();
-            this.customComboBox1 = new XCotrols.CustomComboBox();
+            this.cbEI = new XCotrols.CustomComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.vButton1 = new XCotrols.VButton();
@@ -115,6 +115,8 @@ namespace KnaufinsulationWalls.Steps
             this.cbCountN.Name = "cbCountN";
             this.cbCountN.Size = new System.Drawing.Size(198, 24);
             this.cbCountN.TabIndex = 3;
+            this.cbCountN.Enter += new System.EventHandler(this.onFocusCombo);
+            this.cbCountN.Leave += new System.EventHandler(this.onLeaveCombo);
             // 
             // roundPanel3
             // 
@@ -143,62 +145,71 @@ namespace KnaufinsulationWalls.Steps
             this.cbIsolation.Name = "cbIsolation";
             this.cbIsolation.Size = new System.Drawing.Size(198, 24);
             this.cbIsolation.TabIndex = 3;
+            this.cbIsolation.SelectedIndexChanged += new System.EventHandler(this.onChangeTi);
+            this.cbIsolation.Enter += new System.EventHandler(this.onFocusCombo);
+            this.cbIsolation.Leave += new System.EventHandler(this.onLeaveCombo);
             // 
             // roundPanel2
             // 
             this.roundPanel2.BackColorInBorder = System.Drawing.Color.White;
             this.roundPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
             this.roundPanel2.BorderWidth = 2;
-            this.roundPanel2.Controls.Add(this.customComboBox2);
+            this.roundPanel2.Controls.Add(this.cbTP);
             this.roundPanel2.Location = new System.Drawing.Point(18, 180);
             this.roundPanel2.Name = "roundPanel2";
             this.roundPanel2.Radius = 20;
             this.roundPanel2.Size = new System.Drawing.Size(225, 35);
             this.roundPanel2.TabIndex = 4;
             // 
-            // customComboBox2
+            // cbTP
             // 
-            this.customComboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.customComboBox2.ColorActiveItem = System.Drawing.Color.CornflowerBlue;
-            this.customComboBox2.ColorDeactiveItem = System.Drawing.Color.White;
-            this.customComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.customComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.customComboBox2.DropDownWidth = 198;
-            this.customComboBox2.Font = new System.Drawing.Font("Lato", 10F);
-            this.customComboBox2.ForeColor = System.Drawing.Color.Black;
-            this.customComboBox2.FormattingEnabled = true;
-            this.customComboBox2.Location = new System.Drawing.Point(14, 6);
-            this.customComboBox2.Name = "customComboBox2";
-            this.customComboBox2.Size = new System.Drawing.Size(198, 24);
-            this.customComboBox2.TabIndex = 3;
+            this.cbTP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbTP.ColorActiveItem = System.Drawing.Color.CornflowerBlue;
+            this.cbTP.ColorDeactiveItem = System.Drawing.Color.White;
+            this.cbTP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbTP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTP.DropDownWidth = 198;
+            this.cbTP.Font = new System.Drawing.Font("Lato", 10F);
+            this.cbTP.ForeColor = System.Drawing.Color.Black;
+            this.cbTP.FormattingEnabled = true;
+            this.cbTP.Location = new System.Drawing.Point(14, 6);
+            this.cbTP.Name = "cbTP";
+            this.cbTP.Size = new System.Drawing.Size(198, 24);
+            this.cbTP.TabIndex = 3;
+            this.cbTP.SelectedIndexChanged += new System.EventHandler(this.onChangeTp);
+            this.cbTP.Enter += new System.EventHandler(this.onFocusCombo);
+            this.cbTP.Leave += new System.EventHandler(this.onLeaveCombo);
             // 
             // roundPanel1
             // 
             this.roundPanel1.BackColorInBorder = System.Drawing.Color.White;
             this.roundPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
             this.roundPanel1.BorderWidth = 2;
-            this.roundPanel1.Controls.Add(this.customComboBox1);
+            this.roundPanel1.Controls.Add(this.cbEI);
             this.roundPanel1.Location = new System.Drawing.Point(18, 123);
             this.roundPanel1.Name = "roundPanel1";
             this.roundPanel1.Radius = 20;
             this.roundPanel1.Size = new System.Drawing.Size(225, 35);
             this.roundPanel1.TabIndex = 2;
             // 
-            // customComboBox1
+            // cbEI
             // 
-            this.customComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.customComboBox1.ColorActiveItem = System.Drawing.Color.CornflowerBlue;
-            this.customComboBox1.ColorDeactiveItem = System.Drawing.Color.White;
-            this.customComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.customComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.customComboBox1.DropDownWidth = 200;
-            this.customComboBox1.Font = new System.Drawing.Font("Lato", 10F);
-            this.customComboBox1.ForeColor = System.Drawing.Color.Black;
-            this.customComboBox1.FormattingEnabled = true;
-            this.customComboBox1.Location = new System.Drawing.Point(14, 6);
-            this.customComboBox1.Name = "customComboBox1";
-            this.customComboBox1.Size = new System.Drawing.Size(200, 24);
-            this.customComboBox1.TabIndex = 1;
+            this.cbEI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbEI.ColorActiveItem = System.Drawing.Color.CornflowerBlue;
+            this.cbEI.ColorDeactiveItem = System.Drawing.Color.White;
+            this.cbEI.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbEI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEI.DropDownWidth = 200;
+            this.cbEI.Font = new System.Drawing.Font("Lato", 10F);
+            this.cbEI.ForeColor = System.Drawing.Color.Black;
+            this.cbEI.FormattingEnabled = true;
+            this.cbEI.Location = new System.Drawing.Point(14, 6);
+            this.cbEI.Name = "cbEI";
+            this.cbEI.Size = new System.Drawing.Size(200, 24);
+            this.cbEI.TabIndex = 1;
+            this.cbEI.SelectedIndexChanged += new System.EventHandler(this.onChangeEI);
+            this.cbEI.Enter += new System.EventHandler(this.onFocusCombo);
+            this.cbEI.Leave += new System.EventHandler(this.onLeaveCombo);
             // 
             // label9
             // 
@@ -233,6 +244,7 @@ namespace KnaufinsulationWalls.Steps
             this.vButton1.Text = "vButton1";
             this.vButton1.UseVisualStyleBackColor = true;
             this.vButton1.wightDeliter = 2;
+            this.vButton1.Click += new System.EventHandler(this.onClickExtParams);
             // 
             // label7
             // 
@@ -324,29 +336,29 @@ namespace KnaufinsulationWalls.Steps
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Lato", 8.25F);
-            this.label4.Location = new System.Drawing.Point(726, 478);
+            this.label4.Font = new System.Drawing.Font("Lato", 9F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(726, 476);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 13);
+            this.label4.Size = new System.Drawing.Size(132, 15);
             this.label4.TabIndex = 13;
             this.label4.Text = "03. Результат подбора";
             // 
             // label12
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Lato", 8.25F);
-            this.label12.Location = new System.Drawing.Point(344, 478);
+            this.label12.Font = new System.Drawing.Font("Lato", 9F, System.Drawing.FontStyle.Bold);
+            this.label12.Location = new System.Drawing.Point(333, 476);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(115, 13);
+            this.label12.Size = new System.Drawing.Size(128, 15);
             this.label12.TabIndex = 14;
             this.label12.Text = "01. Уровень шума Rw";
             // 
             // lblBack
             // 
-            this.lblBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblBack.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblBack.Font = new System.Drawing.Font("Lato Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.lblBack.Location = new System.Drawing.Point(470, 470);
@@ -354,11 +366,11 @@ namespace KnaufinsulationWalls.Steps
             this.lblBack.Size = new System.Drawing.Size(67, 25);
             this.lblBack.TabIndex = 9;
             this.lblBack.Text = "Назад";
-            this.lblBack.Click += new System.EventHandler(this.label4_Click);
+            this.lblBack.Click += new System.EventHandler(this.lbl_Back);
             // 
             // btnNext
             // 
-            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnNext.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnNext.ButtonBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
@@ -376,7 +388,7 @@ namespace KnaufinsulationWalls.Steps
             this.btnNext.Location = new System.Drawing.Point(544, 464);
             this.btnNext.Name = "btnNext";
             this.btnNext.offsettextX = 0;
-            this.btnNext.Size = new System.Drawing.Size(169, 40);
+            this.btnNext.Size = new System.Drawing.Size(170, 40);
             this.btnNext.TabIndex = 8;
             this.btnNext.Text = "ДАЛЕЕ";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -412,7 +424,6 @@ namespace KnaufinsulationWalls.Steps
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Step2";
             this.Load += new System.EventHandler(this.Step2_Load);
-            this.Resize += new System.EventHandler(this.Step2_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.roundPanel4.ResumeLayout(false);
@@ -443,9 +454,9 @@ namespace KnaufinsulationWalls.Steps
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbl_N1;
         private XCotrols.RoundPanel roundPanel1;
-        private XCotrols.CustomComboBox customComboBox1;
+        private XCotrols.CustomComboBox cbEI;
         private XCotrols.RoundPanel roundPanel2;
-        private XCotrols.CustomComboBox customComboBox2;
+        private XCotrols.CustomComboBox cbTP;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label12;
         private XCotrols.RoundPanel roundPanel4;

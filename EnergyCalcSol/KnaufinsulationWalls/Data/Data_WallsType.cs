@@ -14,6 +14,76 @@ namespace KnaufinsulationWalls.Data
         public static List<sWalls> data = new List<sWalls>(10);
         public static int maxRW = 0;
 
+        
+
+        public static List<sWalls> GetDatabyRW(List<sWalls> _data, int Rw)
+        {
+            List<sWalls> itemCalc = new List<sWalls>();
+
+            foreach (var itm in data)
+                itemCalc.Add((sWalls)itm.Clone());
+
+            foreach (var item in itemCalc)
+            {
+                item.types.RemoveAll(x => x.Rw < Rw);
+            }
+
+            itemCalc.RemoveAll(x => x.types.Count == 0);
+
+            return itemCalc;
+        }
+
+        public static List<sWalls> GetDatabyEI(List<sWalls> _data, int EI)
+        {
+            List<sWalls> itemCalc = new List<sWalls>();
+
+            foreach (var itm in _data)
+                itemCalc.Add((sWalls)itm.Clone());
+
+            foreach (var item in itemCalc)
+            {
+                item.types.RemoveAll(x => x.EI < EI);
+            }
+
+            itemCalc.RemoveAll(x => x.types.Count == 0);
+
+            return itemCalc;
+        }
+
+        public static List<sWalls> GetDatabyTP(List<sWalls> _data, int TP)
+        {
+            List<sWalls> itemCalc = new List<sWalls>();
+
+            foreach (var itm in _data)
+                itemCalc.Add((sWalls)itm.Clone());
+
+            foreach (var item in itemCalc)
+            {
+                item.types.RemoveAll(x => x.Tp != TP);
+            }
+
+            itemCalc.RemoveAll(x => x.types.Count == 0);
+
+            return itemCalc;
+        }
+
+        public static List<sWalls> GetDatabyTi(List<sWalls> _data, int TI)
+        {
+            List<sWalls> itemCalc = new List<sWalls>();
+
+            foreach (var itm in _data)
+                itemCalc.Add((sWalls)itm.Clone());
+
+            foreach (var item in itemCalc)
+            {
+                item.types.RemoveAll(x => x.Ti != TI);
+            }
+
+            itemCalc.RemoveAll(x => x.types.Count == 0);
+
+            return itemCalc;
+        }
+
 
         public static List<sWalls> GetFilerData(CalcItem userFilter)
         {
@@ -24,22 +94,24 @@ namespace KnaufinsulationWalls.Data
             
             foreach (var item in itemCalc)
             {
-                item.types.RemoveAll(x => x.Tp  != userFilter.Tp);
                 item.types.RemoveAll(x => x.EI < userFilter.EI);
                 item.types.RemoveAll(x => x.Rw < userFilter.Rw);
                 
+                if(userFilter.Tp != 0)
+                    item.types.RemoveAll(x => x.Tp != userFilter.Tp);
+
                 if (userFilter.Ti != 0)
-                    item.types.RemoveAll(x => x.Ti < userFilter.Ti);
+                    item.types.RemoveAll(x => x.Ti != userFilter.Ti);
 
                 if (userFilter.N != 0)
-                   item.types.RemoveAll(x => x.N < userFilter.N);
+                   item.types.RemoveAll(x => x.N != userFilter.N);
             }
 
             itemCalc.RemoveAll(x => x.types.Count == 0);
-            
+
             return itemCalc;
         }
-        
+                
         public static List<sLineWallsStruct> GetLineStruct(List<sWalls> data)
         {
             List<sLineWallsStruct> newData = new List<sLineWallsStruct>();
@@ -157,10 +229,6 @@ namespace KnaufinsulationWalls.Data
             }
             return true;
         }
-
-
-
-
 
     }
 }

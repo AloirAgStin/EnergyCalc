@@ -79,6 +79,9 @@
   <ItemGroup>
     <Compile Include="Base64Manager.cs" />
     <Compile Include="CalcItem.cs" />
+    <Compile Include="Data\FormExt.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\sFile.cs" />
     <Compile Include="Data\sLineWallsStruct.cs" />
     <Compile Include="Data\sWalls.cs" />
@@ -215,6 +218,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\stepImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stepImageTp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stepImageTi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stepImageN.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stepImageEI.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

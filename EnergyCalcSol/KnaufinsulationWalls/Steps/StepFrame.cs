@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
+using KnaufinsulationWalls.Data;
 using KnaufinsulationWalls.Properties;
 
  
@@ -13,7 +14,7 @@ namespace KnaufinsulationWalls.Steps
         int top = 0;
         int count = 0;
 
-        Form[] frm = {
+        FormExt[] frm = {
                               new Step1(),
                               new Step2(),
                               new Step3(),
@@ -27,14 +28,11 @@ namespace KnaufinsulationWalls.Steps
 
             CalcStruct = new CalcItem();
 
-            IsEnableCheck = false;
+            IsEnableCheck = true;
 
-            //todo del
-            CalcStruct.Tp = 100;
-            CalcStruct.EI = 30;
-            CalcStruct.Rw = 30;
-            
 
+            Helper.WriteLog("Load selection form");
+            Helper.WriteLog("Load step 1");
         }
         
         private void StepFrame_Resize(object sender, EventArgs e)
@@ -113,6 +111,7 @@ namespace KnaufinsulationWalls.Steps
             else
             {
                 LoadForm();
+                panelMain.Focus();
             }
             
         }
@@ -126,7 +125,9 @@ namespace KnaufinsulationWalls.Steps
             }
             else
             {
-                LoadForm();          
+                LoadForm();
+                frm[top].AfterShow();
+                panelMain.Focus();
             }
 
            
@@ -136,6 +137,8 @@ namespace KnaufinsulationWalls.Steps
         {
             try
             {
+
+                Helper.WriteLog("Load step " + (top + 1).ToString());
                 frm[top].TopLevel = false;
                 frm[top].Dock = DockStyle.Fill;
                 frm[top].Parent = this;
@@ -144,14 +147,6 @@ namespace KnaufinsulationWalls.Steps
                 panelMain.Controls.Add(frm[top]);
 
                 frm[top].Show();
-                if (top == frm.Count() - 1)
-                {
-                    var f  = frm[top] as Step3;
-                    f.FiltrData();
-                }
-                panelMain.Focus();
-                
-
             }
             catch (Exception ex)
             {
