@@ -32,47 +32,60 @@ namespace KnaufinsulationWalls.Steps
         }
 
 
-        private List<sWalls> _dataSource;
-        private List<sWalls> _dataWork;
+        private List<sWalls> dataSource;
+        private List<sWalls> data = new List<sWalls>();
 
         public override void AfterShow()
         {
-            var vMainFrom = Parent.Parent as StepFrame;
-            _dataSource = Data_WallsType.GetDatabyRW(Data_WallsType.data, vMainFrom.CalcStruct.Rw);
-
-            _dataWork = new List<sWalls>();
-            foreach (var item in _dataSource)
-                _dataWork.Add((sWalls)item.Clone());
-
-            InitDataForEIandTP(_dataWork);
-
             cbEI.DisplayMember = "Name";
             cbEI.ValueMember = "index";
 
             cbTP.DisplayMember = "Name";
             cbTP.ValueMember = "index";
-            
+
             cbIsolation.DisplayMember = "Name";
             cbIsolation.ValueMember = "index";
-            
+
             cbCountN.DisplayMember = "Name";
             cbCountN.ValueMember = "index";
 
+            var vCalcStruct = (Parent.Parent as StepFrame).CalcStruct;
+            dataSource = Data_WallsType.GetDatabyRW(Data_WallsType.data, vCalcStruct.Rw);
+            
+            FiltrData();
             
             cbEI.DataSource = Data_FillComboBox.cbItem_EI;
-
             cbTP.DataSource = Data_FillComboBox.cbItem_TP;
+            cbIsolation.DataSource = Data_FillComboBox.cbItem_Ti;
+            cbCountN.DataSource = Data_FillComboBox.cbItem_N;
         }
 
+        void FiltrData(int EI = 0, int TP = 0, int TI = 0)
+        {
+            data.Clear();
+            foreach (var item in dataSource)
+                data.Add((sWalls)item.Clone());
+            InitDataForEI(data);
+
+            if (EI > 0)
+                data = Data_WallsType.GetDatabyEI(data, EI);
+            InitDataForTp(data);
+
+            if (TP > 0)
+                data = Data_WallsType.GetDatabyTP(data, TP);
+            InitDataForTi(data);
+
+            if (TI > 0)
+                data = Data_WallsType.GetDatabyTi(data, TI);
+            InitDataForN(data);
+        }
 
         private void Step2_Load(object sender, EventArgs e)
         {
             btnNext.offsettextX = -5;
             cbEI.Focus();
         }
-
-
-
+        
 
         private bool IsShowExtParam = true;
         private void onClickExtParams(object sender, EventArgs e)
@@ -199,68 +212,54 @@ namespace KnaufinsulationWalls.Steps
 
         private void onChangeEI(object sender, EventArgs e)
         {
-            var elem = (CBItem)cbEI.SelectedItem;
+            var elemEI = (CBItem)cbEI.SelectedItem;
+            FiltrData(elemEI._intValue);
 
-            if (elem._intValue <= 0)
-                return;
+            CBItem elemTp = new CBItem() { _intValue = 0 };
+            if (cbTP.SelectedIndex > 0)
+                elemTp = (CBItem)cbTP.SelectedItem;
 
-            _dataWork = new List<sWalls>();
-            foreach (var item2 in _dataSource)
-                _dataWork.Add((sWalls)item2.Clone());
-
-            _dataWork = Data_WallsType.GetDatabyEI(_dataWork, elem._intValue);
-
-
-            var item = cbTP.SelectedItem;
-
-            InitDataForTp(_dataWork);
             cbTP.DataSource = Data_FillComboBox.cbItem_TP;
+            if (elemTp._intValue > 0)
+                cbTP.SelectedItem = elemTp;
 
-            cbTP.SelectedItem = item;
+
+            cbIsolation.DataSource = Data_FillComboBox.cbItem_Ti;
+          //  cbCountN.DataSource = Data_FillComboBox.cbItem_N;
+            
+            return; 
         }
 
         private void onChangeTp(object sender, EventArgs e)
-        {            
-            var elem = (CBItem)cbTP.SelectedItem;
-            
-            if (elem._intValue <= 0)
-            {
-                InitDataForTi(_dataWork);
-                cbIsolation.DataSource = Data_FillComboBox.cbItem_Ti;
-
-                InitDataForN(_dataWork);
-                cbCountN.DataSource = Data_FillComboBox.cbItem_N;
-                return;
-            }
+        {
+            var elemEI = (CBItem)cbEI.SelectedItem;
+            var elemTp = (CBItem)cbTP.SelectedItem;
+            FiltrData(elemEI._intValue, elemTp._intValue);
 
 
-            var item = cbIsolation.SelectedItem;
-            _dataWork = Data_WallsType.GetDatabyTP(_dataWork, elem._intValue);
+            CBItem elemTi = new CBItem() { _intValue = 0 };
+            if (cbIsolation.SelectedIndex > 0)
+                elemTi = (CBItem)cbIsolation.SelectedItem;
 
-            InitDataForTi(_dataWork);
             cbIsolation.DataSource = Data_FillComboBox.cbItem_Ti;
-
-            cbIsolation.SelectedItem = item;
+            cbIsolation.SelectedItem = elemTi;
         }
 
         private void onChangeTi(object sender, EventArgs e)
-        {            
-            var elem = (CBItem)cbIsolation.SelectedItem;
+        {
+            var elemEI = (CBItem)cbEI.SelectedItem;
+            var elemTp = (CBItem)cbTP.SelectedItem;
+            var elemTi = (CBItem)cbIsolation.SelectedItem;
 
-            if (elem._intValue <= 0)
-            {
-                InitDataForN(_dataWork);
-                cbCountN.DataSource = Data_FillComboBox.cbItem_N;
-                return;
-            }
+            FiltrData(elemEI._intValue, elemTp._intValue, elemTi._intValue);
 
-            var item = cbCountN.SelectedItem;
 
-            var filtrList = Data_WallsType.GetDatabyTi(_dataWork, elem._intValue);
-            InitDataForN(filtrList);
+            CBItem elemN = new CBItem() { _intValue = 0 };
+            if (cbCountN.SelectedIndex > 0)
+                elemN = (CBItem)cbCountN.SelectedItem;
+
             cbCountN.DataSource = Data_FillComboBox.cbItem_N;
-
-            cbCountN.SelectedItem = item;
+            cbCountN.SelectedItem = elemN;
         }
         
 

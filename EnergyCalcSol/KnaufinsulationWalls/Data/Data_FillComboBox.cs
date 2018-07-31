@@ -268,7 +268,7 @@ namespace KnaufinsulationWalls.Data
         }
 
         public struct CBItem
-        {       
+        {
             public String Name { get; set; }
             public int index { get; set; }
             public int _intValue { get; set; }

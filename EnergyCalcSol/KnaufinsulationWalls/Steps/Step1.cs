@@ -26,7 +26,6 @@ namespace KnaufinsulationWalls.Steps
             DoubleBuffered = true;
 
             Shown += Step1_Shown;
-
         }
 
 
@@ -160,10 +159,6 @@ namespace KnaufinsulationWalls.Steps
                 customComboBox2.DataSource = Data_BuildingType.GetDataByIndex(item.index);
                 customComboBox2.DisplayMember = "Name";
                 customComboBox2.ValueMember = "index";
-            }
-            else
-            {
-
             }
  
         }
