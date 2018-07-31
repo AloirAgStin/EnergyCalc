@@ -155,6 +155,9 @@ namespace KnaufinsulationWalls.Steps
             }
         }
 
-
+        private void stepCounter1_Enter(object sender, EventArgs e)
+        {
+            pictureBox1.Focus();
+        }
     }
 }

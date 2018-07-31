@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StepFrame));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.stepCounter1 = new XCotrols.StepCounter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.stepCounter1 = new XCotrols.StepCounter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,22 +46,8 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1026, 67);
+            this.panel2.Size = new System.Drawing.Size(1026, 62);
             this.panel2.TabIndex = 1;
-            // 
-            // stepCounter1
-            // 
-            this.stepCounter1.Font = new System.Drawing.Font("Lato", 26F);
-            this.stepCounter1.Location = new System.Drawing.Point(18, 10);
-            this.stepCounter1.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
-            this.stepCounter1.Name = "stepCounter1";
-            this.stepCounter1.Size = new System.Drawing.Size(461, 47);
-            this.stepCounter1.StepColorCurrent = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(175)))), ((int)(((byte)(230)))));
-            this.stepCounter1.StepColorFuture = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(215)))), ((int)(((byte)(216)))));
-            this.stepCounter1.StepCount = 3;
-            this.stepCounter1.StepCurrent = 1;
-            this.stepCounter1.TabIndex = 1;
-            this.stepCounter1.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -69,7 +55,7 @@
             this.pictureBox1.Image = global::KnaufinsulationWalls.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(755, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(271, 67);
+            this.pictureBox1.Size = new System.Drawing.Size(271, 62);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -79,11 +65,25 @@
             this.panelMain.AutoScroll = true;
             this.panelMain.BackColor = System.Drawing.Color.White;
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(0, 67);
+            this.panelMain.Location = new System.Drawing.Point(0, 62);
             this.panelMain.Margin = new System.Windows.Forms.Padding(0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1026, 544);
+            this.panelMain.Size = new System.Drawing.Size(1026, 549);
             this.panelMain.TabIndex = 2;
+            // 
+            // stepCounter1
+            // 
+            this.stepCounter1.BackColor = System.Drawing.Color.White;
+            this.stepCounter1.Location = new System.Drawing.Point(12, 3);
+            this.stepCounter1.Name = "stepCounter1";
+            this.stepCounter1.Size = new System.Drawing.Size(726, 54);
+            this.stepCounter1.StepColorCurrent = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(175)))), ((int)(((byte)(230)))));
+            this.stepCounter1.StepColorFuture = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(215)))), ((int)(((byte)(216)))));
+            this.stepCounter1.StepCount = 3;
+            this.stepCounter1.StepCurrent = 1;
+            this.stepCounter1.TabIndex = 3;
+            this.stepCounter1.TabStop = false;
+            this.stepCounter1.Enter += new System.EventHandler(this.stepCounter1_Enter);
             // 
             // StepFrame
             // 
@@ -110,9 +110,9 @@
         }
 
         #endregion
-        private XCotrols.StepCounter stepCounter1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelMain;
+        private XCotrols.StepCounter stepCounter1;
     }
 }
