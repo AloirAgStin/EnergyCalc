@@ -248,12 +248,11 @@ namespace KnaufinsulationWalls.Steps
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.label7.Location = new System.Drawing.Point(11, 255);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(204, 17);
+            this.label7.Size = new System.Drawing.Size(225, 20);
             this.label7.TabIndex = 29;
             this.label7.Text = "Дополонительные параметры";
             this.label7.Click += new System.EventHandler(this.onClickExtParams);

@@ -83,7 +83,11 @@ namespace KnaufinsulationWalls.Steps
         private void Step2_Load(object sender, EventArgs e)
         {
             btnNext.offsettextX = -5;
+            onClickExtParams(sender, e);
+
             cbEI.Focus();
+
+
         }
         
 

@@ -151,7 +151,6 @@ namespace KnaufinsulationWalls.Steps
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
 
