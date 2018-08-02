@@ -118,7 +118,7 @@ namespace KnaufinsulationWalls.Steps
             this.cbCountN.Location = new System.Drawing.Point(14, 6);
             this.cbCountN.Name = "cbCountN";
             this.cbCountN.Size = new System.Drawing.Size(198, 24);
-            this.cbCountN.TabIndex = 3;
+            this.cbCountN.TabIndex = 6;
             this.cbCountN.Enter += new System.EventHandler(this.onFocusCombo);
             this.cbCountN.Leave += new System.EventHandler(this.onLeaveCombo);
             // 
@@ -148,7 +148,7 @@ namespace KnaufinsulationWalls.Steps
             this.cbIsolation.Location = new System.Drawing.Point(14, 6);
             this.cbIsolation.Name = "cbIsolation";
             this.cbIsolation.Size = new System.Drawing.Size(198, 24);
-            this.cbIsolation.TabIndex = 3;
+            this.cbIsolation.TabIndex = 5;
             this.cbIsolation.SelectedIndexChanged += new System.EventHandler(this.onChangeTi);
             this.cbIsolation.Enter += new System.EventHandler(this.onFocusCombo);
             this.cbIsolation.Leave += new System.EventHandler(this.onLeaveCombo);
@@ -257,7 +257,7 @@ namespace KnaufinsulationWalls.Steps
             this.label7.Location = new System.Drawing.Point(11, 255);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(225, 20);
-            this.label7.TabIndex = 29;
+            this.label7.TabIndex = 4;
             this.label7.Text = "Дополонительные параметры";
             this.label7.Click += new System.EventHandler(this.onClickExtParams);
             // 

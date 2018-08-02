@@ -70,7 +70,7 @@ namespace KnaufinsulationWalls
                            "Тел.  +7(495) 933 - 61 - 30,\r\n" +
                            "факс: +7(495) 933 - 61 - 31\r\n" +
                            "info.russia@knaufinsulation.com";
-
+                    
                     XTextFormatter tf = new XTextFormatter(gr);
                     var sz = gr.MeasureString(text, font);
                     sz.Height += 10;
@@ -78,6 +78,7 @@ namespace KnaufinsulationWalls
                     gr.DrawRectangle(backColor, rect);
                     tf.DrawString(text, font, XBrushes.Black, rect, XStringFormats.TopLeft);
 
+                    tf.Alignment = XParagraphAlignment.Justify;
 
                     var logo = XImage.FromGdiPlusImage(Properties.Resources.logo);
                     gr.DrawImage(logo, 370, pCurrLine.Y, 180, 50);
@@ -127,7 +128,7 @@ namespace KnaufinsulationWalls
             var img = ImageManager.LoadImageFromFile(FileManager.GetPathToRes(item.WallTypes.ImageName));
 
             var mainImg = XImage.FromGdiPlusImage(img);
-            gr.DrawImage(mainImg, pCurrLine.X, pCurrLine.Y, 228, 237);
+            gr.DrawImage(mainImg, pCurrLine.X, pCurrLine.Y, 240, 259);
 
             {
                 var pointP = pCurrLine;
@@ -144,7 +145,7 @@ namespace KnaufinsulationWalls
                     pointP.Y += (int)gr.MeasureString(ResultText, f).Height / 2;
                 }
 
-
+                
 
                 {
                     var f = new XFont(FontFamilyName, 11, XFontStyle.Regular, options);
@@ -170,21 +171,44 @@ namespace KnaufinsulationWalls
                 {
                     var f = new XFont(FontFamilyName, 11, XFontStyle.Regular, options);
                     StringBuilder strB = new StringBuilder();
-                    strB.AppendFormat("В соответствии с СП 51.1330.2011 «Защита от\r\nшума»," +
+                    strB.AppendFormat("В соответствии с СП 51.1330.2011 «Защита от шума», " +
                         "требуемый индекс изоляции шума для конструкции составляет {0} дБ"
                         , item.WallTypes.Rw);
                     ResultText = strB.ToString();
 
                     XTextFormatter tf = new XTextFormatter(gr);
+
+                    tf.Alignment = XParagraphAlignment.Justify;
                     var sz = gr.MeasureString(ResultText, f);
-                    sz.Height += 10;
-                    XRect rect = new XRect(pointP, new XPoint((int)(PAGE.Width.Point - pCurrLine.X), pointP.Y + sz.Height * 1.2));
+                    sz.Height += 15;
+                    XRect rect = new XRect(pointP, new XPoint((int)(PAGE.Width.Point - pCurrLine.X), pointP.Y + sz.Height * 2));
 
                     gr.DrawRectangle(backColor, rect);
                     tf.DrawString(ResultText, f, XBrushes.Black, rect, XStringFormats.TopLeft);
 
 
-                    pointP.Y += rect.Height;
+                    pointP.Y += rect.Height ;
+                }
+
+
+                {
+                    var f = new XFont(FontFamilyName, 11, XFontStyle.Regular, options);
+
+                    var strB = new StringBuilder();
+
+                    strB.AppendFormat("Для    удовлетворения    требований    рекомендуется\r\nследующая конструкция перегородки:");
+                    ResultText = strB.ToString();
+
+                    XTextFormatter tf = new XTextFormatter(gr);
+                    tf.Alignment = XParagraphAlignment.Justify;
+
+                    var sz = gr.MeasureString(ResultText, f);
+                    sz.Width += 20;
+                    sz.Height += 5;
+                    XRect rect = new XRect(pointP, sz);
+                    gr.DrawRectangle(XBrushes.White, rect);
+                    tf.DrawString(ResultText, f, XBrushes.Black, rect, XStringFormats.TopLeft);
+                    pointP.Y += sz.Height;
                 }
 
                 {
@@ -196,11 +220,13 @@ namespace KnaufinsulationWalls
                         "- Толщина перегородки: {0} мм\r\n" +
                         "- Толщина изоляции: {1} мм\r\n" +
                         "- Кол-во листов с одной стороны  - {2} {3}\r\n" +
-                        "- Материал изоляции перегородки: минеральная вата"
+                        "- Материал изоляции перегородки:\r\n" +
+                        "    Knauf Insulation AS Акустическая перегородка"
                         , item.WallTypes.Tp, item.WallTypes.Ti, item.WallTypes.N, item.GetNameExtVal());
                     ResultText = strB.ToString();
 
                     XTextFormatter tf = new XTextFormatter(gr);
+                    
                     var sz = gr.MeasureString(ResultText, f);
                     sz.Height += 10;
                     XRect rect = new XRect(pointP, sz);
@@ -209,11 +235,14 @@ namespace KnaufinsulationWalls
                     pointP.Y += sz.Height;
                 }
 
-                {
+               /* {
                     var f = new XFont(FontFamilyName, 11, XFontStyle.Regular | XFontStyle.Underline, options);
-                    gr.DrawString("KnaufInsulation AS Акустическая перегородка", f, XBrushes.Black, pointP);
+
+                    pointP.X += gr.MeasureString("_", f).Width;
+                    gr.DrawString("Knauf Insulation AS Акустическая перегородка", f, XBrushes.Black, pointP);
 
                 }
+                */
             }
             
             //bottom page

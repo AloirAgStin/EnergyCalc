@@ -106,12 +106,12 @@ namespace KnaufinsulationWalls.Steps
 
             if(itm.Tp > 0)
                 Text.AppendFormat("; Толщина перегродки Tп={0} мм",itm.Tp);
-
+            /*
             if (itm.Ti > 0)
                 Text.AppendFormat("; Толщина изоляции Tu={0}", itm.Ti);
 
             if (itm.N > 0)
-                Text.AppendFormat("; N={0}", itm.N);
+                Text.AppendFormat("; N={0}", itm.N);*/
 
             return Text.ToString();
         }
