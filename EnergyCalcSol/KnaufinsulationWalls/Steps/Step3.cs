@@ -83,8 +83,6 @@ namespace KnaufinsulationWalls.Steps
                     if (exListBox1.Items.Count > 0)
                         exListBox1.SelectedIndex = 0;
                 }
-
-                lblEmptyVar.Visible = emptyVariants;
                 btndw.Visible = !emptyVariants;
                 btnEI.Visible = !emptyVariants;
                 btnNG.Visible = !emptyVariants;
@@ -104,7 +102,17 @@ namespace KnaufinsulationWalls.Steps
         private String MakeUserChoiseText(CalcItem itm)
         {
             StringBuilder Text = new StringBuilder();
-            Text.AppendFormat("Rw={0} дБ, EI={1}; Толщина перегродки Tп={2} мм", itm.Rw, itm.EI, itm.Tp);            
+            Text.AppendFormat("Rw={0} дБ, EI={1}", itm.Rw, itm.EI);
+
+            if(itm.Tp > 0)
+                Text.AppendFormat("; Толщина перегродки Tп={0} мм",itm.Tp);
+
+            if (itm.Ti > 0)
+                Text.AppendFormat("; Толщина изоляции Tu={0}", itm.Ti);
+
+            if (itm.N > 0)
+                Text.AppendFormat("; N={0}", itm.N);
+
             return Text.ToString();
         }
         

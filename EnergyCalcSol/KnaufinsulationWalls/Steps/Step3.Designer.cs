@@ -52,7 +52,6 @@ namespace KnaufinsulationWalls.Steps
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblEmptyVar = new System.Windows.Forms.Label();
             this.saveFDPDF = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.btnDWG.SuspendLayout();
@@ -86,9 +85,7 @@ namespace KnaufinsulationWalls.Steps
             this.exListBox1.FormattingEnabled = true;
             this.exListBox1.ItemHeight = 25;
             this.exListBox1.Items.AddRange(new object[] {
-            "ВАРИАНТ 1",
-            "ВАРИАНТ 2",
-            "ВАРИАНТ 3"});
+            "ВАРИАНТ 1"});
             this.exListBox1.Location = new System.Drawing.Point(14, 82);
             this.exListBox1.Name = "exListBox1";
             this.exListBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -129,21 +126,20 @@ namespace KnaufinsulationWalls.Steps
             this.btnDWG.Location = new System.Drawing.Point(260, 0);
             this.btnDWG.MinimumSize = new System.Drawing.Size(0, 65);
             this.btnDWG.Name = "btnDWG";
-            this.btnDWG.Size = new System.Drawing.Size(727, 65);
+            this.btnDWG.Size = new System.Drawing.Size(733, 65);
             this.btnDWG.TabIndex = 10;
             // 
             // lblUserData
             // 
             this.lblUserData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUserData.AutoSize = true;
             this.lblUserData.Font = new System.Drawing.Font("Lato", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblUserData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(145)))), ((int)(((byte)(149)))));
             this.lblUserData.Location = new System.Drawing.Point(13, 38);
             this.lblUserData.Name = "lblUserData";
-            this.lblUserData.Size = new System.Drawing.Size(421, 22);
+            this.lblUserData.Size = new System.Drawing.Size(707, 22);
             this.lblUserData.TabIndex = 4;
-            this.lblUserData.Text = "Rw=55дБ, EI=60; Толщина перегродки Tп=150мм";
+            this.lblUserData.Text = "Rw=55дБ, EI=60; Толщина перегродки Tп=150мм;";
             this.lblUserData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
@@ -299,7 +295,7 @@ namespace KnaufinsulationWalls.Steps
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lato", 9F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(276, 472);
+            this.label4.Location = new System.Drawing.Point(279, 472);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(186, 15);
             this.label4.TabIndex = 21;
@@ -310,7 +306,7 @@ namespace KnaufinsulationWalls.Steps
             this.lblBack.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblBack.Font = new System.Drawing.Font("Lato Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.lblBack.Location = new System.Drawing.Point(470, 464);
+            this.lblBack.Location = new System.Drawing.Point(473, 464);
             this.lblBack.Name = "lblBack";
             this.lblBack.Size = new System.Drawing.Size(66, 25);
             this.lblBack.TabIndex = 9;
@@ -333,7 +329,7 @@ namespace KnaufinsulationWalls.Steps
             this.btnPrint.ButtonRoundRadius = 30;
             this.btnPrint.Font = new System.Drawing.Font("Lato", 14F, System.Drawing.FontStyle.Bold);
             this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Location = new System.Drawing.Point(544, 459);
+            this.btnPrint.Location = new System.Drawing.Point(547, 459);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.offsettextX = 0;
             this.btnPrint.Size = new System.Drawing.Size(202, 39);
@@ -346,7 +342,7 @@ namespace KnaufinsulationWalls.Steps
             this.lblClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblClose.Font = new System.Drawing.Font("Lato Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.lblClose.Location = new System.Drawing.Point(757, 465);
+            this.lblClose.Location = new System.Drawing.Point(760, 465);
             this.lblClose.Name = "lblClose";
             this.lblClose.Size = new System.Drawing.Size(85, 25);
             this.lblClose.TabIndex = 10;
@@ -364,7 +360,7 @@ namespace KnaufinsulationWalls.Steps
             this.richTextBox1.Location = new System.Drawing.Point(565, 83);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(409, 277);
+            this.richTextBox1.Size = new System.Drawing.Size(415, 277);
             this.richTextBox1.TabIndex = 23;
             this.richTextBox1.Text = "";
             // 
@@ -398,20 +394,6 @@ namespace KnaufinsulationWalls.Steps
             this.tableLayoutPanel1.Size = new System.Drawing.Size(702, 83);
             this.tableLayoutPanel1.TabIndex = 24;
             // 
-            // lblEmptyVar
-            // 
-            this.lblEmptyVar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEmptyVar.Font = new System.Drawing.Font("Lato", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblEmptyVar.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblEmptyVar.Location = new System.Drawing.Point(813, 272);
-            this.lblEmptyVar.Name = "lblEmptyVar";
-            this.lblEmptyVar.Size = new System.Drawing.Size(165, 88);
-            this.lblEmptyVar.TabIndex = 25;
-            this.lblEmptyVar.Text = "Невозможно выполнить подбор перегоодок по заданным условиям\r\nПопробуйте задать др" +
-    "угие критерии подбора";
-            this.lblEmptyVar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // saveFDPDF
             // 
             this.saveFDPDF.DefaultExt = "pdf";
@@ -423,8 +405,7 @@ namespace KnaufinsulationWalls.Steps
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(987, 510);
-            this.Controls.Add(this.lblEmptyVar);
+            this.ClientSize = new System.Drawing.Size(993, 510);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.lblClose);
@@ -438,7 +419,7 @@ namespace KnaufinsulationWalls.Steps
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Step3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Step3";
+            this.Text = "ы";
             this.Load += new System.EventHandler(this.Step3_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -475,7 +456,6 @@ namespace KnaufinsulationWalls.Steps
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lblEmptyVar;
         private System.Windows.Forms.SaveFileDialog saveFDPDF;
     }
 }

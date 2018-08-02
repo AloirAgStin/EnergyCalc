@@ -50,12 +50,16 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnNext = new XControl.RounButtonWithArroy();
             this.dbPictureBox1 = new XControl.DBPictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.roundPanel2.SuspendLayout();
             this.roundPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,7 +82,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 484);
+            this.panel1.Size = new System.Drawing.Size(260, 512);
             this.panel1.TabIndex = 3;
             // 
             // label7
@@ -98,7 +102,7 @@
             this.panel2.Controls.Add(this.richTextBox1);
             this.panel2.Location = new System.Drawing.Point(14, 369);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(225, 102);
+            this.panel2.Size = new System.Drawing.Size(225, 130);
             this.panel2.TabIndex = 11;
             // 
             // richTextBox1
@@ -112,7 +116,7 @@
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(225, 102);
+            this.richTextBox1.Size = new System.Drawing.Size(225, 130);
             this.richTextBox1.TabIndex = 9;
             this.richTextBox1.TabStop = false;
             this.richTextBox1.Text = "";
@@ -274,7 +278,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Lato", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(640, 150);
+            this.label3.Location = new System.Drawing.Point(659, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(275, 123);
             this.label3.TabIndex = 6;
@@ -286,7 +290,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Lato", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.label5.Location = new System.Drawing.Point(720, 90);
+            this.label5.Location = new System.Drawing.Point(740, 90);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 56);
             this.label5.TabIndex = 8;
@@ -297,7 +301,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Lato", 9F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(726, 444);
+            this.label8.Location = new System.Drawing.Point(743, 472);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(186, 15);
             this.label8.TabIndex = 0;
@@ -320,7 +324,7 @@
             this.btnNext.DrawArrow = true;
             this.btnNext.Font = new System.Drawing.Font("Lato", 14F, System.Drawing.FontStyle.Bold);
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(544, 432);
+            this.btnNext.Location = new System.Drawing.Point(561, 460);
             this.btnNext.Name = "btnNext";
             this.btnNext.offsettextX = 0;
             this.btnNext.Size = new System.Drawing.Size(170, 40);
@@ -334,9 +338,29 @@
             this.dbPictureBox1.Image = global::KnaufinsulationWalls.Properties.Resources.stepImage;
             this.dbPictureBox1.Location = new System.Drawing.Point(270, 10);
             this.dbPictureBox1.Name = "dbPictureBox1";
-            this.dbPictureBox1.Size = new System.Drawing.Size(348, 437);
+            this.dbPictureBox1.Size = new System.Drawing.Size(372, 448);
             this.dbPictureBox1.TabIndex = 5;
             this.dbPictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::KnaufinsulationWalls.Properties.Resources.arroyR;
+            this.pictureBox2.Location = new System.Drawing.Point(655, 93);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(86, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::KnaufinsulationWalls.Properties.Resources.arroyL;
+            this.pictureBox3.Location = new System.Drawing.Point(828, 93);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(89, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 12;
+            this.pictureBox3.TabStop = false;
             // 
             // Step1
             // 
@@ -345,11 +369,13 @@
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(917, 484);
+            this.ClientSize = new System.Drawing.Size(950, 512);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dbPictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -364,6 +390,8 @@
             this.roundPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,5 +419,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

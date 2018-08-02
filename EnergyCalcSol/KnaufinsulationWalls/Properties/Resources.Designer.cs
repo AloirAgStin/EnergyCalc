@@ -73,6 +73,26 @@ namespace KnaufinsulationWalls.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arroyL {
+            get {
+                object obj = ResourceManager.GetObject("arroyL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arroyR {
+            get {
+                object obj = ResourceManager.GetObject("arroyR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dw_file {
             get {
                 object obj = ResourceManager.GetObject("dw_file", resourceCulture);
@@ -106,16 +126,6 @@ namespace KnaufinsulationWalls.Properties {
         internal static System.Drawing.Bitmap stepImage {
             get {
                 object obj = ResourceManager.GetObject("stepImage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap stepImageEI {
-            get {
-                object obj = ResourceManager.GetObject("stepImageEI", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

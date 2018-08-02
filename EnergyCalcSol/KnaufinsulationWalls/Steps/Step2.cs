@@ -182,11 +182,7 @@ namespace KnaufinsulationWalls.Steps
             var item = sender as CustomComboBox;
             var name = item.Name;
 
-            if (cbEI.Name == name)
-            {
-                dbPictureBox1.Image = Properties.Resources.stepImageEI;
-            }
-            else
+         
             if (cbTP.Name == name)
             {
                 dbPictureBox1.Image = Properties.Resources.stepImageTp;
@@ -229,7 +225,6 @@ namespace KnaufinsulationWalls.Steps
 
 
             cbIsolation.DataSource = Data_FillComboBox.cbItem_Ti;
-          //  cbCountN.DataSource = Data_FillComboBox.cbItem_N;
             
             return; 
         }

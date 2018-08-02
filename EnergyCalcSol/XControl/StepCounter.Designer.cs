@@ -44,7 +44,7 @@
             this.richTextBox1.BackColor = System.Drawing.Color.White;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.DetectUrls = false;
-            this.richTextBox1.Font = new System.Drawing.Font("Lato", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBox1.Font = new System.Drawing.Font("Lato", 34F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox1.Location = new System.Drawing.Point(0, -3);
             this.richTextBox1.Multiline = false;
             this.richTextBox1.Name = "richTextBox1";
@@ -60,7 +60,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::XControl.Properties.Resources.ic;
-            this.pictureBox1.Location = new System.Drawing.Point(22, 46);
+            this.pictureBox1.Location = new System.Drawing.Point(21, 46);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(8, 8);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -70,7 +70,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::XControl.Properties.Resources.ic;
-            this.pictureBox2.Location = new System.Drawing.Point(116, 46);
+            this.pictureBox2.Location = new System.Drawing.Point(113, 46);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(8, 8);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -80,7 +80,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::XControl.Properties.Resources.ic;
-            this.pictureBox3.Location = new System.Drawing.Point(212, 46);
+            this.pictureBox3.Location = new System.Drawing.Point(208, 46);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(8, 8);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
