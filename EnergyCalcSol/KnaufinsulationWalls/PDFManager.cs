@@ -122,7 +122,7 @@ namespace KnaufinsulationWalls
                 br = new XSolidBrush(XColor.FromArgb(140, 145, 149));
                 gr.DrawString(ResultText, f, br, new Point((int)pCurrLine.X + 10, (int)pCurrLine.Y + (int)gr.MeasureString(ResultText, f).Height + 2));
 
-                pCurrLine.Y += 40;
+                pCurrLine.Y += 45;
             }
 
             var img = ImageManager.LoadImageFromFile(FileManager.GetPathToRes(item.WallTypes.ImageName));
@@ -209,6 +209,8 @@ namespace KnaufinsulationWalls
                     gr.DrawRectangle(XBrushes.White, rect);
                     tf.DrawString(ResultText, f, XBrushes.Black, rect, XStringFormats.TopLeft);
                     pointP.Y += sz.Height;
+                    pointP.Y -= 5;
+
                 }
 
                 {
@@ -221,8 +223,12 @@ namespace KnaufinsulationWalls
                         "- Толщина изоляции: {1} мм\r\n" +
                         "- Кол-во листов с одной стороны  - {2} {3}\r\n" +
                         "- Материал изоляции перегородки:\r\n" +
-                        "    Knauf Insulation AS Акустическая перегородка"
-                        , item.WallTypes.Tp, item.WallTypes.Ti, item.WallTypes.N, item.GetNameExtVal());
+                        "Knauf Insulation AS Акустическая перегородка\r\n" +
+                        "- Rw={4} дБ\r\n" +
+                        "- EI{5}"
+                        , item.WallTypes.Tp, item.WallTypes.Ti, item.WallTypes.N, item.GetNameExtVal(),
+                        item.WallTypes.Rw,
+                        item.WallTypes.EI);
                     ResultText = strB.ToString();
 
                     XTextFormatter tf = new XTextFormatter(gr);
