@@ -49,15 +49,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnNext = new XControl.RounButtonWithArroy();
             this.dbPictureBox1 = new XControl.DBPictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pbLArroy = new System.Windows.Forms.PictureBox();
+            this.pbRArroy = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.roundPanel2.SuspendLayout();
             this.roundPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLArroy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRArroy)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -227,6 +227,8 @@
             this.roundEdit1.TabIndex = 2;
             this.roundEdit1.WatermarkActive = true;
             this.roundEdit1.WatermarkText = "Введите Rw, Дб";
+            this.roundEdit1.Enter += new System.EventHandler(this.onSetFocusRW);
+            this.roundEdit1.Leave += new System.EventHandler(this.onSetKillFocusRW);
             // 
             // radioButton1
             // 
@@ -238,7 +240,7 @@
             this.radioButton1.Size = new System.Drawing.Size(272, 39);
             this.radioButton1.TabIndex = 1;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Я ЗНАЮ ТРЕБУЕМЫЙ ИНДЕКС ИЗОЛЯЦИИ ВОЗДУШНОГО ШУМА, RW";
+            this.radioButton1.Text = "Я ЗНАЮ ТРЕБУЕМЫЙ ИНДЕКС ИЗОЛЯЦИИ ВОЗДУШНОГО ШУМА, Rw";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
@@ -313,6 +315,8 @@
             this.btnNext.ButtonPressedForeColor = System.Drawing.Color.White;
             this.btnNext.ButtonRoundRadius = 30;
             this.btnNext.DrawArrow = true;
+            this.btnNext.DrawArrowW = 1F;
+            this.btnNext.DrawArrowXOffset = 0F;
             this.btnNext.Font = new System.Drawing.Font("Lato", 14F, System.Drawing.FontStyle.Bold);
             this.btnNext.ForeColor = System.Drawing.Color.White;
             this.btnNext.Location = new System.Drawing.Point(583, 465);
@@ -333,25 +337,27 @@
             this.dbPictureBox1.TabIndex = 5;
             this.dbPictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // pbLArroy
             // 
-            this.pictureBox2.Image = global::KnaufinsulationWalls.Properties.Resources.arroyR;
-            this.pictureBox2.Location = new System.Drawing.Point(711, 94);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(86, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
+            this.pbLArroy.Image = global::KnaufinsulationWalls.Properties.Resources.arroyR;
+            this.pbLArroy.Location = new System.Drawing.Point(711, 95);
+            this.pbLArroy.Name = "pbLArroy";
+            this.pbLArroy.Size = new System.Drawing.Size(89, 50);
+            this.pbLArroy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLArroy.TabIndex = 11;
+            this.pbLArroy.TabStop = false;
+            this.pbLArroy.Visible = false;
             // 
-            // pictureBox3
+            // pbRArroy
             // 
-            this.pictureBox3.Image = global::KnaufinsulationWalls.Properties.Resources.arroyL;
-            this.pictureBox3.Location = new System.Drawing.Point(884, 94);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(89, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 12;
-            this.pictureBox3.TabStop = false;
+            this.pbRArroy.Image = global::KnaufinsulationWalls.Properties.Resources.arroyL;
+            this.pbRArroy.Location = new System.Drawing.Point(884, 95);
+            this.pbRArroy.Name = "pbRArroy";
+            this.pbRArroy.Size = new System.Drawing.Size(89, 50);
+            this.pbRArroy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRArroy.TabIndex = 12;
+            this.pbRArroy.TabStop = false;
+            this.pbRArroy.Visible = false;
             // 
             // Step1
             // 
@@ -362,8 +368,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(994, 512);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pbRArroy);
+            this.Controls.Add(this.pbLArroy);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.label5);
@@ -380,8 +386,8 @@
             this.roundPanel2.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dbPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLArroy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRArroy)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,7 +414,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pbLArroy;
+        private System.Windows.Forms.PictureBox pbRArroy;
     }
 }

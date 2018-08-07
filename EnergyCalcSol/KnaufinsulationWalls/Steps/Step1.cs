@@ -237,5 +237,17 @@ namespace KnaufinsulationWalls.Steps
                 return;
             }            
         }
+
+        private void onSetFocusRW(object sender, EventArgs e)
+        {
+            pbLArroy.Visible = true;
+            pbRArroy.Visible = true;
+        }
+
+        private void onSetKillFocusRW(object sender, EventArgs e)
+        {
+            pbLArroy.Visible = false;
+            pbRArroy.Visible = false;
+        }
     }
 }

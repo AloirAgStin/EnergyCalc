@@ -247,7 +247,7 @@ namespace KnaufinsulationWalls.Steps
                 richTextBox1.AppendText("Knauf Insulation AS Акустическая перегородка");
                 
 
-                richTextBox1.Invalidate();
+                //richTextBox1.Invalidate();
             }
             catch (Exception ex)
             {

@@ -182,7 +182,6 @@ namespace KnaufinsulationWalls.Steps
             var item = sender as CustomComboBox;
             var name = item.Name;
 
-         
             if (cbTP.Name == name)
             {
                 dbPictureBox1.Image = Properties.Resources.stepImageTp;
@@ -202,12 +201,19 @@ namespace KnaufinsulationWalls.Steps
                 dbPictureBox1.Image = Properties.Resources.stepImage;
             }
 
+            if (cbEI.Name == name)
+            {
+                pbRArroy.Visible = true;
+                pbLArroy.Visible = true;
+            }
 
         }
 
         private void onLeaveCombo(object sender, EventArgs e)
         {
             dbPictureBox1.Image = Properties.Resources.stepImage;
+            pbRArroy.Visible = false;
+            pbLArroy.Visible = false;
         }
 
         private void onChangeEI(object sender, EventArgs e)

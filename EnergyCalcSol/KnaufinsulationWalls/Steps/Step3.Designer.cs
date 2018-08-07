@@ -223,10 +223,10 @@ namespace KnaufinsulationWalls.Steps
             this.richTextBox1.BackColor = System.Drawing.Color.White;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox1.Location = new System.Drawing.Point(605, 71);
+            this.richTextBox1.Location = new System.Drawing.Point(605, 76);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(444, 289);
+            this.richTextBox1.Size = new System.Drawing.Size(447, 289);
             this.richTextBox1.TabIndex = 23;
             this.richTextBox1.Text = "";
             // 
@@ -264,7 +264,7 @@ namespace KnaufinsulationWalls.Steps
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(322, 71);
+            this.pictureBox1.Location = new System.Drawing.Point(322, 76);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(277, 289);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -279,9 +279,9 @@ namespace KnaufinsulationWalls.Steps
             this.btnDWG.Controls.Add(this.label3);
             this.btnDWG.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDWG.Location = new System.Drawing.Point(310, 0);
-            this.btnDWG.MinimumSize = new System.Drawing.Size(0, 65);
+            this.btnDWG.MinimumSize = new System.Drawing.Size(0, 70);
             this.btnDWG.Name = "btnDWG";
-            this.btnDWG.Size = new System.Drawing.Size(752, 65);
+            this.btnDWG.Size = new System.Drawing.Size(752, 70);
             this.btnDWG.TabIndex = 10;
             // 
             // lblUserData
@@ -290,7 +290,7 @@ namespace KnaufinsulationWalls.Steps
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUserData.Font = new System.Drawing.Font("Lato", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblUserData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(145)))), ((int)(((byte)(149)))));
-            this.lblUserData.Location = new System.Drawing.Point(13, 38);
+            this.lblUserData.Location = new System.Drawing.Point(13, 42);
             this.lblUserData.Name = "lblUserData";
             this.lblUserData.Size = new System.Drawing.Size(726, 22);
             this.lblUserData.TabIndex = 4;
@@ -351,18 +351,18 @@ namespace KnaufinsulationWalls.Steps
             this.exListBox1.Name = "exListBox1";
             this.exListBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.exListBox1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.exListBox1.Size = new System.Drawing.Size(192, 250);
+            this.exListBox1.Size = new System.Drawing.Size(175, 400);
             this.exListBox1.TabIndex = 1;
             this.exListBox1.SelectedIndexChanged += new System.EventHandler(this.exListBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lato", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Lato", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.label1.Location = new System.Drawing.Point(75, 10);
+            this.label1.Location = new System.Drawing.Point(91, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 54);
+            this.label1.Size = new System.Drawing.Size(141, 58);
             this.label1.TabIndex = 0;
             this.label1.Text = "РЕЗУЛЬТАТ\r\nПОДБОРА";
             // 
@@ -398,7 +398,7 @@ namespace KnaufinsulationWalls.Steps
             this.btnPrint.offsettextX = 0;
             this.btnPrint.Size = new System.Drawing.Size(202, 39);
             this.btnPrint.TabIndex = 8;
-            this.btnPrint.Text = "Сохранить PDF";
+            this.btnPrint.Text = "СОХРАНИТЬ PDF";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // Step3

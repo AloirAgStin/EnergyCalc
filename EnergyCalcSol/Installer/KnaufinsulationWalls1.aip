@@ -62,7 +62,7 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
     <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
-    <ROW Directory="FontsFolder" Directory_Parent="TARGETDIR" DefaultDir="FONTSF~1|FontsFolder" IsPseudoRoot="1"/>
+    <ROW Directory="FontsFolder" Directory_Parent="TARGETDIR" DefaultDir="FONTSF~1|FontsFolder" IsPseudoRoot="1" DirectoryOptions="3"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
     <ROW Directory="data_Dir" Directory_Parent="APPDIR" DefaultDir="data"/>
     <ROW Directory="docs_Dir" Directory_Parent="data_Dir" DefaultDir="docs"/>
@@ -117,24 +117,24 @@
     <ROW File="F9.zip" Component_="F20.zip" FileName="F9.zip" Attributes="0" SourcePath="bin\data\docs\F9.zip" SelfReg="false" NextFile="F8.zip"/>
     <ROW File="INIFileParser.dll" Component_="INIFileParser.dll" FileName="INIFIL~1.DLL|INIFileParser.dll" Attributes="0" SourcePath="bin\INIFileParser.dll" SelfReg="false" NextFile="PdfSharp.dll"/>
     <ROW File="KnaufinsulationWalls.exe" Component_="KnaufinsulationWalls.exe" FileName="KNAUFI~1.EXE|KnaufinsulationWalls.exe" Attributes="0" SourcePath="bin\KnaufinsulationWalls.exe" SelfReg="false" NextFile="XControl.dll" DigSign="true"/>
-    <ROW File="LatoBlack.ttf" Component_="LatoThin.ttf" FileName="LATO-B~1.TTF|Lato-Black.ttf" Attributes="0" SourcePath="Fonts\Lato-Black.ttf" SelfReg="false" NextFile="LatoBlackItalic.ttf"/>
-    <ROW File="LatoBlackItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-B~2.TTF|Lato-BlackItalic.ttf" Attributes="0" SourcePath="Fonts\Lato-BlackItalic.ttf" SelfReg="false" NextFile="LatoBold.ttf"/>
-    <ROW File="LatoBold.ttf" Component_="LatoThin.ttf" FileName="LATO-B~3.TTF|Lato-Bold.ttf" Attributes="0" SourcePath="Fonts\Lato-Bold.ttf" SelfReg="false" NextFile="LatoBoldItalic.ttf"/>
-    <ROW File="LatoBoldItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-B~4.TTF|Lato-BoldItalic.ttf" Attributes="0" SourcePath="Fonts\Lato-BoldItalic.ttf" SelfReg="false"/>
-    <ROW File="LatoHairline.ttf" Component_="LatoThin.ttf" FileName="LATO-H~1.TTF|Lato-Hairline.ttf" Attributes="0" SourcePath="Fonts\Lato-Hairline.ttf" SelfReg="false" NextFile="LatoHairlineItalic.ttf"/>
-    <ROW File="LatoHairlineItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-H~2.TTF|Lato-HairlineItalic.ttf" Attributes="0" SourcePath="Fonts\Lato-HairlineItalic.ttf" SelfReg="false" NextFile="LatoHeavy.ttf"/>
-    <ROW File="LatoHeavy.ttf" Component_="LatoThin.ttf" FileName="LATO-H~3.TTF|Lato-Heavy.ttf" Attributes="0" SourcePath="Fonts\Lato-Heavy.ttf" SelfReg="false" NextFile="LatoHeavyItalic.ttf"/>
-    <ROW File="LatoHeavyItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-H~4.TTF|Lato-HeavyItalic.ttf" Attributes="0" SourcePath="Fonts\Lato-HeavyItalic.ttf" SelfReg="false" NextFile="LatoItalic.ttf"/>
-    <ROW File="LatoItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-I~1.TTF|Lato-Italic.ttf" Attributes="0" SourcePath="Fonts\Lato-Italic.ttf" SelfReg="false" NextFile="LatoLight.ttf"/>
-    <ROW File="LatoLight.ttf" Component_="LatoThin.ttf" FileName="LATO-L~2.TTF|Lato-Light.ttf" Attributes="0" SourcePath="Fonts\Lato-Light.ttf" SelfReg="false" NextFile="LatoBlack.ttf"/>
-    <ROW File="LatoLightItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-L~1.TTF|Lato-LightItalic.ttf" Attributes="0" SourcePath="Fonts\Lato-LightItalic.ttf" SelfReg="false" NextFile="LatoMedium.ttf"/>
-    <ROW File="LatoMedium.ttf" Component_="LatoThin.ttf" FileName="LATO-M~1.TTF|Lato-Medium.ttf" Attributes="0" SourcePath="Fonts\Lato-Medium.ttf" SelfReg="false" NextFile="LatoMediumItalic.ttf"/>
-    <ROW File="LatoMediumItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-M~2.TTF|Lato-MediumItalic.ttf" Attributes="0" SourcePath="Fonts\Lato-MediumItalic.ttf" SelfReg="false" NextFile="LatoRegular.ttf"/>
-    <ROW File="LatoRegular.ttf" Component_="LatoThin.ttf" FileName="LATO-R~1.TTF|Lato-Regular.ttf" Attributes="0" SourcePath="Fonts\Lato-Regular.ttf" SelfReg="false" NextFile="LatoSemibold.ttf"/>
-    <ROW File="LatoSemibold.ttf" Component_="LatoThin.ttf" FileName="LATO-S~1.TTF|Lato-Semibold.ttf" Attributes="0" SourcePath="Fonts\Lato-Semibold.ttf" SelfReg="false" NextFile="LatoSemiboldItalic.ttf"/>
-    <ROW File="LatoSemiboldItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-S~2.TTF|Lato-SemiboldItalic.ttf" Attributes="0" SourcePath="Fonts\Lato-SemiboldItalic.ttf" SelfReg="false" NextFile="LatoHairline.ttf"/>
-    <ROW File="LatoThin.ttf" Component_="LatoThin.ttf" FileName="LATO-T~1.TTF|Lato-Thin.ttf" Attributes="0" SourcePath="Fonts\Lato-Thin.ttf" SelfReg="false" NextFile="LatoThinItalic.ttf"/>
-    <ROW File="LatoThinItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-T~2.TTF|Lato-ThinItalic.ttf" Attributes="0" SourcePath="Fonts\Lato-ThinItalic.ttf" SelfReg="false" NextFile="LatoLightItalic.ttf"/>
+    <ROW File="LatoBlack.ttf" Component_="LatoThin.ttf" FileName="LATO-B~1.TTF|Lato-Black.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-Black.ttf" SelfReg="false" NextFile="LatoBlackItalic.ttf"/>
+    <ROW File="LatoBlackItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-B~2.TTF|Lato-BlackItalic.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-BlackItalic.ttf" SelfReg="false" NextFile="LatoBold.ttf"/>
+    <ROW File="LatoBold.ttf" Component_="LatoThin.ttf" FileName="LATO-B~3.TTF|Lato-Bold.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-Bold.ttf" SelfReg="false" NextFile="LatoBoldItalic.ttf"/>
+    <ROW File="LatoBoldItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-B~4.TTF|Lato-BoldItalic.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-BoldItalic.ttf" SelfReg="false"/>
+    <ROW File="LatoHairline.ttf" Component_="LatoThin.ttf" FileName="LATO-H~1.TTF|Lato-Hairline.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-Hairline.ttf" SelfReg="false" NextFile="LatoHairlineItalic.ttf"/>
+    <ROW File="LatoHairlineItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-H~2.TTF|Lato-HairlineItalic.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-HairlineItalic.ttf" SelfReg="false" NextFile="LatoHeavy.ttf"/>
+    <ROW File="LatoHeavy.ttf" Component_="LatoThin.ttf" FileName="LATO-H~3.TTF|Lato-Heavy.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-Heavy.ttf" SelfReg="false" NextFile="LatoHeavyItalic.ttf"/>
+    <ROW File="LatoHeavyItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-H~4.TTF|Lato-HeavyItalic.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-HeavyItalic.ttf" SelfReg="false" NextFile="LatoItalic.ttf"/>
+    <ROW File="LatoItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-I~1.TTF|Lato-Italic.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-Italic.ttf" SelfReg="false" NextFile="LatoLight.ttf"/>
+    <ROW File="LatoLight.ttf" Component_="LatoThin.ttf" FileName="LATO-L~2.TTF|Lato-Light.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-Light.ttf" SelfReg="false" NextFile="LatoBlack.ttf"/>
+    <ROW File="LatoLightItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-L~1.TTF|Lato-LightItalic.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-LightItalic.ttf" SelfReg="false" NextFile="LatoMedium.ttf"/>
+    <ROW File="LatoMedium.ttf" Component_="LatoThin.ttf" FileName="LATO-M~1.TTF|Lato-Medium.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-Medium.ttf" SelfReg="false" NextFile="LatoMediumItalic.ttf"/>
+    <ROW File="LatoMediumItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-M~2.TTF|Lato-MediumItalic.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-MediumItalic.ttf" SelfReg="false" NextFile="LatoRegular.ttf"/>
+    <ROW File="LatoRegular.ttf" Component_="LatoThin.ttf" FileName="LATO-R~1.TTF|Lato-Regular.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-Regular.ttf" SelfReg="false" NextFile="LatoSemibold.ttf"/>
+    <ROW File="LatoSemibold.ttf" Component_="LatoThin.ttf" FileName="LATO-S~1.TTF|Lato-Semibold.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-Semibold.ttf" SelfReg="false" NextFile="LatoSemiboldItalic.ttf"/>
+    <ROW File="LatoSemiboldItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-S~2.TTF|Lato-SemiboldItalic.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-SemiboldItalic.ttf" SelfReg="false" NextFile="LatoHairline.ttf"/>
+    <ROW File="LatoThin.ttf" Component_="LatoThin.ttf" FileName="LATO-T~1.TTF|Lato-Thin.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-Thin.ttf" SelfReg="false" NextFile="LatoThinItalic.ttf"/>
+    <ROW File="LatoThinItalic.ttf" Component_="LatoThin.ttf" FileName="LATO-T~2.TTF|Lato-ThinItalic.ttf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="Fonts\Lato-ThinItalic.ttf" SelfReg="false" NextFile="LatoLightItalic.ttf"/>
     <ROW File="PdfSharp.dll" Component_="PdfSharp.dll" FileName="PdfSharp.dll" Attributes="0" SourcePath="bin\PdfSharp.dll" SelfReg="false" NextFile="LatoThin.ttf"/>
     <ROW File="TypeBuildings.xml" Component_="TypeBuildings.xml" FileName="TYPEBU~1.XML|TypeBuildings.xml" Attributes="0" SourcePath="bin\data\TypeBuildings.xml" SelfReg="false" NextFile="TypeWalls.xml"/>
     <ROW File="TypeWalls.xml" Component_="TypeBuildings.xml" FileName="TYPEWA~1.XML|TypeWalls.xml" Attributes="0" SourcePath="bin\data\TypeWalls.xml" SelfReg="false" NextFile="F20.zip"/>
