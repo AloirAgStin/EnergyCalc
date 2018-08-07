@@ -46,7 +46,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1026, 62);
+            this.panel2.Size = new System.Drawing.Size(1066, 62);
             this.panel2.TabIndex = 1;
             // 
             // stepCounter1
@@ -67,7 +67,7 @@
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = global::KnaufinsulationWalls.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(755, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(795, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(271, 62);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -82,7 +82,7 @@
             this.panelMain.Location = new System.Drawing.Point(0, 62);
             this.panelMain.Margin = new System.Windows.Forms.Padding(0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1026, 549);
+            this.panelMain.Size = new System.Drawing.Size(1066, 549);
             this.panelMain.TabIndex = 2;
             // 
             // StepFrame
@@ -90,11 +90,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1026, 611);
+            this.ClientSize = new System.Drawing.Size(1066, 611);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1010, 610);
+            this.MinimumSize = new System.Drawing.Size(1082, 610);
             this.Name = "StepFrame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Подбор перегородок";
