@@ -64,7 +64,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.roundPanel2);
@@ -81,6 +80,8 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(310, 512);
             this.panel1.TabIndex = 3;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.Resize += new System.EventHandler(this.panel1_Resize);
             // 
             // label7
             // 
@@ -98,9 +99,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.Controls.Add(this.richTextBox1);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel2.Location = new System.Drawing.Point(25, 368);
+            this.panel2.Location = new System.Drawing.Point(25, 380);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(266, 130);
+            this.panel2.Size = new System.Drawing.Size(266, 120);
             this.panel2.TabIndex = 11;
             // 
             // richTextBox1
@@ -108,13 +109,13 @@
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Font = new System.Drawing.Font("Lato", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.richTextBox1.Font = new System.Drawing.Font("Lato", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(109)))), ((int)(((byte)(111)))));
             this.richTextBox1.Location = new System.Drawing.Point(0, 0);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(266, 130);
+            this.richTextBox1.Size = new System.Drawing.Size(266, 120);
             this.richTextBox1.TabIndex = 9;
             this.richTextBox1.TabStop = false;
             this.richTextBox1.Text = "Стены и перегородки между квартирами; между помещениями квартир и офисов; между п" +
@@ -135,7 +136,7 @@
             // customComboBox2
             // 
             this.customComboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.customComboBox2.ColorActiveItem = System.Drawing.Color.CornflowerBlue;
+            this.customComboBox2.ColorActiveItem = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.customComboBox2.ColorDeactiveItem = System.Drawing.Color.White;
             this.customComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.customComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -164,7 +165,7 @@
             // customComboBox1
             // 
             this.customComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.customComboBox1.ColorActiveItem = System.Drawing.Color.CornflowerBlue;
+            this.customComboBox1.ColorActiveItem = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.customComboBox1.ColorDeactiveItem = System.Drawing.Color.White;
             this.customComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.customComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;

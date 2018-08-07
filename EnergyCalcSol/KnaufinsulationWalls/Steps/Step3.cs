@@ -208,18 +208,24 @@ namespace KnaufinsulationWalls.Steps
 
 
                 richTextBox1.Clear();
-                richTextBox1.SelectionFont = new Font(new Font(coreFont.FontFamily, 14), FontStyle.Bold | FontStyle.Underline);
+                richTextBox1.SelectionFont = new Font(new Font(coreFont.Name, 14), FontStyle.Bold | FontStyle.Underline);
                 
                 richTextBox1.AppendText(item.Name);
                 
-                richTextBox1.SelectionFont = new Font(new Font(coreFont.FontFamily, 12), FontStyle.Bold | FontStyle.Underline);
+                richTextBox1.SelectionFont = new Font(new Font(coreFont.Name, 12), FontStyle.Bold | FontStyle.Underline);
                 richTextBox1.AppendText(" " + item.Description);
 
+
+
                 RichTextAddNewLine();
-                
+
+
+                richTextBox1.SelectionFont = new Font(coreFont.Name, 12);
+                richTextBox1.SelectionColor = Color.FromArgb(91, 124, 137);
+
                 StringBuilder strB = new StringBuilder();
                 strB.AppendFormat("В соответствии с СП 51.1330.2011 «Защита от шума», " +
-                    "требуемый индекс изоляции шума для конструкции составляет {0} дБ"
+                    "индекс изоляции шума конструкции составляет {0} дБ"
                     , item.WallTypes.Rw);
                 richTextBox1.AppendText(strB.ToString());
 
@@ -305,6 +311,29 @@ namespace KnaufinsulationWalls.Steps
             }
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            var rect = panel1.ClientRectangle;
+            rect.Inflate(-2, -2);
+            ControlPaint.DrawBorder(e.Graphics, rect,
+                Color.FromArgb(208, 211, 212), 0, ButtonBorderStyle.Solid,
+                Color.FromArgb(208, 211, 212), 1,
+                ButtonBorderStyle.Solid, Color.FromArgb(208, 211, 212), 1,
+                ButtonBorderStyle.Solid, Color.FromArgb(208, 211, 212), 0, ButtonBorderStyle.Solid
+                                    );
 
+        }
+
+        private void panel1_Resize(object sender, EventArgs e)
+        {
+            panel1.Invalidate();
+        }
+
+        private void onPaintBorder(object sender, PaintEventArgs e)
+        {
+            //var item = sender as Button;
+            
+            //ControlPaint.DrawBorder(e.Graphics, item.ClientRectangle, Color.FromArgb(237, 238, 238), ButtonBorderStyle.Solid);
+        }
     }
 }

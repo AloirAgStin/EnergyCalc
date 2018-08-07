@@ -37,6 +37,7 @@ namespace KnaufinsulationWalls
             this.bgCheckUpdates = new System.ComponentModel.BackgroundWorker();
             this.label5 = new XControl.SelectableLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,13 +54,13 @@ namespace KnaufinsulationWalls
             this.roundButton1.ButtonPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.roundButton1.ButtonPressedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.roundButton1.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.roundButton1.ButtonRoundRadius = 30;
-            this.roundButton1.Font = new System.Drawing.Font("Lato Black", 14F);
+            this.roundButton1.ButtonRoundRadius = 40;
+            this.roundButton1.Font = new System.Drawing.Font("Lato", 18F);
             this.roundButton1.ForeColor = System.Drawing.Color.White;
-            this.roundButton1.Location = new System.Drawing.Point(243, 327);
+            this.roundButton1.Location = new System.Drawing.Point(334, 301);
             this.roundButton1.Name = "roundButton1";
-            this.roundButton1.offsettextX = 0;
-            this.roundButton1.Size = new System.Drawing.Size(268, 60);
+            this.roundButton1.offsettextX = 3;
+            this.roundButton1.Size = new System.Drawing.Size(200, 47);
             this.roundButton1.TabIndex = 1;
             this.roundButton1.TabStop = false;
             this.roundButton1.Text = "НАЧАТЬ";
@@ -69,10 +70,10 @@ namespace KnaufinsulationWalls
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lato Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(47, 146);
+            this.label1.Font = new System.Drawing.Font("Lato", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(71, 163);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(660, 29);
+            this.label1.Size = new System.Drawing.Size(724, 33);
             this.label1.TabIndex = 1;
             this.label1.Text = "ПРОГРАММА ПОДБОРА ПЕРЕГОРОДОК ПОД ОБЪЕКТ";
             // 
@@ -81,12 +82,13 @@ namespace KnaufinsulationWalls
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(76, 203);
+            this.label2.Location = new System.Drawing.Point(143, 220);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(602, 34);
+            this.label2.Size = new System.Drawing.Size(608, 34);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Программа поможет быстро и легко по требуемым параметрам (R , EI, толщина) подобр" +
-    "ать\r\nконструкцию перегородок и получить подтверждающую техническую документацию";
+            this.label2.Text = "Программа поможет быстро и легко по требуемым параметрам (R   , EI, толщина) подо" +
+    "брать\r\nконструкцию перегородок и получить подтверждающую техническую документаци" +
+    "ю";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bgCheckUpdates
@@ -96,9 +98,10 @@ namespace KnaufinsulationWalls
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label5.Location = new System.Drawing.Point(584, 414);
+            this.label5.Location = new System.Drawing.Point(696, 422);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(161, 20);
             this.label5.TabIndex = 6;
@@ -112,19 +115,32 @@ namespace KnaufinsulationWalls
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.Image = global::KnaufinsulationWalls.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(228, 33);
+            this.pictureBox1.Location = new System.Drawing.Point(295, 62);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(298, 90);
+            this.pictureBox1.Size = new System.Drawing.Size(298, 68);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Font = new System.Drawing.Font("Lato", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(578, 227);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(9, 12);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "w";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(754, 442);
+            this.ClientSize = new System.Drawing.Size(866, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
@@ -150,6 +166,7 @@ namespace KnaufinsulationWalls
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.ComponentModel.BackgroundWorker bgCheckUpdates;
         private SelectableLabel label5;
+        private System.Windows.Forms.Label label3;
     }
 }
 

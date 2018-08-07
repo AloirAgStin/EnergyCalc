@@ -172,7 +172,7 @@ namespace KnaufinsulationWalls
                     var f = new XFont(FontFamilyName, 11, XFontStyle.Regular, options);
                     StringBuilder strB = new StringBuilder();
                     strB.AppendFormat("В соответствии с СП 51.1330.2011 «Защита от шума», " +
-                        "требуемый индекс изоляции шума для конструкции составляет {0} дБ"
+                        "индекс изоляции шума конструкции составляет {0} дБ"
                         , item.WallTypes.Rw);
                     ResultText = strB.ToString();
 

@@ -72,7 +72,6 @@ namespace KnaufinsulationWalls.Steps
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.roundPanel4);
             this.panel1.Controls.Add(this.roundPanel3);
             this.panel1.Controls.Add(this.roundPanel2);
@@ -91,6 +90,8 @@ namespace KnaufinsulationWalls.Steps
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(310, 516);
             this.panel1.TabIndex = 5;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.Resize += new System.EventHandler(this.panel1_Resize);
             // 
             // roundPanel4
             // 
@@ -107,7 +108,7 @@ namespace KnaufinsulationWalls.Steps
             // cbCountN
             // 
             this.cbCountN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbCountN.ColorActiveItem = System.Drawing.Color.CornflowerBlue;
+            this.cbCountN.ColorActiveItem = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.cbCountN.ColorDeactiveItem = System.Drawing.Color.White;
             this.cbCountN.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.cbCountN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -137,7 +138,7 @@ namespace KnaufinsulationWalls.Steps
             // cbIsolation
             // 
             this.cbIsolation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbIsolation.ColorActiveItem = System.Drawing.Color.CornflowerBlue;
+            this.cbIsolation.ColorActiveItem = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.cbIsolation.ColorDeactiveItem = System.Drawing.Color.White;
             this.cbIsolation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.cbIsolation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -168,7 +169,7 @@ namespace KnaufinsulationWalls.Steps
             // cbTP
             // 
             this.cbTP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbTP.ColorActiveItem = System.Drawing.Color.CornflowerBlue;
+            this.cbTP.ColorActiveItem = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.cbTP.ColorDeactiveItem = System.Drawing.Color.White;
             this.cbTP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.cbTP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -199,7 +200,7 @@ namespace KnaufinsulationWalls.Steps
             // cbEI
             // 
             this.cbEI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbEI.ColorActiveItem = System.Drawing.Color.CornflowerBlue;
+            this.cbEI.ColorActiveItem = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.cbEI.ColorDeactiveItem = System.Drawing.Color.White;
             this.cbEI.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.cbEI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;

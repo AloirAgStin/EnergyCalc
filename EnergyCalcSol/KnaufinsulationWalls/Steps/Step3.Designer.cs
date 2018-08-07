@@ -92,21 +92,24 @@ namespace KnaufinsulationWalls.Steps
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(730, 83);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(730, 88);
             this.tableLayoutPanel1.TabIndex = 24;
             // 
             // btnTex
             // 
             this.btnTex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTex.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnTex.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnTex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnTex.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnTex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTex.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnTex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnTex.Image = global::KnaufinsulationWalls.Properties.Resources.dw_file;
             this.btnTex.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTex.Location = new System.Drawing.Point(608, 4);
             this.btnTex.Name = "btnTex";
-            this.btnTex.Size = new System.Drawing.Size(119, 74);
+            this.btnTex.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.btnTex.Size = new System.Drawing.Size(119, 80);
             this.btnTex.TabIndex = 7;
             this.btnTex.Tag = "5";
             this.btnTex.Text = "ТЕХСВИДЕ-\r\nТЕЛЬСТВО";
@@ -114,19 +117,23 @@ namespace KnaufinsulationWalls.Steps
             this.btnTex.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnTex.UseVisualStyleBackColor = false;
             this.btnTex.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
+            this.btnTex.Paint += new System.Windows.Forms.PaintEventHandler(this.onPaintBorder);
             // 
             // btnNG
             // 
             this.btnNG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNG.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnNG.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnNG.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnNG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNG.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnNG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnNG.Image = global::KnaufinsulationWalls.Properties.Resources.dw_file;
             this.btnNG.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNG.Location = new System.Drawing.Point(487, 4);
             this.btnNG.Name = "btnNG";
-            this.btnNG.Size = new System.Drawing.Size(115, 74);
+            this.btnNG.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.btnNG.Size = new System.Drawing.Size(115, 80);
             this.btnNG.TabIndex = 6;
             this.btnNG.Tag = "4";
             this.btnNG.Text = "СЕРТИФИКАТ\r\nНА НГ";
@@ -134,19 +141,23 @@ namespace KnaufinsulationWalls.Steps
             this.btnNG.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnNG.UseVisualStyleBackColor = false;
             this.btnNG.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
+            this.btnNG.Paint += new System.Windows.Forms.PaintEventHandler(this.onPaintBorder);
             // 
             // btnEI
             // 
             this.btnEI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEI.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnEI.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnEI.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnEI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEI.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnEI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnEI.Image = global::KnaufinsulationWalls.Properties.Resources.dw_file;
             this.btnEI.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEI.Location = new System.Drawing.Point(366, 4);
             this.btnEI.Name = "btnEI";
-            this.btnEI.Size = new System.Drawing.Size(115, 74);
+            this.btnEI.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.btnEI.Size = new System.Drawing.Size(115, 80);
             this.btnEI.TabIndex = 5;
             this.btnEI.Tag = "3";
             this.btnEI.Text = "ПРОТОКОЛ \r\nНА EI ";
@@ -154,19 +165,23 @@ namespace KnaufinsulationWalls.Steps
             this.btnEI.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnEI.UseVisualStyleBackColor = false;
             this.btnEI.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
+            this.btnEI.Paint += new System.Windows.Forms.PaintEventHandler(this.onPaintBorder);
             // 
             // btnRW
             // 
             this.btnRW.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRW.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnRW.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnRW.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnRW.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRW.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnRW.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnRW.Image = global::KnaufinsulationWalls.Properties.Resources.dw_file;
             this.btnRW.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRW.Location = new System.Drawing.Point(245, 4);
             this.btnRW.Name = "btnRW";
-            this.btnRW.Size = new System.Drawing.Size(115, 74);
+            this.btnRW.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.btnRW.Size = new System.Drawing.Size(115, 80);
             this.btnRW.TabIndex = 4;
             this.btnRW.Tag = "2";
             this.btnRW.Text = "ПРОТОКОЛ \r\nНА Rw";
@@ -174,19 +189,23 @@ namespace KnaufinsulationWalls.Steps
             this.btnRW.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnRW.UseVisualStyleBackColor = false;
             this.btnRW.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
+            this.btnRW.Paint += new System.Windows.Forms.PaintEventHandler(this.onPaintBorder);
             // 
             // btndw
             // 
             this.btndw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btndw.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btndw.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btndw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btndw.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btndw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndw.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btndw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btndw.Image = global::KnaufinsulationWalls.Properties.Resources.dw_file;
             this.btndw.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btndw.Location = new System.Drawing.Point(124, 4);
             this.btndw.Name = "btndw";
-            this.btndw.Size = new System.Drawing.Size(115, 74);
+            this.btndw.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.btndw.Size = new System.Drawing.Size(115, 80);
             this.btndw.TabIndex = 3;
             this.btndw.Tag = "1";
             this.btndw.Text = "ЧЕРТЕЖИ \r\nDWG";
@@ -194,19 +213,25 @@ namespace KnaufinsulationWalls.Steps
             this.btndw.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btndw.UseVisualStyleBackColor = false;
             this.btndw.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
+            this.btndw.Paint += new System.Windows.Forms.PaintEventHandler(this.onPaintBorder);
             // 
             // btnPDF
             // 
             this.btnPDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPDF.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnPDF.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnPDF.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnPDF.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnPDF.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btnPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPDF.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnPDF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnPDF.Image = global::KnaufinsulationWalls.Properties.Resources.dw_file;
             this.btnPDF.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPDF.Location = new System.Drawing.Point(3, 4);
             this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(115, 74);
+            this.btnPDF.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.btnPDF.Size = new System.Drawing.Size(115, 80);
             this.btnPDF.TabIndex = 2;
             this.btnPDF.Tag = "0";
             this.btnPDF.Text = "ЧЕРТЕЖИ \r\nPDF";
@@ -214,6 +239,7 @@ namespace KnaufinsulationWalls.Steps
             this.btnPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnPDF.UseVisualStyleBackColor = false;
             this.btnPDF.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
+            this.btnPDF.Paint += new System.Windows.Forms.PaintEventHandler(this.onPaintBorder);
             // 
             // richTextBox1
             // 
@@ -324,7 +350,6 @@ namespace KnaufinsulationWalls.Steps
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.exListBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
@@ -333,6 +358,8 @@ namespace KnaufinsulationWalls.Steps
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(310, 510);
             this.panel1.TabIndex = 5;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.Resize += new System.EventHandler(this.panel1_Resize);
             // 
             // exListBox1
             // 
@@ -451,7 +478,6 @@ namespace KnaufinsulationWalls.Steps
         private ExListBox exListBox1;
         private SelectableLabel lblClose;
         private System.Windows.Forms.Button btndw;
-        private System.Windows.Forms.Button btnRW;
         private System.Windows.Forms.Button btnEI;
         private System.Windows.Forms.Button btnNG;
         private System.Windows.Forms.Button btnTex;
@@ -459,5 +485,6 @@ namespace KnaufinsulationWalls.Steps
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.SaveFileDialog saveFDPDF;
+        private System.Windows.Forms.Button btnRW;
     }
 }

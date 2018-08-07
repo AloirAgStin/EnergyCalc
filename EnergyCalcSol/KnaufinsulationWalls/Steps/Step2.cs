@@ -104,6 +104,7 @@ namespace KnaufinsulationWalls.Steps
 
             cbIsolation.Visible = IsShowExtParam;
             cbCountN.Visible = IsShowExtParam;
+            label8.Focus();
         }
 
         private void lbl_Back(object sender, EventArgs e)
@@ -266,7 +267,25 @@ namespace KnaufinsulationWalls.Steps
             cbCountN.DataSource = Data_FillComboBox.cbItem_N;
             cbCountN.SelectedItem = elemN;
         }
-        
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            var rect = panel1.ClientRectangle;
+            rect.Inflate(-2, -2);
+            ControlPaint.DrawBorder(e.Graphics, rect,
+                Color.FromArgb(208, 211, 212), 0, ButtonBorderStyle.Solid,
+                Color.FromArgb(208, 211, 212), 1,
+                ButtonBorderStyle.Solid, Color.FromArgb(208, 211, 212), 1,
+                ButtonBorderStyle.Solid, Color.FromArgb(208, 211, 212), 0, ButtonBorderStyle.Solid
+                                    );
+
+        }
+
+        private void panel1_Resize(object sender, EventArgs e)
+        {
+            panel1.Invalidate();
+        }
+
 
     }
 }

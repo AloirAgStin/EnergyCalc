@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using KnaufinsulationWalls.Data;
 using XCotrols;
@@ -72,6 +73,8 @@ namespace KnaufinsulationWalls.Steps
             richTextBox1.Visible = false;
 
             DebugChoise();
+            roundEdit1.Focus();
+
         }
        
 
@@ -248,6 +251,24 @@ namespace KnaufinsulationWalls.Steps
         {
             pbLArroy.Visible = false;
             pbRArroy.Visible = false;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            var rect = panel1.ClientRectangle;
+            rect.Inflate(-2, -2);
+                ControlPaint.DrawBorder(e.Graphics, rect, 
+                    Color.FromArgb(208,211, 212), 0, ButtonBorderStyle.Solid, 
+                    Color.FromArgb(208, 211, 212), 1,
+                    ButtonBorderStyle.Solid, Color.FromArgb(208, 211, 212), 1, 
+                    ButtonBorderStyle.Solid, Color.FromArgb(208, 211, 212), 0, ButtonBorderStyle.Solid   
+                                        );
+
+        }
+
+        private void panel1_Resize(object sender, EventArgs e)
+        {
+            panel1.Invalidate();
         }
     }
 }
