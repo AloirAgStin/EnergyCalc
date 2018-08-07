@@ -5,7 +5,6 @@ EnergyCalcSolXCtrl/bin/**
 EnergyCalcSol/XCtrl/obj/**
 EnergyCalcSol/.vs/**
 EnergyCalcSol/Docs/**
-EnergyCalcSol/Installer/**
 EnergyCalcSol/XControl/bin/**
 EnergyCalcSol/XControl/obj/**
 EnergyCalcSol/KnaufInsalutionCalc/**
@@ -41,3 +40,7 @@ EnergyCalcSol/KnaufinsulationWalls/bin/Release/data/docs/F1(5).zip
 EnergyCalcSol/KnaufinsulationWalls/bin/Release/data/docs/F1(3,4).zip
 EnergyCalcSol/KnaufinsulationWalls/bin/Release/data/docs/F1(1,2,6,7).zip
 *.zip
+EnergyCalcSol/Installer/KnaufinsulationWalls1-SetupFiles/Version.xml
+EnergyCalcSol/Installer/KnaufinsulationWalls1-cache/part2/output-info.ini
+EnergyCalcSol/Installer/KnaufinsulationWalls1-cache/part2/disk1.cab
+EnergyCalcSol/Installer/KnaufinsulationWalls1-cache/cacheIndex.txt
