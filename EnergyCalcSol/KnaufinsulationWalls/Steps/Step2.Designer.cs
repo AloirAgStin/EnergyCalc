@@ -295,7 +295,7 @@ namespace KnaufinsulationWalls.Steps
             // 
             this.label5.Font = new System.Drawing.Font("Lato", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.label5.Location = new System.Drawing.Point(55, 98);
+            this.label5.Location = new System.Drawing.Point(47, 98);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(197, 17);
             this.label5.TabIndex = 24;
