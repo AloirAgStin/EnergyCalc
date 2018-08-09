@@ -93,6 +93,16 @@ namespace KnaufinsulationWalls.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnRW {
+            get {
+                object obj = ResourceManager.GetObject("btnRW", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dw_file {
             get {
                 object obj = ResourceManager.GetObject("dw_file", resourceCulture);

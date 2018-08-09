@@ -58,8 +58,18 @@ namespace KnaufinsulationWalls.Steps
             cbTP.DataSource = Data_FillComboBox.cbItem_TP;
             cbIsolation.DataSource = Data_FillComboBox.cbItem_Ti;
             cbCountN.DataSource = Data_FillComboBox.cbItem_N;
-        }
 
+
+
+            if (DEBUGINFO.IsDEBUGINFO)
+                DebugChoise();
+        }
+        private void DebugChoise()
+        {
+            cbEI.SelectedIndex = 1;
+            btnNext_Click(this, new EventArgs());
+
+        }
         void FiltrData(int EI = 0, int TP = 0, int TI = 0)
         {
             data.Clear();
@@ -80,14 +90,12 @@ namespace KnaufinsulationWalls.Steps
             InitDataForN(data);
         }
 
+
         private void Step2_Load(object sender, EventArgs e)
         {
-            btnNext.offsettextX = -5;
             onClickExtParams(sender, e);
 
             cbEI.Focus();
-
-
         }
         
 
@@ -104,6 +112,7 @@ namespace KnaufinsulationWalls.Steps
 
             cbIsolation.Visible = IsShowExtParam;
             cbCountN.Visible = IsShowExtParam;
+            label8.Focus();
         }
 
         private void lbl_Back(object sender, EventArgs e)
@@ -182,7 +191,6 @@ namespace KnaufinsulationWalls.Steps
             var item = sender as CustomComboBox;
             var name = item.Name;
 
-         
             if (cbTP.Name == name)
             {
                 dbPictureBox1.Image = Properties.Resources.stepImageTp;
@@ -202,12 +210,19 @@ namespace KnaufinsulationWalls.Steps
                 dbPictureBox1.Image = Properties.Resources.stepImage;
             }
 
+            if (cbEI.Name == name)
+            {
+                pbRArroy.Visible = true;
+                pbLArroy.Visible = true;
+            }
 
         }
 
         private void onLeaveCombo(object sender, EventArgs e)
         {
             dbPictureBox1.Image = Properties.Resources.stepImage;
+            pbRArroy.Visible = false;
+            pbLArroy.Visible = false;
         }
 
         private void onChangeEI(object sender, EventArgs e)
@@ -260,7 +275,25 @@ namespace KnaufinsulationWalls.Steps
             cbCountN.DataSource = Data_FillComboBox.cbItem_N;
             cbCountN.SelectedItem = elemN;
         }
-        
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            var rect = panel1.ClientRectangle;
+            rect.Inflate(-2, -2);
+            ControlPaint.DrawBorder(e.Graphics, rect,
+                Color.FromArgb(208, 211, 212), 0, ButtonBorderStyle.Solid,
+                Color.FromArgb(208, 211, 212), 1,
+                ButtonBorderStyle.Solid, Color.FromArgb(208, 211, 212), 1,
+                ButtonBorderStyle.Solid, Color.FromArgb(208, 211, 212), 0, ButtonBorderStyle.Solid
+                                    );
+
+        }
+
+        private void panel1_Resize(object sender, EventArgs e)
+        {
+            panel1.Invalidate();
+        }
+
 
     }
 }

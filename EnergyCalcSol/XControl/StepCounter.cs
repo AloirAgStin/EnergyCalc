@@ -20,7 +20,7 @@ namespace XCotrols
 
 
                 richTextBox1.Clear();
-                richTextBox1.SelectionFont = new Font("Lato", 34);
+                richTextBox1.SelectionFont = new Font("Lato", 19, FontStyle.Regular);
 
                 pictureBox1.Visible = StepCurrent == 1 ? true : false;
                 pictureBox2.Visible = StepCurrent == 2 ? true : false;
@@ -62,15 +62,13 @@ namespace XCotrols
         public StepCounter()
         {
             InitializeComponent();
-
-            Size = new Size(200, 80);
-            
+                        
             StepColorCurrent = Color.FromArgb(8, 175, 230);
             StepColorFuture = Color.FromArgb(211, 215, 216);
 
             richTextBox1.BackColor = BackColor;
             DoubleBuffered = true;
-
+            
             StepCount = 3;
             StepCurrent = 1;
          }
