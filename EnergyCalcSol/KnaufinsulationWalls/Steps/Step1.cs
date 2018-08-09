@@ -68,18 +68,9 @@ namespace KnaufinsulationWalls.Steps
         private void Step1_Load(object sender, EventArgs e)
         {
             InitComboBoxes(1);
-            /*richTextBox1.Visible = false;
-            rtRwText.SelectionCharOffset = -1;
             
-            rtRwText.Text = "Звукоизолирующая способность (\"Индекс звукоизоляции\") от воздушного шума R";
-            rtRwText.SelectionCharOffset = -200;
-            rtRwText.AppendText("w");
-            // rtRwText.SelectionCharOffset;
-            rtRwText.SelectionCharOffset = 0;
-            rtRwText.AppendText(", дБ - способность ограждающей конструкции уменьшать проходящий через нее звук. \r\n\r\nТребуемый индекс звукоизоляции определяется в соответствии с " +
-                "СП 51.13330.2011 \"Защита от Шума\"");
-            */
-            DebugChoise();
+            if(DEBUGINFO.IsDEBUGINFO)
+                DebugChoise();
 
             roundEdit1.Focus();
         

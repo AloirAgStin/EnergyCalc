@@ -15,6 +15,7 @@ using KnaufinsulationWalls.Data;
 
 namespace KnaufinsulationWalls
 {
+
     public partial class MainForm : Form
     {
         public MainForm()
@@ -22,7 +23,7 @@ namespace KnaufinsulationWalls
             InitializeComponent();
         }
 
-     
+
         private void Wc_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
         }
@@ -92,8 +93,8 @@ namespace KnaufinsulationWalls
                 var url = new Uri(pXmlVersionFile);
                 var fileData = wc.DownloadData(url);
                 var xml = XElement.Parse(Encoding.UTF8.GetString(fileData));
-                                
-                
+
+
                 var node = xml.FirstNode;
 
                 var nVersion = xml.Element("Version");
@@ -103,9 +104,9 @@ namespace KnaufinsulationWalls
                 {
                     throw new Exception("Отсуствует обязательный параметр Version или InstallerLink\r\nXML:\r\n" + xml);
                 }
-                
+
                 var urlForDownLoad = nLinkToDownLoad.Value;
-                if(urlForDownLoad == null)
+                if (urlForDownLoad == null)
                 {
                     throw new Exception("Отсуствует обязательный параметр InstallerLink\r\nXML:\r\n" + xml);
                 }
@@ -116,10 +117,10 @@ namespace KnaufinsulationWalls
                     throw new Exception("Отсуствует обязательный параметр Version\r\nXML:\r\n" + xml);
                 }
 
-                int vM = 1, vMaj = 0 , vMin = 0;
-                
+                int vM = 1, vMaj = 0, vMin = 0;
+
                 Helper.ParseVersionString(Version, out vM, out vMaj, out vMin);
-                
+
                 if (vM < GlobalData.VMain)
                     return;
 
@@ -128,10 +129,10 @@ namespace KnaufinsulationWalls
 
                 if (vMin <= GlobalData.VMinor)
                     return;
-                
+
                 //если версия меньше 
                 //Обновим время проверки
-                
+
                 LinkToDownload = urlForDownLoad;
                 vVersionNew = Version;
             }
@@ -143,7 +144,7 @@ namespace KnaufinsulationWalls
 
                 return;
             }
-            
+
 
             e.Result = (int)1;
         }
@@ -179,12 +180,17 @@ namespace KnaufinsulationWalls
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Helper.WriteLog(ex.Message);
                 MessageBox.Show(ex.Message, "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
+    }
+
+    public class DEBUGINFO
+    {
+        public static bool IsDEBUGINFO = false;
     }
 }

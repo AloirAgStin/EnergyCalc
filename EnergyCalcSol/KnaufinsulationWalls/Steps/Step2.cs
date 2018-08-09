@@ -60,7 +60,9 @@ namespace KnaufinsulationWalls.Steps
             cbCountN.DataSource = Data_FillComboBox.cbItem_N;
 
 
-            DebugChoise();
+
+            if (DEBUGINFO.IsDEBUGINFO)
+                DebugChoise();
         }
         private void DebugChoise()
         {

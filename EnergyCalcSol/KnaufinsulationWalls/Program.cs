@@ -68,9 +68,12 @@ namespace KnaufinsulationWalls
                 Application.Exit();
                 return;
             }
-            
-           Application.Run(new Steps.StepFrame());
-            //Application.Run(new MainForm());
+
+
+            if (DEBUGINFO.IsDEBUGINFO)
+                Application.Run(new Steps.StepFrame());
+            else
+                Application.Run(new MainForm());
         }
     }
 }

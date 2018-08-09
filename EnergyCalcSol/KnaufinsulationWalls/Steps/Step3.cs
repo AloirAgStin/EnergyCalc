@@ -313,7 +313,7 @@ namespace KnaufinsulationWalls.Steps
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            var rect = panel1.ClientRectangle;
+            var rect = panelLeftSide.ClientRectangle;
             rect.Inflate(-2, -2);
             ControlPaint.DrawBorder(e.Graphics, rect,
                 Color.FromArgb(208, 211, 212), 0, ButtonBorderStyle.Solid,
@@ -326,7 +326,7 @@ namespace KnaufinsulationWalls.Steps
 
         private void panel1_Resize(object sender, EventArgs e)
         {
-            panel1.Invalidate();
+            panelLeftSide.Invalidate();
         }
 
         private void onPaintBorder(object sender, PaintEventArgs e)
@@ -335,5 +335,6 @@ namespace KnaufinsulationWalls.Steps
             
             //ControlPaint.DrawBorder(e.Graphics, item.ClientRectangle, Color.FromArgb(237, 238, 238), ButtonBorderStyle.Solid);
         }
+              
     }
 }
