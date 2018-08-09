@@ -30,6 +30,7 @@ namespace KnaufinsulationWalls.Steps
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Step3));
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.saveFDPDF = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -53,6 +54,8 @@ namespace KnaufinsulationWalls.Steps
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnPrint = new XControl.RoundButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.btnDWG.SuspendLayout();
@@ -88,7 +91,7 @@ namespace KnaufinsulationWalls.Steps
             this.tableLayoutPanel1.Controls.Add(this.btnRW, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btndw, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnPDF, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(322, 370);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(313, 381);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -184,7 +187,7 @@ namespace KnaufinsulationWalls.Steps
             this.btnRW.Size = new System.Drawing.Size(115, 80);
             this.btnRW.TabIndex = 4;
             this.btnRW.Tag = "2";
-            this.btnRW.Text = "ПРОТОКОЛ \r\nНА Rw";
+            this.btnRW.Text = "ПРОТОКОЛ \r\nНА R  ";
             this.btnRW.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnRW.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnRW.UseVisualStyleBackColor = false;
@@ -248,20 +251,21 @@ namespace KnaufinsulationWalls.Steps
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.BackColor = System.Drawing.Color.White;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox1.Location = new System.Drawing.Point(605, 76);
+            this.richTextBox1.Font = new System.Drawing.Font("Lato", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.Black;
+            this.richTextBox1.Location = new System.Drawing.Point(591, 85);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(447, 289);
             this.richTextBox1.TabIndex = 23;
-            this.richTextBox1.Text = "";
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // lblClose
             // 
             this.lblClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblClose.Font = new System.Drawing.Font("Lato Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.lblClose.Location = new System.Drawing.Point(795, 470);
+            this.lblClose.Location = new System.Drawing.Point(813, 486);
             this.lblClose.Name = "lblClose";
             this.lblClose.Size = new System.Drawing.Size(85, 25);
             this.lblClose.TabIndex = 10;
@@ -274,7 +278,7 @@ namespace KnaufinsulationWalls.Steps
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lato", 9.25F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(150)))), ((int)(((byte)(187)))));
-            this.label4.Location = new System.Drawing.Point(314, 475);
+            this.label4.Location = new System.Drawing.Point(325, 491);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(198, 16);
             this.label4.TabIndex = 21;
@@ -290,7 +294,7 @@ namespace KnaufinsulationWalls.Steps
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(322, 76);
+            this.pictureBox1.Location = new System.Drawing.Point(308, 85);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(277, 289);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -301,26 +305,28 @@ namespace KnaufinsulationWalls.Steps
             // 
             this.btnDWG.AutoSize = true;
             this.btnDWG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnDWG.Controls.Add(this.lblUserData);
+            this.btnDWG.Controls.Add(this.label6);
+            this.btnDWG.Controls.Add(this.label5);
             this.btnDWG.Controls.Add(this.label3);
+            this.btnDWG.Controls.Add(this.lblUserData);
             this.btnDWG.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDWG.Location = new System.Drawing.Point(310, 0);
-            this.btnDWG.MinimumSize = new System.Drawing.Size(0, 70);
+            this.btnDWG.Location = new System.Drawing.Point(290, 0);
+            this.btnDWG.MinimumSize = new System.Drawing.Size(0, 75);
             this.btnDWG.Name = "btnDWG";
-            this.btnDWG.Size = new System.Drawing.Size(752, 70);
+            this.btnDWG.Size = new System.Drawing.Size(772, 75);
             this.btnDWG.TabIndex = 10;
             // 
             // lblUserData
             // 
             this.lblUserData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUserData.Font = new System.Drawing.Font("Lato", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblUserData.Font = new System.Drawing.Font("Lato", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
             this.lblUserData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(145)))), ((int)(((byte)(149)))));
-            this.lblUserData.Location = new System.Drawing.Point(13, 42);
+            this.lblUserData.Location = new System.Drawing.Point(46, 42);
             this.lblUserData.Name = "lblUserData";
-            this.lblUserData.Size = new System.Drawing.Size(726, 22);
+            this.lblUserData.Size = new System.Drawing.Size(604, 22);
             this.lblUserData.TabIndex = 4;
-            this.lblUserData.Text = "Rw=55дБ, EI=60; Толщина перегродки Tп=150мм;";
+            this.lblUserData.Text = "=55дБ, EI=60; Толщина перегродки Tп=150мм;";
             this.lblUserData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
@@ -339,7 +345,7 @@ namespace KnaufinsulationWalls.Steps
             this.lblBack.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblBack.Font = new System.Drawing.Font("Lato Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.lblBack.Location = new System.Drawing.Point(508, 469);
+            this.lblBack.Location = new System.Drawing.Point(526, 486);
             this.lblBack.Name = "lblBack";
             this.lblBack.Size = new System.Drawing.Size(66, 25);
             this.lblBack.TabIndex = 9;
@@ -356,7 +362,7 @@ namespace KnaufinsulationWalls.Steps
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(310, 510);
+            this.panel1.Size = new System.Drawing.Size(290, 530);
             this.panel1.TabIndex = 5;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.Resize += new System.EventHandler(this.panel1_Resize);
@@ -368,7 +374,7 @@ namespace KnaufinsulationWalls.Steps
             this.exListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.exListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.exListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.exListBox1.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold);
+            this.exListBox1.Font = new System.Drawing.Font("Lato", 18F);
             this.exListBox1.ForeColor = System.Drawing.Color.Silver;
             this.exListBox1.FormattingEnabled = true;
             this.exListBox1.ItemHeight = 25;
@@ -378,31 +384,32 @@ namespace KnaufinsulationWalls.Steps
             this.exListBox1.Name = "exListBox1";
             this.exListBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.exListBox1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.exListBox1.Size = new System.Drawing.Size(175, 400);
+            this.exListBox1.Size = new System.Drawing.Size(231, 400);
             this.exListBox1.TabIndex = 1;
             this.exListBox1.SelectedIndexChanged += new System.EventHandler(this.exListBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lato", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Lato", 19F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.label1.Location = new System.Drawing.Point(91, 10);
+            this.label1.Location = new System.Drawing.Point(85, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 58);
+            this.label1.Size = new System.Drawing.Size(152, 64);
             this.label1.TabIndex = 0;
             this.label1.Text = "РЕЗУЛЬТАТ\r\nПОДБОРА";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lato", 37F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Lato", 37F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.label2.Location = new System.Drawing.Point(5, 10);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 60);
+            this.label2.Size = new System.Drawing.Size(84, 60);
             this.label2.TabIndex = 1;
             this.label2.Text = "03";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnPrint
             // 
@@ -417,16 +424,44 @@ namespace KnaufinsulationWalls.Steps
             this.btnPrint.ButtonPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnPrint.ButtonPressedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnPrint.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.btnPrint.ButtonRoundRadius = 30;
+            this.btnPrint.ButtonRoundRadius = 35;
             this.btnPrint.Font = new System.Drawing.Font("Lato", 14F, System.Drawing.FontStyle.Bold);
             this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Location = new System.Drawing.Point(582, 464);
+            this.btnPrint.Location = new System.Drawing.Point(600, 473);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.offsettextX = 0;
-            this.btnPrint.Size = new System.Drawing.Size(202, 39);
+            this.btnPrint.Size = new System.Drawing.Size(195, 47);
             this.btnPrint.TabIndex = 8;
             this.btnPrint.Text = "СОХРАНИТЬ PDF";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Font = new System.Drawing.Font("Lato", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(145)))), ((int)(((byte)(149)))));
+            this.label5.Location = new System.Drawing.Point(18, 42);
+            this.label5.Margin = new System.Windows.Forms.Padding(0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(17, 22);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "R";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(145)))), ((int)(((byte)(149)))));
+            this.label6.Location = new System.Drawing.Point(31, 52);
+            this.label6.Margin = new System.Windows.Forms.Padding(0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(16, 14);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "w";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Step3
             // 
@@ -434,7 +469,7 @@ namespace KnaufinsulationWalls.Steps
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1062, 510);
+            this.ClientSize = new System.Drawing.Size(1062, 530);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.lblClose);
@@ -486,5 +521,7 @@ namespace KnaufinsulationWalls.Steps
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.SaveFileDialog saveFDPDF;
         private System.Windows.Forms.Button btnRW;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }

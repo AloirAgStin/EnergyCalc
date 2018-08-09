@@ -88,7 +88,7 @@ namespace KnaufinsulationWalls.Steps
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(310, 516);
+            this.panel1.Size = new System.Drawing.Size(290, 530);
             this.panel1.TabIndex = 5;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.Resize += new System.EventHandler(this.panel1_Resize);
@@ -99,10 +99,10 @@ namespace KnaufinsulationWalls.Steps
             this.roundPanel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
             this.roundPanel4.BorderWidth = 2;
             this.roundPanel4.Controls.Add(this.cbCountN);
-            this.roundPanel4.Location = new System.Drawing.Point(18, 370);
+            this.roundPanel4.Location = new System.Drawing.Point(16, 406);
             this.roundPanel4.Name = "roundPanel4";
-            this.roundPanel4.Radius = 20;
-            this.roundPanel4.Size = new System.Drawing.Size(270, 35);
+            this.roundPanel4.Radius = 35;
+            this.roundPanel4.Size = new System.Drawing.Size(258, 40);
             this.roundPanel4.TabIndex = 6;
             // 
             // cbCountN
@@ -112,13 +112,14 @@ namespace KnaufinsulationWalls.Steps
             this.cbCountN.ColorDeactiveItem = System.Drawing.Color.White;
             this.cbCountN.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.cbCountN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCountN.DropDownWidth = 243;
+            this.cbCountN.DropDownWidth = 231;
             this.cbCountN.Font = new System.Drawing.Font("Lato", 10F);
-            this.cbCountN.ForeColor = System.Drawing.Color.Black;
+            this.cbCountN.ForeColor = System.Drawing.Color.DimGray;
+            this.cbCountN.ForeColorFirstItem = System.Drawing.Color.DimGray;
             this.cbCountN.FormattingEnabled = true;
-            this.cbCountN.Location = new System.Drawing.Point(14, 6);
+            this.cbCountN.Location = new System.Drawing.Point(14, 9);
             this.cbCountN.Name = "cbCountN";
-            this.cbCountN.Size = new System.Drawing.Size(243, 24);
+            this.cbCountN.Size = new System.Drawing.Size(231, 24);
             this.cbCountN.TabIndex = 6;
             this.cbCountN.Enter += new System.EventHandler(this.onFocusCombo);
             this.cbCountN.Leave += new System.EventHandler(this.onLeaveCombo);
@@ -129,10 +130,10 @@ namespace KnaufinsulationWalls.Steps
             this.roundPanel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
             this.roundPanel3.BorderWidth = 2;
             this.roundPanel3.Controls.Add(this.cbIsolation);
-            this.roundPanel3.Location = new System.Drawing.Point(18, 308);
+            this.roundPanel3.Location = new System.Drawing.Point(16, 340);
             this.roundPanel3.Name = "roundPanel3";
-            this.roundPanel3.Radius = 20;
-            this.roundPanel3.Size = new System.Drawing.Size(271, 35);
+            this.roundPanel3.Radius = 35;
+            this.roundPanel3.Size = new System.Drawing.Size(258, 40);
             this.roundPanel3.TabIndex = 5;
             // 
             // cbIsolation
@@ -142,13 +143,14 @@ namespace KnaufinsulationWalls.Steps
             this.cbIsolation.ColorDeactiveItem = System.Drawing.Color.White;
             this.cbIsolation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.cbIsolation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbIsolation.DropDownWidth = 244;
+            this.cbIsolation.DropDownWidth = 231;
             this.cbIsolation.Font = new System.Drawing.Font("Lato", 10F);
-            this.cbIsolation.ForeColor = System.Drawing.Color.Black;
+            this.cbIsolation.ForeColor = System.Drawing.Color.DimGray;
+            this.cbIsolation.ForeColorFirstItem = System.Drawing.Color.DimGray;
             this.cbIsolation.FormattingEnabled = true;
-            this.cbIsolation.Location = new System.Drawing.Point(14, 6);
+            this.cbIsolation.Location = new System.Drawing.Point(14, 9);
             this.cbIsolation.Name = "cbIsolation";
-            this.cbIsolation.Size = new System.Drawing.Size(244, 24);
+            this.cbIsolation.Size = new System.Drawing.Size(231, 24);
             this.cbIsolation.TabIndex = 5;
             this.cbIsolation.SelectedIndexChanged += new System.EventHandler(this.onChangeTi);
             this.cbIsolation.Enter += new System.EventHandler(this.onFocusCombo);
@@ -160,10 +162,10 @@ namespace KnaufinsulationWalls.Steps
             this.roundPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
             this.roundPanel2.BorderWidth = 2;
             this.roundPanel2.Controls.Add(this.cbTP);
-            this.roundPanel2.Location = new System.Drawing.Point(18, 195);
+            this.roundPanel2.Location = new System.Drawing.Point(16, 214);
             this.roundPanel2.Name = "roundPanel2";
-            this.roundPanel2.Radius = 20;
-            this.roundPanel2.Size = new System.Drawing.Size(271, 35);
+            this.roundPanel2.Radius = 35;
+            this.roundPanel2.Size = new System.Drawing.Size(258, 40);
             this.roundPanel2.TabIndex = 4;
             // 
             // cbTP
@@ -173,13 +175,14 @@ namespace KnaufinsulationWalls.Steps
             this.cbTP.ColorDeactiveItem = System.Drawing.Color.White;
             this.cbTP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.cbTP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTP.DropDownWidth = 244;
+            this.cbTP.DropDownWidth = 231;
             this.cbTP.Font = new System.Drawing.Font("Lato", 10F);
-            this.cbTP.ForeColor = System.Drawing.Color.Black;
+            this.cbTP.ForeColor = System.Drawing.Color.DimGray;
+            this.cbTP.ForeColorFirstItem = System.Drawing.Color.DimGray;
             this.cbTP.FormattingEnabled = true;
-            this.cbTP.Location = new System.Drawing.Point(14, 6);
+            this.cbTP.Location = new System.Drawing.Point(14, 9);
             this.cbTP.Name = "cbTP";
-            this.cbTP.Size = new System.Drawing.Size(244, 24);
+            this.cbTP.Size = new System.Drawing.Size(231, 24);
             this.cbTP.TabIndex = 3;
             this.cbTP.SelectedIndexChanged += new System.EventHandler(this.onChangeTp);
             this.cbTP.Enter += new System.EventHandler(this.onFocusCombo);
@@ -191,10 +194,10 @@ namespace KnaufinsulationWalls.Steps
             this.roundPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
             this.roundPanel1.BorderWidth = 2;
             this.roundPanel1.Controls.Add(this.cbEI);
-            this.roundPanel1.Location = new System.Drawing.Point(18, 138);
+            this.roundPanel1.Location = new System.Drawing.Point(16, 149);
             this.roundPanel1.Name = "roundPanel1";
-            this.roundPanel1.Radius = 20;
-            this.roundPanel1.Size = new System.Drawing.Size(271, 35);
+            this.roundPanel1.Radius = 35;
+            this.roundPanel1.Size = new System.Drawing.Size(258, 40);
             this.roundPanel1.TabIndex = 2;
             // 
             // cbEI
@@ -204,13 +207,14 @@ namespace KnaufinsulationWalls.Steps
             this.cbEI.ColorDeactiveItem = System.Drawing.Color.White;
             this.cbEI.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.cbEI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEI.DropDownWidth = 246;
+            this.cbEI.DropDownWidth = 233;
             this.cbEI.Font = new System.Drawing.Font("Lato", 10F);
-            this.cbEI.ForeColor = System.Drawing.Color.Black;
+            this.cbEI.ForeColor = System.Drawing.Color.DimGray;
+            this.cbEI.ForeColorFirstItem = System.Drawing.Color.DimGray;
             this.cbEI.FormattingEnabled = true;
-            this.cbEI.Location = new System.Drawing.Point(14, 6);
+            this.cbEI.Location = new System.Drawing.Point(14, 9);
             this.cbEI.Name = "cbEI";
-            this.cbEI.Size = new System.Drawing.Size(246, 24);
+            this.cbEI.Size = new System.Drawing.Size(233, 24);
             this.cbEI.TabIndex = 1;
             this.cbEI.SelectedIndexChanged += new System.EventHandler(this.onChangeEI);
             this.cbEI.Enter += new System.EventHandler(this.onFocusCombo);
@@ -220,7 +224,8 @@ namespace KnaufinsulationWalls.Steps
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Lato", 8F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(30, 355);
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(28, 391);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(231, 13);
             this.label9.TabIndex = 35;
@@ -230,7 +235,8 @@ namespace KnaufinsulationWalls.Steps
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Lato", 8F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(30, 293);
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(28, 325);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(154, 13);
             this.label8.TabIndex = 33;
@@ -240,7 +246,7 @@ namespace KnaufinsulationWalls.Steps
             // 
             this.vButton1.EnablePress = false;
             this.vButton1.isPress = false;
-            this.vButton1.Location = new System.Drawing.Point(248, 266);
+            this.vButton1.Location = new System.Drawing.Point(239, 298);
             this.vButton1.Name = "vButton1";
             this.vButton1.PenColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.vButton1.PenSize = 2;
@@ -256,7 +262,7 @@ namespace KnaufinsulationWalls.Steps
             // 
             this.label7.Font = new System.Drawing.Font("Lato", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.label7.Location = new System.Drawing.Point(32, 263);
+            this.label7.Location = new System.Drawing.Point(23, 295);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(244, 20);
             this.label7.TabIndex = 4;
@@ -267,7 +273,8 @@ namespace KnaufinsulationWalls.Steps
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Lato", 8F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(30, 180);
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(28, 199);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(171, 13);
             this.label6.TabIndex = 27;
@@ -277,7 +284,8 @@ namespace KnaufinsulationWalls.Steps
             // 
             this.lbl_N1.AutoSize = true;
             this.lbl_N1.Font = new System.Drawing.Font("Lato", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_N1.Location = new System.Drawing.Point(30, 123);
+            this.lbl_N1.ForeColor = System.Drawing.Color.DimGray;
+            this.lbl_N1.Location = new System.Drawing.Point(28, 134);
             this.lbl_N1.Name = "lbl_N1";
             this.lbl_N1.Size = new System.Drawing.Size(165, 13);
             this.lbl_N1.TabIndex = 25;
@@ -285,9 +293,9 @@ namespace KnaufinsulationWalls.Steps
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Font = new System.Drawing.Font("Lato", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.label5.Location = new System.Drawing.Point(56, 86);
+            this.label5.Location = new System.Drawing.Point(55, 98);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(197, 17);
             this.label5.TabIndex = 24;
@@ -295,19 +303,19 @@ namespace KnaufinsulationWalls.Steps
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lato", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Lato", 19F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.label1.Location = new System.Drawing.Point(91, 10);
+            this.label1.Location = new System.Drawing.Point(75, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 58);
+            this.label1.Size = new System.Drawing.Size(208, 64);
             this.label1.TabIndex = 0;
             this.label1.Text = "ПАРАМЕТРЫ\r\nПЕРЕГОРОДКИ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lato", 37F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Lato", 37F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.label2.Location = new System.Drawing.Point(5, 10);
             this.label2.Name = "label2";
@@ -320,7 +328,7 @@ namespace KnaufinsulationWalls.Steps
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Lato", 9F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.Gray;
-            this.label11.Location = new System.Drawing.Point(720, 161);
+            this.label11.Location = new System.Drawing.Point(715, 161);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(240, 180);
             this.label11.TabIndex = 10;
@@ -332,7 +340,7 @@ namespace KnaufinsulationWalls.Steps
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lato", 9.25F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(150)))), ((int)(((byte)(187)))));
-            this.label4.Location = new System.Drawing.Point(751, 481);
+            this.label4.Location = new System.Drawing.Point(811, 491);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(145, 16);
             this.label4.TabIndex = 13;
@@ -344,7 +352,7 @@ namespace KnaufinsulationWalls.Steps
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Lato", 9.25F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(150)))), ((int)(((byte)(187)))));
-            this.label12.Location = new System.Drawing.Point(358, 481);
+            this.label12.Location = new System.Drawing.Point(382, 491);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(136, 16);
             this.label12.TabIndex = 14;
@@ -355,7 +363,7 @@ namespace KnaufinsulationWalls.Steps
             this.lblBack.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblBack.Font = new System.Drawing.Font("Lato Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.lblBack.Location = new System.Drawing.Point(495, 475);
+            this.lblBack.Location = new System.Drawing.Point(526, 486);
             this.lblBack.Name = "lblBack";
             this.lblBack.Size = new System.Drawing.Size(67, 25);
             this.lblBack.TabIndex = 9;
@@ -375,16 +383,16 @@ namespace KnaufinsulationWalls.Steps
             this.btnNext.ButtonPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnNext.ButtonPressedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.btnNext.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.btnNext.ButtonRoundRadius = 30;
+            this.btnNext.ButtonRoundRadius = 35;
             this.btnNext.DrawArrow = true;
-            this.btnNext.DrawArrowW = 1F;
-            this.btnNext.DrawArrowXOffset = 0F;
+            this.btnNext.DrawArrowW = 1.6F;
+            this.btnNext.DrawArrowXOffset = -5F;
             this.btnNext.Font = new System.Drawing.Font("Lato", 14F, System.Drawing.FontStyle.Bold);
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(569, 469);
+            this.btnNext.Location = new System.Drawing.Point(600, 473);
             this.btnNext.Name = "btnNext";
             this.btnNext.offsettextX = 0;
-            this.btnNext.Size = new System.Drawing.Size(170, 40);
+            this.btnNext.Size = new System.Drawing.Size(195, 47);
             this.btnNext.TabIndex = 8;
             this.btnNext.Text = "ДАЛЕЕ";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -412,7 +420,7 @@ namespace KnaufinsulationWalls.Steps
             // pbLArroy
             // 
             this.pbLArroy.Image = global::KnaufinsulationWalls.Properties.Resources.arroyR;
-            this.pbLArroy.Location = new System.Drawing.Point(715, 94);
+            this.pbLArroy.Location = new System.Drawing.Point(715, 95);
             this.pbLArroy.Name = "pbLArroy";
             this.pbLArroy.Size = new System.Drawing.Size(86, 50);
             this.pbLArroy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -437,7 +445,7 @@ namespace KnaufinsulationWalls.Steps
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(967, 516);
+            this.ClientSize = new System.Drawing.Size(1062, 530);
             this.Controls.Add(this.pbRArroy);
             this.Controls.Add(this.pbLArroy);
             this.Controls.Add(this.label3);

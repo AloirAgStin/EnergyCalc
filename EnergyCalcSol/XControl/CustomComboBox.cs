@@ -7,6 +7,7 @@ namespace XCotrols
 {
     public class CustomComboBox : ComboBox
     {
+        public Color ForeColorFirstItem { get; set; }
         public CustomComboBox() : base()
         {
             SetStyle(ControlStyles.UserPaint | ControlStyles.DoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
@@ -23,6 +24,8 @@ namespace XCotrols
 
             Leave += CustomComboBox_Leave;
             GotFocus += CustomComboBox_GotFocus;
+
+            ForeColorFirstItem = Color.DimGray;
         }
 
         private void CustomComboBox_GotFocus(object sender, System.EventArgs e)
@@ -95,7 +98,7 @@ namespace XCotrols
             var sf = new StringFormat(StringFormatFlags.NoWrap);
             sf.LineAlignment = StringAlignment.Center;
 
-            var textColor = SelectedIndex == 0 ? Color.Gray : ForeColor;
+            var textColor = SelectedIndex == 0 ? ForeColorFirstItem : ForeColor;
             var textFont  = SelectedIndex == 0 ? FontSmall : Font;
             using (var brush = new SolidBrush(textColor))
                 e.Graphics.DrawString(Text, textFont, brush, textRectange, sf);
@@ -189,7 +192,7 @@ namespace XCotrols
             }
 
 
-            var colorText = e.Index == 0 ? Color.Black : e.ForeColor;
+            var colorText = e.Index == 0 ? ForeColorFirstItem : e.ForeColor;
             using (var br = new SolidBrush(colorText))
                 e.Graphics.DrawString(textToPaint, e.Font, br, textRectange);
 

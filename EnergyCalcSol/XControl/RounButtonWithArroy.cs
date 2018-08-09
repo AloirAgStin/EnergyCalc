@@ -28,7 +28,7 @@ namespace XControl
                 return;
 
             var rect = ClientRectangle;
-            rect.Inflate(-4, -4);
+            rect.Inflate(-4, -4);   
             //var textPos = e.Graphics.MeasureString(Text, Font);
             
             using (var pen = new Pen(base.ForeColor, DrawArrowW))
@@ -41,7 +41,7 @@ namespace XControl
 
                 e.Graphics.DrawLine(pen, part * 18 - DrawArrowXOffset - part * 2, //начало стрелы 
                                          yPos,
-                                         rect.Width - part * 2.5f, //конец стрелы
+                                         rect.Width - part * 2.5f + 1, //конец стрелы
                                          yPos);
 
                 e.Graphics.DrawLine(pen, rect.Width - part * 2.5f, yPos,

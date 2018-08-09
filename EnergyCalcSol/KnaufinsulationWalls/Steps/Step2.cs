@@ -58,8 +58,16 @@ namespace KnaufinsulationWalls.Steps
             cbTP.DataSource = Data_FillComboBox.cbItem_TP;
             cbIsolation.DataSource = Data_FillComboBox.cbItem_Ti;
             cbCountN.DataSource = Data_FillComboBox.cbItem_N;
-        }
 
+
+            DebugChoise();
+        }
+        private void DebugChoise()
+        {
+            cbEI.SelectedIndex = 1;
+            btnNext_Click(this, new EventArgs());
+
+        }
         void FiltrData(int EI = 0, int TP = 0, int TI = 0)
         {
             data.Clear();
@@ -80,14 +88,12 @@ namespace KnaufinsulationWalls.Steps
             InitDataForN(data);
         }
 
+
         private void Step2_Load(object sender, EventArgs e)
         {
-            btnNext.offsettextX = -5;
             onClickExtParams(sender, e);
 
             cbEI.Focus();
-
-
         }
         
 

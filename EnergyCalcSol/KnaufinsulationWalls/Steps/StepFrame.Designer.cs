@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StepFrame));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panelMain = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.stepCounter1 = new XCotrols.StepCounter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,16 +49,19 @@
             this.panel2.Size = new System.Drawing.Size(1066, 70);
             this.panel2.TabIndex = 1;
             // 
-            // panelMain
+            // stepCounter1
             // 
-            this.panelMain.AutoScroll = true;
-            this.panelMain.BackColor = System.Drawing.Color.White;
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(0, 70);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(0);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1066, 541);
-            this.panelMain.TabIndex = 2;
+            this.stepCounter1.BackColor = System.Drawing.Color.White;
+            this.stepCounter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.stepCounter1.Location = new System.Drawing.Point(27, 15);
+            this.stepCounter1.Name = "stepCounter1";
+            this.stepCounter1.Size = new System.Drawing.Size(395, 40);
+            this.stepCounter1.StepColorCurrent = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(175)))), ((int)(((byte)(230)))));
+            this.stepCounter1.StepColorFuture = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(215)))), ((int)(((byte)(216)))));
+            this.stepCounter1.StepCount = 3;
+            this.stepCounter1.StepCurrent = 1;
+            this.stepCounter1.TabIndex = 3;
+            this.stepCounter1.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -72,18 +75,16 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // stepCounter1
+            // panelMain
             // 
-            this.stepCounter1.BackColor = System.Drawing.Color.White;
-            this.stepCounter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.stepCounter1.Location = new System.Drawing.Point(27, 15);
-            this.stepCounter1.Name = "stepCounter1";
-            this.stepCounter1.Size = new System.Drawing.Size(395, 40);
-            this.stepCounter1.StepColorCurrent = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(175)))), ((int)(((byte)(230)))));
-            this.stepCounter1.StepColorFuture = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(215)))), ((int)(((byte)(216)))));
-            this.stepCounter1.StepCount = 3;
-            this.stepCounter1.StepCurrent = 1;
-            this.stepCounter1.TabIndex = 3;
+            this.panelMain.AutoScroll = true;
+            this.panelMain.BackColor = System.Drawing.Color.White;
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(0, 70);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(0);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(1066, 541);
+            this.panelMain.TabIndex = 2;
             // 
             // StepFrame
             // 

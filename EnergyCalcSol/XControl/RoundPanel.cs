@@ -24,7 +24,7 @@ namespace XCotrols
 
             SetStyle(ControlStyles.Selectable, true);
 
-           // DoubleBuffered = true;
+            DoubleBuffered = true;
 
         }
 
@@ -40,6 +40,8 @@ namespace XCotrols
         
         private void RoundPanel_Paint1(object sender, PaintEventArgs e)
         {
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
             var ButtonBorderColor = Color.Red;
 
             using (var pen = new Pen(BorderColor, BorderWidth))

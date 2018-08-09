@@ -102,7 +102,7 @@ namespace KnaufinsulationWalls.Steps
         private String MakeUserChoiseText(CalcItem itm)
         {
             StringBuilder Text = new StringBuilder();
-            Text.AppendFormat("Rw={0} дБ, EI={1}", itm.Rw, itm.EI);
+            Text.AppendFormat("={0} дБ, EI={1}", itm.Rw, itm.EI);
 
             if(itm.Tp > 0)
                 Text.AppendFormat("; Толщина перегродки Tп={0} мм",itm.Tp);
@@ -190,6 +190,7 @@ namespace KnaufinsulationWalls.Steps
             richTextBox1.SelectionCharOffset = 0;
 
             richTextBox1.SelectionFont = coreFont;
+            
         }
 
         private void exListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -220,8 +221,7 @@ namespace KnaufinsulationWalls.Steps
                 RichTextAddNewLine();
 
 
-                richTextBox1.SelectionFont = new Font(coreFont.Name, 12);
-                richTextBox1.SelectionColor = Color.FromArgb(91, 124, 137);
+                richTextBox1.SelectionFont = new Font(coreFont.Name, 11);
 
                 StringBuilder strB = new StringBuilder();
                 strB.AppendFormat("В соответствии с СП 51.1330.2011 «Защита от шума», " +
@@ -234,8 +234,8 @@ namespace KnaufinsulationWalls.Steps
                 richTextBox1.AppendText("Для удовлетворения требований рекомендуется следующая конструкция перегородки:");
 
                 RichTextAddNewLine();
-                
-                
+
+
                 richTextBox1.SelectionFont = coreFont;
                 richTextBox1.SelectionCharOffset = 2;
                 strB = new StringBuilder();

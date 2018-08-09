@@ -20,7 +20,7 @@ namespace XCotrols
 
 
                 richTextBox1.Clear();
-                richTextBox1.SelectionFont = new Font("Lato", 19, FontStyle.Bold);
+                richTextBox1.SelectionFont = new Font("Lato", 19, FontStyle.Regular);
 
                 pictureBox1.Visible = StepCurrent == 1 ? true : false;
                 pictureBox2.Visible = StepCurrent == 2 ? true : false;
