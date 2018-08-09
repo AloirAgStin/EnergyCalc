@@ -158,7 +158,9 @@ namespace KnaufinsulationWalls.UpdateForms
             this.Controls.Add(this.roundButton1);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "newVersion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Обновление программы KnaufInsulation Walls";

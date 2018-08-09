@@ -162,7 +162,7 @@ namespace XControl
             get { return _watermarkActive;  }
             set { _watermarkActive = value; }
         }
-        private string _watermarkText = "Введите значение";
+        private string _watermarkText = "Введите Rw, Дб";
         public string WatermarkText
         {
             get { return _watermarkText; }

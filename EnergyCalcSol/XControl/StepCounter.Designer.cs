@@ -44,14 +44,14 @@
             this.richTextBox1.BackColor = System.Drawing.Color.White;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.DetectUrls = false;
-            this.richTextBox1.Font = new System.Drawing.Font("Lato", 34F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox1.Location = new System.Drawing.Point(0, -3);
+            this.richTextBox1.Font = new System.Drawing.Font("Lato", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBox1.Location = new System.Drawing.Point(5, 0);
             this.richTextBox1.Multiline = false;
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.richTextBox1.ShortcutsEnabled = false;
-            this.richTextBox1.Size = new System.Drawing.Size(600, 52);
+            this.richTextBox1.Size = new System.Drawing.Size(282, 27);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.TabStop = false;
             this.richTextBox1.Text = "01 - 02 - 03 РЕЗУЛЬТАТ";
@@ -60,7 +60,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::XControl.Properties.Resources.ic;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 46);
+            this.pictureBox1.Location = new System.Drawing.Point(14, 30);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(8, 8);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -70,7 +70,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::XControl.Properties.Resources.ic;
-            this.pictureBox2.Location = new System.Drawing.Point(113, 46);
+            this.pictureBox2.Location = new System.Drawing.Point(65, 30);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(8, 8);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -80,7 +80,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::XControl.Properties.Resources.ic;
-            this.pictureBox3.Location = new System.Drawing.Point(208, 46);
+            this.pictureBox3.Location = new System.Drawing.Point(117, 30);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(8, 8);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -89,15 +89,16 @@
             // 
             // StepCounter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.richTextBox1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Name = "StepCounter";
-            this.Size = new System.Drawing.Size(600, 58);
+            this.Size = new System.Drawing.Size(290, 40);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

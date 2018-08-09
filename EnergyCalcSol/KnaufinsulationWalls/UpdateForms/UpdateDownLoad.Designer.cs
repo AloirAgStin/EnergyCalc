@@ -111,6 +111,7 @@
             this.Controls.Add(this.lblStatus);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "UpdateDownLoad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Обновление программы";

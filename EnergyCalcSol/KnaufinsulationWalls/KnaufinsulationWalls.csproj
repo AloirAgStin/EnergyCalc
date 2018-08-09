@@ -229,13 +229,16 @@
     <None Include="Resources\stepImageN.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\stepImageEI.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\arroyR.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arroyL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnRW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnRWactive.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

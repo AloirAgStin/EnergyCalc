@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using KnaufinsulationWalls.Data;
 using XCotrols;
@@ -20,7 +21,6 @@ namespace KnaufinsulationWalls.Steps
 
         private void DebugChoise()
         {
-            return;
             int n = 2;
             if (n == 1)
             {
@@ -68,10 +68,13 @@ namespace KnaufinsulationWalls.Steps
         private void Step1_Load(object sender, EventArgs e)
         {
             InitComboBoxes(1);
-            btnNext.offsettextX = -5;
-            richTextBox1.Visible = false;
+            
+            if(DEBUGINFO.IsDEBUGINFO)
+                DebugChoise();
 
-            DebugChoise();
+            roundEdit1.Focus();
+        
+            
         }
        
 
@@ -236,6 +239,36 @@ namespace KnaufinsulationWalls.Steps
                 focusItem.Focus();
                 return;
             }            
+        }
+
+        private void onSetFocusRW(object sender, EventArgs e)
+        {
+            pbLArroy.Visible = true;
+            pbRArroy.Visible = true;
+        }
+
+        private void onSetKillFocusRW(object sender, EventArgs e)
+        {
+            pbLArroy.Visible = false;
+            pbRArroy.Visible = false;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            var rect = panel1.ClientRectangle;
+            rect.Inflate(-2, -2);
+                ControlPaint.DrawBorder(e.Graphics, rect, 
+                    Color.FromArgb(208,211, 212), 0, ButtonBorderStyle.Solid, 
+                    Color.FromArgb(208, 211, 212), 1,
+                    ButtonBorderStyle.Solid, Color.FromArgb(208, 211, 212), 1, 
+                    ButtonBorderStyle.Solid, Color.FromArgb(208, 211, 212), 0, ButtonBorderStyle.Solid   
+                                        );
+
+        }
+
+        private void panel1_Resize(object sender, EventArgs e)
+        {
+            panel1.Invalidate();
         }
     }
 }

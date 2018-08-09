@@ -158,5 +158,10 @@ namespace KnaufinsulationWalls.Steps
         {
             pictureBox1.Focus();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
