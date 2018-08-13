@@ -191,6 +191,6 @@ namespace KnaufinsulationWalls
 
     public class DEBUGINFO
     {
-        public static bool IsDEBUGINFO = false;
+        public static bool IsDEBUGINFO = true;
     }
 }
