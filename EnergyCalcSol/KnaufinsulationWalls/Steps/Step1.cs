@@ -103,7 +103,8 @@ namespace KnaufinsulationWalls.Steps
 
                 roundEdit1.Focus();
                 radioButton1.Focus();
-                
+
+                richTextBox1.Clear();
             }
             if(ind == 2)
             {

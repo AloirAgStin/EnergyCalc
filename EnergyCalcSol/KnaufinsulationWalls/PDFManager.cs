@@ -218,14 +218,15 @@ namespace KnaufinsulationWalls
 
                     var strB = new StringBuilder();
 
+                    
                     strB.AppendFormat(
                         "- Толщина перегородки: {0} мм\r\n" +
                         "- Толщина изоляции: {1} мм\r\n" +
                         "- Кол-во листов с одной стороны  - {2} {3}\r\n" +
                         "- Материал изоляции перегородки:\r\n" +
                         "Knauf Insulation AS Акустическая перегородка\r\n" +
-                        "- Rw={4} дБ\r\n" +
-                        "- EI{5}"
+                        "- Rw={4} дБ" + "" + "\r\n" +
+                        "- EI{5} "
                         , item.WallTypes.Tp, item.WallTypes.Ti, item.WallTypes.N, item.GetNameExtVal(),
                         item.WallTypes.Rw,
                         item.WallTypes.EI);

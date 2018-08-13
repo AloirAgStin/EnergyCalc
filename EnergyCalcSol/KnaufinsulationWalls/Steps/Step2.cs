@@ -104,15 +104,15 @@ namespace KnaufinsulationWalls.Steps
         {
             IsShowExtParam = !IsShowExtParam;
    
-            label8.Visible = IsShowExtParam;
-            label9.Visible = IsShowExtParam;
+            lblTi.Visible = IsShowExtParam;
+            lblN.Visible = IsShowExtParam;
 
             roundPanel3.Visible = IsShowExtParam;
             roundPanel4.Visible = IsShowExtParam;
 
             cbIsolation.Visible = IsShowExtParam;
             cbCountN.Visible = IsShowExtParam;
-            label8.Focus();
+            lblTi.Focus();
         }
 
         private void lbl_Back(object sender, EventArgs e)
@@ -237,11 +237,10 @@ namespace KnaufinsulationWalls.Steps
             cbTP.DataSource = Data_FillComboBox.cbItem_TP;
             if (elemTp._intValue > 0)
                 cbTP.SelectedItem = elemTp;
-
-
-            cbIsolation.DataSource = Data_FillComboBox.cbItem_Ti;
             
-            return; 
+            cbIsolation.DataSource = Data_FillComboBox.cbItem_Ti;
+
+            onLeaveCombo(sender, e);
         }
 
         private void onChangeTp(object sender, EventArgs e)
@@ -257,6 +256,8 @@ namespace KnaufinsulationWalls.Steps
 
             cbIsolation.DataSource = Data_FillComboBox.cbItem_Ti;
             cbIsolation.SelectedItem = elemTi;
+
+            onLeaveCombo(sender, e);
         }
 
         private void onChangeTi(object sender, EventArgs e)
@@ -274,6 +275,8 @@ namespace KnaufinsulationWalls.Steps
 
             cbCountN.DataSource = Data_FillComboBox.cbItem_N;
             cbCountN.SelectedItem = elemN;
+
+            onLeaveCombo(sender, e);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -294,6 +297,10 @@ namespace KnaufinsulationWalls.Steps
             panel1.Invalidate();
         }
 
+        private void cbCountN_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+            onLeaveCombo(sender, e);
+        }
     }
 }

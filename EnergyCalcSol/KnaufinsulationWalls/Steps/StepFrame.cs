@@ -29,8 +29,7 @@ namespace KnaufinsulationWalls.Steps
             CalcStruct = new CalcItem();
 
             IsEnableCheck = true;
-
-
+            
             Helper.WriteLog("Load selection form");
             Helper.WriteLog("Load step 1");
         }
@@ -157,11 +156,6 @@ namespace KnaufinsulationWalls.Steps
         private void stepCounter1_Enter(object sender, EventArgs e)
         {
             pictureBox1.Focus();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
