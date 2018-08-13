@@ -64,7 +64,7 @@ namespace KnaufinsulationWalls
         private void roundButton1_Click(object sender, EventArgs e)
         {
             Steps.StepFrame d = new Steps.StepFrame();
-            d.Show(this);
+            d.ShowDialog(this);
         }
 
 
