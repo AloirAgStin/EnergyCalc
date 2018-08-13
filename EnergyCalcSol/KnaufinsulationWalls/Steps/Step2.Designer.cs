@@ -40,11 +40,11 @@ namespace KnaufinsulationWalls.Steps
             this.cbTP = new XCotrols.CustomComboBox();
             this.roundPanel1 = new XCotrols.RoundPanel();
             this.cbEI = new XCotrols.CustomComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblN = new System.Windows.Forms.Label();
+            this.lblTi = new System.Windows.Forms.Label();
             this.vButton1 = new XCotrols.VButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblTp = new System.Windows.Forms.Label();
             this.lbl_N1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,20 +52,20 @@ namespace KnaufinsulationWalls.Steps
             this.label11 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.lblBack = new XControl.SelectableLabel();
-            this.btnNext = new XControl.RounButtonWithArroy();
-            this.dbPictureBox1 = new XControl.DBPictureBox();
             this.pbRArroy = new System.Windows.Forms.PictureBox();
             this.pbLArroy = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblBack = new XControl.SelectableLabel();
+            this.btnNext = new XControl.RounButtonWithArroy();
+            this.dbPictureBox1 = new XControl.DBPictureBox();
             this.panel1.SuspendLayout();
             this.roundPanel4.SuspendLayout();
             this.roundPanel3.SuspendLayout();
             this.roundPanel2.SuspendLayout();
             this.roundPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRArroy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLArroy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,11 +76,11 @@ namespace KnaufinsulationWalls.Steps
             this.panel1.Controls.Add(this.roundPanel3);
             this.panel1.Controls.Add(this.roundPanel2);
             this.panel1.Controls.Add(this.roundPanel1);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.lblN);
+            this.panel1.Controls.Add(this.lblTi);
             this.panel1.Controls.Add(this.vButton1);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.lblTp);
             this.panel1.Controls.Add(this.lbl_N1);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label1);
@@ -110,6 +110,7 @@ namespace KnaufinsulationWalls.Steps
             this.cbCountN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbCountN.ColorActiveItem = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.cbCountN.ColorDeactiveItem = System.Drawing.Color.White;
+            this.cbCountN.DrawFocusRect = true;
             this.cbCountN.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.cbCountN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCountN.DropDownWidth = 231;
@@ -121,6 +122,8 @@ namespace KnaufinsulationWalls.Steps
             this.cbCountN.Name = "cbCountN";
             this.cbCountN.Size = new System.Drawing.Size(231, 24);
             this.cbCountN.TabIndex = 6;
+            this.cbCountN.DropDown += new System.EventHandler(this.onFocusCombo);
+            this.cbCountN.SelectedIndexChanged += new System.EventHandler(this.cbCountN_SelectedIndexChanged);
             this.cbCountN.Enter += new System.EventHandler(this.onFocusCombo);
             this.cbCountN.Leave += new System.EventHandler(this.onLeaveCombo);
             // 
@@ -141,6 +144,7 @@ namespace KnaufinsulationWalls.Steps
             this.cbIsolation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbIsolation.ColorActiveItem = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.cbIsolation.ColorDeactiveItem = System.Drawing.Color.White;
+            this.cbIsolation.DrawFocusRect = true;
             this.cbIsolation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.cbIsolation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIsolation.DropDownWidth = 231;
@@ -152,6 +156,7 @@ namespace KnaufinsulationWalls.Steps
             this.cbIsolation.Name = "cbIsolation";
             this.cbIsolation.Size = new System.Drawing.Size(231, 24);
             this.cbIsolation.TabIndex = 5;
+            this.cbIsolation.DropDown += new System.EventHandler(this.onFocusCombo);
             this.cbIsolation.SelectedIndexChanged += new System.EventHandler(this.onChangeTi);
             this.cbIsolation.Enter += new System.EventHandler(this.onFocusCombo);
             this.cbIsolation.Leave += new System.EventHandler(this.onLeaveCombo);
@@ -173,6 +178,7 @@ namespace KnaufinsulationWalls.Steps
             this.cbTP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbTP.ColorActiveItem = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.cbTP.ColorDeactiveItem = System.Drawing.Color.White;
+            this.cbTP.DrawFocusRect = true;
             this.cbTP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.cbTP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTP.DropDownWidth = 231;
@@ -184,6 +190,7 @@ namespace KnaufinsulationWalls.Steps
             this.cbTP.Name = "cbTP";
             this.cbTP.Size = new System.Drawing.Size(231, 24);
             this.cbTP.TabIndex = 3;
+            this.cbTP.DropDown += new System.EventHandler(this.onFocusCombo);
             this.cbTP.SelectedIndexChanged += new System.EventHandler(this.onChangeTp);
             this.cbTP.Enter += new System.EventHandler(this.onFocusCombo);
             this.cbTP.Leave += new System.EventHandler(this.onLeaveCombo);
@@ -205,6 +212,7 @@ namespace KnaufinsulationWalls.Steps
             this.cbEI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEI.ColorActiveItem = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.cbEI.ColorDeactiveItem = System.Drawing.Color.White;
+            this.cbEI.DrawFocusRect = true;
             this.cbEI.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.cbEI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEI.DropDownWidth = 233;
@@ -216,31 +224,32 @@ namespace KnaufinsulationWalls.Steps
             this.cbEI.Name = "cbEI";
             this.cbEI.Size = new System.Drawing.Size(233, 24);
             this.cbEI.TabIndex = 1;
+            this.cbEI.DropDown += new System.EventHandler(this.onFocusCombo);
             this.cbEI.SelectedIndexChanged += new System.EventHandler(this.onChangeEI);
             this.cbEI.Enter += new System.EventHandler(this.onFocusCombo);
             this.cbEI.Leave += new System.EventHandler(this.onLeaveCombo);
             // 
-            // label9
+            // lblN
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Lato", 8F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(28, 391);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(231, 13);
-            this.label9.TabIndex = 35;
-            this.label9.Text = "КОЛ-ВО ЛИСТОВ С ОДНОЙ СТОРОНЫ, N";
+            this.lblN.AutoSize = true;
+            this.lblN.Font = new System.Drawing.Font("Lato", 8F, System.Drawing.FontStyle.Bold);
+            this.lblN.ForeColor = System.Drawing.Color.DimGray;
+            this.lblN.Location = new System.Drawing.Point(28, 391);
+            this.lblN.Name = "lblN";
+            this.lblN.Size = new System.Drawing.Size(231, 13);
+            this.lblN.TabIndex = 6;
+            this.lblN.Text = "КОЛ-ВО ЛИСТОВ С ОДНОЙ СТОРОНЫ, N";
             // 
-            // label8
+            // lblTi
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Lato", 8F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(28, 325);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(154, 13);
-            this.label8.TabIndex = 33;
-            this.label8.Text = "ТОЛЩИНА ИЗОЛЯЦИИ, Ти ";
+            this.lblTi.AutoSize = true;
+            this.lblTi.Font = new System.Drawing.Font("Lato", 8F, System.Drawing.FontStyle.Bold);
+            this.lblTi.ForeColor = System.Drawing.Color.DimGray;
+            this.lblTi.Location = new System.Drawing.Point(28, 325);
+            this.lblTi.Name = "lblTi";
+            this.lblTi.Size = new System.Drawing.Size(154, 13);
+            this.lblTi.TabIndex = 4;
+            this.lblTi.Text = "ТОЛЩИНА ИЗОЛЯЦИИ, Ти ";
             // 
             // vButton1
             // 
@@ -269,16 +278,16 @@ namespace KnaufinsulationWalls.Steps
             this.label7.Text = "ДОПОЛОНИТЕЛЬНЫЕ ПАРАМЕТРЫ";
             this.label7.Click += new System.EventHandler(this.onClickExtParams);
             // 
-            // label6
+            // lblTp
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Lato", 8F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(28, 199);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(171, 13);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "ТОЛЩИНА ПЕРЕГОРОДКИ, Тп";
+            this.lblTp.AutoSize = true;
+            this.lblTp.Font = new System.Drawing.Font("Lato", 8F, System.Drawing.FontStyle.Bold);
+            this.lblTp.ForeColor = System.Drawing.Color.DimGray;
+            this.lblTp.Location = new System.Drawing.Point(28, 199);
+            this.lblTp.Name = "lblTp";
+            this.lblTp.Size = new System.Drawing.Size(171, 13);
+            this.lblTp.TabIndex = 2;
+            this.lblTp.Text = "ТОЛЩИНА ПЕРЕГОРОДКИ, Тп";
             // 
             // lbl_N1
             // 
@@ -358,6 +367,38 @@ namespace KnaufinsulationWalls.Steps
             this.label12.TabIndex = 14;
             this.label12.Text = "01. Уровень шума Rw";
             // 
+            // pbRArroy
+            // 
+            this.pbRArroy.Image = global::KnaufinsulationWalls.Properties.Resources.arroyL;
+            this.pbRArroy.Location = new System.Drawing.Point(859, 94);
+            this.pbRArroy.Name = "pbRArroy";
+            this.pbRArroy.Size = new System.Drawing.Size(89, 50);
+            this.pbRArroy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRArroy.TabIndex = 22;
+            this.pbRArroy.TabStop = false;
+            // 
+            // pbLArroy
+            // 
+            this.pbLArroy.Image = global::KnaufinsulationWalls.Properties.Resources.arroyR;
+            this.pbLArroy.Location = new System.Drawing.Point(715, 95);
+            this.pbLArroy.Name = "pbLArroy";
+            this.pbLArroy.Size = new System.Drawing.Size(86, 50);
+            this.pbLArroy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLArroy.TabIndex = 21;
+            this.pbLArroy.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Lato", 35F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
+            this.label3.Location = new System.Drawing.Point(800, 94);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 56);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "EI";
+            // 
             // lblBack
             // 
             this.lblBack.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -407,38 +448,6 @@ namespace KnaufinsulationWalls.Steps
             this.dbPictureBox1.TabIndex = 9;
             this.dbPictureBox1.TabStop = false;
             // 
-            // pbRArroy
-            // 
-            this.pbRArroy.Image = global::KnaufinsulationWalls.Properties.Resources.arroyL;
-            this.pbRArroy.Location = new System.Drawing.Point(859, 94);
-            this.pbRArroy.Name = "pbRArroy";
-            this.pbRArroy.Size = new System.Drawing.Size(89, 50);
-            this.pbRArroy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRArroy.TabIndex = 22;
-            this.pbRArroy.TabStop = false;
-            // 
-            // pbLArroy
-            // 
-            this.pbLArroy.Image = global::KnaufinsulationWalls.Properties.Resources.arroyR;
-            this.pbLArroy.Location = new System.Drawing.Point(715, 95);
-            this.pbLArroy.Name = "pbLArroy";
-            this.pbLArroy.Size = new System.Drawing.Size(86, 50);
-            this.pbLArroy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLArroy.TabIndex = 21;
-            this.pbLArroy.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Lato", 35F);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.label3.Location = new System.Drawing.Point(800, 94);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 56);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "EI";
-            // 
             // Step2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,9 +477,9 @@ namespace KnaufinsulationWalls.Steps
             this.roundPanel3.ResumeLayout(false);
             this.roundPanel2.ResumeLayout(false);
             this.roundPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dbPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRArroy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLArroy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -485,11 +494,11 @@ namespace KnaufinsulationWalls.Steps
         private SelectableLabel lblBack;
         private System.Windows.Forms.Label label5;
         private XControl.DBPictureBox dbPictureBox1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTp;
         private System.Windows.Forms.Label label7;
         private XCotrols.VButton vButton1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblN;
+        private System.Windows.Forms.Label lblTi;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbl_N1;
         private XCotrols.RoundPanel roundPanel1;

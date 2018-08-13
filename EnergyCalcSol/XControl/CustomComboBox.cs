@@ -8,6 +8,7 @@ namespace XCotrols
     public class CustomComboBox : ComboBox
     {
         public Color ForeColorFirstItem { get; set; }
+        public bool DrawFocusRect { get; set; }
         public CustomComboBox() : base()
         {
             SetStyle(ControlStyles.UserPaint | ControlStyles.DoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
@@ -25,6 +26,7 @@ namespace XCotrols
             Leave += CustomComboBox_Leave;
             GotFocus += CustomComboBox_GotFocus;
 
+            DrawFocusRect = true;
             ForeColorFirstItem = Color.DimGray;
         }
 
@@ -151,7 +153,8 @@ namespace XCotrols
         {
             if (!DroppedDown)
             {
-                e.DrawFocusRectangle();
+                if(DrawFocusRect)
+                    e.DrawFocusRectangle();
                 return;
             }
 
@@ -196,7 +199,8 @@ namespace XCotrols
             using (var br = new SolidBrush(colorText))
                 e.Graphics.DrawString(textToPaint, e.Font, br, textRectange);
 
-            e.DrawFocusRectangle();
+            if(DrawFocusRect)
+                e.DrawFocusRectangle();
         }
 
     }
