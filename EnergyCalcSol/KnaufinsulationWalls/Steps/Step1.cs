@@ -24,7 +24,7 @@ namespace KnaufinsulationWalls.Steps
             int n = 2;
             if (n == 1)
             {
-                roundEdit1.textbox.Text = "50";
+                roundEdit1._RichTextBox.Text = "50";
             }
             else
             {
@@ -67,16 +67,26 @@ namespace KnaufinsulationWalls.Steps
 
         private void Step1_Load(object sender, EventArgs e)
         {
+            roundEdit1.onDrawTextWaterMask += RoundEdit1_onDrawTextWaterMask;
             InitComboBoxes(1);
             
             if(DEBUGINFO.IsDEBUGINFO)
                 DebugChoise();
 
-            roundEdit1.Focus();
-        
+
+            roundEdit1.ApplyWatermark();
+            //roundEdit1.Focus();     
             
         }
-       
+
+        private void RoundEdit1_onDrawTextWaterMask()
+        {
+            roundEdit1._RichTextBox.AppendText("Введите R");
+            roundEdit1._RichTextBox.SelectionCharOffset = -3;
+            roundEdit1._RichTextBox.AppendText("w");
+            roundEdit1._RichTextBox.SelectionCharOffset = -0;
+            roundEdit1._RichTextBox.AppendText(", Дб");
+        }
 
         private void InitComboBoxes(int ind)
         {
@@ -86,7 +96,7 @@ namespace KnaufinsulationWalls.Steps
 
                 bool IsEnable = false;
 
-                roundEdit1.textbox.Enabled = !IsEnable;
+                roundEdit1._RichTextBox.Enabled = !IsEnable;
                 roundEdit1.Enabled = !IsEnable;
 
 
@@ -110,9 +120,9 @@ namespace KnaufinsulationWalls.Steps
             {
                 bool IsEnable = true;
 
-                roundEdit1.textbox.Enabled = !IsEnable;
+                roundEdit1._RichTextBox.Enabled = !IsEnable;
                 roundEdit1.Enabled = !IsEnable;
-                roundEdit1.textbox.Text = "";
+                roundEdit1._RichTextBox.Text = "";
 
                 customComboBox1.Enabled = IsEnable;
                 customComboBox2.Enabled = IsEnable;
@@ -191,12 +201,12 @@ namespace KnaufinsulationWalls.Steps
                 {
                     if (radioButton1.Checked)
                     {
-                        Helper.WriteLog("Manual input: " + roundEdit1.textbox.Text);
+                        Helper.WriteLog("Manual input: " + roundEdit1._RichTextBox.Text);
 
                         int nDb = 0;
-                        Int32.TryParse(roundEdit1.textbox.Text, out nDb);
+                        Int32.TryParse(roundEdit1._RichTextBox.Text, out nDb);
 
-                        if (!Int32.TryParse(roundEdit1.textbox.Text, out nDb) || nDb <= 0 || nDb > Data_WallsType.maxRW)
+                        if (!Int32.TryParse(roundEdit1._RichTextBox.Text, out nDb) || nDb <= 0 || nDb > Data_WallsType.maxRW)
                         {
                             focusItem = roundEdit1;
                             throw new Exception("Значение поля \"Индекс изоляции воздушного шума, Rw\" " +

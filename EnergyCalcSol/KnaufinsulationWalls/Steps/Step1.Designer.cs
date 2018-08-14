@@ -120,7 +120,7 @@
             this.label10.ForeColor = System.Drawing.Color.DimGray;
             this.label10.Location = new System.Drawing.Point(255, 140);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 14);
+            this.label10.Size = new System.Drawing.Size(12, 14);
             this.label10.TabIndex = 13;
             this.label10.Text = "w";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -181,6 +181,7 @@
             this.customComboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.customComboBox2.ColorActiveItem = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.customComboBox2.ColorDeactiveItem = System.Drawing.Color.White;
+            this.customComboBox2.DrawFocusRect = true;
             this.customComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.customComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.customComboBox2.DropDownWidth = 231;
@@ -211,6 +212,7 @@
             this.customComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.customComboBox1.ColorActiveItem = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
             this.customComboBox1.ColorDeactiveItem = System.Drawing.Color.White;
+            this.customComboBox1.DrawFocusRect = true;
             this.customComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.customComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.customComboBox1.DropDownWidth = 231;
@@ -261,6 +263,8 @@
             // 
             // roundEdit1
             // 
+            this.roundEdit1._WaterMarkColor = System.Drawing.Color.Gray;
+            this.roundEdit1._WaterMarkFont = new System.Drawing.Font("Lato", 10F);
             this.roundEdit1.BackColorInBorder = System.Drawing.Color.White;
             this.roundEdit1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(203)))), ((int)(((byte)(242)))));
             this.roundEdit1.BorderWidth = 2;
@@ -273,8 +277,6 @@
             this.roundEdit1.Radius = 35;
             this.roundEdit1.Size = new System.Drawing.Size(258, 40);
             this.roundEdit1.TabIndex = 2;
-            this.roundEdit1.WatermarkActive = true;
-            this.roundEdit1.WatermarkText = "Введите Rw, Дб";
             this.roundEdit1.Enter += new System.EventHandler(this.onSetFocusRW);
             this.roundEdit1.Leave += new System.EventHandler(this.onSetKillFocusRW);
             // 
