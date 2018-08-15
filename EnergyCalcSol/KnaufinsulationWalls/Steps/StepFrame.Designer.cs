@@ -94,8 +94,6 @@
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1082, 610);
             this.Name = "StepFrame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
