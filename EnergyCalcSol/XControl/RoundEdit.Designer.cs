@@ -30,12 +30,12 @@
         {
             this._RichTextBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
-            //
+            // 
             // _RichTextBox
-            //
+            // 
             this._RichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._RichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._RichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._RichTextBox.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this._RichTextBox.Location = new System.Drawing.Point(17, 13);
             this._RichTextBox.Margin = new System.Windows.Forms.Padding(4);
             this._RichTextBox.Name = "_RichTextBox";
@@ -43,9 +43,9 @@
             this._RichTextBox.Size = new System.Drawing.Size(322, 18);
             this._RichTextBox.TabIndex = 0;
             this._RichTextBox.Text = "";
-            //
+            // 
             // RoundEdit
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this._RichTextBox);

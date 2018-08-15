@@ -119,6 +119,7 @@ namespace KnaufinsulationWalls.Steps
             this.btnRW.Text = "ПРОТОКОЛ ";
             this.btnRW.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnRW.UseVisualStyleBackColor = false;
+            this.btnRW.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
             // 
             // btnPDF
             // 
@@ -141,6 +142,7 @@ namespace KnaufinsulationWalls.Steps
             this.btnPDF.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnPDF.UseVisualStyleBackColor = false;
+            this.btnPDF.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
             // 
             // btnTex
             // 
