@@ -328,10 +328,10 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIniFileComponent">
     <ROW IniFile="enable" FileName="config.ini" DirProperty="APPDIR" Section="updates" Key="enable" Value="true" Action="0" Component_="AI_ExePath"/>
-    <ROW IniFile="lastCheck" FileName="config.ini" DirProperty="APPDIR" Section="updates" Key="lastCheck" Value="01.06.2018" Action="0" Component_="AI_ExePath"/>
+    <ROW IniFile="lastCheck" FileName="config.ini" DirProperty="APPDIR" Section="updates" Key="lastCheck" Value="13.08.2018" Action="0" Component_="AI_ExePath"/>
     <ROW IniFile="logFile" FileName="config.ini" DirProperty="APPDIR" Section="debug" Key="logFile" Value="program_log.log" Action="0" Component_="AI_ExePath"/>
     <ROW IniFile="url" FileName="config.ini" DirProperty="APPDIR" Section="updates" Key="url" Value="http://test.pahomov.pro/static/desktop/xml/Version.xml" Action="0" Component_="AI_ExePath"/>
-    <ROW IniFile="version" FileName="version.ini" DirProperty="APPDIR" Section="version" Key="version" Value="1.0.0" Action="0" Component_="AI_ExePath"/>
+    <ROW IniFile="version" FileName="version.ini" DirProperty="APPDIR" Section="version" Key="version" Value="[ProductVersion]" Action="0" Component_="AI_ExePath"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
