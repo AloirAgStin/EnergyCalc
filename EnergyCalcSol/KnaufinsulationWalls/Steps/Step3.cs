@@ -185,8 +185,8 @@ namespace KnaufinsulationWalls.Steps
         private void RichTextAddNewLine()
         {
             richTextBox1.SelectionCharOffset = -3;
-            richTextBox1.SelectionFont = new Font(new Font(coreFont.FontFamily, 3), FontStyle.Regular);
-            richTextBox1.AppendText("\r\n \r\n");
+            richTextBox1.SelectionFont = new Font(new Font(coreFont.Name, 3), FontStyle.Regular);
+            richTextBox1.AppendText("\r\n\r\n");
             richTextBox1.SelectionCharOffset = 0;
 
             richTextBox1.SelectionFont = coreFont;
