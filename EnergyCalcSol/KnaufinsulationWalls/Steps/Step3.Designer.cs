@@ -30,6 +30,7 @@ namespace KnaufinsulationWalls.Steps
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Step3));
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.saveFDPDF = new System.Windows.Forms.SaveFileDialog();
@@ -56,10 +57,13 @@ namespace KnaufinsulationWalls.Steps
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnPrint = new XControl.RoundButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.btnDWG.SuspendLayout();
             this.panelLeftSide.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // saveFileDialog1
@@ -166,7 +170,6 @@ namespace KnaufinsulationWalls.Steps
             this.btnTex.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnTex.UseVisualStyleBackColor = false;
             this.btnTex.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
-            this.btnTex.Paint += new System.Windows.Forms.PaintEventHandler(this.onPaintBorder);
             // 
             // btnNG
             // 
@@ -190,7 +193,6 @@ namespace KnaufinsulationWalls.Steps
             this.btnNG.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnNG.UseVisualStyleBackColor = false;
             this.btnNG.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
-            this.btnNG.Paint += new System.Windows.Forms.PaintEventHandler(this.onPaintBorder);
             // 
             // btnEI
             // 
@@ -214,7 +216,6 @@ namespace KnaufinsulationWalls.Steps
             this.btnEI.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnEI.UseVisualStyleBackColor = false;
             this.btnEI.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
-            this.btnEI.Paint += new System.Windows.Forms.PaintEventHandler(this.onPaintBorder);
             // 
             // btndw
             // 
@@ -238,7 +239,6 @@ namespace KnaufinsulationWalls.Steps
             this.btndw.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btndw.UseVisualStyleBackColor = false;
             this.btndw.Click += new System.EventHandler(this.onBtnFileDownLoadClick);
-            this.btndw.Paint += new System.Windows.Forms.PaintEventHandler(this.onPaintBorder);
             // 
             // richTextBox1
             // 
@@ -248,10 +248,10 @@ namespace KnaufinsulationWalls.Steps
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Font = new System.Drawing.Font("Lato", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.richTextBox1.Location = new System.Drawing.Point(591, 85);
+            this.richTextBox1.Location = new System.Drawing.Point(307, 0);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(447, 289);
+            this.richTextBox1.Size = new System.Drawing.Size(440, 282);
             this.richTextBox1.TabIndex = 23;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
@@ -292,9 +292,9 @@ namespace KnaufinsulationWalls.Steps
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Location = new System.Drawing.Point(308, 85);
+            this.pictureBox1.Location = new System.Drawing.Point(17, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(277, 289);
+            this.pictureBox1.Size = new System.Drawing.Size(284, 282);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
@@ -457,6 +457,23 @@ namespace KnaufinsulationWalls.Steps
             this.btnPrint.Text = "СОХРАНИТЬ PDF";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Location = new System.Drawing.Point(296, 82);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(754, 293);
+            this.panel1.TabIndex = 25;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Step3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,12 +481,11 @@ namespace KnaufinsulationWalls.Steps
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1062, 530);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.lblClose);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnDWG);
             this.Controls.Add(this.lblBack);
             this.Controls.Add(this.panelLeftSide);
@@ -479,12 +495,14 @@ namespace KnaufinsulationWalls.Steps
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ы";
             this.Load += new System.EventHandler(this.Step3_Load);
+            this.Resize += new System.EventHandler(this.Step3_Resize);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.btnDWG.ResumeLayout(false);
             this.btnDWG.PerformLayout();
             this.panelLeftSide.ResumeLayout(false);
             this.panelLeftSide.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,5 +535,7 @@ namespace KnaufinsulationWalls.Steps
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnPDF;
         private System.Windows.Forms.Button btnRW;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

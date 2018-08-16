@@ -33,18 +33,13 @@ namespace KnaufinsulationWalls.Steps
         public Step3()
         {
             InitializeComponent();
+
             coreFont = richTextBox1.Font;
-
         }
-        
-        private void Step3_Load(object sender, EventArgs e)
-        {
-        }
-
-
-
+    
         public override void AfterShow()
         {
+            IsAfterShow = true;
             FiltrData();
         }
 
@@ -106,12 +101,6 @@ namespace KnaufinsulationWalls.Steps
 
             if(itm.Tp > 0)
                 Text.AppendFormat("; Толщина перегродки Tп={0} мм",itm.Tp);
-            /*
-            if (itm.Ti > 0)
-                Text.AppendFormat("; Толщина изоляции Tu={0}", itm.Ti);
-
-            if (itm.N > 0)
-                Text.AppendFormat("; N={0}", itm.N);*/
 
             return Text.ToString();
         }
@@ -189,77 +178,9 @@ namespace KnaufinsulationWalls.Steps
             richTextBox1.AppendText("\r\n\r\n");
             richTextBox1.SelectionCharOffset = 0;
 
-            richTextBox1.SelectionFont = coreFont;
-            
+            richTextBox1.SelectionFont = coreFont;            
         }
-
-        private void exListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                var item = GetCurrItem();
-                var oldCharOffset = richTextBox1.SelectionCharOffset;
-
-                var imgName = FileManager.GetPathToRes(item.WallTypes.ImageName);
-
-                var img = ImageManager.LoadImageFromFile(imgName);
-
-
-                pictureBox1.Image = img;
-
-
-                richTextBox1.Clear();
-                richTextBox1.SelectionFont = new Font(new Font(coreFont.Name, 14), FontStyle.Bold | FontStyle.Underline);
-                
-                richTextBox1.AppendText(item.Name);
-                
-                richTextBox1.SelectionFont = new Font(new Font(coreFont.Name, 12), FontStyle.Bold | FontStyle.Underline);
-                richTextBox1.AppendText(" " + item.Description);
-
-
-
-                RichTextAddNewLine();
-
-
-                richTextBox1.SelectionFont = new Font(coreFont.Name, 11);
-
-                StringBuilder strB = new StringBuilder();
-                strB.AppendFormat("В соответствии с СП 51.1330.2011 «Защита от шума», " +
-                    "индекс изоляции шума конструкции составляет {0} дБ"
-                    , item.WallTypes.Rw);
-                richTextBox1.AppendText(strB.ToString());
-
-                RichTextAddNewLine();
-
-                richTextBox1.AppendText("Для удовлетворения требований рекомендуется следующая конструкция перегородки:");
-
-                RichTextAddNewLine();
-
-
-                richTextBox1.SelectionFont = coreFont;
-                richTextBox1.SelectionCharOffset = 2;
-                strB = new StringBuilder();
-                strB.AppendFormat(
-                    "- Толщина перегородки: {0} мм\r\n" +
-                    "- Толщина изоляции: {1} мм\r\n" +
-                    "- Кол-во листов с одной стороны  - {2} {3}\r\n" +
-                    "- Материал изоляции перегородки: минеральная вата\r\n   "
-                    ,  item.WallTypes.Tp, item.WallTypes.Ti, item.WallTypes.N, item.GetNameExtVal());
-
-
-                richTextBox1.AppendText(strB.ToString());
-                
-                richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Underline);
-                richTextBox1.AppendText("Knauf Insulation AS Акустическая перегородка");
-                
-
-                //richTextBox1.Invalidate();
-            }
-            catch (Exception ex)
-            {
-                Helper.WriteLog(ex.Message);
-            }
-        }
+        
 
         //download file
         private void onBtnFileDownLoadClick(object sender, EventArgs e)
@@ -329,12 +250,129 @@ namespace KnaufinsulationWalls.Steps
             panelLeftSide.Invalidate();
         }
 
-        private void onPaintBorder(object sender, PaintEventArgs e)
+        private bool IsAfterShow = true;
+        private void exListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //var item = sender as Button;
-            
-            //ControlPaint.DrawBorder(e.Graphics, item.ClientRectangle, Color.FromArgb(237, 238, 238), ButtonBorderStyle.Solid);
+            if (IsAfterShow)
+            {
+                OnChangeVariant();
+                IsAfterShow = false;
+            }
+            else
+            {
+                timer1.Start();
+            }
+
         }
-              
+
+        private Point defLocation = new Point(0, 0);
+        private void Step3_Load(object sender, EventArgs e)
+        {
+            defLocation = panel1.Location;
+        }
+
+        private bool IsGoingToRight = true;
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            var loc = panel1.Location;
+            int step = pictureBox1.Width > 500 ? 160 : 80;
+            if (IsGoingToRight)
+            {
+                loc.X += step;
+                panel1.Location = loc;
+
+                if (panel1.Location.X >= Width)
+                {
+                    OnChangeVariant();
+                    IsGoingToRight = false;
+                }
+
+            }
+            else
+            {
+                loc.X -= step;
+                panel1.Location = loc;
+
+                if (panel1.Location.X <= defLocation.X)
+                {
+                    IsGoingToRight = true;
+                    timer1.Stop();
+                    panel1.Location = defLocation;
+
+                }
+            }
+        }
+
+        private void Step3_Resize(object sender, EventArgs e)
+        {
+            defLocation = panel1.Location;
+        }
+
+        private void OnChangeVariant()
+        {
+            try
+            {
+                var item = GetCurrItem();
+                var oldCharOffset = richTextBox1.SelectionCharOffset;
+
+                var imgName = FileManager.GetPathToRes(item.WallTypes.ImageName);
+
+                var img = ImageManager.LoadImageFromFile(imgName);
+
+
+                pictureBox1.Image = img;
+
+
+                richTextBox1.Clear();
+                richTextBox1.SelectionFont = new Font(new Font(coreFont.Name, 14), FontStyle.Bold | FontStyle.Underline);
+
+                richTextBox1.AppendText(item.Name);
+
+                richTextBox1.SelectionFont = new Font(new Font(coreFont.Name, 12), FontStyle.Bold | FontStyle.Underline);
+                richTextBox1.AppendText(" " + item.Description);
+
+
+
+                RichTextAddNewLine();
+
+
+                richTextBox1.SelectionFont = new Font(coreFont.Name, 11);
+
+                StringBuilder strB = new StringBuilder();
+                strB.AppendFormat("В соответствии с СП 51.1330.2011 «Защита от шума», " +
+                    "индекс изоляции шума конструкции составляет {0} дБ"
+                    , item.WallTypes.Rw);
+                richTextBox1.AppendText(strB.ToString());
+
+                RichTextAddNewLine();
+
+                richTextBox1.AppendText("Для удовлетворения требований рекомендуется следующая конструкция перегородки:");
+
+                RichTextAddNewLine();
+
+
+                richTextBox1.SelectionFont = coreFont;
+                richTextBox1.SelectionCharOffset = 2;
+                strB = new StringBuilder();
+                strB.AppendFormat(
+                    "- Толщина перегородки: {0} мм\r\n" +
+                    "- Толщина изоляции: {1} мм\r\n" +
+                    "- Кол-во листов с одной стороны  - {2} {3}\r\n" +
+                    "- Материал изоляции перегородки: минеральная вата\r\n   "
+                    , item.WallTypes.Tp, item.WallTypes.Ti, item.WallTypes.N, item.GetNameExtVal());
+
+
+                richTextBox1.AppendText(strB.ToString());
+
+                richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Underline);
+                richTextBox1.AppendText("Knauf Insulation AS Акустическая перегородка");
+
+            }
+            catch (Exception ex)
+            {
+                Helper.WriteLog(ex.Message);
+            }
+        }
     }
 }
