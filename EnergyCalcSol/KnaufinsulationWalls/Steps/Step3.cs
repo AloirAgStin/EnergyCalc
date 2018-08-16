@@ -35,13 +35,105 @@ namespace KnaufinsulationWalls.Steps
             InitializeComponent();
             coreFont = richTextBox1.Font;
 
+
+
         }
-        
+
+        private Size defImgSize = new Size();
+        private Size defImgMinSz= new Size();
+
+
+        private Size defRichSize = new Size();
+
+
         private void Step3_Load(object sender, EventArgs e)
         {
+            defRichSize = richTextBox1.Size;
+            defImgSize = pictureBox1.Size;
+            PointStart = pictureBox1.Location;
+            defImgMinSz = pictureBox1.MinimumSize;
+
+            var szRich = richTextBox1.Size;
+            szRich.Width = 0;
+            richTextBox1.Size = szRich;
+
+            var szPict = pictureBox1.Size;
+            szPict.Width = 0;
+            pictureBox1.Size = szPict;
+        }
+        private void exListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var szRich = richTextBox1.Size;
+            szRich.Width = 0;
+            richTextBox1.Size = szRich;
+
+            var szPict = pictureBox1.Size;
+            szPict.Width = 0;
+            pictureBox1.Size = szPict;
+
+            timer1.Start();
         }
 
+        int stepCount = 0;
+        int stepDrawR = 50;
+        int stepDrawP = 50;
 
+        private void onTimer(object sender, EventArgs e)
+        {
+            if(stepCount == 0)
+            {
+                richTextBox1.ScrollBars = RichTextBoxScrollBars.None;
+               // richTextBox1.WordWrap = false;
+
+                var maxSize = defRichSize;
+                if (defImgSize.Width >= maxSize.Width)
+                    maxSize = defImgSize;
+
+                stepCount = 8;
+
+
+                stepDrawP = defImgSize.Width/ stepCount;
+                stepDrawR = defRichSize.Width / stepCount;
+
+                OnChangeContex();
+            }
+
+            int intOK = 0;
+            if(pictureBox1.Size.Width < defImgSize.Width)
+            {
+                var s = pictureBox1.Size;
+                s.Width += stepDrawR;
+                pictureBox1.Size = s;
+            }
+            else
+            {
+                pictureBox1.Size = defImgSize;
+                intOK++;
+            }
+
+            if (richTextBox1.Size.Width < defRichSize.Width)
+            {
+                var s = richTextBox1.Size;
+                s.Width += stepDrawP;
+                richTextBox1.Size = s;
+            }
+            else
+            {
+                richTextBox1.Size = defRichSize;
+                intOK++;
+            }
+
+            if(intOK == 2)
+            {
+
+                //pictureBox1.MinimumSize = defImgMinSz;
+                stepCount = 0;
+                timer1.Stop();
+                richTextBox1.WordWrap = true;
+                richTextBox1.ScrollBars = RichTextBoxScrollBars.Both;
+
+            }
+        }
 
         public override void AfterShow()
         {
@@ -106,12 +198,6 @@ namespace KnaufinsulationWalls.Steps
 
             if(itm.Tp > 0)
                 Text.AppendFormat("; Толщина перегродки Tп={0} мм",itm.Tp);
-            /*
-            if (itm.Ti > 0)
-                Text.AppendFormat("; Толщина изоляции Tu={0}", itm.Ti);
-
-            if (itm.N > 0)
-                Text.AppendFormat("; N={0}", itm.N);*/
 
             return Text.ToString();
         }
@@ -193,7 +279,9 @@ namespace KnaufinsulationWalls.Steps
             
         }
 
-        private void exListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        
+
+        private void OnChangeContex()
         {
             try
             {
@@ -210,9 +298,9 @@ namespace KnaufinsulationWalls.Steps
 
                 richTextBox1.Clear();
                 richTextBox1.SelectionFont = new Font(new Font(coreFont.Name, 14), FontStyle.Bold | FontStyle.Underline);
-                
+
                 richTextBox1.AppendText(item.Name);
-                
+
                 richTextBox1.SelectionFont = new Font(new Font(coreFont.Name, 12), FontStyle.Bold | FontStyle.Underline);
                 richTextBox1.AppendText(" " + item.Description);
 
@@ -244,16 +332,14 @@ namespace KnaufinsulationWalls.Steps
                     "- Толщина изоляции: {1} мм\r\n" +
                     "- Кол-во листов с одной стороны  - {2} {3}\r\n" +
                     "- Материал изоляции перегородки: минеральная вата\r\n   "
-                    ,  item.WallTypes.Tp, item.WallTypes.Ti, item.WallTypes.N, item.GetNameExtVal());
+                    , item.WallTypes.Tp, item.WallTypes.Ti, item.WallTypes.N, item.GetNameExtVal());
 
 
                 richTextBox1.AppendText(strB.ToString());
-                
+
                 richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Underline);
                 richTextBox1.AppendText("Knauf Insulation AS Акустическая перегородка");
                 
-
-                //richTextBox1.Invalidate();
             }
             catch (Exception ex)
             {
@@ -329,12 +415,45 @@ namespace KnaufinsulationWalls.Steps
             panelLeftSide.Invalidate();
         }
 
-        private void onPaintBorder(object sender, PaintEventArgs e)
+        public Point PointStart;
+
+        private void Step3_Resize(object sender, EventArgs e)
         {
-            //var item = sender as Button;
-            
-            //ControlPaint.DrawBorder(e.Graphics, item.ClientRectangle, Color.FromArgb(237, 238, 238), ButtonBorderStyle.Solid);
+            if(pictureBox1.Size.Width > 50)
+                defImgSize = pictureBox1.Size;
+            else
+            {
+                pictureBox1.Size = defImgSize;
+
+            }
+
+            if (richTextBox1.Size.Width > 50)
+            {
+                defRichSize = richTextBox1.Size;
+            }
+            else
+            {
+                richTextBox1.Size = defRichSize;
+
+            }
+            int border = 6;
+            int imgW = pictureBox1.Size.Width < defImgSize.Width ? defImgSize.Width : pictureBox1.Width;
+
+            var pt = new Point(pictureBox1.Location.X + imgW + border, 85);
+
+            if (pt.X < PointStart.X - border)
+            {
+                richTextBox1.Location = PointStart;
+            }
+            else
+                richTextBox1.Location = pt;
+            richTextBox1.Width = Width - richTextBox1.Location.X - 25;
         }
-              
+
+        private void Step3_ResizeBegin(object sender, EventArgs e)
+        {
+            int n = 4;
+
+        }
     }
 }
