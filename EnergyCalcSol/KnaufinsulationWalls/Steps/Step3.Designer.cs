@@ -396,17 +396,18 @@ namespace KnaufinsulationWalls.Steps
             this.exListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.exListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.exListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.exListBox1.Font = new System.Drawing.Font("Lato", 18F);
+            this.exListBox1.Font = new System.Drawing.Font("Lato", 16F);
             this.exListBox1.ForeColor = System.Drawing.Color.Silver;
             this.exListBox1.FormattingEnabled = true;
             this.exListBox1.ItemHeight = 25;
             this.exListBox1.Items.AddRange(new object[] {
-            "ВАРИАНТ 1"});
-            this.exListBox1.Location = new System.Drawing.Point(14, 82);
+            "ВАРИАНТ 29 (Тп=125мм)"});
+            this.exListBox1.Location = new System.Drawing.Point(6, 82);
+            this.exListBox1.Margin = new System.Windows.Forms.Padding(0);
             this.exListBox1.Name = "exListBox1";
             this.exListBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.exListBox1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(236)))));
-            this.exListBox1.Size = new System.Drawing.Size(231, 400);
+            this.exListBox1.Size = new System.Drawing.Size(278, 400);
             this.exListBox1.TabIndex = 1;
             this.exListBox1.SelectedIndexChanged += new System.EventHandler(this.exListBox1_SelectedIndexChanged);
             // 

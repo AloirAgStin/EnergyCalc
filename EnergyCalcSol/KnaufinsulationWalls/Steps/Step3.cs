@@ -68,11 +68,13 @@ namespace KnaufinsulationWalls.Steps
                     int num = 1;
                     foreach (var item in m_variants)
                     {
-                        String text = "ВАРИАНТ " + num.ToString();
+                        StringBuilder str = new StringBuilder();
+                        str.AppendFormat("ВАРИАНТ {0}(Тп={1}мм)", num, item.WallTypes.Tp);
+                      
                         num++;
 
 
-                        exListBox1.Items.Add(text);
+                        exListBox1.Items.Add(str.ToString());
                     }
 
                     if (exListBox1.Items.Count > 0)
@@ -100,7 +102,7 @@ namespace KnaufinsulationWalls.Steps
             Text.AppendFormat("={0} дБ, EI={1}", itm.Rw, itm.EI);
 
             if(itm.Tp > 0)
-                Text.AppendFormat("; Толщина перегродки Tп={0} мм",itm.Tp);
+                Text.AppendFormat("; Толщина перегродки Tп={0}мм",itm.Tp);
 
             return Text.ToString();
         }
@@ -276,7 +278,7 @@ namespace KnaufinsulationWalls.Steps
         private void timer1_Tick(object sender, EventArgs e)
         {
             var loc = panel1.Location;
-            int step = pictureBox1.Width > 500 ? 160 : 80;
+            int step = panel1.Width / 6;
             if (IsGoingToRight)
             {
                 loc.X += step;
@@ -337,12 +339,16 @@ namespace KnaufinsulationWalls.Steps
                 RichTextAddNewLine();
 
 
+                var vMainFrom = Parent.Parent as StepFrame;
+                var userData = vMainFrom.CalcStruct;
+
+
                 richTextBox1.SelectionFont = new Font(coreFont.Name, 11);
 
                 StringBuilder strB = new StringBuilder();
                 strB.AppendFormat("В соответствии с СП 51.1330.2011 «Защита от шума», " +
-                    "индекс изоляции шума конструкции составляет {0} дБ"
-                    , item.WallTypes.Rw);
+                    "требуемый индекс изоляции шума конструкции составляет {0} дБ"
+                    , userData.Rw);
                 richTextBox1.AppendText(strB.ToString());
 
                 RichTextAddNewLine();
@@ -367,6 +373,12 @@ namespace KnaufinsulationWalls.Steps
 
                 richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | FontStyle.Underline);
                 richTextBox1.AppendText("Knauf Insulation AS Акустическая перегородка");
+
+
+                richTextBox1.SelectionFont = coreFont;
+                richTextBox1.SelectionCharOffset = 2;
+                richTextBox1.AppendText("\r\n- Индекс изоляции шума " + item.WallTypes.Rw + " Дб");
+
 
             }
             catch (Exception ex)
