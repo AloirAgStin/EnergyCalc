@@ -290,7 +290,7 @@
             this.radioButton1.Size = new System.Drawing.Size(272, 39);
             this.radioButton1.TabIndex = 1;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "̬Я ЗНАЮ ТРЕБУЕМЫЙ ИНДЕКС ИЗОЛЯЦИИ ВОЗДУШНОГО ШУМА, R";
+            this.radioButton1.Text = "Я ЗНАЮ ТРЕБУЕМЫЙ ИНДЕКС ИЗОЛЯЦИИ ВОЗДУШНОГО ШУМА, R";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
