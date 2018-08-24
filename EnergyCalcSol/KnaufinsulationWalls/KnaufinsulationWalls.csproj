@@ -237,9 +237,6 @@
   <ItemGroup>
     <None Include="Resources\btnRW.png" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btnRWactive.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>rd C:\Users\Rokky\AppData\Local\KnaufinsulationWalls\ /s /q</PostBuildEvent>

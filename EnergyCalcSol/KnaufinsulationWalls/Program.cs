@@ -13,7 +13,7 @@ namespace KnaufinsulationWalls
         /// Главная точка входа для приложения.
         /// </summary>
         /// 
-        static DateTime dt = new DateTime(2018, 8, 7);
+        static DateTime dt = new DateTime(2018, 8, 21);
         static DateTime dtEnd = dt;
 
         [STAThread]
@@ -25,7 +25,7 @@ namespace KnaufinsulationWalls
             Helper.WriteLog("---------------------------------------------");
             Helper.WriteLog("Запуск программы " + Application.StartupPath);
 
-            dtEnd = new DateTime(2018, 8, 20);
+            dtEnd = new DateTime(2018, 10, 20);
 
             if (DateTime.Now > dtEnd || DateTime.Now < dt)
             {

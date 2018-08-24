@@ -185,7 +185,6 @@ namespace KnaufinsulationWalls
                 Helper.WriteLog(ex.Message);
                 MessageBox.Show(ex.Message, "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
     }
 
